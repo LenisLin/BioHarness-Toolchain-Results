@@ -1,0 +1,453 @@
+backend_adapter_id: spatial_domain_identification.banksy.adapter.v1
+adapter_id: spatial_domain_identification.banksy.adapter.v1
+linked_surface_id: spatial_domain_identification.banksy.v1
+surface_id: spatial_domain_identification.banksy.v1
+backend_method: BANKSY
+authority_status: blueprint
+implementation_status: not_implemented
+visibility: implementation_debug_audit_only
+
+native_repository:
+  url: https://github.com/prabhakarlab/Banksy_py
+  commit_or_release: 43e2d692db6705c0195039764194473912e4cfc2
+  package_name: pybanksy
+  package_version: "1.3.4"
+  license: GPL-3.0
+  last_checked: "2026-04-28"
+  evidence_refs:
+    - OFFICIAL_HEAD_PIN
+    - PYPROJECT_PACKAGE_ENV
+    - LICENSE_GPL3
+
+evidence_authority:
+  registry_file: ../method_audits/banksy.audit.md
+  registry_section: Audit Evidence Registry
+
+runtime_language: python
+environment_profile_candidate: banksy_cpu_python_blueprint
+environment_profile: banksy_cpu_python_blueprint
+integration_mode:
+  mode: strong_wrapper_over_official_python_package
+  implementation_exists: false
+  rationale: Official source evidence supports a wrapper draft, but BioHarness-owned I/O, parameter normalization, artifact policy, provenance, and typed failures still need implementation and validation.
+  evidence_refs:
+    - README_QUICKSTART
+    - RUN_MULTIPARAM_OUTPUT
+
+entrypoint: not_implemented_planned_wrapper_over_official_python_package
+backend_entrypoints:
+  - entrypoint_id: readme_workflow
+    type: documentation
+    path_or_symbol: README.md quick start
+    purpose: Documents expected AnnData-style input, spatial coordinate source, clustering defaults, and workflow shape.
+    evidence_refs:
+      - README_QUICKSTART
+    confidence: high
+  - entrypoint_id: initialize_spatial_context
+    type: source_file
+    path_or_symbol: src/banksy/initialize_banksy.py
+    purpose: Source evidence for coordinate handling and spatial-weight construction.
+    evidence_refs:
+      - INIT_COORDINATES_WEIGHTS
+    confidence: high
+  - entrypoint_id: build_neighbor_augmented_representation
+    type: source_file
+    path_or_symbol: src/banksy/embed_banksy.py
+    purpose: Source evidence for neighbor-augmented representation, numeric controls, dense-memory risk, and finite-matrix checks.
+    evidence_refs:
+      - EMBED_MATRIX_DENSE_RISK
+    confidence: high
+  - entrypoint_id: orchestrate_workflow
+    type: source_file
+    path_or_symbol: src/banksy/run_banksy.py
+    purpose: Source evidence for workflow orchestration and result-table behavior.
+    evidence_refs:
+      - RUN_MULTIPARAM_OUTPUT
+    confidence: high
+  - entrypoint_id: cluster_domains
+    type: source_file
+    path_or_symbol: src/banksy/cluster_methods.py
+    purpose: Source evidence for clustering choices, seed policy, and optional R-backed clustering path.
+    evidence_refs:
+      - CLUSTER_SEED_OPTIONAL_MCLUST
+    confidence: high
+  - entrypoint_id: assign_and_export_outputs
+    type: source_file
+    path_or_symbol: src/banksy/plot_banksy.py
+    purpose: Source evidence for label assignment and optional figure/object output behavior.
+    evidence_refs:
+      - PLOT_OUTPUT_ARTIFACTS
+    confidence: high
+  - entrypoint_id: embedding_seed_behavior
+    type: source_file
+    path_or_symbol: src/banksy_utils/umap_pca.py
+    purpose: Source evidence for PCA/UMAP-related reproducibility planning.
+    evidence_refs:
+      - UMAP_PCA_SEED
+    confidence: high
+
+call_graph:
+  status: draft_from_source_file_roles
+  implementation_verified: false
+  steps:
+    - layer3_stage: input_check
+      backend_refs:
+        - README_QUICKSTART
+        - INIT_COORDINATES_WEIGHTS
+      planned_wrapper_action: validate spatial expression object and semantic coordinate source before backend call.
+    - layer3_stage: method_preprocessing
+      backend_refs:
+        - README_QUICKSTART
+      planned_wrapper_action: confirm input is already suitable for method-local processing; do not perform broad upstream ST preprocessing silently.
+    - layer3_stage: core_structure_building
+      backend_refs:
+        - INIT_COORDINATES_WEIGHTS
+        - EMBED_MATRIX_DENSE_RISK
+      planned_wrapper_action: build spatial neighborhood context and screen dense-memory risk.
+    - layer3_stage: model_fit_or_inference
+      backend_refs:
+        - RUN_MULTIPARAM_OUTPUT
+        - CLUSTER_SEED_OPTIONAL_MCLUST
+        - UMAP_PCA_SEED
+      planned_wrapper_action: run selected clustering/granularity policy and record seed behavior.
+    - layer3_stage: output_assignment
+      backend_refs:
+        - RUN_MULTIPARAM_OUTPUT
+        - PLOT_OUTPUT_ARTIFACTS
+      planned_wrapper_action: normalize labels and summary table into BioHarness output namespace.
+    - layer3_stage: artifact_export
+      backend_refs:
+        - PLOT_OUTPUT_ARTIFACTS
+      planned_wrapper_action: constrain all artifacts to approved output directory and manifest them.
+    - layer3_stage: final_validation
+      backend_refs:
+        - RUN_MULTIPARAM_OUTPUT
+        - PLOT_OUTPUT_ARTIFACTS
+      planned_wrapper_action: check label presence, table presence, artifacts, and provenance.
+    - layer3_stage: visualization
+      backend_refs:
+        - PLOT_OUTPUT_ARTIFACTS
+      planned_wrapper_action: generate optional diagnostic figures for sanity only.
+
+function_surface_bindings:
+  - binding_id: input_check_to_backend_input_validation
+    layer3_stage: input_check
+    backend_file: README.md and src/banksy/initialize_banksy.py
+    backend_function_or_entrypoint: source_symbol_not_resolved_in_current_inventory
+    evidence_refs:
+      - README_QUICKSTART
+      - INIT_COORDINATES_WEIGHTS
+    confidence: medium
+  - binding_id: structure_building_to_spatial_weights_and_representation
+    layer3_stage: core_structure_building
+    backend_file: src/banksy/initialize_banksy.py and src/banksy/embed_banksy.py
+    backend_function_or_entrypoint: source_symbol_not_resolved_in_current_inventory
+    evidence_refs:
+      - INIT_COORDINATES_WEIGHTS
+      - EMBED_MATRIX_DENSE_RISK
+    confidence: medium
+  - binding_id: inference_to_workflow_and_clustering_sources
+    layer3_stage: model_fit_or_inference
+    backend_file: src/banksy/run_banksy.py and src/banksy/cluster_methods.py
+    backend_function_or_entrypoint: source_symbol_not_resolved_in_current_inventory
+    evidence_refs:
+      - RUN_MULTIPARAM_OUTPUT
+      - CLUSTER_SEED_OPTIONAL_MCLUST
+    confidence: medium
+  - binding_id: outputs_to_plot_and_result_sources
+    layer3_stage: output_assignment
+    backend_file: src/banksy/plot_banksy.py
+    backend_function_or_entrypoint: source_symbol_not_resolved_in_current_inventory
+    evidence_refs:
+      - PLOT_OUTPUT_ARTIFACTS
+    confidence: medium
+
+parameter_mapping:
+  expose_to_agent:
+    - spatial_coordinate_source
+    - requested_domain_granularity
+    - neighborhood_scale_policy
+    - spatial_expression_weight_policy
+    - clustering_backend_policy
+    - random_seed
+    - output_namespace
+    - export_visualization
+  infer_from_input:
+    - available_coordinate_sources
+    - observation_count
+    - feature_count
+    - sparse_or_dense_matrix_status
+  fixed_by_adapter:
+    - label_namespace
+    - output_directory_layout
+    - provenance_schema
+    - filesystem_safety_policy
+  backend_default:
+    - upstream default values that are documented but not yet validated by BioHarness fixture
+  forbidden_for_agent:
+    - raw_backend_function_names
+    - backend_file_paths
+    - package_private_parameters
+    - implementation_call_graph
+    - backend_coordinate_representation_details
+    - unsafe_memory_flags
+  mapping_table:
+    - layer3_parameter: spatial_coordinate_source
+      backend_parameter: coordinate_key_representation
+      mapping_rule: convert BioHarness coordinate source into backend-compatible coordinate keys
+      visibility: layer4_only
+      default_policy: infer only when unambiguous
+      validation: source resolves to coordinates aligned with observations
+      evidence_refs:
+        - README_QUICKSTART
+        - INIT_COORDINATES_WEIGHTS
+    - layer3_parameter: requested_domain_granularity
+      backend_parameter: clustering_resolution_or_selection_policy
+      mapping_rule: treat as granularity-control abstraction; exact target domain count is not directly guaranteed
+      default_policy: not_frozen
+      validation: may require resolution search or post-hoc selection
+      evidence_refs:
+        - RUN_MULTIPARAM_OUTPUT
+        - CLUSTER_SEED_OPTIONAL_MCLUST
+    - layer3_parameter: spatial_expression_weight_policy
+      backend_parameter: lambda_related_backend_setting
+      mapping_rule: map semantic enum to validated numeric values only after fixture testing
+      default_policy: not_frozen
+      validation: fixture-based validation required
+      evidence_refs:
+        - EMBED_MATRIX_DENSE_RISK
+    - layer3_parameter: neighborhood_scale_policy
+      backend_parameter: neighborhood_related_backend_setting
+      mapping_rule: map semantic enum to validated backend settings
+      default_policy: not_frozen
+      validation: fixture-based validation and memory preflight required
+      evidence_refs:
+        - INIT_COORDINATES_WEIGHTS
+        - EMBED_MATRIX_DENSE_RISK
+    - layer3_parameter: clustering_backend_policy
+      backend_parameter: clustering_implementation_selection
+      mapping_rule: use default Python clustering path for MVP planning; gate optional R-backed path until environment evidence exists
+      default_policy: python_default_path
+      validation: environment capability check
+      evidence_refs:
+        - README_QUICKSTART
+        - PYPROJECT_PACKAGE_ENV
+        - CLUSTER_SEED_OPTIONAL_MCLUST
+    - layer3_parameter: random_seed
+      backend_parameter: seed_controls_where_exposed_or_fixed
+      mapping_rule: record seed settings in provenance
+      default_policy: record_backend_default_or_fixed_seed_behavior
+      validation: repeated-run fixture check required before determinism claim
+      evidence_refs:
+        - CLUSTER_SEED_OPTIONAL_MCLUST
+        - UMAP_PCA_SEED
+
+input_conversion:
+  canonical_to_backend: BioHarness spatial AnnData contract candidate to BANKSY-compatible AnnData plus Layer4 coordinate representation.
+  required_conversions:
+    - validate AnnData-compatible object
+    - validate semantic coordinate source
+    - convert semantic coordinate source to backend-compatible coordinate representation
+    - validate or flag finite expression data
+    - estimate dense-memory risk before execution
+  lossy_conversions: not_observed
+  object_boundary: AnnData-compatible object remains the primary boundary; wrapper controls coordinate mapping and output namespace.
+  evidence_refs:
+    - README_QUICKSTART
+    - INIT_COORDINATES_WEIGHTS
+    - EMBED_MATRIX_DENSE_RISK
+
+output_mapping:
+  backend_to_canonical: copy backend labels and result table into BioHarness standard outputs.
+  domain_labels: write or extract labels into BioHarness-controlled label namespace.
+  results_summary_table: normalize returned summary table to future BioHarness schema.
+  labeled_object: optional h5ad export after output schema is frozen.
+  diagnostic_figures: optional sanity artifacts only.
+  logs: wrapper-added because runtime log contract is not observed in current evidence.
+  provenance: wrapper-added required artifact.
+  missing_mappings:
+    - exact result table schema
+    - exact embedding export contract
+    - runtime log schema
+  evidence_refs:
+    - RUN_MULTIPARAM_OUTPUT
+    - PLOT_OUTPUT_ARTIFACTS
+
+artifact_mapping:
+  output_directory_policy: adapter_owned_output_directory_only
+  artifacts:
+    - artifact_id: domain_label_table
+      backend_source: extracted_or_written_labels
+      standard_artifact: domain_labels.tsv
+      required: true
+      evidence_refs:
+        - PLOT_OUTPUT_ARTIFACTS
+    - artifact_id: results_summary_table
+      backend_source: returned_or_computed_result_table
+      standard_artifact: banksy_results_summary.tsv
+      required: true
+      evidence_refs:
+        - RUN_MULTIPARAM_OUTPUT
+    - artifact_id: labeled_object
+      backend_source: optional_written_object
+      standard_artifact: banksy_labeled.h5ad
+      required: false
+      evidence_refs:
+        - PLOT_OUTPUT_ARTIFACTS
+    - artifact_id: diagnostic_visualization
+      backend_source: optional_plotting_path
+      standard_artifact: figures/banksy_domain_labels.png
+      required: false
+      evidence_refs:
+        - PLOT_OUTPUT_ARTIFACTS
+    - artifact_id: provenance_record
+      backend_source: wrapper_added
+      standard_artifact: provenance.yaml
+      required: true
+      evidence_refs:
+        - REPO_LAYER3_LAYER4_PROTOCOL
+
+filesystem_policy:
+  working_directory: adapter_managed_run_directory_required
+  input_mounts:
+    - read_only_input_object_path_when_file_backed
+  output_directory: adapter_managed_output_directory_required
+  temp_storage: adapter_managed_temp_directory_required
+  cache_policy: no_uncontrolled_global_cache_in_default_surface
+  cleanup_policy: preserve declared artifacts_and_logs_only
+  forbidden:
+    - writing outside adapter output directory
+    - agent_supplied_temporary_paths
+    - silent overwrite of input object
+
+failure_translation:
+  - backend_signal: missing_or_invalid_coordinates
+    typed_failure: missing_spatial_coordinates
+    agent_visible_summary: Spatial coordinate source is missing or cannot be mapped safely.
+    evidence_refs:
+      - README_QUICKSTART
+      - INIT_COORDINATES_WEIGHTS
+  - backend_signal: dense_memory_pressure
+    typed_failure: memory_risk_detected
+    agent_visible_summary: Planned representation may exceed safe memory bounds; stop before execution.
+    evidence_refs:
+      - EMBED_MATRIX_DENSE_RISK
+  - backend_signal: nonfinite_matrix_state
+    typed_failure: nonfinite_or_invalid_matrix
+    agent_visible_summary: Generated matrix contains invalid values; inspect preprocessing and input matrix.
+    evidence_refs:
+      - EMBED_MATRIX_DENSE_RISK
+  - backend_signal: optional_R_backed_clustering_unavailable
+    typed_failure: optional_clustering_backend_unavailable
+    agent_visible_summary: Optional clustering backend is unavailable; use validated default path or request environment review.
+    evidence_refs:
+      - PYPROJECT_PACKAGE_ENV
+      - CLUSTER_SEED_OPTIONAL_MCLUST
+  - backend_signal: expected_label_or_table_missing
+    typed_failure: output_schema_missing
+    agent_visible_summary: Required labels or summary output were not produced.
+    evidence_refs:
+      - RUN_MULTIPARAM_OUTPUT
+      - PLOT_OUTPUT_ARTIFACTS
+
+environment_binding:
+  expected_capsule: none_exists_blueprint_only
+  native_package_manager: python_packaging
+  install_files:
+    - pyproject.toml
+  lock_or_container_available: not_observed
+  dependency_conflict_risk: medium_high
+  known_dependency_risks:
+    - dependency: python
+      risk: official range excludes Python 3.13+
+      evidence_refs:
+        - PYPROJECT_PACKAGE_ENV
+    - dependency: numpy
+      risk: official range constrains numpy below 2.0
+      evidence_refs:
+        - PYPROJECT_PACKAGE_ENV
+    - dependency: rpy2_R_optional_path
+      risk: optional clustering path requires separate R/rpy2 verification
+      evidence_refs:
+        - PYPROJECT_PACKAGE_ENV
+        - CLUSTER_SEED_OPTIONAL_MCLUST
+  gpu_policy: not_required_by_current_evidence
+  cuda_policy: not_applicable_by_current_evidence
+  cpu_fallback_policy: CPU is the primary planned mode.
+  environment_decision:
+    - environment_probe_required
+    - shared_capsule_unknown
+    - dedicated_capsule_may_be_required
+    - wrapper_boundary_required
+    - optional_mclust_excluded_until_rpy2_R_verified
+  environment_hold_status: not_justified_yet
+  environment_subagent_report: ../environment_profiles/banksy.environment_subagent_report.md
+
+smoke_test:
+  status: planned_not_run
+  fixture_source: not_available
+  installable:
+    status: not_run
+    evidence_refs:
+      - PYPROJECT_PACKAGE_ENV
+      - README_QUICKSTART
+  runnable_example:
+    status: not_run
+    evidence_refs:
+      - OFFICIAL_EXAMPLES_FIXTURE_LIMIT
+  observable_io:
+    status: not_run
+    evidence_refs:
+      - RUN_MULTIPARAM_OUTPUT
+      - PLOT_OUTPUT_ARTIFACTS
+  minimal_success_criteria:
+    - accepts minimal AnnData-compatible object with semantic coordinate source
+    - emits one non-null label per observation
+    - emits method provenance
+    - writes only under approved output directory
+
+fidelity_test:
+  status: planned_not_run
+  required: true_before_mvp
+  comparison_target: official Python package behavior on approved fixture
+  metrics_or_checks:
+    - output_schema_equivalence
+    - domain_count_or_granularity_consistency
+    - no_empty_domain_check
+    - label_permutation_aware_similarity
+    - figure_sanity_only
+
+rewrite_level: strong_wrapper
+rewrite_rationale: Standardize I/O, semantic parameters, artifacts, provenance, and typed failures without rewriting BANKSY scientific algorithm.
+algorithm_core_touched: false
+
+blocking_issues:
+  - issue: No BioHarness-owned minimal smoke fixture.
+    severity: high
+    required_resolution: create and approve a small AnnData-compatible fixture before MVP implementation.
+    evidence_refs:
+      - OFFICIAL_EXAMPLES_FIXTURE_LIMIT
+  - issue: No install/import environment probe.
+    severity: high
+    required_resolution: run isolated install/import probe before selecting shared or dedicated capsule.
+    evidence_refs:
+      - PYPROJECT_PACKAGE_ENV
+  - issue: Numeric semantic-to-backend parameter mapping is unvalidated.
+    severity: medium
+    required_resolution: validate mappings on a fixture before exposing defaults as stable controls.
+    evidence_refs:
+      - EMBED_MATRIX_DENSE_RISK
+      - RUN_MULTIPARAM_OUTPUT
+  - issue: Runtime-cost measurement is absent.
+    severity: medium
+    required_resolution: measure wall time, memory, device, and fixture size after smoke fixture exists.
+    evidence_refs:
+      - OFFICIAL_EXAMPLES_FIXTURE_LIMIT
+  - issue: GPL-3.0 packaging and distribution implications unresolved.
+    severity: high
+    required_resolution: review packaging and distribution strategy before bundling decisions.
+    evidence_refs:
+      - LICENSE_GPL3
+      - PYPROJECT_PACKAGE_ENV
+
+authority_note: Layer4 adapter draft only. It does not implement, run, validate, or provide runtime support for BANKSY.

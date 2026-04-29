@@ -1,0 +1,99 @@
+surface_id: spatial_domain_identification.canonical.v1
+surface_version: v1
+analysis_problem: Domain / Clustering
+task_family: spatial_domain_identification
+visibility: agent_readable
+surface_status: draft
+purpose: assign spatial domain labels to spots or cells using a selected backend method
+
+functional_surfaces:
+  - input_check
+  - method_preprocessing
+  - core_structure_building
+  - model_fit_or_inference
+  - output_assignment
+  - artifact_export
+  - final_validation
+  - visualization
+
+standard_inputs:
+  - spatial_expression_object
+  - spatial_coordinates
+  - optional_histology_image
+  - optional_batch_or_slice_key
+
+standard_parameters:
+  - n_domains
+  - spatial_key
+  - feature_layer
+  - use_histology
+  - batch_key
+  - random_seed
+
+standard_outputs:
+  - domain_labels
+  - updated_object
+  - optional_embedding
+  - run_summary
+  - figures
+  - logs
+  - provenance
+
+standard_failure_modes:
+  - SpatialKeyMissing
+  - CoordinateSystemMismatch
+  - ClusterKeyNotCategorical
+  - EmptyNeighborhoodGraph
+  - DisconnectedSpatialGraph
+  - OutputContractViolation
+  - RuntimeToolError
+  - SparseMatrixDensificationRisk
+  - OutputSchemaDrift
+
+input_contract:
+  primary_object: AnnData_or_equivalent_spatial_expression_object
+  required_modalities:
+    - expression
+    - spatial_coordinates
+  optional_modalities:
+    - histology_image
+    - batch_or_slice_key
+
+parameter_template:
+  n_domains: optional_or_method_specific
+  spatial_key: required_unless_inferred
+  feature_layer: optional
+  use_histology: method_specific
+  batch_key: optional
+  random_seed: optional
+
+environment_profile: task_family_method_specific
+
+output_artifacts:
+  - domain_labels
+  - updated_object
+  - run_summary
+  - provenance
+  - optional_figures
+  - logs
+
+validation_hooks:
+  - preflight.spatial_expression_object
+  - preflight.spatial_coordinates
+  - postrun.domain_labels_one_per_observation
+  - postrun.output_contract
+  - postrun.provenance_complete
+  - visual.sanity_only_if_figures_requested
+
+provenance_expectations:
+  - selected_method_id
+  - selected_surface_id
+  - input_object_reference
+  - coordinate_key_or_mapping
+  - parameter_values
+  - random_seed_if_used
+  - environment_profile
+  - backend_adapter_reference_if_any
+
+authority_note: "Canonical Layer3 surface only. Does not imply any backend adapter is implemented."
+

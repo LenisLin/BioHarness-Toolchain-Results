@@ -1,0 +1,33 @@
+./docs/90_roadmap.md:30:- run pilots in order: BANKSY, SpaGCN, hold / legacy / no-clean-API negative case
+./docs/90_roadmap.md:40:- BANKSY has an intermediate Layer3/4 co-design review package under `/mnt/NAS_21T/ProjectData/BioHarness/BioHarness-Toolchain-ST/layer3_4/spatial_domain_identification/BANKSY/v0.6.1/` and source retrieval outputs under `/mnt/NAS_21T/ProjectData/BioHarness/results/layer3_4/spatial_domain_identification/banksy/`.
+./docs/90_roadmap.md:91:The first pilot order is BANKSY, SpaGCN, and then a hold / legacy / no-clean-API negative case. The target is to freeze the template and co-design process, not to immediately claim a production adapter.
+./docs/30_env_strategy.md:73:- `environment_decision`
+./docs/30_env_strategy.md:75:Allowed planning decisions include `shared_capsule`, `dedicated_capsule`, `legacy_capsule`, `wrapper_boundary`, `compatibility_rewrite_considered`, and `hold_due_to_environment`.
+./docs/83_layer3_4_method_execution_planning_protocol.md:9:Given a Layer 2 promoted method name, such as `BANKSY`, this protocol guides code reading and subagent-style work decomposition to produce a `MethodExecutionPlanningRecord`. The record is an engineering-stage planning object. It gathers the Layer 2 handoff, canonical surface inheritance, method-specific Layer 3 surface plan, Layer 4 adapter draft, environment plan, rewrite plan, validation/runtime plan, risks, decisions, and evidence ledger into one auditable record.
+./docs/83_layer3_4_method_execution_planning_protocol.md:34:  method_surface_id: spatial_domain_identification.banksy.v1
+./docs/83_layer3_4_method_execution_planning_protocol.md:38:`spatial_domain_identification.banksy.v1` should inherit from `spatial_domain_identification.canonical.v1`. The canonical family surface should at minimum define:
+./docs/83_layer3_4_method_execution_planning_protocol.md:449:    environment_decision:
+./docs/83_layer3_4_method_execution_planning_protocol.md:614:      - hold_due_to_environment
+./docs/83_layer3_4_method_execution_planning_protocol.md:666:Pilot 1: `BANKSY`.
+./docs/45_task_adapters.md:19:  backend: banksy
+./docs/45_task_adapters.md:79:Each promoted method must inherit the task-family canonical surface before generating a method-specific Layer 3 surface. For spatial domain identification, method-specific surfaces such as `spatial_domain_identification.banksy.v1` should inherit from `spatial_domain_identification.canonical.v1`.
+./docs/45_task_adapters.md:84:1. BANKSY
+./docs/45_task_adapters.md:89:This order validates the template and co-design process. It does not freeze BANKSY or SpaGCN as default methods and does not claim that any adapter is implemented.
+./docs/45_task_adapters.md:91:The BANKSY Layer3/4 co-design pilot is stored outside project docs as a NAS intermediate package at `/mnt/NAS_21T/ProjectData/BioHarness/BioHarness-Toolchain-ST/layer3_4/spatial_domain_identification/BANKSY/v0.6.1/`. Its source retrieval outputs are stored under `/mnt/NAS_21T/ProjectData/BioHarness/results/layer3_4/spatial_domain_identification/banksy/`. These artifacts are blueprint/protocol evidence only; they do not claim a production adapter, environment capsule, runtime validator, smoke fixture, or runtime-cost result.
+./surface_registry/README.md:51:Method-specific intermediate surface drafts should remain outside this repository until promoted. The BANKSY v0.6.1 intermediate surface draft is stored in the NAS review package at `/mnt/NAS_21T/ProjectData/BioHarness/BioHarness-Toolchain-ST/layer3_4/spatial_domain_identification/BANKSY/v0.6.1/`.
+./tests/test_round1_registry_generator.py:116:    assert ("Domain / Clustering", "Spatial domain identification", "BANKSY") in keys
+./tests/test_round1_registry_generator.py:125:    assert sum(row["Method Name"] == "BANKSY" for row in rows) == 1
+./tests/test_round2_targeted_consolidation.py:152:            "BANKSY",
+./tests/test_round2_targeted_consolidation.py:154:            "BANKSY unifies cell typing and tissue domain segmentation for scalable spatial omics data analysis",
+./tests/test_round2_targeted_consolidation.py:163:            "https://github.com/prabhakarlab/Banksy_py",
+./docs/82_layer3_4_codesign.md:49:  e.g. spatial_domain_identification.banksy.v1 inherits_from canonical
+./docs/82_layer3_4_codesign.md:71:For spatial domain identification, `spatial_domain_identification.banksy.v1` should inherit from `spatial_domain_identification.canonical.v1` when BANKSY is used as a promoted planning pilot.
+./docs/82_layer3_4_codesign.md:139:- BANKSY v0.6.1 Layer3/4 co-design review package: `/mnt/NAS_21T/ProjectData/BioHarness/BioHarness-Toolchain-ST/layer3_4/spatial_domain_identification/BANKSY/v0.6.1/`
+./docs/82_layer3_4_codesign.md:140:- BANKSY source retrieval outputs: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer3_4/spatial_domain_identification/banksy/`
+./scripts/build_round1_expanded_outputs.py:1201:            "Whitelist sweep retained BayesSpace, SpaGCN, STAGATE, GraphST, BANKSY, BASS, SEDR, SpatialPCA, and DR-SC as the dominant published domain-identification layer.",
+./scripts/build_round1_expanded_outputs.py:1471:                "BANKSY",
+./scripts/build_round1_expanded_outputs.py:1472:                "BANKSY unifies cell typing and tissue domain segmentation for scalable spatial omics data analysis",
+./scripts/build_round1_expanded_outputs.py:1480:                "https://github.com/prabhakarlab/Banksy_py",
+./scripts/build_round1_expanded_outputs.py:1483:                notes="Included here because domain segmentation is one of BANKSY's primary stable outputs.",
+./docs/templates/method_execution_planning_record_template.md:321:    environment_decision: "" # shared_capsule | dedicated_capsule | legacy_capsule | wrapper_boundary | compatibility_rewrite_considered | hold_due_to_environment
+./docs/templates/method_execution_planning_record_template.md:469:      - "hold_due_to_environment"

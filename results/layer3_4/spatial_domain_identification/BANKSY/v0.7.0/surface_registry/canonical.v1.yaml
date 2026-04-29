@@ -1,0 +1,115 @@
+surface_id: spatial_domain_identification.canonical.v1
+surface_version: v1
+task_family: spatial_domain_identification
+visibility: agent_readable
+authority_status: blueprint
+surface_status: draft
+canonical_scope: method_neutral_layer3_only
+functional_surfaces:
+  - input_check
+  - method_preprocessing
+  - core_structure_building
+  - model_fit_or_inference
+  - output_assignment
+  - artifact_export
+  - final_validation
+  - visualization
+standard_inputs:
+  spatial_expression_object:
+    required: true
+    accepted_object_types:
+      - AnnData
+      - SpatialData
+      - method_supported_spatial_expression_object
+    description: Spatial expression object with observations, features, and spatial coordinates.
+  spatial_coordinate_source:
+    required: true
+    allowed_modes:
+      - obsm_spatial
+      - obs_x_y_columns
+      - adapter_validated_custom_mapping
+  histology_image:
+    required: method_dependent
+    description: Only required for methods whose Layer2 handoff and Layer3 surface require image signal.
+  reference_object:
+    required: method_dependent
+    description: Only required for methods whose Layer2 handoff and Layer3 surface require external reference data.
+standard_parameters:
+  target_domain_count_policy:
+    status_values:
+      - directly_supported
+      - not_directly_guaranteed
+      - unsupported
+      - unknown
+  random_seed:
+    visibility: agent_readable_when_supported
+    description: Semantic reproducibility seed, mapped by Layer4 when backend support exists.
+  output_namespace:
+    visibility: adapter_controlled
+    description: BioHarness-controlled output key namespace.
+parameter_policy:
+  expose_to_agent:
+    - target_domain_count_or_granularity_when_supported
+    - random_seed_when_supported
+    - output_namespace_label
+  infer_from_input:
+    - observation_count
+    - feature_count
+    - coordinate_availability
+  fixed_by_adapter:
+    - output_directory_layout
+    - artifact_manifest_layout
+  backend_default:
+    - method_specific_defaults_documented_in_layer4
+  forbidden_for_agent:
+    - raw_backend_file_paths
+    - temporary_file_names
+    - unsafe_memory_flags
+    - package_private_parameters
+standard_outputs:
+  domain_labels:
+    required: true
+    description: Per-observation spatial domain labels written to a declared output field or table.
+  results_summary_table:
+    required: true
+    description: Method run summary, selected parameters, output keys, and validation status.
+  labeled_object:
+    required: method_dependent
+    description: Input object or copy with domain labels written to a controlled namespace.
+  diagnostic_artifacts:
+    required: method_dependent
+    description: Optional figures, logs, or tables for human sanity inspection.
+  provenance_record:
+    required: true
+    description: Method, surface, adapter, evidence, environment, parameter, and artifact provenance.
+common_failure_modes:
+  - missing_spatial_coordinates
+  - invalid_spatial_coordinate_shape
+  - missing_expression_matrix
+  - invalid_requested_domain_granularity
+  - insufficient_observations
+  - insufficient_features
+  - memory_risk_detected
+  - dependency_unavailable
+  - output_schema_missing
+  - empty_or_degenerate_domain_assignment
+validation_contract:
+  preflight_checks:
+    - input_object_type_supported
+    - spatial_coordinates_present
+    - expression_matrix_present
+    - semantic_parameters_valid
+    - environment_profile_declared
+  postrun_checks:
+    - domain_labels_present
+    - domain_label_count_reported
+    - no_empty_domain_when_applicable
+    - output_namespace_written
+    - artifacts_manifested
+    - provenance_record_written
+visual_checks:
+  purpose: sanity_only
+  known_limitations:
+    - visual plausibility is not biological correctness
+    - visual similarity does not prove algorithmic equivalence
+authority_note: This canonical Layer3 surface defines a method-neutral planning contract only. It does not implement or bind any backend.

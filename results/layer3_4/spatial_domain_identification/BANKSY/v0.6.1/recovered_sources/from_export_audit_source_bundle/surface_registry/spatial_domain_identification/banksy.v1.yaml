@@ -1,0 +1,356 @@
+surface_id: spatial_domain_identification.banksy.v1
+inherits_from: spatial_domain_identification.canonical.v1
+method_id: BANKSY
+method: BANKSY
+surface_version: v1
+analysis_problem: Domain / Clustering
+task_family: spatial_domain_identification
+visibility: agent_readable
+surface_status: draft
+authority_status: blueprint
+
+purpose:
+  short: morphology-free spatial domain identification using local neighborhood transcriptome context
+
+layer2_constraints:
+  required_modalities:
+    - spatial transcriptomics expression matrix
+    - spatial coordinates
+  histology_requirement: not_required
+  gpu_requirement: not_required
+  multi_slice_requirement: separate_multi_sample_use_only_blueprint
+  reference_requirement: not_required
+  applicability_limits:
+    - Do not use when explicit joint multi-slice modeling is first-order.
+    - Do not use when image-guided domain calling is first-order.
+    - Do not claim biological correctness from visual sanity checks.
+
+input_contract:
+  canonical_input_object: AnnData
+  accepted_external_inputs:
+    - h5ad_or_in_memory_AnnData_with_expression_and_coordinates
+  required_fields:
+    - expression_matrix
+    - coordinate_key_pair
+  optional_fields:
+    - slice_or_library_key_for_provenance
+    - feature_layer
+  spatial_coordinate_requirements:
+    coordinate_key_pair: required
+    coordinate_system: dataset_native_2d_coordinates
+    scale_factor_policy: not_required_by_current_BANKSY_evidence
+  batch_or_slice_requirements:
+    status: optional_provenance_only
+    explicit_joint_modeling_claim: false
+  image_requirements:
+    status: not_required
+    accepted_image_inputs: []
+  forbidden_or_unsupported_inputs:
+    - image_only_input
+    - reference_only_input
+    - non_spatial_expression_without_coordinates
+
+parameter_contract:
+  parameter_policy:
+    expose_to_agent:
+      - coordinate_key_pair
+      - domain_resolution_policy
+      - neighborhood_scale_policy
+      - spatial_expression_weight_policy
+      - cluster_method_policy
+      - seed_policy
+      - artifact_export_policy
+    infer_from_input:
+      - observation_count
+      - feature_count
+      - available_coordinate_keys
+      - optional_slice_key
+    fixed_by_adapter:
+      - label_namespace
+      - output_directory_layout
+      - provenance_schema
+      - filesystem_safety_policy
+    backend_default:
+      - low_level_defaults_not_validated_for_agent_surface
+    forbidden_for_agent:
+      - backend_file_paths
+      - raw_backend_function_names
+      - package_private_parameters
+      - implementation_call_graph
+  semantic_parameters:
+    - name: coordinate_key_pair
+      purpose: Select the two spatial coordinate fields.
+      required: true
+      default_policy: infer only when canonical coordinate metadata is unambiguous
+      allowed_values_or_range: two coordinate keys present in the input object
+      agent_visible: true
+      validation: keys exist and have one coordinate pair per observation
+    - name: domain_resolution_policy
+      purpose: Semantic domain granularity or cluster-resolution exploration policy.
+      required: false
+      default_policy: conservative default after fixture validation
+      allowed_values_or_range: low | default | high | adapter_validated_custom
+      agent_visible: true
+      validation: must map to an adapter-validated backend policy before production
+    - name: neighborhood_scale_policy
+      purpose: Semantic strength or range of local spatial-neighborhood context.
+      required: false
+      default_policy: default
+      allowed_values_or_range: low | default | high | adapter_validated_custom
+      agent_visible: true
+      validation: must pass memory preflight and fixture validation before production
+    - name: spatial_expression_weight_policy
+      purpose: Semantic balance between original expression and neighbor-augmented expression.
+      required: false
+      default_policy: balanced
+      allowed_values_or_range: expression_dominant | balanced | spatial_context_enriched | adapter_validated_custom
+      agent_visible: true
+      validation: numeric mapping is Layer4-owned and not frozen
+    - name: cluster_method_policy
+      purpose: Semantic clustering backend family.
+      required: false
+      default_policy: leiden_default
+      allowed_values_or_range: leiden_default | optional_mclust_hold_until_environment_proven
+      agent_visible: true
+      validation: optional mclust requires environment proof
+    - name: seed_policy
+      purpose: Reproducibility control for stochastic stages.
+      required: false
+      default_policy: record all seed choices in provenance
+      allowed_values_or_range: integer seed or adapter default
+      agent_visible: true
+      validation: repeated-run determinism is not claimed until measured
+    - name: artifact_export_policy
+      purpose: Select standard artifacts to emit.
+      required: false
+      default_policy: labels_and_table
+      allowed_values_or_range: labels_only | labels_and_table | labels_table_figures | full_debug_artifacts
+      agent_visible: true
+      validation: output directory must be controlled by adapter
+
+parameter_template:
+  coordinate_key_pair: required
+  domain_resolution_policy: optional_semantic
+  neighborhood_scale_policy: optional_semantic
+  spatial_expression_weight_policy: optional_semantic
+  cluster_method_policy: leiden_default
+  seed_policy: optional_recorded
+  artifact_export_policy: labels_and_table
+
+execution_stages:
+  - stage_id: input_check
+    method_stage_label: validate spatial expression object and coordinates
+    stage_requiredness: required
+    stage_purpose: Verify AnnData expression data and coordinate availability.
+    agent_visible_inputs: [spatial_expression_object, coordinate_key_pair]
+    agent_visible_outputs: [input_contract_status]
+    allowed_agent_parameters: [coordinate_key_pair]
+    stage_preconditions: [spatial_expression_object_present]
+    stage_validation_hooks: [coordinate_keys_present, expression_matrix_present]
+    common_failure_modes: [SpatialKeyMissing, nonfinite_or_invalid_matrix]
+    agent_action_on_failure: provide coordinate key mapping or run preprocessing/QC
+  - stage_id: method_preprocessing
+    method_stage_label: verify preprocessing readiness
+    stage_requiredness: conditional
+    stage_purpose: Ensure upstream expression preprocessing is appropriate enough for BANKSY planning.
+    agent_visible_inputs: [spatial_expression_object]
+    agent_visible_outputs: [preprocessing_readiness_status]
+    allowed_agent_parameters: []
+    stage_preconditions: [input_check_passed]
+    stage_validation_hooks: [feature_layer_present_or_defaulted]
+    common_failure_modes: [InputContractViolation]
+    agent_action_on_failure: run foundation preprocessing adapters or select another method
+  - stage_id: core_structure_building
+    method_stage_label: build neighborhood-aware representation
+    stage_requiredness: required
+    stage_purpose: Build spatial-neighborhood representation from expression data and coordinates.
+    agent_visible_inputs: [spatial_expression_object, coordinate_key_pair]
+    agent_visible_outputs: [neighborhood_representation_status]
+    allowed_agent_parameters: [neighborhood_scale_policy, spatial_expression_weight_policy]
+    stage_preconditions: [input_check_passed]
+    stage_validation_hooks: [memory_preflight_recorded, generated_matrix_finite]
+    common_failure_modes: [SparseMatrixDensificationRisk, nonfinite_or_invalid_matrix]
+    agent_action_on_failure: request smaller fixture, more memory, preprocessing, or alternative method
+  - stage_id: model_fit_or_inference
+    method_stage_label: compute embedding and cluster domains
+    stage_requiredness: required
+    stage_purpose: Assign spatial domains under a semantic clustering policy.
+    agent_visible_inputs: [neighborhood_representation_status]
+    agent_visible_outputs: [candidate_domain_labels, results_summary_table]
+    allowed_agent_parameters: [domain_resolution_policy, cluster_method_policy, seed_policy]
+    stage_preconditions: [core_structure_building_passed]
+    stage_validation_hooks: [seed_recorded, clustering_result_nonempty]
+    common_failure_modes: [RuntimeToolError, optional_clustering_backend_unavailable]
+    agent_action_on_failure: use default clustering policy or hold for environment setup
+  - stage_id: output_assignment
+    method_stage_label: assign domain labels to standard object fields
+    stage_requiredness: required
+    stage_purpose: Attach labels to BioHarness-controlled output locations.
+    agent_visible_inputs: [candidate_domain_labels]
+    agent_visible_outputs: [domain_labels, results_summary_table]
+    allowed_agent_parameters: []
+    stage_preconditions: [model_fit_or_inference_passed]
+    stage_validation_hooks: [one_label_per_observation, nonempty_label_vector]
+    common_failure_modes: [OutputContractViolation]
+    agent_action_on_failure: stop and request adapter/debug review
+  - stage_id: artifact_export
+    method_stage_label: emit standardized artifacts
+    stage_requiredness: required
+    stage_purpose: Export label table, updated object, summary, provenance, and optional figures.
+    agent_visible_inputs: [domain_labels, results_summary_table]
+    agent_visible_outputs: [labeled_object, domain_label_table, method_provenance, optional_diagnostic_plots]
+    allowed_agent_parameters: [artifact_export_policy]
+    stage_preconditions: [output_assignment_passed]
+    stage_validation_hooks: [artifact_presence_check, path_safety_check]
+    common_failure_modes: [OutputContractViolation, filesystem_policy_violation]
+    agent_action_on_failure: stop and request artifact/export repair
+  - stage_id: final_validation
+    method_stage_label: validate BANKSY domain outputs
+    stage_requiredness: required
+    stage_purpose: Check output contract, provenance, reproducibility metadata, and visual sanity boundaries.
+    agent_visible_inputs: [domain_labels, method_provenance, optional_figures]
+    agent_visible_outputs: [validation_status]
+    allowed_agent_parameters: []
+    stage_preconditions: [artifact_export_passed]
+    stage_validation_hooks: [domain_label_count_equals_observation_count, label_permutation_awareness_recorded]
+    common_failure_modes: [OutputContractViolation, validation_incomplete]
+    agent_action_on_failure: stop for manual review or rerun with repaired inputs
+  - stage_id: visualization
+    method_stage_label: generate optional spatial label diagnostics
+    stage_requiredness: conditional
+    stage_purpose: Produce optional spatial plots for visual sanity only.
+    agent_visible_inputs: [domain_labels, spatial_coordinates]
+    agent_visible_outputs: [diagnostic_plots]
+    allowed_agent_parameters: [artifact_export_policy]
+    stage_preconditions: [domain_labels_present]
+    stage_validation_hooks: [plot_exists_if_requested, labels_not_all_missing]
+    common_failure_modes: [visualization_failed]
+    agent_action_on_failure: continue if optional; otherwise request artifact repair
+
+output_contract:
+  standard_outputs:
+    - domain_labels
+    - results_summary_table
+    - method_provenance
+  object_writes:
+    - BioHarness-controlled label namespace in the updated object
+  tables:
+    - domain_label_table
+    - results_summary_table
+  figures:
+    - optional_diagnostic_spatial_label_plots
+  logs:
+    - standard_run_log_planned
+  provenance:
+    - method_id
+    - surface_id
+    - backend_adapter_reference
+    - parameter_values
+    - seed_policy
+    - environment_profile_candidate
+  downstream_compatibility:
+    - domain labels should be usable by downstream visualization and enrichment adapters
+
+validation_contract:
+  preflight_checks:
+    - object type present
+    - coordinate keys present
+    - expression matrix present
+    - memory preflight recorded
+  postrun_checks:
+    - one label per observation
+    - nonempty label vector
+    - results summary table exists
+    - provenance exists
+  contract_tests:
+    - input_contract.spatial_expression_object
+    - output_contract.domain_labels
+    - output_contract.provenance
+  visual_checks:
+    purpose: sanity_only
+    known_limitations:
+      - visual plausibility is not biological correctness
+      - visual similarity does not prove algorithmic equivalence
+  reproducibility_checks:
+    random_seed_control: record seed behavior where exposed or fixed
+    deterministic_mode_available: unknown
+    repeated_run_policy: required before production
+    expected_variability: stochastic embedding and clustering may vary
+    label_permutation_awareness: required
+    stochastic_components:
+      - Leiden partitioning
+      - UMAP
+
+failure_policy:
+  typed_failures:
+    - SpatialKeyMissing
+    - SparseMatrixDensificationRisk
+    - NonFiniteMatrix
+    - OptionalClusteringBackendUnavailable
+    - OutputContractViolation
+    - RuntimeToolError
+  recoverable_failures:
+    - SpatialKeyMissing
+    - OptionalClusteringBackendUnavailable
+    - SparseMatrixDensificationRisk
+  nonrecoverable_failures:
+    - OutputContractViolation_without_repair_path
+  agent_repair_actions:
+    - provide coordinate key mapping
+    - run preprocessing/QC
+    - choose default clustering path
+    - request more memory or smaller fixture
+    - stop for manual review
+
+artifact_policy:
+  expected_artifacts:
+    - labeled_object
+    - domain_label_table
+    - results_summary_table
+    - method_provenance
+    - optional_diagnostic_plots
+  artifact_naming_policy: BioHarness-controlled names; backend names hidden from Layer3
+  artifact_retention_policy: retain standard outputs and provenance; debug artifacts require explicit policy
+
+runtime_cost_policy:
+  expected_device: CPU
+  expected_memory_class: at_least_16gb_recommended_by_upstream_but_not_measured
+  runtime_measurement_required: true_before_production
+  cpu_fallback_policy: CPU is primary; GPU fallback not applicable
+
+provenance_policy:
+  required_metadata:
+    - method_id
+    - surface_id
+    - backend_adapter_reference
+    - environment_profile_candidate
+    - coordinate_key_pair
+    - semantic_parameters
+    - random_seed
+  package_versions: required_when_runtime_exists
+  environment_profile: banksy_cpu_python_blueprint
+  input_checksums_or_paths: required_when_runtime_exists
+  random_seed: record_if_set_or_backend_fixed
+  backend_adapter_reference: backend.spatial_domain_identification.banksy.v1
+
+layer4_reference_policy:
+  backend_adapter_id: backend.spatial_domain_identification.banksy.v1
+  default_visibility: hidden_from_default_brain
+  debug_visibility: implementation_debug_audit_only
+
+environment_profile: banksy_cpu_python_blueprint
+output_artifacts:
+  - domain_labels
+  - updated_object
+  - results_summary_table
+  - method_provenance
+  - optional_diagnostic_plots
+validation_hooks:
+  - preflight.spatial_coordinates
+  - preflight.memory_risk
+  - postrun.domain_labels_one_per_observation
+  - postrun.provenance_complete
+  - visual.sanity_only_if_requested
+backend_adapter: backend.spatial_domain_identification.banksy.v1
+example_status: blueprint_no_runtime_execution
+authority_note: "Layer3 surface draft. Does not imply a production BANKSY adapter exists."

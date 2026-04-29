@@ -1,0 +1,17 @@
+artifact_id	expected_role	path	status	notes
+README	package boundary README	README.md	present	fresh v0.7.0 NAS package README
+review_pack	review package	review_pack/banksy_layer3_4_review_pack.md	present	status is partial_with_known_blockers
+audit	method engineering audit	method_audits/banksy.audit.md	present	v0.7 audit with evidence registry
+rewrite_decision	rewrite decision	method_audits/banksy.rewrite_decision.md	present	interface standardization separated from algorithmic rewrite
+validation_runtime	validation/runtime plan	method_audits/banksy.validation_runtime.md	present	no runtime numbers fabricated
+risk_decision_log	risk register and decision log	method_audits/banksy.risk_decision_log.md	present	risks and decisions recorded
+canonical_surface	canonical Layer3 surface	surface_registry/canonical.v1.yaml	present	valid YAML expected
+banksy_surface	BANKSY Layer3 surface	surface_registry/banksy.v1.yaml	present	valid YAML expected; no raw backend function names expected
+banksy_adapter	BANKSY Layer4 adapter draft	backend_adapter_registry/banksy.adapter.v1.yaml	present	valid YAML expected; implementation_status not_implemented
+environment_plan	environment plan	environment_profiles/banksy.environment.md	present	environment_hold_status not_justified_yet
+environment_subagent_report	environment subagent report	environment_profiles/banksy.environment_subagent_report.md	present	report_status requires_probe
+environment_probe_plan	environment probe plan	environment_profiles/banksy.environment_probe_plan.md	present	probes planned but not run
+evidence_index	evidence index	evidence/evidence_index.md	present	source spine is lowercase NAS retrieval artifacts
+acceptance_gate	acceptance gate report	checks/acceptance_gate_report.md	present	acceptance status partial
+artifact_manifest	artifact manifest	checks/artifact_manifest.tsv	present	this file
+sha256_manifest	SHA256 manifest	checks/sha256_manifest.tsv	present	generated after final check files

@@ -1,0 +1,6 @@
+---COMMIT 06c37d68525ab12a819b4163d3d3ac2c63bb98ab 2026-04-28 10:49:51 +0800 chore(substrate): align layer registry transition artifacts
+surface_registry/README.md
+
+---COMMIT 7021f1f7a408a80ba361b469c482e9dff9ba5c37 2026-04-18 22:27:32 +0800 feat: add round2 substrate blueprints and validation scaffolds
+surface_registry/README.md
+surface_registry/examples/spatial_domain_identification.spagcn.example.json

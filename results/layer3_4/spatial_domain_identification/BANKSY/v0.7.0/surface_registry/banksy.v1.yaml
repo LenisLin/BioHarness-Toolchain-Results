@@ -1,0 +1,193 @@
+surface_id: spatial_domain_identification.banksy.v1
+inherits_from: spatial_domain_identification.canonical.v1
+surface_version: v1
+method_id: BANKSY
+task_family: spatial_domain_identification
+visibility: agent_readable
+authority_status: blueprint
+surface_status: requires_followup
+canonical_surface_reference:
+  surface_id: spatial_domain_identification.canonical.v1
+  status: created_for_this_task
+layer2_to_layer3_handoff:
+  summary: BANKSY is planned as a morphology-free spatial domain identification backend using spatial expression data and spatial coordinates.
+  evidence_refs:
+    - L2_BANKSY_COMPACT_HANDOFF
+hard_constraints_for_layer3:
+  required_modalities:
+    - spatial_expression
+    - spatial_coordinates
+  forbidden_modalities:
+    - histology_image_required_by_default
+    - external_reference_required_by_default
+  required_input_object:
+    object_type: AnnData_or_adapter_validated_spatial_expression_object
+    required_fields:
+      - expression_matrix
+      - observation_axis
+      - feature_axis
+  required_spatial_information:
+    spatial_coordinate_source_required: true
+  histology_requirement:
+    status: not_required
+  reference_requirement:
+    status: not_required
+  gpu_requirement:
+    status: not_required_by_current_evidence
+  minimum_dataset_assumptions:
+    status: requires_followup
+    notes: Minimum observation, feature, and domain-count assumptions require fixture validation.
+spatial_coordinate_source:
+  allowed_modes:
+    - obsm_spatial
+    - obs_x_y_columns
+    - adapter_validated_custom_mapping
+  agent_visible_summary: Provide a semantic coordinate source; backend-specific coordinate representation is Layer4-only.
+multi_sample_policy:
+  status: examples_observed_but_bioharness_contract_not_validated
+  supported_claim: no_joint_multisample_contract_claim
+  agent_visible_summary: Multi-sample usage requires additional review before default surface exposure.
+target_domain_count_policy:
+  status: not_directly_guaranteed
+  mapping: may require resolution search or post-hoc selection
+  agent_action: ask user whether approximate granularity is acceptable
+parameter_policy:
+  expose_to_agent:
+    - spatial_coordinate_source
+    - requested_domain_granularity
+    - neighborhood_scale_policy
+    - spatial_expression_weight_policy
+    - clustering_backend_policy
+    - random_seed
+    - output_namespace
+    - export_visualization
+  infer_from_input:
+    - observation_count
+    - feature_count
+    - coordinate_availability
+    - sparse_or_dense_matrix_status
+  fixed_by_adapter:
+    - output_directory_layout
+    - artifact_manifest_name
+    - provenance_record_name
+    - BioHarness_output_field_prefix
+  backend_default:
+    - default_clustering_path_when_not_overridden_by_validated_surface_policy
+  forbidden_for_agent:
+    - raw_backend_file_paths
+    - temporary_file_names
+    - unsafe_memory_flags
+    - package_private_parameters
+    - backend_internal_matrix_names
+semantic_inputs:
+  - input_id: spatial_expression_object
+    required: true
+    object_contract: AnnData-compatible spatial expression object
+    constraints:
+      - expression matrix present
+      - observation axis present
+      - feature axis present
+  - input_id: spatial_coordinate_source
+    required: true
+    object_contract: semantic coordinate source selected from allowed modes
+semantic_parameters:
+  - parameter_id: requested_domain_granularity
+    meaning: User intent for approximate number or granularity of domains.
+    policy: expose_to_agent
+    exact_count_guarantee: false
+  - parameter_id: neighborhood_scale_policy
+    meaning: Semantic neighborhood scale selection.
+    policy: expose_to_agent
+  - parameter_id: spatial_expression_weight_policy
+    meaning: Semantic balance between local spatial context and expression signal.
+    policy: expose_to_agent
+  - parameter_id: clustering_backend_policy
+    meaning: Select default Python clustering path unless optional R-backed path is separately validated.
+    policy: expose_to_agent
+  - parameter_id: random_seed
+    meaning: Reproducibility seed where backend support exists.
+    policy: expose_to_agent
+semantic_outputs:
+  - output_id: domain_labels
+    required: true
+    object_location: BioHarness-controlled observation metadata namespace or label table
+    validation_hook: domain_labels_present
+  - output_id: results_summary_table
+    required: true
+    object_location: standardized artifact table
+    validation_hook: summary_table_present
+  - output_id: provenance_record
+    required: true
+    object_location: standardized provenance artifact
+    validation_hook: provenance_record_present
+standard_artifacts:
+  - artifact_id: labeled_object_or_label_table
+    artifact_type: h5ad_or_tsv
+    required: true
+  - artifact_id: diagnostic_visualization
+    artifact_type: png_or_pdf
+    required: false
+  - artifact_id: validation_report
+    artifact_type: yaml_or_json
+    required: true
+layer4_reference_policy:
+  default_agent_visibility: hidden
+  adapter_spec_id: spatial_domain_identification.banksy.adapter.v1
+  expose_layer4_only_for:
+    - implementation
+    - debugging
+    - audit
+validation_contract:
+  callability_required_before_mvp:
+    - install_probe
+    - import_probe
+    - minimal_fixture_smoke_run
+    - observable_io_check
+  preflight_checks:
+    - expression_matrix_present
+    - spatial_coordinate_source_present
+    - semantic_parameters_bounded
+    - memory_risk_screened
+  postrun_checks:
+    - domain_labels_present
+    - output_namespace_present
+    - label_count_reported
+    - no_empty_domain_when_applicable
+    - provenance_record_present
+  visual_checks:
+    purpose: sanity_only
+    known_limitations:
+      - visual plausibility is not biological correctness
+      - visual similarity does not prove algorithmic equivalence
+failure_policy:
+  typed_failures:
+    - missing_spatial_coordinates
+    - invalid_spatial_coordinate_shape
+    - missing_expression_matrix
+    - memory_risk_detected
+    - nonfinite_or_invalid_matrix
+    - optional_clustering_backend_unavailable
+    - output_schema_missing
+    - runtime_backend_error
+  agent_actions:
+    missing_spatial_coordinates: ask user to provide or map spatial coordinates
+    memory_risk_detected: stop before execution and request smaller fixture or resource review
+    optional_clustering_backend_unavailable: use validated default path or request environment review
+provenance_policy:
+  required_fields:
+    - method_id
+    - surface_id
+    - adapter_spec_id
+    - source_repository
+    - source_commit
+    - evidence_registry
+    - environment_profile_candidate
+    - parameter_summary
+    - output_namespace
+    - artifact_manifest
+evidence_refs:
+  - L2_BANKSY_COMPACT_HANDOFF
+  - README_QUICKSTART
+  - PYPROJECT_PACKAGE_ENV
+  - OFFICIAL_EXAMPLES_FIXTURE_LIMIT
+authority_note: Blueprint Layer3 surface only. It does not implement, run, or validate BANKSY.

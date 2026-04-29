@@ -1,0 +1,511 @@
+{
+  "record_id": "2026-04-28_banksy_layer3_4_source_evidence_inventory",
+  "record_version": "1.0",
+  "created_at": "2026-04-28",
+  "task_family": "spatial_domain_identification",
+  "method": "BANKSY",
+  "planning_status": "blueprint_only_no_production_adapter",
+  "retrieval_scope": {
+    "included": [
+      "existing read-only Layer2 spatial_domain_identification artifacts",
+      "local BioHarness Layer3/4 planning docs and template",
+      "official prabhakarlab/Banksy_py repository at pinned HEAD commit"
+    ],
+    "excluded": [
+      "new literature review",
+      "benchmark reranking",
+      "biological correctness evaluation",
+      "mutation of existing NAS Layer2 artifacts",
+      "production adapter implementation",
+      "environment capsule implementation",
+      "runtime smoke execution"
+    ],
+    "claim_boundary": "Evidence supports blueprint Layer3/Layer4 planning only. It does not support production adapter, runtime, benchmark, or biological correctness claims."
+  },
+  "source_pinning": {
+    "official_repository": "https://github.com/prabhakarlab/Banksy_py",
+    "head_commit_checked": "43e2d692db6705c0195039764194473912e4cfc2",
+    "head_check_command": "git ls-remote https://github.com/prabhakarlab/Banksy_py HEAD",
+    "last_checked": "2026-04-28",
+    "official_source_urls": [
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/README.md",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/pyproject.toml",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/LICENSE.md",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/initialize_banksy.py",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/embed_banksy.py",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/run_banksy.py",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/cluster_methods.py",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/plot_banksy.py",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy_utils/umap_pca.py",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/CODEX_B006_ascending.py",
+      "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/DLPFC_concatenate_multisample.py"
+    ]
+  },
+  "evidence_items": [
+    {
+      "ref_id": "L2_BANKSY_COMPACT_HANDOFF",
+      "source_type": "existing_layer2_artifacts",
+      "source": "/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_domain_identification/",
+      "inspected_items": [
+        "BANKSY method row",
+        "field registry context",
+        "supplement review branch placement"
+      ],
+      "supported_claims": [
+        "BANKSY is a neighborhood-kernel clustering candidate for spatial domain identification",
+        "main input is spatial transcriptomics matrix plus spatial coordinates",
+        "main output is domain labels",
+        "image signal and external biological guidance are not required",
+        "compute profile is CPU-oriented in Layer2 handoff",
+        "multi-sample support should be treated as separate multi-sample use rather than explicit joint modeling"
+      ],
+      "limitations": [
+        "Layer2 reasoning is not copied into Layer3",
+        "comparative ranking and benchmark claims are not expanded in this retrieval"
+      ],
+      "layer_assignment": "shared_planning_metadata",
+      "layer3_implications": [
+        "semantic input requires spatial expression data and coordinates",
+        "surface must not require image or reference input",
+        "domain-label output is required"
+      ],
+      "layer4_implications": [
+        "adapter should enforce no hidden image/reference precondition"
+      ],
+      "confidence": "medium",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "backend_implications_only",
+        "shared_planning_metadata": "assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "OFFICIAL_HEAD_PIN",
+      "source_type": "official_repository_metadata",
+      "source": "https://github.com/prabhakarlab/Banksy_py",
+      "inspected_items": [
+        "HEAD commit"
+      ],
+      "supported_claims": [
+        "official source evidence is pinned to commit 43e2d692db6705c0195039764194473912e4cfc2"
+      ],
+      "limitations": [
+        "pinning source code does not establish installability in a BioHarness environment"
+      ],
+      "layer_assignment": "layer4",
+      "layer3_implications": [
+        "Layer3 can refer to method id and semantic capability, not upstream commit"
+      ],
+      "layer4_implications": [
+        "BackendAdapterSpec draft should cite repository URL and commit"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "assigned",
+        "shared_planning_metadata": "not_assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "README_QUICKSTART",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/README.md",
+      "inspected_items": [
+        "pip install note",
+        "quick start imports",
+        "AnnData loading",
+        "coordinate key tuple example",
+        "domain segmentation overview",
+        "RAM recommendation",
+        "Leiden default and mclust optional note"
+      ],
+      "supported_claims": [
+        "BANKSY Python package is installable as pybanksy according to official README",
+        "usage expects AnnData-style spatial transcriptomics input",
+        "coordinate keys are required for initialization",
+        "Leiden is the default clustering path in the public documentation",
+        "at least 16 GB RAM is recommended by upstream documentation"
+      ],
+      "limitations": [
+        "README quick start is not a BioHarness smoke test",
+        "README does not define BioHarness artifact schema or label namespace"
+      ],
+      "layer_assignment": "shared_planning_metadata",
+      "layer3_implications": [
+        "semantic inputs include AnnData with expression and coordinates",
+        "semantic parameter vocabulary should include coordinate key pair and clustering policy",
+        "typed failures should include missing coordinates and insufficient memory"
+      ],
+      "layer4_implications": [
+        "adapter draft needs backend import/call binding and output normalization",
+        "filesystem side effects must be controlled if plotting/export helpers are used"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "backend_implications_only",
+        "shared_planning_metadata": "assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "PYPROJECT_PACKAGE_ENV",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/pyproject.toml",
+      "inspected_items": [
+        "project name pybanksy",
+        "version 1.3.4",
+        "Python >=3.8,<3.13",
+        "core dependencies",
+        "optional dependencies",
+        "license metadata"
+      ],
+      "supported_claims": [
+        "package/version evidence exists for environment planning",
+        "Python range excludes Python 3.13+",
+        "numpy is constrained to >=1.21,<2.0",
+        "core stack includes anndata, scanpy, umap-learn, python-igraph, leidenalg, and h5py",
+        "mclust optional extra uses rpy2"
+      ],
+      "limitations": [
+        "no lockfile or container evidence is present in this source",
+        "dependency metadata does not prove BioHarness capsule compatibility"
+      ],
+      "layer_assignment": "shared_planning_metadata",
+      "layer3_implications": [
+        "Layer3 should expose CPU-first method profile without package-specific dependency details"
+      ],
+      "layer4_implications": [
+        "adapter/environment plan must pin compatible Python and numpy ranges",
+        "optional mclust path must remain gated behind environment proof"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "backend_implications_only",
+        "shared_planning_metadata": "assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "LICENSE_GPL3",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/LICENSE.md",
+      "inspected_items": [
+        "GPL-3.0 license declaration"
+      ],
+      "supported_claims": [
+        "license risk must be tracked before redistribution or bundling"
+      ],
+      "limitations": [
+        "this retrieval is not legal advice"
+      ],
+      "layer_assignment": "shared_planning_metadata",
+      "layer3_implications": [
+        "no agent-facing license detail is needed for normal method selection"
+      ],
+      "layer4_implications": [
+        "adapter packaging and environment distribution need license review"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "backend_implications_only",
+        "shared_planning_metadata": "assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "INIT_COORDINATES_WEIGHTS",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/initialize_banksy.py",
+      "inspected_items": [
+        "AnnData argument",
+        "coordinate key tuple",
+        "number of neighbors",
+        "neighbor weight decay",
+        "fixed-neighbor spatial weights"
+      ],
+      "supported_claims": [
+        "coordinate keys are a concrete backend input",
+        "neighborhood size and weighting are concrete backend controls",
+        "spatial graph/weights construction is part of the backend workflow"
+      ],
+      "limitations": [
+        "raw function and file names are Layer4 evidence only"
+      ],
+      "layer_assignment": "layer4",
+      "layer3_implications": [
+        "Layer3 should expose coordinate key pair and neighborhood scale semantics"
+      ],
+      "layer4_implications": [
+        "map semantic coordinate and neighborhood controls to backend initialization arguments"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "assigned",
+        "shared_planning_metadata": "not_assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "EMBED_MATRIX_DENSE_RISK",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/embed_banksy.py",
+      "inspected_items": [
+        "BANKSY matrix generation",
+        "lambda list",
+        "max_m",
+        "dense conversion",
+        "non-finite assertion"
+      ],
+      "supported_claims": [
+        "neighbor-augmented representation has backend numeric controls",
+        "dense conversion creates memory risk",
+        "non-finite matrix states should become typed failures"
+      ],
+      "limitations": [
+        "numeric parameter mapping is not frozen until fixture validation"
+      ],
+      "layer_assignment": "layer4",
+      "layer3_implications": [
+        "Layer3 should expose semantic spatial-expression weight policy rather than raw numeric internals",
+        "typed failures should include invalid matrix and insufficient memory"
+      ],
+      "layer4_implications": [
+        "adapter must implement memory preflight and non-finite failure translation"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "assigned",
+        "shared_planning_metadata": "not_assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "RUN_MULTIPARAM_OUTPUT",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/run_banksy.py",
+      "inspected_items": [
+        "multiparam workflow",
+        "PCA/UMAP",
+        "clustering",
+        "plotting",
+        "results_df return"
+      ],
+      "supported_claims": [
+        "official workflow path can drive a Layer4 strong wrapper draft",
+        "returned result table is candidate evidence for results summary mapping",
+        "plotting/export behavior needs artifact policy"
+      ],
+      "limitations": [
+        "no BioHarness adapter call signature is defined by this retrieval"
+      ],
+      "layer_assignment": "layer4",
+      "layer3_implications": [
+        "Layer3 can require results summary table and standard artifacts"
+      ],
+      "layer4_implications": [
+        "adapter can bind workflow path, normalize outputs, and constrain side effects"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "assigned",
+        "shared_planning_metadata": "not_assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "CLUSTER_SEED_OPTIONAL_MCLUST",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/cluster_methods.py",
+      "inspected_items": [
+        "Leiden partitioning",
+        "partition seed",
+        "mclust path requiring rpy2/R"
+      ],
+      "supported_claims": [
+        "reproducibility plan should record clustering seed policy",
+        "optional mclust path should not be default until R/rpy2 environment is proven"
+      ],
+      "limitations": [
+        "seed evidence does not prove full determinism"
+      ],
+      "layer_assignment": "layer4",
+      "layer3_implications": [
+        "Layer3 should include semantic seed policy and default clustering policy"
+      ],
+      "layer4_implications": [
+        "adapter must map seed controls and gate optional clustering backend"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "assigned",
+        "shared_planning_metadata": "not_assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "PLOT_OUTPUT_ARTIFACTS",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy/plot_banksy.py",
+      "inspected_items": [
+        "label assignment to AnnData observations",
+        "optional h5ad save",
+        "figure outputs"
+      ],
+      "supported_claims": [
+        "domain labels can be mapped into AnnData observation metadata",
+        "figures and h5ad output need controlled artifact policy"
+      ],
+      "limitations": [
+        "visual output is sanity evidence only, not biological correctness"
+      ],
+      "layer_assignment": "layer4",
+      "layer3_implications": [
+        "Layer3 should define domain_labels, labeled_anndata, label table, and optional diagnostic plots"
+      ],
+      "layer4_implications": [
+        "adapter must copy labels into BioHarness namespace and restrict output directories"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "assigned",
+        "shared_planning_metadata": "not_assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "UMAP_PCA_SEED",
+      "source_type": "official_repository_file",
+      "source": "https://github.com/prabhakarlab/Banksy_py/blob/43e2d692db6705c0195039764194473912e4cfc2/src/banksy_utils/umap_pca.py",
+      "inspected_items": [
+        "PCA/UMAP helper",
+        "UMAP transform seed"
+      ],
+      "supported_claims": [
+        "reproducibility plan should include UMAP seed behavior"
+      ],
+      "limitations": [
+        "does not prove deterministic end-to-end output"
+      ],
+      "layer_assignment": "layer4",
+      "layer3_implications": [
+        "Layer3 should not promise deterministic output until repeated runs are checked"
+      ],
+      "layer4_implications": [
+        "adapter provenance should record dimensionality-reduction seed behavior"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "assigned",
+        "shared_planning_metadata": "not_assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "OFFICIAL_EXAMPLES_FIXTURE_LIMIT",
+      "source_type": "official_repository_examples",
+      "source": "CODEX_B006_ascending.py and DLPFC_concatenate_multisample.py at prabhakarlab/Banksy_py commit 43e2d692db6705c0195039764194473912e4cfc2",
+      "inspected_items": [
+        "CODEX domain segmentation example",
+        "DLPFC multi-sample example",
+        "external data dependency"
+      ],
+      "supported_claims": [
+        "official examples demonstrate domain segmentation and multi-sample usage patterns",
+        "examples are not yet BioHarness smoke fixtures"
+      ],
+      "limitations": [
+        "external data retrieval and fixture normalization are unresolved"
+      ],
+      "layer_assignment": "shared_planning_metadata",
+      "layer3_implications": [
+        "multi-sample support should remain conservative and not imply explicit joint batch modeling"
+      ],
+      "layer4_implications": [
+        "future smoke fixture should be BioHarness-owned or explicitly licensed/retrieved"
+      ],
+      "confidence": "medium",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "backend_implications_only",
+        "shared_planning_metadata": "assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    },
+    {
+      "ref_id": "REPO_LAYER3_LAYER4_PROTOCOL",
+      "source_type": "local_repo_docs",
+      "source": "/home/lenislin/Experiment/projects/BioHarness-Toolchain-ST/docs/83_layer3_4_method_execution_planning_protocol.md",
+      "inspected_items": [
+        "v0.6 planning record expectations",
+        "Layer3/Layer4 visibility boundary",
+        "environment/rewrite/validation/risk fields"
+      ],
+      "supported_claims": [
+        "Layer3 must remain agent-visible and semantic",
+        "Layer4 may hold backend file/function/binding evidence",
+        "MethodExecutionPlanningRecord v0.6 must include evidence ledger, code map, environment plan, rewrite plan, validation plan, risks, and decisions"
+      ],
+      "limitations": [
+        "protocol is blueprint and not runtime"
+      ],
+      "layer_assignment": "shared_planning_metadata",
+      "layer3_implications": [
+        "exclude backend raw function names and file paths from Layer3"
+      ],
+      "layer4_implications": [
+        "include backend binding evidence only in implementation/debug/audit fields"
+      ],
+      "confidence": "high",
+      "assignment_detail": {
+        "layer3": "semantic_implications_only",
+        "layer4": "backend_implications_only",
+        "shared_planning_metadata": "assigned",
+        "excluded_out_of_scope": "not_assigned"
+      }
+    }
+  ],
+  "coverage_summary": {
+    "layer2_hard_constraints": "covered from existing Layer2 artifacts",
+    "canonical_family_surface": "covered from local repo Layer3/4 protocol and task adapter docs",
+    "official_install_environment_evidence": "mostly covered; lock/container evidence absent",
+    "backend_callable_source_evidence": "covered from official README and modules",
+    "layer3_agent_surface_draft_evidence": "sufficient for blueprint draft",
+    "layer4_adapter_draft_evidence": "sufficient for strong_wrapper planning, not implementation",
+    "validation_runtime_plan": "partial; only planned checks, no run",
+    "runtime_cost": "not covered",
+    "scientific_claim_boundary": "covered as evidence/claim boundary only"
+  },
+  "unresolved_gaps": [
+    {
+      "gap": "No BioHarness minimal BANKSY fixture has been run.",
+      "impact": "blocks production adapter and runtime validation claims",
+      "planned_resolution": "future environment probe and smoke fixture design"
+    },
+    {
+      "gap": "No lockfile/container or BioHarness capsule exists for pybanksy.",
+      "impact": "blocks production runtime support claim",
+      "planned_resolution": "future isolated install probe"
+    },
+    {
+      "gap": "Exact semantic-to-backend numeric parameter mappings are not validated.",
+      "impact": "Layer3 can expose semantic controls but Layer4 cannot freeze production mappings",
+      "planned_resolution": "fixture-based wrapper validation"
+    },
+    {
+      "gap": "GPL-3.0 distribution implications are not reviewed.",
+      "impact": "packaging/bundling decisions remain provisional",
+      "planned_resolution": "future license/distribution review before production adapter packaging"
+    }
+  ]
+}

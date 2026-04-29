@@ -1,0 +1,335 @@
+{
+  "schema_name": "spatial_domain_identification_layer2_pilot",
+  "layer": "Layer 2",
+  "task_slot": "Domain / Clustering -> Spatial domain identification",
+  "status": "pilot",
+  "decision_tree_note": "Decision tree growth is restricted to these Layer 2 fields; this registry is not a Layer 3 execution manual.",
+  "fields": [
+    {
+      "field_name": "Tool Name",
+      "scope": "shared",
+      "field_role": "identity",
+      "definition": "Canonical tool identity for the current topic subtable.",
+      "fill_rule": "Use the canonical method/tool name only; no aliases or package variants.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "SpaGCN",
+      "notes": "Identity field rather than a decision field."
+    },
+    {
+      "field_name": "Method Family",
+      "scope": "shared",
+      "field_role": "method characterization",
+      "definition": "Short algorithm-family label for the method.",
+      "fill_rule": "Keep to a short family phrase only.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "Graph convolutional network",
+      "notes": "Do not expand into training procedure, benchmark history, or package structure."
+    },
+    {
+      "field_name": "Main Input",
+      "scope": "shared",
+      "field_role": "input picture",
+      "definition": "High-level input picture for this topic.",
+      "fill_rule": "Use a short object-level phrase; do not encode schema, file formats, or parameters.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "ST matrix + spatial coordinates + histology image",
+      "notes": "High-level description only."
+    },
+    {
+      "field_name": "Main Use in This Topic",
+      "scope": "shared",
+      "field_role": "topic use",
+      "definition": "Main role of the tool inside Spatial domain identification.",
+      "fill_rule": "Use a short topic-specific phrase.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "spatial domain identification with histology-aware graph construction",
+      "notes": "This is a topic-specific use statement, not a paper summary."
+    },
+    {
+      "field_name": "Main Output",
+      "scope": "shared",
+      "field_role": "output object",
+      "definition": "High-level output object for this topic.",
+      "fill_rule": "Use a short object-level phrase only.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "domain labels",
+      "notes": "Do not include downstream workflow steps."
+    },
+    {
+      "field_name": "Closest Alternatives",
+      "scope": "shared",
+      "field_role": "selection discriminator",
+      "definition": "Nearby alternatives from the same topic.",
+      "fill_rule": "Use 2-4 local alternatives from the current topic only.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "STAGATE; GraphST; SiGra",
+      "notes": "Local alternatives only; not a cross-topic comparator field. Keep as pilot provisional Layer 2 judgment."
+    },
+    {
+      "field_name": "Key Difference",
+      "scope": "shared",
+      "field_role": "selection discriminator",
+      "definition": "Main decision difference versus nearby alternatives.",
+      "fill_rule": "Use one short decision-level distinction sentence.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "Uses histology-informed graph construction for domain calling unlike graph-only alternatives or heavier multimodal fusion approaches.",
+      "notes": "Keep the contrast local and selection-oriented. This remains pilot provisional Layer 2 judgment."
+    },
+    {
+      "field_name": "Compute Requirement",
+      "scope": "shared",
+      "field_role": "resource cue",
+      "definition": "Coarse compute requirement only.",
+      "fill_rule": "Use one frozen compute label only.",
+      "controlled_values": [
+        "CPU",
+        "Optional GPU",
+        "Required GPU"
+      ],
+      "value_meanings": {
+        "CPU": "Normal topic use is reasonably CPU-oriented.",
+        "Optional GPU": "GPU can help or is commonly used, but the method is not treated here as strictly GPU-bound.",
+        "Required GPU": "Public method materials strongly suggest the intended topic use is effectively GPU-bound."
+      },
+      "example_value": "Optional GPU",
+      "notes": "Do not encode benchmarking detail or hardware micro-specifications."
+    },
+    {
+      "field_name": "Memory Burden",
+      "scope": "shared",
+      "field_role": "resource cue",
+      "definition": "Coarse memory burden.",
+      "fill_rule": "Use a short coarse label and allow unclear when direct support is weak.",
+      "controlled_values": [
+        "low",
+        "medium",
+        "high",
+        "unclear"
+      ],
+      "value_meanings": {
+        "low": "Current public evidence supports a relatively light memory profile for the topic use.",
+        "medium": "Current public evidence supports a moderate memory profile for the topic use.",
+        "high": "Current public evidence supports a relatively heavy memory profile for the topic use.",
+        "unclear": "Direct public support is not strong enough for a more specific burden label."
+      },
+      "example_value": "unclear",
+      "notes": "Stay conservative unless there is strong direct support."
+    },
+    {
+      "field_name": "Scale Sensitivity",
+      "scope": "shared",
+      "field_role": "resource cue",
+      "definition": "Coarse sensitivity to larger spatial scale.",
+      "fill_rule": "Use a short coarse label and allow unclear; be more conservative than Memory Burden.",
+      "controlled_values": [
+        "low",
+        "medium",
+        "high",
+        "unclear"
+      ],
+      "value_meanings": {
+        "low": "Public evidence supports good tolerance to larger spatial scale for the topic use.",
+        "medium": "Public evidence supports some practical scale sensitivity but not a severe limit.",
+        "high": "Public evidence supports notable sensitivity to larger spatial scale for the topic use.",
+        "unclear": "Direct public support is not strong enough for a more specific scale label."
+      },
+      "example_value": "unclear",
+      "notes": "This field should be filled more conservatively than Memory Burden."
+    },
+    {
+      "field_name": "Code Access",
+      "scope": "shared",
+      "field_role": "access trace",
+      "definition": "Current code-access state.",
+      "fill_rule": "Record access state only.",
+      "controlled_values": [
+        "available",
+        "archived",
+        "unclear",
+        "unavailable"
+      ],
+      "value_meanings": {
+        "available": "Public code is currently available.",
+        "archived": "Public code is available but clearly archived or inactive.",
+        "unclear": "Public code status could not be verified confidently.",
+        "unavailable": "No verifiable public code is currently available."
+      },
+      "example_value": "available",
+      "notes": "Keep to access state, not package quality or install difficulty."
+    },
+    {
+      "field_name": "Primary Code Link",
+      "scope": "shared",
+      "field_role": "access trace",
+      "definition": "One primary code location.",
+      "fill_rule": "Use one primary link only.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "https://github.com/jianhuupenn/SpaGCN",
+      "notes": "Prefer the official repository landing page when available."
+    },
+    {
+      "field_name": "Evidence Source",
+      "scope": "shared",
+      "field_role": "evidence trace",
+      "definition": "Main evidence basis for the row.",
+      "fill_rule": "Use one frozen source label only.",
+      "controlled_values": [
+        "method paper",
+        "benchmark/review",
+        "official docs",
+        "community practice",
+        "mixed"
+      ],
+      "value_meanings": {
+        "method paper": "Mainly grounded in the original method paper.",
+        "benchmark/review": "Mainly grounded in benchmark or review literature.",
+        "official docs": "Mainly grounded in official repository or documentation material.",
+        "community practice": "Mainly grounded in stable community usage patterns.",
+        "mixed": "Grounded in multiple evidence types rather than a single source."
+      },
+      "example_value": "mixed",
+      "notes": "Choose the narrowest honest label; use mixed when evidence is intentionally combined."
+    },
+    {
+      "field_name": "Evidence Note",
+      "scope": "shared",
+      "field_role": "evidence trace",
+      "definition": "Short caveat on what is explicit and what still rests on pilot judgment.",
+      "fill_rule": "Keep to 1-2 short sentences.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "Method paper and official code materials explicitly support histology-aware domain calling from expression and coordinates. Alternative-ranking fields are still Layer 2 pilot judgment, and memory/scale are kept conservative as unclear.",
+      "notes": "Use this field to separate direct evidence from pilot inference."
+    },
+    {
+      "field_name": "Image Signal Use",
+      "scope": "topic-specific",
+      "field_role": "topic-specific decision cue",
+      "definition": "How image information enters the method for this topic.",
+      "fill_rule": "Use one frozen value only.",
+      "controlled_values": [
+        "none",
+        "optional",
+        "required"
+      ],
+      "value_meanings": {
+        "none": "The method does not use image signal for this topic.",
+        "optional": "Image signal can be used but is not required.",
+        "required": "Image signal is required for the intended topic use."
+      },
+      "example_value": "optional",
+      "notes": "Choose the most decision-relevant reading for the current topic."
+    },
+    {
+      "field_name": "External Biological Guidance",
+      "scope": "topic-specific",
+      "field_role": "topic-specific decision cue",
+      "definition": "Whether the method depends on external biological priors.",
+      "fill_rule": "Use one frozen value only.",
+      "controlled_values": [
+        "none",
+        "marker-guided",
+        "annotation-guided",
+        "reference-like guidance",
+        "deconvolution-assisted"
+      ],
+      "value_meanings": {
+        "none": "No external biological prior is required.",
+        "marker-guided": "Markers directly guide part of the domain-calling process.",
+        "annotation-guided": "External labels or annotations guide part of the method.",
+        "reference-like guidance": "A reference-style external guide is used.",
+        "deconvolution-assisted": "Deconvolution-derived guidance informs the method."
+      },
+      "example_value": "none",
+      "notes": "Keep this separate from image signal."
+    },
+    {
+      "field_name": "Cross-slice Support",
+      "scope": "topic-specific",
+      "field_role": "topic-specific decision cue",
+      "definition": "Whether the method is designed for only single slices, separate repeated use, or joint multi-slice modeling.",
+      "fill_rule": "Use one frozen value only.",
+      "controlled_values": [
+        "single-slice only",
+        "separate multi-sample use",
+        "joint multi-slice modeling"
+      ],
+      "value_meanings": {
+        "single-slice only": "The method is primarily a single-slice method.",
+        "separate multi-sample use": "The method can be reused across samples without joint modeling support.",
+        "joint multi-slice modeling": "The method explicitly supports joint modeling across multiple slices or samples."
+      },
+      "example_value": "single-slice only",
+      "notes": "Do not upgrade to joint support unless public evidence is explicit. Filled conservatively and still treated as pilot provisional Layer 2 judgment."
+    },
+    {
+      "field_name": "Batch Handling",
+      "scope": "topic-specific",
+      "field_role": "topic-specific decision cue",
+      "definition": "Whether batch effects are ignored, only partly handled, or explicitly modeled.",
+      "fill_rule": "Use one frozen value only.",
+      "controlled_values": [
+        "not addressed",
+        "implicit / limited",
+        "explicit batch-aware"
+      ],
+      "value_meanings": {
+        "not addressed": "No explicit batch-handling mechanism is part of the method.",
+        "implicit / limited": "Some limited or indirect handling exists, but explicit batch-aware modeling is not central.",
+        "explicit batch-aware": "The method explicitly models or corrects batch structure."
+      },
+      "example_value": "not addressed",
+      "notes": "Use the strongest directly supported reading and stay conservative. This remains pilot provisional Layer 2 judgment and may be tightened later before Layer 3 use."
+    },
+    {
+      "field_name": "Main Spatial Prior",
+      "scope": "topic-specific",
+      "field_role": "topic-specific decision cue",
+      "definition": "Main spatial inductive bias used for domain calling.",
+      "fill_rule": "use `primary label + optional short modifier`",
+      "controlled_values": [],
+      "value_meanings": {
+        "graph neighborhood": "Graph adjacency between nearby observations is the main spatial prior.",
+        "Bayesian spatial smoothing": "Bayesian smoothing over neighboring locations is the main spatial prior.",
+        "multiscale neighborhood": "The method leverages neighborhood structure at multiple scales.",
+        "latent embedding": "A spatially informed latent representation is the main prior.",
+        "topic structure": "Topic-like latent structure drives the spatial prior.",
+        "image-informed weighting": "Image-derived information modulates the spatial prior or neighborhood weighting.",
+        "deep multimodal fusion": "Deep multimodal integration is the main spatial prior.",
+        "ensemble consensus": "Consensus across multiple views or clustering outputs is the main spatial prior."
+      },
+      "example_value": "graph neighborhood + image-informed weighting",
+      "notes": "Main decision field for this topic. The primary label must come from the frozen label set in value_meanings, but the combined field itself is not strict controlled-values-only."
+    },
+    {
+      "field_name": "Best First Choice When",
+      "scope": "topic-specific",
+      "field_role": "topic-specific decision cue",
+      "definition": "Best-fit starting condition for the method.",
+      "fill_rule": "Use one short condition sentence.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "When histology is available or likely informative and you want an established within-slice histology-aware graph baseline.",
+      "notes": "This is a Layer 2 recommendation cue rather than an execution instruction."
+    },
+    {
+      "field_name": "Do Not Start With This When",
+      "scope": "topic-specific",
+      "field_role": "topic-specific decision cue",
+      "definition": "Main exclusion condition for the method.",
+      "fill_rule": "Use one short exclusion sentence.",
+      "controlled_values": [],
+      "value_meanings": {},
+      "example_value": "When explicit batch-aware correction or native joint multi-slice modeling is the first-order requirement.",
+      "notes": "Keep this exclusion local to the current topic."
+    }
+  ]
+}

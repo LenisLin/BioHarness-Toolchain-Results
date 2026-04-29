@@ -1,0 +1,228 @@
+backend_adapter_id: backend.spatial_domain_identification.banksy.v1
+adapter_id: backend.spatial_domain_identification.banksy.v1
+linked_surface_id: spatial_domain_identification.banksy.v1
+surface_id: spatial_domain_identification.banksy.v1
+backend_method: BANKSY
+authority_status: blueprint
+implementation_status: not_implemented
+
+native_repository:
+  url: https://github.com/prabhakarlab/Banksy_py
+  commit_or_release: 43e2d692db6705c0195039764194473912e4cfc2
+  license: GPL-3.0
+  last_checked: "2026-04-28"
+  evidence_refs: [E_README, E_PYPROJECT, E_LICENSE]
+
+evidence_authority:
+  registry_file: ../method_audits/banksy.audit.md
+  registry_section: Audit Evidence Registry
+
+runtime_language: python
+environment_profile: banksy_cpu_python_blueprint
+environment_profile_candidate: banksy_cpu_python_blueprint
+entrypoint: not_implemented_planned_wrapper_over_official_python_api
+
+integration_mode:
+  type: public_api
+  rationale: Official README and source modules expose a Python usage path, but BioHarness still needs wrapper-owned I/O, parameter, artifact, provenance, and failure policy.
+  stability: requires_followup
+  risks:
+    - package dependency constraints are unproven in BioHarness capsules
+    - optional mclust path adds R/rpy2 complexity
+    - output and plotting side effects need filesystem control
+
+backend_entrypoints:
+  - entrypoint_id: readme_quickstart
+    type: documentation
+    path_or_symbol: README.md quick start
+    purpose: documents AnnData input, coordinate keys, initialization, and multiparam run shape
+    evidence_refs: [E_README]
+    confidence: high
+  - entrypoint_id: initialize_spatial_weights
+    type: python_function
+    path_or_symbol: src/banksy/initialize_banksy.py
+    purpose: initialize AnnData/coordinate inputs and spatial weights
+    evidence_refs: [E_INIT]
+    confidence: high
+  - entrypoint_id: generate_banksy_representation
+    type: python_function
+    path_or_symbol: src/banksy/embed_banksy.py
+    purpose: generate neighborhood-augmented BANKSY matrices
+    evidence_refs: [E_EMBED]
+    confidence: high
+  - entrypoint_id: run_workflow
+    type: python_function
+    path_or_symbol: src/banksy/run_banksy.py
+    purpose: orchestrate PCA, UMAP, clustering, plotting, and result table production
+    evidence_refs: [E_RUN]
+    confidence: high
+  - entrypoint_id: cluster_labels
+    type: python_function
+    path_or_symbol: src/banksy/cluster_methods.py
+    purpose: clustering implementation evidence, including Leiden and optional mclust paths
+    evidence_refs: [E_CLUSTER]
+    confidence: high
+  - entrypoint_id: assign_and_plot_outputs
+    type: python_function
+    path_or_symbol: src/banksy/plot_banksy.py
+    purpose: assign labels to AnnData observations and optionally write figures/H5AD
+    evidence_refs: [E_PLOT]
+    confidence: high
+
+parameter_mapping:
+  expose_to_agent:
+    - spatial_coordinate_source
+    - domain_resolution_policy
+    - neighborhood_scale_policy
+    - spatial_expression_weight_policy
+    - cluster_method_policy
+    - seed_policy
+    - artifact_export_policy
+  infer_from_input:
+    - available_spatial_coordinate_sources
+    - observation_count
+    - feature_count
+    - optional_slice_key
+  fixed_by_adapter:
+    - label_namespace
+    - output_directory_layout
+    - provenance_schema
+    - filesystem_safety_policy
+  backend_default:
+    - unvalidated_low_level_defaults
+  forbidden_for_agent:
+    - raw_backend_function_names
+    - backend_file_paths
+    - package_private_parameters
+    - implementation_call_graph
+    - backend_coordinate_tuple_details
+  mapping_table:
+    - layer3_parameter: spatial_coordinate_source
+      backend_parameter: coordinate_key_representation
+      mapping_rule: convert BioHarness coordinate source into BANKSY-compatible coordinate keys
+      visibility: layer4_only
+      default_policy: infer only when unambiguous
+      validation: source resolves to coordinates aligned with observations
+      evidence_refs: [E_README, E_INIT]
+    - layer3_parameter: domain_resolution_policy
+      backend_parameter: clustering_resolution_or_selection_policy
+      mapping_rule: treat as granularity-control abstraction; exact target domain count is not directly guaranteed
+      default_policy: not_frozen
+      validation: may require resolution search or post-hoc selection
+      evidence_refs: [E_RUN, E_CLUSTER]
+    - layer3_parameter: spatial_expression_weight_policy
+      backend_parameter: lambda-related backend setting
+      mapping_rule: map semantic enum to validated numeric values in future wrapper
+      default_policy: not_frozen
+      validation: fixture-based validation required
+      evidence_refs: [E_EMBED]
+    - layer3_parameter: neighborhood_scale_policy
+      backend_parameter: max_m/neighborhood-related backend setting
+      mapping_rule: map semantic enum to validated backend settings
+      default_policy: not_frozen
+      validation: fixture-based validation and memory preflight required
+      evidence_refs: [E_INIT, E_EMBED]
+    - layer3_parameter: cluster_method_policy
+      backend_parameter: clustering implementation selection
+      mapping_rule: default to Leiden; gate optional mclust until R/rpy2 environment is proven
+      default_policy: leiden_default
+      validation: environment capability check
+      evidence_refs: [E_README, E_PYPROJECT, E_CLUSTER]
+    - layer3_parameter: seed_policy
+      backend_parameter: partition/embedding seed controls where exposed or fixed
+      mapping_rule: record seed settings in provenance
+      default_policy: record_backend_default_or_fixed_seed_behavior
+      validation: repeated-run fixture check required before determinism claim
+      evidence_refs: [E_CLUSTER, E_UMAP_PCA]
+
+input_conversion:
+  canonical_to_backend: BioHarness spatial AnnData contract candidate to BANKSY AnnData plus Layer4 coordinate-key representation
+  required_conversions:
+    - validate AnnData object
+    - validate semantic coordinate source
+    - convert semantic coordinate source to backend coordinate-key representation
+    - validate or flag finite expression data
+    - estimate dense-memory risk
+  lossy_conversions: not_observed
+  object_boundary: AnnData object remains the primary boundary; wrapper controls coordinate and output namespace mapping
+  evidence_refs: [E_README, E_INIT, E_EMBED]
+
+output_mapping:
+  backend_to_canonical: copy backend labels and result table into BioHarness standard outputs
+  domain_labels: labels written or extracted into BioHarness-controlled label namespace
+  embeddings: optional_embedding_not_frozen
+  tables: results_df-style table normalized to future schema
+  figures: optional diagnostic figures
+  logs: not_observed_requires_wrapper
+  provenance: wrapper-added required artifact
+  missing_mappings:
+    - exact result table schema
+    - exact embedding export contract
+    - runtime logs
+
+environment_binding:
+  expected_capsule: none_exists_blueprint_only
+  package_manager: Python packaging via pyproject metadata
+  install_files: [pyproject.toml]
+  lock_or_container_available: not_observed
+  dependency_conflict_risk: medium_high_due_to_python_numpy_and_optional_rpy2_constraints
+  known_conflicting_dependencies:
+    - dependency: python
+      conflict: official range >=3.8,<3.13
+    - dependency: numpy
+      conflict: official range >=1.21,<2.0
+    - dependency: rpy2/R
+      conflict: optional mclust path requires separate runtime support
+  gpu_policy: not_required
+  cuda_policy: not_applicable
+  cpu_fallback_policy: CPU is primary planned mode
+  environment_decision:
+  - environment_probe_required
+  - shared_capsule_unknown
+  - dedicated_capsule_may_be_required
+  - wrapper_boundary_required
+  - optional_mclust_excluded_until_rpy2_R_verified
+environment_hold_status: not_justified_yet
+  environment_subagent_report: ../environment_profiles/banksy.environment_subagent_report.md
+
+smoke_test:
+  fixture_source: not_available
+  installable:
+    status: not_run
+    evidence_refs: [E_PYPROJECT, E_README]
+  runnable_example:
+    status: not_run
+    evidence_refs: [E_EXAMPLES]
+  observable_io:
+    status: not_run
+    evidence_refs: [E_RUN, E_PLOT]
+  minimal_success_criteria:
+    - accepts minimal AnnData with semantic coordinate source
+    - emits one non-null label per observation
+    - emits method provenance
+    - writes only under approved output directory
+
+rewrite_level: strong_wrapper
+rewrite_rationale: standardize I/O, semantic parameters, artifacts, provenance, and failures without rewriting BANKSY scientific algorithm
+algorithm_core_touched: false
+visibility: implementation_debug_audit_only
+
+blocking_issues:
+  - issue: No BioHarness-owned minimal smoke fixture.
+    severity: high
+    required_resolution: create and approve a small AnnData fixture before production claims
+    evidence_refs: [E_EXAMPLES, E_NAS_COVERAGE]
+  - issue: No environment probe or capsule.
+    severity: high
+    required_resolution: run isolated install/import probe and decide shared versus dedicated capsule
+    evidence_refs: [E_PYPROJECT]
+  - issue: Numeric semantic-to-backend parameter mapping unvalidated.
+    severity: medium
+    required_resolution: validate mappings on fixture before exposing as production controls
+    evidence_refs: [E_EMBED]
+  - issue: GPL-3.0 distribution implications unresolved.
+    severity: high
+    required_resolution: review packaging/distribution strategy
+    evidence_refs: [E_LICENSE, E_PYPROJECT]
+
+authority_note: "Layer4 adapter draft only. Does not imply production execution support."
