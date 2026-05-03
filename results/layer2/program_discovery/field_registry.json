@@ -1,0 +1,211 @@
+{
+  "topic": "Program Discovery",
+  "layer": "Layer 2",
+  "version_date": "2026-05-01",
+  "purpose": "Define shared and Program Discovery-specific fields for a Layer 2 method-selection evidence package. This registry supports branch-local reasoning only.",
+  "non_goals": [
+    "No Layer 3 execution surface definitions.",
+    "No Layer 4 adapter or rewrite decisions.",
+    "No callable signatures, environment capsules, runtime-support claims, or default-method policy."
+  ],
+  "fields": [
+    {
+      "name": "Tool Name",
+      "definition": "Canonical method name from the frozen candidate set.",
+      "fill_rule": "copy exactly from candidate_freeze",
+      "role": "identity",
+      "scope": "all rows",
+      "controlled_values": "none",
+      "topic_relevance": "Keeps tables synchronized."
+    },
+    {
+      "name": "Method Family",
+      "definition": "Short family label from the frozen registry.",
+      "fill_rule": "copy from input unless obviously normalized",
+      "role": "classification",
+      "scope": "all rows",
+      "controlled_values": "none",
+      "topic_relevance": "Branch cue."
+    },
+    {
+      "name": "Main Input",
+      "definition": "Primary data objects expected by the method.",
+      "fill_rule": "use frozen title/evidence plus conservative synthesis",
+      "role": "decision cue",
+      "scope": "Layer 2 only",
+      "controlled_values": "free text",
+      "topic_relevance": "Separates spot, subcellular, single-cell-resolution, reference, and gene-set-dependent routes."
+    },
+    {
+      "name": "Main Use in This Topic",
+      "definition": "Program Discovery role used in this package.",
+      "fill_rule": "state topic-local use, not all possible uses",
+      "role": "decision cue",
+      "scope": "Layer 2 only",
+      "controlled_values": "free text",
+      "topic_relevance": "Prevents cross-topic overreach."
+    },
+    {
+      "name": "Main Output",
+      "definition": "Primary analytical output relevant to Program Discovery.",
+      "fill_rule": "describe output type without runtime claims",
+      "role": "decision cue",
+      "scope": "Layer 2 only",
+      "controlled_values": "free text",
+      "topic_relevance": "Distinguishes topics, factors, networks, gradients, regulons, and tissue modules."
+    },
+    {
+      "name": "Closest Alternatives",
+      "definition": "Nearest methods inside the frozen set.",
+      "fill_rule": "list frozen candidates only",
+      "role": "comparison",
+      "scope": "branch-local",
+      "controlled_values": "semicolon list",
+      "topic_relevance": "Supports local tie-breaks."
+    },
+    {
+      "name": "Key Difference",
+      "definition": "Main differentiator against close alternatives.",
+      "fill_rule": "Layer 2 synthesis based on frozen evidence",
+      "role": "comparison",
+      "scope": "branch-local",
+      "controlled_values": "free text",
+      "topic_relevance": "Explains why a branch points to one method family."
+    },
+    {
+      "name": "Compute Requirement",
+      "definition": "Compute label from frozen registry.",
+      "fill_rule": "copy frozen Compute Requirement",
+      "role": "resource cue",
+      "scope": "all rows",
+      "controlled_values": "CPU; Optional GPU; Required GPU; unclear",
+      "topic_relevance": "Resource gate only, not runtime support."
+    },
+    {
+      "name": "Memory Burden",
+      "definition": "Conservative memory burden estimate.",
+      "fill_rule": "use unclear unless directly supported or clearly implied by scale/model class",
+      "role": "resource cue",
+      "scope": "all rows",
+      "controlled_values": "low; medium; high; unclear",
+      "topic_relevance": "Avoids unsupported engineering claims."
+    },
+    {
+      "name": "Scale Sensitivity",
+      "definition": "Sensitivity to number of spots/cells/genes/samples.",
+      "fill_rule": "conservative Layer 2 synthesis",
+      "role": "resource/science cue",
+      "scope": "all rows",
+      "controlled_values": "low; medium; high; unclear",
+      "topic_relevance": "Flags audit priorities."
+    },
+    {
+      "name": "Code Access",
+      "definition": "Code availability status from frozen Accessibility/GitHub fields.",
+      "fill_rule": "available only with frozen public GitHub; otherwise pending/manual review",
+      "role": "audit cue",
+      "scope": "all rows",
+      "controlled_values": "available; pending/manual review; unclear",
+      "topic_relevance": "Not a BioHarness runtime-support claim."
+    },
+    {
+      "name": "Primary Code Link",
+      "definition": "Primary public code URL when frozen input provides one.",
+      "fill_rule": "copy frozen GitHub URL or unclear",
+      "role": "audit cue",
+      "scope": "all rows",
+      "controlled_values": "URL; unclear",
+      "topic_relevance": "For later manual audit only."
+    },
+    {
+      "name": "Evidence Source",
+      "definition": "Direct evidence pointer.",
+      "fill_rule": "include frozen registry row plus PMID/DOI",
+      "role": "evidence",
+      "scope": "all rows",
+      "controlled_values": "free text",
+      "topic_relevance": "Maintains traceability."
+    },
+    {
+      "name": "Evidence Note",
+      "definition": "Separation of direct evidence from synthesis.",
+      "fill_rule": "must name direct registry/PubMed evidence and Layer 2 synthesis separately",
+      "role": "evidence",
+      "scope": "all rows",
+      "controlled_values": "free text",
+      "topic_relevance": "Prevents overclaiming."
+    },
+    {
+      "name": "Best First Choice When",
+      "definition": "Conditional branch-local use case.",
+      "fill_rule": "write as when-to-read/consider, not default",
+      "role": "decision cue",
+      "scope": "branch-local",
+      "controlled_values": "free text",
+      "topic_relevance": "Supports selection logic."
+    },
+    {
+      "name": "Do Not Start With This When",
+      "definition": "Conditional branch-local exclusion/caution.",
+      "fill_rule": "state when another branch should be considered first",
+      "role": "decision cue",
+      "scope": "branch-local",
+      "controlled_values": "free text",
+      "topic_relevance": "Prevents global rankings."
+    },
+    {
+      "name": "Program Family",
+      "definition": "Topic-specific normalized program-discovery family.",
+      "fill_rule": "choose a short label from row evidence and synthesis",
+      "role": "topic cue",
+      "scope": "all rows",
+      "controlled_values": "factor / NMF; multicellular latent program; tensor decomposition; probabilistic latent variable; spatial topic model; probabilistic spatial factor; gene-set correlation; spatial co-expression network; regulatory program inference; interaction-aware tissue module; spatial co-expression model; spatial gradient analysis",
+      "topic_relevance": "Organizes branch families."
+    },
+    {
+      "name": "Program Output Type",
+      "definition": "Topic-specific output shape.",
+      "fill_rule": "describe what a user would inspect downstream",
+      "role": "topic cue",
+      "scope": "all rows",
+      "controlled_values": "free text",
+      "topic_relevance": "Separates factors, topics, networks, gradients, regulons, and modules."
+    },
+    {
+      "name": "Spatial Coupling",
+      "definition": "How spatial information enters the method.",
+      "fill_rule": "use concise conservative phrase",
+      "role": "topic cue",
+      "scope": "all rows",
+      "controlled_values": "free text",
+      "topic_relevance": "Critical for spatial-program interpretation."
+    },
+    {
+      "name": "Reference Dependence",
+      "definition": "Dependence on annotations, gene sets, regulatory priors, or external references.",
+      "fill_rule": "state reference-free or dependency class; use unclear when unsupported",
+      "role": "topic cue",
+      "scope": "all rows",
+      "controlled_values": "reference-free; annotation-dependent; optional/reference-informed; gene-set-dependent; regulatory-prior-dependent; unclear",
+      "topic_relevance": "Flags bias and setup needs."
+    },
+    {
+      "name": "Multi-sample Cue",
+      "definition": "Whether the method naturally supports multi-sample/cohort program discovery.",
+      "fill_rule": "use strong/suited/can support/unclear style from evidence",
+      "role": "topic cue",
+      "scope": "all rows",
+      "controlled_values": "free text",
+      "topic_relevance": "Important for cohort program discovery."
+    },
+    {
+      "name": "Interpretability Caveat",
+      "definition": "Main caution when interpreting programs.",
+      "fill_rule": "Layer 2 scientific-critical-thinking caveat",
+      "role": "topic cue",
+      "scope": "all rows",
+      "controlled_values": "free text",
+      "topic_relevance": "Keeps factor/topic/network/regulatory outputs conservative."
+    }
+  ]
+}

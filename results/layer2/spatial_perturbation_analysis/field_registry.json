@@ -1,0 +1,257 @@
+{
+  "topic": "Spatial Perturbation Analysis",
+  "layer": "Layer 2",
+  "version_date": "2026-05-02",
+  "purpose": "Field registry for the Spatial Perturbation Analysis Layer 2 method-selection evidence package.",
+  "non_goals": [
+    "Layer 3 execution surfaces",
+    "Layer 4 adapter definitions",
+    "callable signatures",
+    "environment bindings",
+    "runtime-support claims",
+    "default-method policy"
+  ],
+  "fields": [
+    {
+      "name": "Tool Name",
+      "role": "identity",
+      "scope": "shared",
+      "definition": "Canonical method or tool identity in the frozen topic candidate set.",
+      "fill_rule": "Use the canonical method name from the frozen input JSON.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the row identity."
+    },
+    {
+      "name": "Method Family",
+      "role": "method characterization",
+      "scope": "shared",
+      "definition": "Short algorithm-family label.",
+      "fill_rule": "Use a concise family phrase from the Layer 1 registry and verified method evidence.",
+      "controlled_values": null,
+      "topic_relevance": "Distinguishes niche-aware generative response modeling from causal generative perturbation modeling."
+    },
+    {
+      "name": "Main Input",
+      "role": "input picture",
+      "scope": "shared",
+      "definition": "High-level input picture for the method in this topic.",
+      "fill_rule": "Use object-level input phrasing rather than parameter lists.",
+      "controlled_values": null,
+      "topic_relevance": "Clarifies whether the method expects explicit spatial perturbation-response data or a broader causal tissue-modeling input."
+    },
+    {
+      "name": "Main Use in This Topic",
+      "role": "topic use",
+      "scope": "shared",
+      "definition": "Main role of the method inside Spatial Perturbation Analysis.",
+      "fill_rule": "Describe only the perturbation-response, causal, or counterfactual modeling role; do not foreground unrelated downstream claims.",
+      "controlled_values": null,
+      "topic_relevance": "Keeps both frontier methods scoped to this analysis problem."
+    },
+    {
+      "name": "Main Output",
+      "role": "output object",
+      "scope": "shared",
+      "definition": "High-level output object relevant to this topic.",
+      "fill_rule": "Use a short object-level phrase, not a package object or callable signature.",
+      "controlled_values": null,
+      "topic_relevance": "Separates response predictions from causal program and counterfactual tissue outputs."
+    },
+    {
+      "name": "Closest Alternatives",
+      "role": "local comparator set",
+      "scope": "shared",
+      "definition": "Nearby alternatives from the same frozen topic set.",
+      "fill_rule": "Use local alternatives from the frozen candidate set. Prefer branch-near alternatives rather than a global ranking.",
+      "controlled_values": null,
+      "topic_relevance": "Supports local comparison without global ranking."
+    },
+    {
+      "name": "Key Difference",
+      "role": "selection discriminator",
+      "scope": "shared",
+      "definition": "Main decision difference versus nearby alternatives.",
+      "fill_rule": "Use one decision-level sentence.",
+      "controlled_values": null,
+      "topic_relevance": "Provides branch-local selection logic."
+    },
+    {
+      "name": "Compute Requirement",
+      "role": "resource cue",
+      "scope": "shared",
+      "definition": "Coarse compute requirement only.",
+      "fill_rule": "Use the coarse label supported by the registry and method evidence; do not infer runtime readiness.",
+      "controlled_values": [
+        "CPU",
+        "Optional GPU",
+        "Required GPU",
+        "unclear"
+      ],
+      "topic_relevance": "Acts as a branch-local resource gate."
+    },
+    {
+      "name": "Memory Burden",
+      "role": "resource cue",
+      "scope": "shared",
+      "definition": "Coarse memory burden.",
+      "fill_rule": "Use low, medium, high, or unclear. Prefer unclear when direct public support is weak.",
+      "controlled_values": [
+        "low",
+        "medium",
+        "high",
+        "unclear"
+      ],
+      "topic_relevance": "Captures practical constraints without creating execution claims."
+    },
+    {
+      "name": "Scale Sensitivity",
+      "role": "resource cue",
+      "scope": "shared",
+      "definition": "Coarse sensitivity to larger spatial scale, multi-sample scale, or high-resolution tissue datasets.",
+      "fill_rule": "Use low, medium, high, or unclear. Be conservative unless public evidence directly supports a label.",
+      "controlled_values": [
+        "low",
+        "medium",
+        "high",
+        "unclear"
+      ],
+      "topic_relevance": "Helps decide whether large perturbation atlases or multi-slice settings need later engineering scrutiny."
+    },
+    {
+      "name": "Code Access",
+      "role": "access trace",
+      "scope": "shared",
+      "definition": "Current code-access state.",
+      "fill_rule": "Record access state only; do not equate access with runtime support.",
+      "controlled_values": [
+        "available",
+        "archived",
+        "unclear",
+        "unavailable"
+      ],
+      "topic_relevance": "Supports later audit triage."
+    },
+    {
+      "name": "Primary Code Link",
+      "role": "access trace",
+      "scope": "shared",
+      "definition": "One primary code or official documentation location.",
+      "fill_rule": "Fill only when an official or clearly primary code/documentation source is confirmed.",
+      "controlled_values": null,
+      "topic_relevance": "Provides a traceable code source for later engineering review."
+    },
+    {
+      "name": "Evidence Source",
+      "role": "evidence trace",
+      "scope": "shared",
+      "definition": "Main evidence basis for the row.",
+      "fill_rule": "Use one controlled source label.",
+      "controlled_values": [
+        "method paper",
+        "benchmark/review",
+        "official docs",
+        "community practice",
+        "mixed"
+      ],
+      "topic_relevance": "Distinguishes direct method evidence from review or community-use evidence."
+    },
+    {
+      "name": "Evidence Note",
+      "role": "evidence trace",
+      "scope": "shared",
+      "definition": "Short note on what is direct evidence and what is Layer 2 synthesis.",
+      "fill_rule": "Use one to three concise sentences. Mark comparison, burden, risk, and first-choice fields as synthesized when appropriate.",
+      "controlled_values": null,
+      "topic_relevance": "Keeps uncertainty and evidence strength visible."
+    },
+    {
+      "name": "Best First Choice When",
+      "role": "positive decision cue",
+      "scope": "shared",
+      "definition": "Best-fit starting condition within this topic.",
+      "fill_rule": "Use one positive conditional sentence. Do not write default-method claims.",
+      "controlled_values": null,
+      "topic_relevance": "Feeds the decision tree."
+    },
+    {
+      "name": "Do Not Start With This When",
+      "role": "exclusion decision cue",
+      "scope": "shared",
+      "definition": "Main condition where this method should not be the first method read or trialed.",
+      "fill_rule": "Use one concise exclusion sentence.",
+      "controlled_values": null,
+      "topic_relevance": "Prevents method misuse without claiming runtime failure."
+    },
+    {
+      "name": "Perturbation Question Type",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Primary scientific question type addressed by the method.",
+      "fill_rule": "Use one controlled value. Separate predictive response modeling, causal counterfactual modeling, observed perturbation-effect detection, perturbation-responsive pattern prioritization, and spatiotemporal regulator prioritization.",
+      "controlled_values": [
+        "response prediction",
+        "causal counterfactual",
+        "observed perturbation-effect detection",
+        "perturbation-responsive pattern prioritization",
+        "spatiotemporal perturbation regulator prioritization",
+        "mixed",
+        "unclear"
+      ],
+      "topic_relevance": "Separates predictive response modeling from causal counterfactual tissue modeling."
+    },
+    {
+      "name": "Spatial Mechanism Emphasis",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Dominant way the method represents spatial perturbation context.",
+      "fill_rule": "Use one controlled value that reflects the direct method description.",
+      "controlled_values": [
+        "niche kernels",
+        "cell-cell graph causal programs",
+        "spatial differential activation",
+        "spatial pattern attribution",
+        "spatiotemporal network regulators",
+        "mixed",
+        "unclear"
+      ],
+      "topic_relevance": "Highlights whether local niche effects or causal cell-cell program structure should drive first reading."
+    },
+    {
+      "name": "Direct Perturbation Data Cue",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Coarse cue about the perturbation evidence or data condition emphasized by the method evidence.",
+      "fill_rule": "Use measured perturbation-response ST only when the method is framed around measured perturbation transcriptomics. Use condition-labeled spatial omics for observed treatment, exposure, disease, or perturbation condition comparisons. Use unclear when the requirement cannot be verified from bounded evidence.",
+      "controlled_values": [
+        "measured perturbation-response ST",
+        "condition-labeled spatial omics",
+        "not clearly required",
+        "unclear"
+      ],
+      "topic_relevance": "Prevents overextending a method to data conditions not supported by the bounded evidence pass."
+    },
+    {
+      "name": "Validation Evidence Scope",
+      "role": "topic-specific evidence cue",
+      "scope": "topic-specific",
+      "definition": "Coarse public validation scope visible from the bounded method-paper evidence.",
+      "fill_rule": "Use one controlled value; do not convert method-paper comparisons into independent benchmarks.",
+      "controlled_values": [
+        "method-paper benchmark plus case studies",
+        "method-paper simulations plus tissue case studies",
+        "independent benchmark",
+        "unclear"
+      ],
+      "topic_relevance": "Keeps validation strength and benchmark limitations visible."
+    },
+    {
+      "name": "Scientific Caveat",
+      "role": "topic-specific evidence caveat",
+      "scope": "topic-specific",
+      "definition": "Concise caveat about causal assumptions, counterfactual validation, frontier evidence, or benchmark limitations.",
+      "fill_rule": "Use conservative free text. Do not convert the caveat into a severity score unless later evidence justifies that.",
+      "controlled_values": null,
+      "topic_relevance": "Makes scientific-critical-thinking concerns explicit in method selection."
+    }
+  ]
+}

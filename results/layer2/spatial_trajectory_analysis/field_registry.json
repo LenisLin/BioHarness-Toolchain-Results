@@ -1,0 +1,284 @@
+{
+  "topic": "Spatial Trajectory Analysis",
+  "layer": "Layer 2",
+  "version_date": "2026-05-01",
+  "purpose": "Field registry for the Spatial Trajectory Analysis Layer 2 method-selection evidence package.",
+  "non_goals": [
+    "Layer 3 execution surfaces",
+    "Layer 4 adapter definitions",
+    "callable signatures",
+    "environment bindings",
+    "runtime-support claims",
+    "default-method policy"
+  ],
+  "fields": [
+    {
+      "name": "Tool Name",
+      "role": "identity",
+      "scope": "shared",
+      "definition": "Canonical method or tool identity in the frozen topic candidate set.",
+      "fill_rule": "Use the canonical method name from the frozen input JSON.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the row identity for the trajectory-method candidate set."
+    },
+    {
+      "name": "Method Family",
+      "role": "method characterization",
+      "scope": "shared",
+      "definition": "Short algorithm-family label for the method.",
+      "fill_rule": "Use the Layer 1 registry family phrase, adjusted only when PubMed method-paper evidence supports a clearer topic label.",
+      "controlled_values": null,
+      "topic_relevance": "Separates optimal transport, RNA velocity, tensor dynamics, adversarial graph embedding, topological velocity, and causal trajectory routes."
+    },
+    {
+      "name": "Main Input",
+      "role": "input picture",
+      "scope": "shared",
+      "definition": "High-level input object and signal expected by the method in this topic.",
+      "fill_rule": "Use object-level phrasing; include spatial coordinates, splicing, histology, reference data, or multi-batch context only when directly relevant.",
+      "controlled_values": null,
+      "topic_relevance": "Trajectory methods differ strongly by whether they need spatial coordinates alone, spliced/unspliced signal, reference scRNA-seq, histology, or multi-batch data."
+    },
+    {
+      "name": "Main Use in This Topic",
+      "role": "topic use",
+      "scope": "shared",
+      "definition": "Main role of the method inside Spatial Trajectory Analysis.",
+      "fill_rule": "Describe only trajectory, pseudotime, RNA velocity, state-transition, or causal-trajectory use; do not foreground unrelated downstream claims.",
+      "controlled_values": null,
+      "topic_relevance": "Keeps multi-task methods scoped to trajectory selection."
+    },
+    {
+      "name": "Main Output",
+      "role": "output object",
+      "scope": "shared",
+      "definition": "High-level output object relevant to this topic.",
+      "fill_rule": "Use a short object-level phrase such as trajectory topology, velocity field, transition tensor, latent pseudotime, or causal trajectory tree.",
+      "controlled_values": null,
+      "topic_relevance": "Distinguishes trajectory topology, velocity, embedding, and causal graph outputs."
+    },
+    {
+      "name": "Closest Alternatives",
+      "role": "local comparator set",
+      "scope": "shared",
+      "definition": "Nearby alternatives from the same frozen topic set.",
+      "fill_rule": "Use two to four local alternatives only; do not add methods outside the frozen candidate set.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local comparison without global ranking."
+    },
+    {
+      "name": "Key Difference",
+      "role": "selection discriminator",
+      "scope": "shared",
+      "definition": "Main decision difference versus nearby alternatives.",
+      "fill_rule": "Use one decision-level sentence grounded in input/output and method-family differences.",
+      "controlled_values": null,
+      "topic_relevance": "Feeds branch-local method selection."
+    },
+    {
+      "name": "Compute Requirement",
+      "role": "resource cue",
+      "scope": "shared",
+      "definition": "Coarse compute requirement from the frozen registry and directly observed article evidence.",
+      "fill_rule": "Use CPU, Optional GPU, Required GPU, or unclear. Do not interpret this as BioHarness runtime readiness.",
+      "controlled_values": [
+        "CPU",
+        "Optional GPU",
+        "Required GPU",
+        "unclear"
+      ],
+      "topic_relevance": "Acts as a branch-local resource gate after task fit is established."
+    },
+    {
+      "name": "Memory Burden",
+      "role": "resource cue",
+      "scope": "shared",
+      "definition": "Coarse memory burden for method use.",
+      "fill_rule": "Use low, medium, high, or unclear. Prefer unclear when direct public evidence is weak or method-paper hardware is not enough to generalize.",
+      "controlled_values": [
+        "low",
+        "medium",
+        "high",
+        "unclear"
+      ],
+      "topic_relevance": "Trajectory methods can involve graph, tensor, deep, or velocity models whose memory needs may affect later audit triage."
+    },
+    {
+      "name": "Scale Sensitivity",
+      "role": "resource cue",
+      "scope": "shared",
+      "definition": "Coarse sensitivity to larger spatial scale, many cells/spots, many slices, or multi-batch data.",
+      "fill_rule": "Use low, medium, high, or unclear. Use unclear unless public evidence directly supports a label.",
+      "controlled_values": [
+        "low",
+        "medium",
+        "high",
+        "unclear"
+      ],
+      "topic_relevance": "Spatial trajectory analyses may be fragile under atlas-scale, high-resolution, or multi-sample settings."
+    },
+    {
+      "name": "Code Access",
+      "role": "access trace",
+      "scope": "shared",
+      "definition": "Current code-access state for the method.",
+      "fill_rule": "Record access state only; do not equate access with runtime support.",
+      "controlled_values": [
+        "available",
+        "archived",
+        "unclear",
+        "unavailable"
+      ],
+      "topic_relevance": "Supports later representative Layer 3/4 audit triage."
+    },
+    {
+      "name": "Primary Code Link",
+      "role": "access trace",
+      "scope": "shared",
+      "definition": "One primary code or official source location when confirmed.",
+      "fill_rule": "Fill only when a primary code location is present in the frozen registry input or PubMed/PMC data-availability text; otherwise leave empty.",
+      "controlled_values": null,
+      "topic_relevance": "Provides a traceable source for later engineering review without claiming execution support."
+    },
+    {
+      "name": "Evidence Source",
+      "role": "evidence trace",
+      "scope": "shared",
+      "definition": "Main evidence basis for the row.",
+      "fill_rule": "Use one controlled source label.",
+      "controlled_values": [
+        "method paper",
+        "benchmark/review",
+        "official docs",
+        "community practice",
+        "mixed"
+      ],
+      "topic_relevance": "Distinguishes method-paper-local evidence from review or synthesized evidence."
+    },
+    {
+      "name": "Evidence Note",
+      "role": "evidence trace",
+      "scope": "shared",
+      "definition": "Short note on what is direct evidence and what is Layer 2 synthesized judgment.",
+      "fill_rule": "Use one to two concise sentences. Mark comparator, resource, caveat, and decision fields as synthesized when appropriate.",
+      "controlled_values": null,
+      "topic_relevance": "Keeps uncertainty and evidence strength visible."
+    },
+    {
+      "name": "Best First Choice When",
+      "role": "positive decision cue",
+      "scope": "shared",
+      "definition": "Best-fit starting condition within this topic.",
+      "fill_rule": "Use one positive conditional sentence. Avoid default-method claims.",
+      "controlled_values": null,
+      "topic_relevance": "Feeds the branch-local decision tree."
+    },
+    {
+      "name": "Do Not Start With This When",
+      "role": "exclusion decision cue",
+      "scope": "shared",
+      "definition": "Main condition where this method should not be the first method read or trialed.",
+      "fill_rule": "Use one concise exclusion sentence.",
+      "controlled_values": null,
+      "topic_relevance": "Prevents method misuse without claiming runtime failure."
+    },
+    {
+      "name": "Trajectory Branch",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Primary trajectory-analysis branch represented by the method.",
+      "fill_rule": "Use one controlled value representing the dominant branch.",
+      "controlled_values": [
+        "differentiation trajectory",
+        "spatial RNA velocity",
+        "spatiotemporal embedding / pseudotime",
+        "causal trajectory",
+        "unclear"
+      ],
+      "topic_relevance": "Separates trajectory topology, velocity, embedding/pseudotime, and causal-trajectory use cases."
+    },
+    {
+      "name": "Splicing / Velocity Dependence",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Whether trajectory inference depends on spliced/unspliced or RNA-velocity signal.",
+      "fill_rule": "Use one controlled value; choose reference-imputed when spatial velocity is inferred through scRNA-seq reference enrichment.",
+      "controlled_values": [
+        "not primary",
+        "uses splicing / velocity signal",
+        "reference-imputed splicing / velocity",
+        "unclear"
+      ],
+      "topic_relevance": "RNA-velocity and non-velocity trajectory branches require different data assumptions."
+    },
+    {
+      "name": "Spatial Coupling Mode",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Dominant way spatial information enters the trajectory model.",
+      "fill_rule": "Use one controlled value based on method-paper description.",
+      "controlled_values": [
+        "coordinates in transition cost",
+        "spatial graph / constraints",
+        "spatially coupled dynamics",
+        "histology + spatial features",
+        "spatially refined causal graph",
+        "unclear"
+      ],
+      "topic_relevance": "Spatial trajectory methods differ by whether space shapes transition costs, random walks, graph constraints, differential equations, image features, or causal graph refinement."
+    },
+    {
+      "name": "Reference Dependence",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Whether the method depends on external reference data for trajectory inference.",
+      "fill_rule": "Use reference-free when no external scRNA-seq reference is central to the method; use scRNA-reference-assisted when the paper requires or foregrounds a reference.",
+      "controlled_values": [
+        "reference-free",
+        "scRNA-reference-assisted",
+        "unclear"
+      ],
+      "topic_relevance": "Highlights reference mismatch and reference-bias risk in spatial velocity inference."
+    },
+    {
+      "name": "Temporal / Multi-sample Cue",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Whether the method directly foregrounds temporal intervals, multi-sample, or multi-batch trajectory analysis.",
+      "fill_rule": "Use one controlled value based on direct paper claims; use unclear if the evidence is not explicit.",
+      "controlled_values": [
+        "single-sample compatible",
+        "multi-sample / temporal interval",
+        "multi-batch",
+        "time-course helpful",
+        "unclear"
+      ],
+      "topic_relevance": "Trajectory tasks often differ by whether samples are independent sections, time intervals, or batches."
+    },
+    {
+      "name": "Output Interpretability Cue",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Main interpretability object produced by the method.",
+      "fill_rule": "Use one controlled value matching the main output object.",
+      "controlled_values": [
+        "trajectory topology",
+        "velocity field",
+        "transition tensor / attractors",
+        "latent pseudotime",
+        "causal tree",
+        "unclear"
+      ],
+      "topic_relevance": "Helps agents choose between topology, velocity, tensor, embedding, and causal explanations."
+    },
+    {
+      "name": "Scientific Caveat",
+      "role": "topic-specific evidence caveat",
+      "scope": "topic-specific",
+      "definition": "Concise caveat about biological interpretation, reference bias, topology assumptions, causal claims, benchmark limits, or validation limits.",
+      "fill_rule": "Use conservative free text. Do not turn caveats into a severity score.",
+      "controlled_values": null,
+      "topic_relevance": "Carries scientific-critical-thinking concerns into branch-local selection."
+    }
+  ]
+}
