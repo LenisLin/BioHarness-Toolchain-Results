@@ -4,7 +4,7 @@ Layer served: `Layer 2`
 
 Status: complete working/evidence package for method-selection support.
 
-This package covers the `Spatial Trajectory Analysis` Analysis Problem using the frozen seven-method candidate set supplied in `/tmp/bioharness_layer2_subagents/input/spatial_trajectory_analysis.json`. It is a method-selection evidence package. It is not a Layer 3 execution surface, Layer 4 adapter plan, environment capsule, callable signature, runtime-support claim, or default-method policy.
+This package covers the `Spatial Trajectory Analysis` Analysis Problem using the targeted nine-method candidate set supplied in `/tmp/bioharness_layer2_subagents/input/spatial_trajectory_analysis.json`. It is a method-selection evidence package. It is not a Layer 3 execution surface, Layer 4 adapter plan, environment capsule, callable signature, runtime-support claim, or default-method policy.
 
 ## Artifacts
 
@@ -20,9 +20,9 @@ This package covers the `Spatial Trajectory Analysis` Analysis Problem using the
 
 ## Candidate Freeze
 
-The candidate set is frozen at seven methods:
+The candidate set is updated to nine methods:
 
-`SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`.
+`SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`, `STORIES`, `stVCR`.
 
-No methods were added beyond the frozen input.
+The 2026-05-03 targeted inclusion correction added `STORIES` and `stVCR`.
 

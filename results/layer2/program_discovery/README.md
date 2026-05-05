@@ -4,13 +4,13 @@
 
 Layer served: `Layer 2`
 
-Current status: complete working/evidence package for method selection.
+Current status: confirmed with caveats after minor boundary wording errata.
 
 This directory contains the Layer 2 method-selection evidence package for the spatial transcriptomics `Program Discovery` analysis problem. It supports conditional, branch-local method selection. It is not a Layer 3 execution surface, Layer 4 adapter implementation, environment capsule, default-method policy, or runtime-support claim.
 
 ## Topic Boundary
 
-This package covers methods whose frozen Layer 1 placement supports discovery of transcriptional programs, multicellular programs, spatial topics, factors, co-expression modules, regulatory programs, tissue modules, or interpretable spatial gradients from spatial transcriptomics data.
+This package covers methods whose frozen Layer 1 placement supports discovery of transcriptional programs, multicellular programs, spatial topics, factors, co-expression modules, boundary-sensitive regulatory-program outputs, tissue modules, or interpretable spatial gradients from spatial transcriptomics data.
 
 The candidate set is frozen to thirteen Layer 1 methods:
 
@@ -32,4 +32,4 @@ Subtask labels from the frozen input are used only as branch cues inside this to
 
 ## Current Closure
 
-The closure decision is that this Layer 2 topic is complete enough to serve as a working/evidence basis for later formal rendering or representative Layer 3/4 engineering audit. No runtime execution support is implied.
+The closure decision is `Confirm with caveats after minor boundary wording errata`. This Layer 2 topic may serve as a working/evidence basis for later formal rendering or representative Layer 3/4 engineering audit. No runtime execution support is implied.

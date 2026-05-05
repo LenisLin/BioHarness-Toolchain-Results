@@ -20,9 +20,9 @@ Primary source registry:
 
 `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-01_layer1_spatial_method_registry_preprocessing_split_working.csv`
 
-Frozen candidate input:
+Frozen candidate record:
 
-`/tmp/bioharness_layer2_subagents/input/spatially_variable_gene_detection.json`
+`/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatially_variable_gene_detection/method_table.json`
 
 ## Bounded Retrieval Record
 

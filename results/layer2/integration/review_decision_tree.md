@@ -6,11 +6,11 @@ Layer served: `Layer 2`
 
 Purpose: `when to choose`, not `how to run`.
 
-This document records the bounded PubMed review pass, evidence spot-checks, branch-local decision tree, and coverage ledger for the frozen `Integration` candidate set. It does not define execution surfaces, wrappers, adapter boundaries, callable signatures, environments, or runtime support.
+This document records the bounded PubMed review pass, evidence spot-checks, branch-local decision tree, and coverage ledger for the updated `Integration` candidate set. It does not define execution surfaces, wrappers, adapter boundaries, callable signatures, environments, or runtime support.
 
 ## Reading Rules
 
-- Keep the 18-method freeze unchanged: `CAST`, `DeST-OT`, `GPSA`, `GraphST`, `PASTE`, `PASTE2`, `PRECAST`, `SANTO`, `SLAT`, `SPACEL`, `STalign`, `STAligner`, `STAIR`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, `Crescendo`.
+- Keep the 22-method targeted freeze: `CAST`, `DeST-OT`, `GPSA`, `GraphST`, `PASTE`, `PASTE2`, `PRECAST`, `SANTO`, `SLAT`, `SPACEL`, `STalign`, `STAligner`, `STAIR`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, `Crescendo`, `SpaMosaic`, `INSPIRE`, `SpatialCOC`, `SSpMosaic`.
 - Use `Subtask` values as branch cues only; they are not separate Layer 2 completion units.
 - Treat compute as a branch-local resource gate. It cannot override task fit.
 - Use benchmark evidence for coverage, caveats, and branch-local tie-breaks only. Do not turn it into a universal all-method ranking.
@@ -21,10 +21,14 @@ This document records the bounded PubMed review pass, evidence spot-checks, bran
 
 ### PubMed candidate verification
 
-PubMed E-utilities verified method-paper identity for all 18 frozen candidates. Missing identifiers in the frozen input were recovered for:
+PubMed E-utilities or DOI/publisher checks verified method-paper identity for all 22 candidates after the targeted correction. Missing identifiers in the frozen input were recovered for:
 
 | Tool | PMID | DOI | Verification result |
 | --- | --- | --- | --- |
+| `SpaMosaic` | 42032296 | 10.1038/s41588-026-02573-3 | Method-paper identity confirmed; code trace supplied by targeted literature check. |
+| `INSPIRE` | 42045691 | 10.1038/s41588-026-02579-x | Method-paper identity confirmed; code trace supplied by targeted literature check. |
+| `SpatialCOC` | 41991905 | 10.1038/s41467-026-71882-2 | Method-paper identity confirmed; code trace supplied by targeted literature check. |
+| `SSpMosaic` | not recorded in this pass | 10.1016/j.xgen.2025.101105 | DOI/publisher identity confirmed; code trace supplied by targeted literature check. |
 | `CAST` | 39294367 | 10.1038/s41592-024-02410-7 | Method-paper identity confirmed. |
 | `SANTO` | 39025895 | 10.1038/s41467-024-50308-x | Method-paper identity confirmed. |
 | `SLAT` | 37945600 | 10.1038/s41467-023-43105-5 | Method-paper identity confirmed. |
@@ -69,6 +73,10 @@ Review conclusion: suitable benchmark evidence exists for alignment and multi-sl
 
 | Tool | Direct support | Layer 2 synthesis / caution |
 | --- | --- | --- |
+| `SpaMosaic` | PubMed verifies PMID 42032296 and DOI 10.1038/s41588-026-02573-3; targeted check supplies GitHub code trace. | Mosaic spatial multi-omics placement is direct; modality-completion and scale caveats are Layer 2 synthesis. |
+| `INSPIRE` | PubMed verifies PMID 42045691 and DOI 10.1038/s41588-026-02579-x; targeted check supplies GitHub code trace. | Interpretable diverse-source integration is direct; representation-objective caveat is Layer 2 synthesis. |
+| `SpatialCOC` | PubMed verifies PMID 41991905 and DOI 10.1038/s41467-026-71882-2; targeted check supplies GitHub code trace. | Cross-omics correction is direct; overcorrection caveat is Layer 2 synthesis. |
+| `SSpMosaic` | DOI/publisher evidence verifies 10.1016/j.xgen.2025.101105 and targeted check supplies GitHub code trace. | Included in Integration with explicit boundary caveats to Cell Type Inference, Program Discovery, and Domain / Clustering/ecotype interpretation. |
 | `CAST` | PubMed verifies PMID 39294367 and DOI 10.1038/s41592-024-02410-7. | High-resolution branch and scale caveats are Layer 2 synthesis. |
 | `DeST-OT` | PubMed verifies PMID 39874960 and DOI 10.1016/j.cels.2024.12.001. | Use as spatiotemporal branch; transport burden is synthesized. |
 | `GPSA` | PubMed verifies PMID 37592182 and DOI 10.1038/s41592-023-01972-2. | Scale caution follows method family; not a BioHarness benchmark. |
@@ -106,11 +114,11 @@ If the deliverable is count-level batch correction for single-cell spatial trans
 - Read first within this branch: `Crescendo`.
 - Carry the row-level biological-signal-removal cue from the method table.
 
-If the deliverable is a multimodal spatial omics model or integrated multimodal representation:
+If the deliverable is a multimodal spatial omics model, cross-omics correction, or integrated multimodal representation:
 
-- Read first within this branch: `MISO`.
+- Read first within this branch: `MISO`, `SpaMosaic`, or `SpatialCOC`, depending on whether the task is multimodal tissue-complexity modeling, mosaic spatial multi-omics integration, or cross-omics correction with continuous mapping.
 - Use this branch for tissue-complexity modeling across modalities, not for transcriptomics-only slice registration.
-- Carry the row-level modality-imbalance cue from the method table.
+- Carry the row-level modality-imbalance, cross-modality imputation, and overcorrection cues from the method table.
 
 If the deliverable is spatiotemporal or progression-ordered alignment:
 
@@ -133,6 +141,16 @@ If the deliverable is 2D/3D multi-slice reconstruction or tissue stacking:
 - End-to-end alignment, integration, and 3D reconstruction: read first within branch `STAIR`.
 - Automated 2D/3D integration: read first within branch `VR-Omics`.
 - Carry row-level model-opacity, automation-opacity, and scale-burden cues from the method table.
+
+If the deliverable is interpretable spatially aware multi-dataset integration:
+
+- Read first within this branch: `INSPIRE`.
+- Keep representation-objective and interpretability caveats visible.
+
+If the deliverable is gene-program-based single-cell/spatial integration with annotation support:
+
+- Read first within this branch: `SSpMosaic` only when Integration remains the center of gravity.
+- Route standalone cell type annotation to Cell Type Inference, program interpretation to Program Discovery, and domain/ecotype discovery to Domain / Clustering.
 
 If the deliverable is latent representation integration:
 
@@ -165,6 +183,10 @@ If public code access is needed before any later audit:
 
 | Tool | Covered in tree branch | Main caveat carried forward |
 | --- | --- | --- |
+| `SpaMosaic` | mosaic spatial multi-omics integration | modality imbalance and cross-modality imputation bias |
+| `INSPIRE` | interpretable diverse-source spatial integration | representation-objective ambiguity |
+| `SpatialCOC` | spatial continuous mapping and cross-omics correction | cross-omics overcorrection |
+| `SSpMosaic` | gene-program-based single-cell/spatial integration | annotation and gene-program boundary leakage |
 | `CAST` | search-and-match mapping | scale sensitivity |
 | `DeST-OT` | spatiotemporal alignment | temporal-model mismatch |
 | `GPSA` | coordinate alignment | scale sensitivity |

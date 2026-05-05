@@ -26,7 +26,7 @@ Search/review strategy: use the frozen PMID/DOI/title fields for direct evidence
 ## Inclusion Rules
 
 - Include only methods in the frozen `candidate_freeze` list.
-- Include methods whose frozen row supports program, factor, topic, co-expression, regulatory, tissue-module, or spatial-gradient discovery.
+- Include methods whose frozen row supports program, factor, topic, co-expression, boundary-sensitive regulatory-program output, tissue-module, or spatial-gradient discovery.
 - Keep cross-topic methods only in their Program Discovery role. For example, `STAMP` is represented here for spatial topic/gene-module output, not as a domain-clustering default.
 - Preserve pending code/accessibility status when code was not manually confirmed in the frozen input.
 
@@ -62,7 +62,9 @@ The branch organization used in this package is topic-local:
 - Multicellular/cohort programs: `CellPie`, `DIALOGUE`, `scITD`, `SPICEMIX`
 - Spatial topic/factor programs: `STAMP`, `SpaTM`, `FISHFactor`, `LSGI`
 - Gene-set/co-expression/network programs: `SpatialCorr`, `SpaceX`, `spMOCA`
-- Regulatory programs: `SpaGRN`
+- Boundary-sensitive regulatory-program output: `SpaGRN`
 - Interaction-aware tissue modules: `SPACE`
 
 These branches are selection aids only. They do not rank all methods globally and do not define Layer 3 surfaces.
+
+This package does not create a separate GRN analysis problem. `SpaGRN` is retained only as a boundary-sensitive Program Discovery row for conservative regulatory-program-style outputs, not as a claim that Program Discovery now owns a standalone GRN task family or mechanism-level proof.

@@ -25,12 +25,28 @@ Package: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference
 - Resolve FAST identity/PMID/DOI before formal rendering.
 - Confirm whether benchmark-covered spot deconvolution methods should be explicitly separated from cell-placement and histology-aware mapping branches.
 
-## Comparative Analysis
+## Comparative Analysis Split
 
-Package: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/comparative_analysis`
+Old package: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/comparative_analysis`
 
-- Decide how to treat STcompare preprint evidence.
-- Review whether registration/template-based comparison and DE comparison belong in the same decision tree.
+- Status: superseded by 2026-05-04 split after human scientific review.
+- Do not render the old 9-row package formally.
+
+## Spatial Contrast Testing
+
+Package: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_contrast_testing`
+
+- Confirm that every branch has an explicit contrast design and contrast-test/map output.
+- Review `STcompare` as structurally matched only, with preprint status recorded as evidence provenance/confidence caveat rather than a selection gate.
+- Keep `Spatially Variable Gene Detection`, domain clustering, and phenotype-linked niche analysis outside this positive set.
+
+## Phenotype- / Cohort-linked Spatial Feature and Niche Analysis
+
+Package: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/phenotype_cohort_linked_spatial_feature_niche_analysis`
+
+- Confirm `TiRank` and `stClinic` targeted metadata/code checks before formal rendering.
+- Review phenotype-label leakage, cohort confounding, bulk-to-spatial transfer, control-choice, and representation-opacity caveats.
+- Keep `MENDER` as cross-topic context only; treat `CytoCommunity` as a controlled duplicate only for cohort-linked TCN/community features.
 
 ## Data Quality Control
 
@@ -133,3 +149,14 @@ Package: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/super_resolution`
 - Resolve unclear code links.
 - Review generated/pseudo-cell output validation, morphology bias, and circular validation risks.
 
+## 2026-05-05 Comparative Boundary Follow-up
+
+Package: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/phenotype_cohort_linked_spatial_feature_niche_analysis`
+
+- Confirm after implementation that the positive set is exactly `TissueMosaic`, `SpaLinker`, `TiRank`, `stClinic`, and `CytoCommunity`.
+- Confirm that `SPaSE` appears only in removal/history notes and not in positive method tables or decision branches.
+- Confirm `CytoCommunity` is treated as a controlled duplicate for cohort-linked TCN/community features, while its generic neighborhood role remains in `Graph / Neighborhood`.
+
+Package: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_contrast_testing`
+
+- Confirm `STcompare` wording treats preprint status as evidence provenance/caveat only and structural comparability as the branch-fit condition.

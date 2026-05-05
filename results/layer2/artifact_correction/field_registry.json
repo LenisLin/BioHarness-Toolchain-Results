@@ -1,260 +1,50 @@
 {
   "topic": "Artifact Correction",
-  "layer": "Layer 2",
-  "version_date": "2026-05-01",
-  "purpose": "Field registry for the Artifact Correction Layer 2 method-selection evidence package.",
-  "non_goals": [
-    "Layer 3 execution surfaces",
-    "Layer 4 adapter definitions",
-    "callable signatures",
-    "environment bindings",
-    "runtime-support claims",
-    "default-method policy"
+  "freeze_date": "2026-05-05",
+  "candidate_count": 4,
+  "candidate_order": [
+    "SpotClean",
+    "Non-parametric Vignetting Correction",
+    "cellAdmix",
+    "SPLIT"
   ],
-  "fields": [
-    {
-      "name": "Tool Name",
-      "role": "identity",
-      "scope": "shared",
-      "definition": "Canonical method or tool identity in the frozen topic candidate set.",
-      "fill_rule": "Use the canonical method name from the frozen input JSON.",
-      "controlled_values": null,
-      "topic_relevance": "Defines the row identity and candidate freeze."
-    },
-    {
-      "name": "Method Family",
-      "role": "method characterization",
-      "scope": "shared",
-      "definition": "Short algorithm-family label for the artifact-correction approach.",
-      "fill_rule": "Use a concise family phrase from the Layer 1 registry and verified method evidence.",
-      "controlled_values": null,
-      "topic_relevance": "Separates probabilistic contamination correction, image illumination correction, and molecular-neighborhood factorization."
-    },
-    {
-      "name": "Main Input",
-      "role": "input picture",
-      "scope": "shared",
-      "definition": "High-level input object or signal used by the method in this topic.",
-      "fill_rule": "Use object-level input phrasing rather than parameters or commands.",
-      "controlled_values": null,
-      "topic_relevance": "Distinguishes spot-count matrices, sparse image volumes, and post-segmentation molecular assignments."
-    },
-    {
-      "name": "Main Use in This Topic",
-      "role": "topic use",
-      "scope": "shared",
-      "definition": "Main role of the method inside Artifact Correction.",
-      "fill_rule": "Describe only the artifact-correction role; do not foreground unrelated downstream analyses.",
-      "controlled_values": null,
-      "topic_relevance": "Keeps each method scoped to the artifact it corrects."
-    },
-    {
-      "name": "Main Output",
-      "role": "output object",
-      "scope": "shared",
-      "definition": "High-level output object relevant to artifact correction.",
-      "fill_rule": "Use a short object-level phrase such as corrected count matrix, corrected image field, or molecular-admixture correction output.",
-      "controlled_values": null,
-      "topic_relevance": "Shows whether the method changes expression counts, image-derived inputs, or cell-level molecular assignments."
-    },
-    {
-      "name": "Closest Alternatives",
-      "role": "local comparator set",
-      "scope": "shared",
-      "definition": "Nearby alternatives from the same frozen topic set.",
-      "fill_rule": "Use local alternatives only. When the frozen set has no same-artifact alternative, name the closest cross-artifact comparators and note the difference in Key Difference.",
-      "controlled_values": null,
-      "topic_relevance": "Supports local comparison without adding methods or creating global rankings."
-    },
-    {
-      "name": "Key Difference",
-      "role": "selection discriminator",
-      "scope": "shared",
-      "definition": "Main decision difference versus nearby alternatives.",
-      "fill_rule": "Use one decision-level sentence grounded in artifact type, input signal, or correction stage.",
-      "controlled_values": null,
-      "topic_relevance": "Feeds branch-local method-selection logic."
-    },
-    {
-      "name": "Compute Requirement",
-      "role": "resource cue",
-      "scope": "shared",
-      "definition": "Coarse compute requirement.",
-      "fill_rule": "Use the coarse label supported by the registry or direct method evidence; do not infer runtime readiness.",
-      "controlled_values": [
-        "CPU",
-        "Optional GPU",
-        "Required GPU",
-        "unclear"
-      ],
-      "topic_relevance": "Acts as a coarse resource cue for later audit triage."
-    },
-    {
-      "name": "Memory Burden",
-      "role": "resource cue",
-      "scope": "shared",
-      "definition": "Coarse memory burden.",
-      "fill_rule": "Use low, medium, high, or unclear. Prefer unclear when direct public support is weak.",
-      "controlled_values": [
-        "low",
-        "medium",
-        "high",
-        "unclear"
-      ],
-      "topic_relevance": "Keeps resource uncertainty visible without over-labeling."
-    },
-    {
-      "name": "Scale Sensitivity",
-      "role": "resource cue",
-      "scope": "shared",
-      "definition": "Coarse sensitivity to larger slides, many images, or high-density molecule/cell assignments.",
-      "fill_rule": "Use low, medium, high, or unclear. Be conservative unless public evidence directly supports a label.",
-      "controlled_values": [
-        "low",
-        "medium",
-        "high",
-        "unclear"
-      ],
-      "topic_relevance": "Highlights possible scaling risk while avoiding unsupported performance claims."
-    },
-    {
-      "name": "Code Access",
-      "role": "access trace",
-      "scope": "shared",
-      "definition": "Current code-access state.",
-      "fill_rule": "Record access state only; do not equate code access with BioHarness runtime support.",
-      "controlled_values": [
-        "available",
-        "archived",
-        "unclear",
-        "unavailable"
-      ],
-      "topic_relevance": "Supports later representative Layer 3/4 audit triage."
-    },
-    {
-      "name": "Primary Code Link",
-      "role": "access trace",
-      "scope": "shared",
-      "definition": "One primary code or official documentation location.",
-      "fill_rule": "Fill only when an official or clearly primary code source is confirmed.",
-      "controlled_values": null,
-      "topic_relevance": "Provides a traceable public code source for later engineering review."
-    },
-    {
-      "name": "Evidence Source",
-      "role": "evidence trace",
-      "scope": "shared",
-      "definition": "Main evidence basis for the row.",
-      "fill_rule": "Use one controlled source label.",
-      "controlled_values": [
-        "method paper",
-        "benchmark/review",
-        "official docs",
-        "community practice",
-        "mixed"
-      ],
-      "topic_relevance": "Distinguishes direct method-paper evidence from review or synthesized evidence."
-    },
-    {
-      "name": "Evidence Note",
-      "role": "evidence trace",
-      "scope": "shared",
-      "definition": "Short note on direct evidence and Layer 2 synthesized judgment.",
-      "fill_rule": "Use one to two concise sentences. Mark comparison, burden, scale, and risk fields as synthesized when appropriate.",
-      "controlled_values": null,
-      "topic_relevance": "Makes evidence strength and uncertainty visible."
-    },
-    {
-      "name": "Best First Choice When",
-      "role": "positive decision cue",
-      "scope": "shared",
-      "definition": "Best-fit starting condition within this topic.",
-      "fill_rule": "Use one positive conditional sentence. Do not write default-method claims.",
-      "controlled_values": null,
-      "topic_relevance": "Feeds conditional branch-local method selection."
-    },
-    {
-      "name": "Do Not Start With This When",
-      "role": "exclusion decision cue",
-      "scope": "shared",
-      "definition": "Main condition where this method should not be the first method read or trialed.",
-      "fill_rule": "Use one concise exclusion sentence.",
-      "controlled_values": null,
-      "topic_relevance": "Prevents cross-artifact misuse without claiming runtime failure."
-    },
-    {
-      "name": "Artifact Target",
-      "role": "topic-specific decision cue",
-      "scope": "topic-specific",
-      "definition": "Primary artifact class the method is intended to correct.",
-      "fill_rule": "Use one controlled value representing the dominant artifact target.",
-      "controlled_values": [
-        "spot swapping / contamination",
-        "optical vignetting / illumination field",
-        "segmentation-error molecular admixture",
-        "unclear"
-      ],
-      "topic_relevance": "This is the first branch point because the three frozen candidates address different artifact mechanisms."
-    },
-    {
-      "name": "Assay / Modality Cue",
-      "role": "topic-specific decision cue",
-      "scope": "topic-specific",
-      "definition": "Coarse assay or data-modality setting implied by the artifact-correction method.",
-      "fill_rule": "Use one controlled value. Use unclear when the public source does not support a tighter modality cue.",
-      "controlled_values": [
-        "spot-barcoded ST",
-        "sparse imaging-based ST images",
-        "imaging-based cell-level ST",
-        "unclear"
-      ],
-      "topic_relevance": "Guards against using a correction model outside the assay family where the artifact arises."
-    },
-    {
-      "name": "Correction Stage",
-      "role": "topic-specific decision cue",
-      "scope": "topic-specific",
-      "definition": "Pipeline stage at which the correction conceptually acts.",
-      "fill_rule": "Use one controlled value for the dominant correction stage.",
-      "controlled_values": [
-        "count-matrix correction",
-        "image / spot-calling preprocessing",
-        "post-segmentation molecular-assignment correction",
-        "unclear"
-      ],
-      "topic_relevance": "Separates corrections applied before spot calling, after count construction, and after cell segmentation."
-    },
-    {
-      "name": "Output Alteration Level",
-      "role": "topic-specific decision cue",
-      "scope": "topic-specific",
-      "definition": "Level at which the method changes or annotates the data object.",
-      "fill_rule": "Use one controlled value for the primary output alteration.",
-      "controlled_values": [
-        "adjusted count matrix",
-        "corrected image / illumination field",
-        "molecular admixture correction",
-        "unclear"
-      ],
-      "topic_relevance": "Clarifies whether downstream users should expect changed counts, changed image-derived inputs, or molecular-assignment correction output."
-    },
-    {
-      "name": "Primary Downstream Risk Addressed",
-      "role": "topic-specific decision cue",
-      "scope": "topic-specific",
-      "definition": "Primary downstream analysis risk described by the method evidence or inferred from the artifact mechanism.",
-      "fill_rule": "Use concise free text; distinguish direct paper claims from Layer 2 synthesis in Evidence Note.",
-      "controlled_values": null,
-      "topic_relevance": "Connects artifact correction to downstream scientific failure modes without ranking methods globally."
-    },
-    {
-      "name": "Scientific Caution",
-      "role": "topic-specific evidence caveat",
-      "scope": "topic-specific",
-      "definition": "Concise caveat about evidence strength, artifact specificity, possible bias, or benchmark limitations.",
-      "fill_rule": "Use conservative free text. Do not convert the caveat into a severity score.",
-      "controlled_values": null,
-      "topic_relevance": "Carries scientific-critical-thinking concerns into the decision tree."
-    }
+  "layer_boundary": {
+    "layer1": "Method identity, analysis-problem placement, and code/access trace metadata.",
+    "layer2": "Artifact-mechanism and data-object-local method selection knowledge for representative Layer 3/4 audit planning.",
+    "excluded_claims": [
+      "BioHarness execution support",
+      "callable interfaces or adapters",
+      "environment profiles",
+      "universal method ranking"
+    ]
+  },
+  "fields": {
+    "Tool Name": "See method_table.csv for row-level values.",
+    "Method Family": "See method_table.csv for row-level values.",
+    "Main Input": "See method_table.csv for row-level values.",
+    "Main Use in This Topic": "See method_table.csv for row-level values.",
+    "Main Output": "See method_table.csv for row-level values.",
+    "Closest Alternatives": "See method_table.csv for row-level values.",
+    "Key Difference": "See method_table.csv for row-level values.",
+    "Compute Requirement": "See method_table.csv for row-level values.",
+    "Memory Burden": "See method_table.csv for row-level values.",
+    "Scale Sensitivity": "See method_table.csv for row-level values.",
+    "Code Access": "See method_table.csv for row-level values.",
+    "Primary Code Link": "See method_table.csv for row-level values.",
+    "Evidence Source": "See method_table.csv for row-level values.",
+    "Evidence Note": "See method_table.csv for row-level values.",
+    "Best First Choice When": "See method_table.csv for row-level values.",
+    "Do Not Start With This When": "See method_table.csv for row-level values.",
+    "Artifact Mechanism": "See method_table.csv for row-level values.",
+    "Data Object": "See method_table.csv for row-level values.",
+    "Platform Scope": "See method_table.csv for row-level values.",
+    "Correction Scope": "See method_table.csv for row-level values.",
+    "Boundary Caveat": "See method_table.csv for row-level values."
+  },
+  "required_caveats": [
+    "Artifact Correction rows correct different artifact mechanisms and cannot be universally ranked.",
+    "QC/artifact flags can overlap with true tissue biology and require contextual review.",
+    "cellAdmix corrects molecular admixture effects; it does not prove segmentation is solved.",
+    "SPLIT is Xenium-specific signal-contamination correction, not generic denoising and not generic QC."
   ]
 }

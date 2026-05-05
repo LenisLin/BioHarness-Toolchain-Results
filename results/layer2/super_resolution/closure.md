@@ -1,105 +1,31 @@
 # Super-resolution Layer 2 Closure
 
-## Status
+## Gate Check
 
-Layer served: `Layer 2`
-
-Closure status: complete working/evidence package with caveats; ready for
-formal rendering or representative Layer 3/4 engineering audit.
-
-This closure does not freeze a default method, Layer 3 execution surface,
-backend adapter boundary, callable signature, environment capsule, rewrite
-decision, or runtime-support status.
-
-## Authority Artifacts
-
-- Topic scope:
-  `/tmp/bioharness_layer2_subagents/output/super_resolution/topic_scope.md`
-- Field registry:
-  `/tmp/bioharness_layer2_subagents/output/super_resolution/field_registry.json`
-- Structured method table:
-  `/tmp/bioharness_layer2_subagents/output/super_resolution/method_table.json`
-- CSV method table:
-  `/tmp/bioharness_layer2_subagents/output/super_resolution/method_table.csv`
-- Human-readable method table:
-  `/tmp/bioharness_layer2_subagents/output/super_resolution/method_table.md`
-- Review and decision tree:
-  `/tmp/bioharness_layer2_subagents/output/super_resolution/review_decision_tree.md`
-
-## Layer 2 Gate Check
-
-| Gate item | Status | Evidence |
+| Gate | Status | Note |
 | --- | --- | --- |
-| Analysis Problem unit | Pass | Topic is `Super-resolution`, not individual algorithms or subtasks. |
-| Bounded retrieval record | Pass | `topic_scope.md` records date, sources, queries, inclusion/exclusion rules, and candidate freeze. |
-| Frozen candidate set | Pass | Eight rows: `FICTURE`, `iStar`, `scstGCN`, `Spotiphy`, `TESLA`, `XFuse`, `iSCALE`, `STAGE`. |
-| Field schema | Pass | Shared fields plus six topic-specific decision/caveat fields in `field_registry.json`. |
-| Method table artifacts | Pass | JSON is the source table; CSV and Markdown are generated from the same JSON. |
-| Review / logic pass | Pass with caveats | No dedicated eight-method independent benchmark was found; decision tree uses explicit logic review plus method-paper evidence. |
-| Decision tree | Pass with caveats | Conditional branch-local method selection only; no global ranking. |
-| Layer boundary | Pass | Artifacts avoid runtime, adapter, environment, callable, and default-method claims. |
+| Candidate freeze | Pass | 11 methods in discussion-locked order. |
+| Method table consistency | Pass | JSON, CSV, and Markdown are generated from the same rows. |
+| Formal boundary | Pass | No formal rendering generated. |
+| Runtime boundary | Pass | No Layer 3 execution readiness, callable, backend binding, or execution-environment bundle is claimed. |
+| Decision-tree boundary | Pass | Branch-local wording only; no universal method choice or cross-branch universal ordering. |
 
 ## Current Layer 2 Facts
 
-- Candidate rows: 8.
-- Fields per method row: 22.
-- Code access: 4 available, 4 unclear.
-- Compute labels: 1 CPU, 7 Optional GPU, 0 Required GPU.
-- Image signal use: 5 required, 1 none, 2 unclear.
-- External reference dependence: 5 reference-free, 3 unclear.
-- Memory burden: 8 unclear.
-- Scale sensitivity: 2 low, 1 medium, 5 unclear.
-- PubMed identity check: all eight PMIDs verified; `scstGCN` DOI was filled
-  from PubMed as `10.1093/bib/bbae630`.
+- Topic: `Super-resolution`
+- Candidate count: 11
+- Methods: FICTURE, iStar, scstGCN, Spotiphy, TESLA, XFuse, ImSpiRE, soScope, iSCALE, STAGE, Thor
 
-## Caveats Carried Into Later Work
+## Remaining Caveats
 
-- No independent benchmark was found that justifies ranking all eight frozen
-  methods.
-- Many resource, memory, scale, code-access, and reference-dependence labels
-  remain conservative because bounded PubMed evidence and frozen input do not
-  verify those details.
-- Histology-guided methods can learn morphology-correlated expression patterns
-  that are visually plausible but biologically biased.
-- Pseudo-single-cell and single-cell-resolution outputs should be treated as
-  inferred reconstructions, not direct single-cell molecular measurements.
-- Large-area or whole-section reconstruction can hide local failure modes if
-  evaluated only by broad tissue-level agreement.
-- Generated or super-resolved expression requires validation that avoids
-  circular comparison to derived targets.
-
-## Representative Layer 3/4 Audit Batch
-
-The audit batch is representative engineering triage only. It is not a runtime
-support claim, default-method list, adapter commitment, or implementation plan.
-
-Because the topic is small and branch-diverse, all eight frozen candidates are
-reasonable representative audit candidates:
-
-| Method | Why include in audit batch |
-| --- | --- |
-| `FICTURE` | CPU segmentation-free submicron factorization branch with available frozen-input code link. |
-| `iStar` | Histology-guided tissue-architecture inference branch with code-access uncertainty. |
-| `scstGCN` | Graph/image single-cell-resolution expression branch with DOI corrected by PubMed and code-access uncertainty. |
-| `Spotiphy` | Whole-section pseudo-single-cell transcriptome branch with available frozen-input code link. |
-| `TESLA` | Tumor-ecosystem super-resolution branch with available frozen-input code link. |
-| `XFuse` | Foundational deep fusion branch with available frozen-input code link. |
-| `iSCALE` | Large-area cellular-level reconstruction branch with code-access uncertainty. |
-| `STAGE` | High-density ST generation branch with code-access uncertainty. |
-
-Audit outputs must remain separate from this Layer 2 package:
-
-- `MethodEngineeringAudit`
-- Layer 3 `ExecutionSurfaceSpec`
-- Layer 4 `BackendAdapterSpec`
-- `RewriteDecision`
-- `EnvironmentProfile`
-- validation requirements
+- Evidence is mostly method-paper-local unless noted otherwise.
+- Code access is metadata only and does not imply execution readiness.
+- Generated, inferred, denoised, reconstructed, predicted, or calibrated outputs remain model-derived and require downstream validation appropriate to their claim type. FICTURE is the measured high-density representation case and should not be described as generating unmeasured pseudo-cell expression.
 
 ## Closure Decision
 
-`Super-resolution` Layer 2 is complete as a working/evidence package for
-method-selection support, with the caveats above carried forward. It is ready
-for later formal rendering or representative Layer 3/4 audit, but it does not
-imply default methods, runtime surfaces, package entrypoints, environment
-capsules, wrappers, rewrites, or adapter implementations.
+This package is rebuilt as a working/evidence package after the 2026-05-04 taxonomy cleanup. Final human confirmation is intentionally deferred before root confirmation/status documents are updated.
+
+## Representative Layer 3/4 Audit Batch
+
+Representative audit candidates should be selected after human confirmation. Any later audit batch is not a universal-method list and does not imply execution readiness.

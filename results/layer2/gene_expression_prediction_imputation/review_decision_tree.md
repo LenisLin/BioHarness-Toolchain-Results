@@ -1,0 +1,39 @@
+# Gene Expression Prediction / Imputation Review And Decision Tree
+
+This review records branch-local logic for the 17-method candidate freeze. It does not define a cross-branch universal ordering, universal method choice, execution readiness, machine-call contract, backend binding, or execution-environment bundle.
+
+## Logic Review
+
+The 2026-05-04 taxonomy cleanup uses Layer 1 `Main Input`, `Main Output`, and `Analysis Problem Basis` fields to keep Super-resolution, Gene Expression Prediction / Imputation, and Denoising / Signal Recovery separated by input/output object rather than by promotional wording.
+
+## Decision Tree
+
+1. **Expression-value gate.** Consider this topic when the requested output is missing, unmeasured, predicted, generated, refined, or calibrated expression values.
+2. **Histology branch.** Consider GHIST, Hist2ST, THItoGene, FmH2ST, OmiCLIP, or STGAT when histology or WSI-derived features are part of the expression-prediction input.
+3. **Reference branch.** Consider SpaGE, stPlus, SpatialScope, ENGEP, iSpatial, or stDiff when scRNA/snRNA or other reference data drive missing-gene or genome-wide expression inference.
+4. **Post-prediction branch.** Consider TISSUE or SPRITE only when predictions already exist and the branch question is calibration, uncertainty, or refinement.
+5. **Leakage caveat.** Prediction/imputation evidence should be assessed for train/test leakage, reference mismatch, morphology hallucination, and circular downstream validation.
+
+## Coverage Ledger
+
+- `GHIST`: histology images with paired training data or learned histology-expression mapping -> predicted single-cell-resolution spatial gene expression. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `Hist2ST`: histology image patches with spatial context and paired ST training data -> predicted spatial transcriptomics expression profiles. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `THItoGene`: histological images with learned histology-to-ST mapping -> predicted spatial transcriptomics expression. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `FmH2ST`: histology images and foundation-model visual features -> generated or predicted spatial transcriptomics expression. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `OmiCLIP`: histopathology images with visual-omics representation learning context -> predicted or aligned spatial omics/expression representation. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `SpaGE`: measured spatial expression for shared genes plus scRNA-seq reference -> enhanced or imputed spatial expression for unmeasured genes. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `stPlus`: spatial transcriptomics matrix plus single-cell reference -> enhanced spatial expression with predicted missing genes. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `SpatialScope`: spatial transcriptomics data plus single-cell reference -> cellular-resolution inferred transcriptomic reconstruction. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `STASCAN`: spatial gene expression profiles plus histology images -> fine-resolution cell distribution or spatial completion map. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `stAI`: single-cell spatial transcriptomics with missing genes and annotation context -> imputed missing genes and cell-type annotations. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `TISSUE`: predicted spatial expression values with calibration context from measured spatial data -> prediction intervals and uncertainty-aware expression-prediction summaries. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `ENGEP`: spatial query expression matrix plus same- or similar-tissue sc/snRNA-seq references -> predicted expression levels for spatially unmeasured genes. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `iSpatial`: limited-gene spatial transcriptomics or FISH data plus scRNA-seq reference -> genome-wide inferred spatial expression. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `stDiff`: measured/shared spatial genes plus reference single-cell transcriptomics -> imputed missing spatial expression and enhanced ST data. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `SPRITE`: baseline spatial expression predictions plus gene and cell networks -> refined predicted spatial expression for target genes. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+- `DIST`: array-based spatial transcriptomics expression maps and spatial layout -> imputed expression at unmeasured locations and enhanced expression profiles. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation. DIST is retained for expression imputation at unmeasured locations and should not be treated as missing-gene-only imputation.
+- `STGAT`: training ST data with spot image/coordinates/expression plus target WSI and bulk RNA-seq -> spot-level predicted gene-expression profiles and tissue labels. Caveat: Predicted, imputed, refined, or calibrated expression values are not direct measurements; validation should guard against hallucination, leakage, reference mismatch, and circular downstream evaluation.
+
+## Evidence Strength
+
+Most rows are method-paper-local evidence. Code links are access traces only. No all-candidate independent benchmark is claimed for this cleanup.

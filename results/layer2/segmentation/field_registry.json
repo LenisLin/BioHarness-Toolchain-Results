@@ -1,15 +1,15 @@
 {
   "topic": "Segmentation",
   "layer": "Layer 2",
-  "version_date": "2026-05-01",
-  "purpose": "Field registry for the Segmentation Layer 2 method-selection evidence package.",
+  "version_date": "2026-05-05",
+  "purpose": "Field registry for the Segmentation Layer 2 11-row method-selection evidence package.",
   "non_goals": [
     "Layer 3 execution surfaces",
     "Layer 4 adapter definitions",
-    "callable signatures",
+    "callable interfaces",
     "environment bindings",
-    "runtime-support claims",
-    "default-method policy"
+    "execution-support claims",
+    "universal method policy"
   ],
   "fields": [
     {
@@ -64,7 +64,7 @@
       "definition": "Nearby alternatives from the same frozen topic set.",
       "fill_rule": "Use two to four local alternatives only.",
       "controlled_values": null,
-      "topic_relevance": "Supports branch-local comparison without global ranking."
+      "topic_relevance": "Supports branch-local comparison without universal ranking."
     },
     {
       "name": "Key Difference",
@@ -121,7 +121,7 @@
       "role": "access trace",
       "scope": "shared",
       "definition": "Current code-access state.",
-      "fill_rule": "Record access state only; do not equate access with runtime support.",
+      "fill_rule": "Record access state only; do not equate access with execution support.",
       "controlled_values": [
         "available",
         "archived",
@@ -168,7 +168,7 @@
       "role": "positive decision cue",
       "scope": "shared",
       "definition": "Best-fit starting condition within this topic.",
-      "fill_rule": "Use one positive conditional sentence. Do not write default-method claims.",
+      "fill_rule": "Use one positive conditional sentence. Do not write universal-method claims.",
       "controlled_values": null,
       "topic_relevance": "Feeds the decision tree."
     },
@@ -185,11 +185,12 @@
       "name": "Segmentation Branch",
       "role": "topic-specific decision cue",
       "scope": "topic-specific",
-      "definition": "Topic branch represented by the method.",
+      "definition": "Topic branch represented by the method, including direct segmentation, upstream spot detection, image-processing support, and joint segmentation/classification boundary rows.",
       "fill_rule": "Use one controlled value matching the primary role in the frozen Segmentation topic.",
       "controlled_values": [
         "cell segmentation / transcript assignment",
         "transcript spot detection",
+        "histology image processing / segmentation support",
         "joint segmentation / classification",
         "unclear"
       ],

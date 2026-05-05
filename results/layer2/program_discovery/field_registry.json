@@ -52,7 +52,7 @@
       "role": "decision cue",
       "scope": "Layer 2 only",
       "controlled_values": "free text",
-      "topic_relevance": "Distinguishes topics, factors, networks, gradients, regulons, and tissue modules."
+      "topic_relevance": "Distinguishes topics, factors, networks, gradients, conservative regulatory-program outputs, and tissue modules."
     },
     {
       "name": "Closest Alternatives",
@@ -159,7 +159,7 @@
       "fill_rule": "choose a short label from row evidence and synthesis",
       "role": "topic cue",
       "scope": "all rows",
-      "controlled_values": "factor / NMF; multicellular latent program; tensor decomposition; probabilistic latent variable; spatial topic model; probabilistic spatial factor; gene-set correlation; spatial co-expression network; regulatory program inference; interaction-aware tissue module; spatial co-expression model; spatial gradient analysis",
+      "controlled_values": "factor / NMF; multicellular latent program; tensor decomposition; probabilistic latent variable; spatial topic model; probabilistic spatial factor; gene-set correlation; spatial co-expression network; boundary-sensitive regulatory-program output; interaction-aware tissue module; spatial co-expression model; spatial gradient analysis",
       "topic_relevance": "Organizes branch families."
     },
     {
@@ -169,7 +169,7 @@
       "role": "topic cue",
       "scope": "all rows",
       "controlled_values": "free text",
-      "topic_relevance": "Separates factors, topics, networks, gradients, regulons, and modules."
+      "topic_relevance": "Separates factors, topics, networks, gradients, conservative regulatory-program outputs, and modules."
     },
     {
       "name": "Spatial Coupling",

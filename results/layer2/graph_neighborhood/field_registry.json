@@ -1,7 +1,7 @@
 {
   "topic": "Graph / Neighborhood",
   "layer": "Layer 2",
-  "version_date": "2026-05-01",
+  "version_date": "2026-05-03",
   "purpose": "Field registry for the Graph / Neighborhood Layer 2 method-selection evidence package.",
   "non_goals": [
     "Layer 3 execution surfaces",
@@ -16,8 +16,8 @@
       "name": "Tool Name",
       "role": "identity",
       "scope": "shared",
-      "definition": "Canonical method or tool identity in the frozen Graph / Neighborhood candidate set.",
-      "fill_rule": "Use the canonical method name from the frozen input JSON.",
+      "definition": "Canonical method or tool identity in the revised 18-method Graph / Neighborhood candidate freeze.",
+      "fill_rule": "Use the canonical method name from the original frozen input JSON plus the 2026-05-03 targeted Graph supplement.",
       "controlled_values": null,
       "topic_relevance": "Defines row identity and preserves the candidate freeze."
     },
@@ -207,6 +207,7 @@
         "reference/query transfer supported",
         "multi-sample possible",
         "cross-sample robustness claimed",
+        "atlas-scale supported",
         "unclear"
       ],
       "topic_relevance": "Graph / Neighborhood choices often depend on whether niches must be compared across samples or conditions."
@@ -247,7 +248,10 @@
         "soft cell-state organization summaries",
         "motif signatures",
         "reconstructed neighborhoods",
-        "gene representations"
+        "gene representations",
+        "cellular community motifs",
+        "cellular microenvironment embeddings",
+        "disentangled spatial-context embeddings"
       ],
       "topic_relevance": "Prevents mixing labels, factors, motifs, metrics, and reconstruction outputs as if they were interchangeable."
     },

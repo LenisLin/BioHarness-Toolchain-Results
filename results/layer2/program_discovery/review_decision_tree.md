@@ -44,7 +44,7 @@ Brief screening query:
 spatial transcriptomics program discovery benchmark review topic modeling factor discovery multicellular programs
 ```
 
-Screening result: no immediately suitable independent benchmark or review was identified that jointly evaluates all thirteen frozen candidates across multicellular programs, spatial topics/factors, gene-set correlation, co-expression networks, regulatory paths, tissue modules, and spatial gradients.
+Screening result: no immediately suitable independent benchmark or review was identified that jointly evaluates all thirteen frozen candidates across multicellular programs, spatial topics/factors, gene-set correlation, co-expression networks, boundary-sensitive regulatory-program outputs, tissue modules, and spatial gradients.
 
 Review conclusion: use explicit logic review from the field registry and method table. Method-paper evidence and broad reviews can inform caveats, but they cannot support a universal all-method ranking.
 
@@ -55,16 +55,16 @@ Program Discovery is heterogeneous. The first split should be output semantics, 
 - If the output must be coordinated multicellular or cohort programs, inspect the multicellular/tensor/factor branch.
 - If the output must be spatial topics, factors, or gradients, inspect the topic/factor/gradient branch.
 - If the output must be gene-set correlation or co-expression networks, inspect the gene-set/co-expression branch.
-- If the output must be regulatory paths or regulons, inspect the regulatory branch.
+- If the output must be regulatory-program-style annotation or scoring, inspect the boundary-sensitive regulatory-program branch.
 - If the output must be interaction-aware tissue modules from single-cell-resolution ST, inspect the tissue-module branch.
 
 Scientific caveat: all factor/topic/network/regulatory outputs require post hoc biological interpretation. The Layer 2 table records the primary interpretation risk for each method, but validation remains dataset- and question-specific.
 
 ## Decision Tree
 
-### Step 0. Are you actually in Program Discovery?
+### Scope premise
 
-If the main task is domain clustering, cell type inference, cell-cell communication, normalization, denoising, trajectory inference, or perturbation modeling, start in that analysis problem first. Return here only when the target output is a program, factor, topic, module, co-expression structure, regulon, tissue module, or spatial gradient.
+This Layer 2 tree assumes Layer 1 has already assigned the task to `Program Discovery`. It only supports topic-internal, branch-local selection among the thirteen frozen Program Discovery candidates. It does not dispatch tasks across analysis problems and does not create a separate GRN analysis problem.
 
 ### Step 1. Is the desired output a coordinated multicellular or cohort-level program?
 
@@ -122,12 +122,12 @@ If the desired output is model-based spatial co-expression programs/modules:
 - Consider `spMOCA`.
 - Keep compositional and covariance-model caveats visible.
 
-### Step 4. Is the desired output regulatory paths or regulons?
+### Step 4. Is the desired output a boundary-sensitive regulatory-program annotation?
 
 If yes:
 
 - Consider `SpaGRN`.
-- Treat regulatory interpretation as prior-dependent and indirect unless separately validated.
+- Treat `SpaGRN` as a boundary-sensitive Program Discovery row. Regulatory-program interpretation is prior-dependent and indirect unless separately validated.
 
 If no:
 
@@ -163,7 +163,7 @@ If GPU resources are constrained, note that `STAMP` and `SPACE` are labeled `Opt
 | `FISHFactor` | probabilistic spatial factor | Subcellular factors may reflect segmentation, molecule-density, or imaging platform effects. |
 | `SpatialCorr` | gene-set correlation | Results inherit gene-set curation bias and do not by themselves discover unrestricted programs. |
 | `SpaceX` | spatial co-expression network | Network edges can be sensitive to sparsity, spatial autocorrelation, and thresholding choices. |
-| `SpaGRN` | regulatory program inference | Regulatory interpretation depends on prior databases, motif assumptions, and indirect expression evidence. |
+| `SpaGRN` | boundary-sensitive regulatory-program output | Regulatory-program interpretation depends on prior databases, motif assumptions, and indirect expression evidence. |
 | `SPACE` | interaction-aware tissue module | Module meaning may blend expression state, local density, and inferred interaction context. |
 | `spMOCA` | spatial co-expression model | Co-expression modules can reflect spatial autocorrelation and compositional effects unless checked. |
 | `LSGI` | spatial gradient analysis | Continuous gradients may obscure sharp boundaries or multiple overlapping programs. |

@@ -1,141 +1,28 @@
 # Data Quality Control Topic Scope
 
-## Status
+## Layer 1 / Layer 2 Boundary
 
-Layer served: `Layer 2`
+The current Layer 1 authority for this package is `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/layer1_spatial_method_registry.csv`. The Data Quality Control freeze contains exactly four Layer 1-positive rows: SpotSweeper, SpatialQC, ovrlpy, and stPipe.
 
-Purpose: method-selection evidence package for the Layer 1 `Analysis Problem`
-`Data Quality Control`.
+Layer 1 records method identity, analysis-problem placement, and code/access trace metadata. Layer 2 records method-selection knowledge for the Data Quality Control task family. A method appearing here can support later representative Layer 3/4 audit planning, but this package does not claim BioHarness execution support, callable interfaces, adapters, or environment profiles.
 
-This document defines the topic boundary and candidate freeze. It does not
-define commands, callable signatures, execution surfaces, adapter boundaries,
-environment bindings, or runtime support.
+## Included Task Space
 
-## Analysis Problem Boundary
+Data Quality Control covers methods whose primary role is to detect, summarize, filter, or report quality issues in spatial transcriptomics data before substantive downstream biological interpretation. The topic is organized by processing stage and data object:
 
-`Data Quality Control` covers methods whose primary reusable contribution is
-spatial transcriptomics data-quality assessment, QC metric evaluation, removal
-or flagging of low-quality spatial observations, or preprocessing workflows
-where quality-control handling is a central part of producing analysis-ready
-spatial expression data.
+- post-count spatial/local/regional QC: SpotSweeper;
+- automated prepared-object QC reporting, filtering, and data cleaning: SpatialQC;
+- post-transcript-localization 3D vertical overlap QC: ovrlpy;
+- upstream preprocessing and QC workflow: stPipe.
 
-The Layer 1 `Subtask` values are branch cues inside this topic only. They are
-not separate Layer 2 completion units.
+## Exclusion Boundary
 
-## Source Registry
+This topic does not include generic denoising, imputation, segmentation validation, biological pattern discovery, or artifact-correction methods whose primary output is a corrected expression matrix. QC flags may motivate those downstream steps, but they are not substitutes for artifact correction or biological validation.
 
-Primary frozen input:
+## Scientific Caveats
 
-`/tmp/bioharness_layer2_subagents/input/data_quality_control.json`
+DQC methods are separated by processing stage and platform; they are not a head-to-head ranking. QC/artifact flags can overlap with true tissue biology and require contextual review. ovrlpy overlap calls are QC evidence, not segmentation validation or biological interpretation. SpatialQC is a broad automated QC/reporting/data-cleaning pipeline, not a focused vertical-overlap or local-spatial-artifact detector.
 
-The input points to the source registry:
+## Retrieval Decision
 
-`/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-01_layer1_spatial_method_registry_preprocessing_split_working.csv`
-
-This Layer 2 package does not mutate the source registry or any formal Layer 2
-location.
-
-## Bounded Retrieval Record
-
-Retrieval date: 2026-05-01
-
-Retrieval role: PMID/DOI identity verification, code-link verification, and
-benchmark/review screening for the frozen candidate set. Retrieval did not
-open the candidate set for expansion.
-
-Retrieval sources:
-
-- frozen candidate input JSON
-- PubMed E-utilities ESummary for candidate PMIDs
-- PubMed E-utilities ESearch/ESummary for benchmark/review screening
-- PubMed/PMC pages for PMID/PMC cross-checks where available
-- official Bioconductor package pages for primary code-link verification
-
-Candidate PMID verification query:
-
-```text
-40481362,41278534
-```
-
-Candidate verification results:
-
-| Tool | PMID | DOI | Verification result |
-| --- | --- | --- | --- |
-| `SpotSweeper` | 40481362 | 10.1038/s41592-025-02713-3 | PubMed ESummary verified the Nature Methods method-paper identity, publication metadata, and PMC record. |
-| `stPipe` | 41278534 | 10.1093/nargab/lqaf167 | PubMed ESummary verified the NAR Genomics and Bioinformatics method-paper identity, publication metadata, and PMC record. |
-
-Code-link verification:
-
-| Tool | Primary code link | Verification result |
-| --- | --- | --- |
-| `SpotSweeper` | https://bioconductor.org/packages/SpotSweeper | Official Bioconductor package page identified as primary code/documentation source. |
-| `stPipe` | https://bioconductor.org/packages/stPipe | Official Bioconductor package page identified as primary code/documentation source. |
-
-Benchmark/review screening query:
-
-```text
-("spatial transcriptomics"[Title/Abstract] OR
- "spatially resolved transcriptomics"[Title/Abstract])
-AND
-("quality control"[Title/Abstract] OR QC[Title/Abstract] OR
- preprocessing[Title/Abstract])
-AND
-(benchmark[Title/Abstract] OR review[Publication Type] OR
- comparison[Title/Abstract])
-```
-
-The query returned broad reviews, platform/workflow papers, clustering
-benchmarks, and related spatial transcriptomics analysis reviews. It did not
-identify a dedicated independent benchmark that jointly evaluates and ranks
-`SpotSweeper` and `stPipe` for the same QC decision problem.
-
-## Inclusion Rules
-
-Include methods when all of the following are true:
-
-- the frozen input JSON lists the method under `Analysis Problem = Data Quality Control`
-- the row has `Registry Status = Include`
-- the method has a named reusable computational identity
-- the primary reusable contribution is spatial QC or preprocessing/QC for spatial transcriptomics data
-- PubMed/DOI metadata can verify the method-paper identity
-
-## Exclusion Rules
-
-Keep outside this topic when the primary contribution is:
-
-- normalization, size-factor estimation, variance stabilization, or HVG selection without a primary QC claim
-- denoising, imputation, enhancement, artifact correction, segmentation, deconvolution, domain clustering, or spatial gene prediction as the main claim
-- general single-cell QC without spatial transcriptomics support
-- workflow-engine infrastructure without a named spatial transcriptomics QC method
-- a method not present in the frozen input JSON
-
-## Final Candidate Freeze
-
-| Tool Name | Layer 1 subtask cue | Evidence identity |
-| --- | --- | --- |
-| `SpotSweeper` | Spatially aware quality control | PMID 40481362; DOI 10.1038/s41592-025-02713-3 |
-| `stPipe` | Spatial preprocessing / QC pipeline | PMID 41278534; DOI 10.1093/nargab/lqaf167 |
-
-## Boundary Notes
-
-`SpotSweeper` is the focused post-count spatial QC branch. It is most relevant
-when a count object already exists and spatially structured QC artifacts are
-the selection problem.
-
-`stPipe` is the upstream preprocessing/QC workflow branch. It is most relevant
-when the selection problem starts before an analysis-ready spatial expression
-object is available.
-
-The package intentionally does not add adjacent QC workflows discovered during
-review screening, because the candidate set is frozen.
-
-## Topic Branch Organization
-
-The topic is organized by method-selection cues rather than by subtask as
-separate packages:
-
-- post-count spatially aware QC and artifact flagging
-- upstream preprocessing plus QC workflow
-
-These branches support conditional selection only. They are not default
-execution routes.
+Targeted metadata and code/access checks were sufficient for this reconciliation. No full retrieval redo is indicated because the Layer 1-positive set is fixed, SpatialQC identity is clear, and the branch logic depends on processing stage rather than on a contested comparative benchmark.

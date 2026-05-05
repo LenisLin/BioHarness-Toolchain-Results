@@ -4,6 +4,8 @@ Date: 2026-05-02
 
 Purpose: exact fix queue from manual science confirmation. These are review or metadata actions only. They do not authorize Layer 1 registry mutation, formal Layer 2 rendering, or Layer 3/4 runtime planning.
 
+Targeted inclusion correction added: 2026-05-03. This correction updates working/evidence packages only and keeps `CoPro` on hold.
+
 ## Cell Type Inference
 
 No remaining Cell Type Inference errata after human review decisions on placement/reconstruction boundary handling and histology/image gate order.
@@ -24,19 +26,27 @@ No remaining blocking Cell-Cell Communication errata after human approval to use
   Recommended fix: Record method-native CCC, causal, pathway, contact, and mechanistic claims as cited evidence only; BioHarness does not independently validate those truth claims.
   Verification: Verification needed: no PubMed; boundary wording retained
 
-## Comparative Analysis
+## Comparative Analysis Split
 
-- Exact issue: STcompare preprint-only evidence
-  Affected file/field/method: `comparative_analysis/method_table.json`; method `STcompare`; field `Evidence Note`
-  Severity: important
-  Recommended fix: Before formal rendering, decide whether to display STcompare, hold it, or label the evidence level in a non-formal source note.
-  Verification: PubMed/DOI verification needed: PubMed not found; DOI/preprint check yes
+No remaining minor errata for the old unified package because the package is superseded.
 
-- Exact issue: SPaSE and SpaLinker code access unclear
-  Affected file/field/method: `comparative_analysis/method_table.json`; methods `SPaSE`, `SpaLinker`; field `Code Access`
-  Severity: minor
-  Recommended fix: Leave as unclear unless primary code sources are verified in a later audit.
-  Verification: Code verification needed: yes
+- Exact issue: old `Comparative Analysis` mixed contrast testing with phenotype/cohort-linked feature and niche outputs
+  Affected file/field/method: `comparative_analysis/*`; methods `C-SIDE`, `Niche-DE`, `SPADE`, `SpatialGEE`, `STcompare`, `TissueMosaic`, `SPaSE`, `SpaLinker`, `SpatialSPM`
+  Severity: major scientific revision, resolved by split working packages
+  Recommended fix: Use `spatial_contrast_testing` for explicit contrast-test/map outputs and `phenotype_cohort_linked_spatial_feature_niche_analysis` for phenotype/cohort-linked scores, motifs, features, and clinical niches. Do not render the old unified package.
+  Verification: Candidate-count consistency and stale-wording checks needed after rebuild.
+
+- Exact issue: targeted inclusion of `TiRank` and `stClinic`
+  Affected file/field/method: `phenotype_cohort_linked_spatial_feature_niche_analysis/method_table.*`; methods `TiRank`, `stClinic`
+  Severity: important, targeted metadata check completed
+  Recommended fix: Include after verified DOI/PMID/code traces; keep phenotype-label leakage, cohort confounding, transfer, and association-not-causality caveats.
+  Verification: DOI/PMID/code trace completed; no full retrieval redo.
+
+- Exact issue: `STcompare` preprint provenance and structural-comparability fit
+  Affected file/field/method: `spatial_contrast_testing/method_table.*`; method `STcompare`
+  Severity: important, caveat retained
+  Recommended fix: Keep only in the structurally matched spatial-pattern contrast branch; treat preprint status as evidence provenance/confidence caveat rather than a Layer 2 selection gate.
+  Verification: targeted DOI/code/status check completed; no PubMed PMID found in this pass.
 
 ## Domain / Clustering
 
@@ -60,7 +70,13 @@ No remaining blocking Cell-Cell Communication errata after human approval to use
 
 ## Integration
 
-No remaining Integration errata after the output-first decision-tree adjustment and targeted code-link check.
+No remaining Integration errata after the output-first decision-tree adjustment, targeted code-link check, and 2026-05-03 inclusion of `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`.
+
+- Exact issue: SSpMosaic boundary caveat
+  Affected file/field/method: `integration/method_table.json`, `integration/review_decision_tree.md`; method `SSpMosaic`; fields `Evidence Note`, `Do Not Start With This When`, `Primary Risk Cue`
+  Severity: minor
+  Recommended fix: Keep `SSpMosaic` in Integration only when integration remains the center of gravity; route standalone cell type annotation, program discovery, and domain/ecotype discovery to their own topics.
+  Verification: Boundary wording retained; code link is evidence trace only.
 
 - Exact issue: Decision-tree root order could make count-level batch correction appear earlier than other deliverables
   Affected file/field/method: `integration/review_decision_tree.md`; branch-local decision tree
@@ -76,17 +92,19 @@ No remaining Integration errata after the output-first decision-tree adjustment 
 
 ## Program Discovery
 
-- Exact issue: SPACE name ambiguity
-  Affected file/field/method: `program_discovery/method_table.json`; method `SPACE`; field `Evidence Source` and `Evidence Note`
-  Severity: important
-  Recommended fix: Tie SPACE explicitly to the Cell Systems 2024 tissue-module method before formal display, or hold if identity remains ambiguous.
-  Verification: PubMed/DOI/code verification needed: PubMed identity already recorded; code/name audit needed
+No remaining blocking Program Discovery errata after minor boundary wording revision: the decision tree now assumes Layer 1 assignment to Program Discovery and no longer performs analysis-problem dispatch; `SpaGRN` is retained only as a boundary-sensitive regulatory-program row rather than a standalone GRN topic or mechanism claim.
 
-- Exact issue: Pending/manual-review code links
+- Exact issue: SPACE name ambiguity resolved as wording caveat
+  Affected file/field/method: `program_discovery/method_table.json`; method `SPACE`; field `Evidence Source` and `Evidence Note`
+  Severity: minor, resolved for Layer 2 confirmation
+  Recommended fix: Tie `SPACE` explicitly to the Cell Systems 2024 tissue-module method in formal display; do not confuse it with other SPACE-like labels.
+  Verification: PubMed/DOI identity already recorded; no full retrieval redo needed
+
+- Exact issue: Pending/manual-review code links retained as caveat
   Affected file/field/method: `program_discovery/method_table.json`; field `Code Access`; nine rows
-  Severity: minor
-  Recommended fix: Either keep `pending/manual review` as conservative Layer 2 metadata or normalize to `unclear` if a future formal renderer expects the shared code-access vocabulary.
-  Verification: Code verification needed: yes
+  Severity: minor, non-blocking
+  Recommended fix: Keep `pending/manual review` as conservative Layer 2 metadata unless a future formal renderer requires vocabulary normalization or a later Layer 3 audit needs current code-link display.
+  Verification: Code verification needed only for later formal/code-display or engineering-audit use
 
 ## Spatial Perturbation Analysis
 
@@ -106,11 +124,17 @@ No remaining blocking Spatial Perturbation Analysis errata after human approval 
 
 ## Graph / Neighborhood
 
-- Exact issue: SPARROW and SMORE code-link status
-  Affected file/field/method: `graph_neighborhood/method_table.json`; methods `SPARROW`, `SMORE`; fields `Code Access`, `Primary Code Link`
-  Severity: minor
-  Recommended fix: Leave code access unclear unless primary repositories are verified. PubMed/DOI identities are acceptable.
-  Verification: Code verification needed: yes
+- Exact issue: targeted 20-row freeze update and boundary-hardening before formal rendering
+  Affected file/field/method: `graph_neighborhood/topic_scope.md`, `graph_neighborhood/method_table.json`, `graph_neighborhood/method_table.csv`, `graph_neighborhood/method_table.md`, `graph_neighborhood/review_decision_tree.md`, `graph_neighborhood/closure.md`; methods `TrimNN`, `scNiche`, `CellNiche`, `DECIPHER`, `SpaNiche`, `SpatialQuery`; boundary methods `SOTIP`, `NicheCompass`, `CytoCommunity`, `SMORE`, `TrimNN`, `DECIPHER`
+  Severity: important
+  Recommended fix: Use the revised 20-row freeze, add Step 0 routing to Domain / Clustering and Cell-Cell Communication, and retain branch-local Graph language only. Keep `stClinic` watchlist; exclude `MNMST` as Domain / Clustering and `STCase` as Cell-Cell Communication for this reopen.
+  Verification: Candidate-count consistency and router acceptance checks needed before formal rendering; no full retrieval redo. Keep `SpatialQuery` visibly preprint-only and keep `SpaNiche` interaction/niche wording descriptive rather than causal or physical communication truth.
+
+- Exact issue: SPARROW and SMORE code-link status resolved as trace metadata
+  Affected file/field/method: `graph_neighborhood/method_table.json`, `graph_neighborhood/method_table.csv`, `graph_neighborhood/method_table.md`; methods `SPARROW`, `SMORE`; fields `Code Access`, `Primary Code Link`, `Evidence Note`
+  Severity: minor, resolved
+  Recommended fix: Record `SPARROW` primary code as `https://github.com/peiyaozhao617/SPARROW` with `https://github.com/aifimmunology/SPARROW` as an accessible fork/mirror; record `SMORE` primary code as `https://github.com/zsamadi/SMORE` with archive `10.5281/zenodo.14510210`. Do not treat code access as runtime support.
+  Verification: Code verification completed; retain no-runtime wording.
 
 ## Spatial Gene Prediction
 
@@ -127,6 +151,18 @@ No remaining blocking Spatial Perturbation Analysis errata after human approval 
   Verification: Code verification needed: yes if selected for engineering
 
 ## Spatial Trajectory Analysis
+
+- Exact issue: CoPro hold / boundary unresolved
+  Affected file/field/method: errata queue only; method `CoPro`; possible boundary between `spatial_trajectory_analysis` and `program_discovery`
+  Severity: important
+  Recommended fix: Do not add CoPro to a positive working table or formal display until targeted preprint metadata, code availability, and topic center-of-gravity are verified.
+  Verification: PubMed/DOI/code verification needed: DOI/preprint yes; code unclear.
+
+- Exact issue: STORIES and stVCR targeted inclusion caveats
+  Affected file/field/method: `spatial_trajectory_analysis/method_table.json`; methods `STORIES`, `stVCR`; fields `Evidence Note`, `Scientific Caveat`
+  Severity: minor
+  Recommended fix: Keep fate-landscape, spatiotemporal dynamics, migration, and directionality language model-based and assumption-bounded.
+  Verification: PubMed/DOI identity and code traces recorded; no independent all-candidate benchmark.
 
 - Exact issue: TopoVelo/SpaTrack code-link evidence
   Affected file/field/method: `spatial_trajectory_analysis/method_table.json`; methods `TopoVelo`, `SpaTrack`; fields `Code Access`, `Primary Code Link`
@@ -162,6 +198,12 @@ No remaining blocking Spatial Perturbation Analysis errata after human approval 
 
 ## Super-resolution
 
+- Exact issue: Thor platform/workflow boundary row
+  Affected file/field/method: `super_resolution/method_table.json`, `super_resolution/review_decision_tree.md`; method `Thor`; fields `Main Use in This Topic`, `Do Not Start With This When`, `Signal-risk Caveat`
+  Severity: minor
+  Recommended fix: Keep Thor as a histology-aware cell-level reconstruction / investigation boundary row; do not present it as primary segmentation, transcript assignment, cell type inference, or direct molecule-level measurement.
+  Verification: PubMed/DOI identity and code trace recorded; boundary wording retained.
+
 - Exact issue: Unclear code links
   Affected file/field/method: `super_resolution/method_table.json`; methods `iStar`, `scstGCN`, `iSCALE`, `STAGE`; fields `Code Access`, `Primary Code Link`
   Severity: minor
@@ -184,6 +226,12 @@ No remaining blocking Spatial Perturbation Analysis errata after human approval 
 
 ## Artifact Correction
 
+- Exact issue: SPLIT Xenium contamination platform caveat
+  Affected file/field/method: `artifact_correction/method_table.json`, `artifact_correction/field_registry.json`, `artifact_correction/review_decision_tree.md`; method `SPLIT`; fields `Artifact Target`, `Assay / Modality Cue`, `Scientific Caution`
+  Severity: minor
+  Recommended fix: Keep SPLIT as Xenium signal-contamination / transcript-spillover artifact correction; do not broaden to generic denoising, generic QC, or platform-independent ground-truth correction.
+  Verification: PubMed/DOI identity and code trace recorded; field registry controlled values updated.
+
 - Exact issue: Cross-artifact comparability
   Affected file/field/method: `artifact_correction/review_decision_tree.md`; all branches
   Severity: minor
@@ -197,3 +245,23 @@ No remaining blocking Spatial Perturbation Analysis errata after human approval 
 - Spatial Clonal Analysis
 - Spatially Variable Gene Detection
 - spatial_domain_identification legacy reference
+
+## Comparative Boundary Follow-up 2026-05-05
+
+- Exact issue: `SPaSE` pathology-score estimand is outside the currently active Analysis Problem set.
+  Affected file/field/method: Layer 1 working registry and `phenotype_cohort_linked_spatial_feature_niche_analysis/*`; method `SPaSE`.
+  Severity: important, resolved by active delete.
+  Recommended fix: Remove `SPaSE` from active positive rows rather than marking it as metadata failure. Reconsider only if a future `Spatial Pathology Scoring` or disease-severity Analysis Problem is opened.
+  Verification: Confirm `SPaSE` is absent from active method tables and positive decision branches; history/removal notes may mention it.
+
+- Exact issue: `CytoCommunity` supervised/condition-associated TCN branch should be available for phenotype/cohort-linked community features without displacing its Graph / Neighborhood identity.
+  Affected file/field/method: Layer 1 working registry; `phenotype_cohort_linked_spatial_feature_niche_analysis/method_table.*`; method `CytoCommunity`.
+  Severity: important, resolved by controlled duplicate.
+  Recommended fix: Keep original Graph / Neighborhood row and add a controlled duplicate under phenotype/cohort-linked spatial feature and niche analysis. Use only for cohort- or phenotype-associated TCN/community feature deliverables.
+  Verification: Confirm exactly two active Layer 1 `CytoCommunity` rows: Graph / Neighborhood and Phenotype/Cohort controlled duplicate.
+
+- Exact issue: `STcompare` preprint wording could be misread as a method-selection gate.
+  Affected file/field/method: `spatial_contrast_testing/method_table.*`, `review_decision_tree.md`, `closure.md`; method `STcompare`.
+  Severity: minor, resolved by wording correction.
+  Recommended fix: Treat preprint status as evidence provenance/confidence caveat only. Treat structural comparability as the method-fit condition.
+  Verification: Search for stale STcompare evidence-status wording before formal rendering; no selection-gate wording should remain in active package files.

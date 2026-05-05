@@ -4,7 +4,7 @@
 
 Layer served: `Layer 2`
 
-Closure status: complete working/evidence package; ready for formal rendering or representative Layer 3/4 engineering audit.
+Closure status: Confirm with caveats after minor boundary wording errata; ready for later formal rendering or representative Layer 3/4 engineering audit.
 
 This closure does not freeze a default method, Layer 3 execution surface, backend adapter boundary, callable signature, environment capsule, rewrite decision, or runtime-support status.
 
@@ -27,7 +27,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 | Field schema | Pass | Shared fields plus six topic-specific decision fields in `field_registry.json`. |
 | Method table artifacts | Pass | JSON was built first; CSV was generated with Python `csv.DictWriter`; Markdown was generated from JSON. |
 | Review / logic pass | Pass with caveats | No suitable all-candidate benchmark was found during brief screening; decision tree uses explicit logic review. |
-| Decision tree | Pass with caveats | Conditional branch-local method selection only; no global ranking. |
+| Decision tree | Pass with caveats | Conditional branch-local method selection only; no global ranking. Scope premise now states that Layer 1 assignment to Program Discovery is already assumed. |
 | Layer boundary | Pass | Artifacts avoid runtime, adapter, environment, callable, and default-method claims. |
 
 ## Current Layer 2 Facts
@@ -36,7 +36,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 - Fields per method row: 22.
 - Code access from frozen input: 4 available, 9 pending/manual review.
 - Compute labels from frozen input: 11 CPU, 2 Optional GPU, 0 Required GPU.
-- Main branch families represented: multicellular latent/factor/tensor programs, spatial topic/factor/gradient programs, gene-set/co-expression/network programs, regulatory programs, and interaction-aware tissue modules.
+- Main branch families represented: multicellular latent/factor/tensor programs, spatial topic/factor/gradient programs, gene-set/co-expression/network programs, boundary-sensitive regulatory-program outputs, and interaction-aware tissue modules.
 - Direct evidence basis: frozen Layer 1 rows with PMID/DOI/title/year/venue and local correction notes.
 - Layer 2 synthesis basis: closest alternatives, branch fit, scale and memory cautions, and interpretability caveats.
 
@@ -46,7 +46,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 - Several rows have `pending/manual review` code access because the frozen input did not provide confirmed public code links.
 - `STAMP` is intentionally represented for spatial topic/gene-module output; this does not convert its cross-topic domain/clustering use into a Program Discovery default.
 - `SPACE` is name-ambiguous; later audit must confirm the Cell Systems 2024 tissue-module method identity.
-- Factor, topic, network, regulon, and gradient outputs require dataset-specific validation and should not be interpreted as direct biological mechanisms without follow-up evidence.
+- Factor, topic, network, regulatory-program, and gradient outputs require dataset-specific validation and should not be interpreted as direct biological mechanisms without follow-up evidence.
 - Resource and scale labels are Layer 2 screening cues, not BioHarness runtime validation.
 
 ## Representative Layer 3/4 Audit Batch
@@ -60,7 +60,7 @@ Representative audit batch, chosen to cover distinct branches rather than to def
 | `STAMP` | Spatial topic/gene-module branch with frozen public code link and optional GPU label. |
 | `SpatialCorr` | Gene-set spatial correlation branch, useful for checking non-factor output handling. |
 | `SpaceX` | Spatial co-expression network branch. |
-| `SpaGRN` | Regulatory path/regulon branch. |
+| `SpaGRN` | Boundary-sensitive regulatory-program output row. |
 | `SPACE` | Interaction-aware tissue-module branch and name-disambiguation audit case. |
 | `LSGI` | Interpretable spatial-gradient branch. |
 
@@ -77,4 +77,4 @@ Audit outputs must remain separate from this Layer 2 package:
 
 ## Closure Decision
 
-`Program Discovery` Layer 2 is complete as a working/evidence package for method-selection support. It is ready for later formal rendering or representative Layer 3/4 audit, but it does not imply default methods, runtime surfaces, package entrypoints, environment capsules, wrappers, rewrites, or adapter implementations.
+`Program Discovery` Layer 2 is confirmed with caveats after minor boundary wording errata. It is complete as a working/evidence package for method-selection support and is ready for later formal rendering or representative Layer 3/4 audit, but it does not imply default methods, runtime surfaces, package entrypoints, environment capsules, wrappers, rewrites, or adapter implementations.

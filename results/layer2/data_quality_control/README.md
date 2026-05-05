@@ -1,40 +1,20 @@
-# Data Quality Control Layer 2 Package
+# Data Quality Control Layer 2 Working Package
 
-## Status
+This package reconciles the Data Quality Control topic against the active Layer 1 working registry. The current freeze contains four methods: SpotSweeper, SpatialQC, ovrlpy, and stPipe.
 
-Layer served: `Layer 2`
+Layer 2 use is limited to branch-local method selection for later representative Layer 3/4 audit planning. Code/access links are trace metadata only and do not imply BioHarness execution support, callable interfaces, adapters, or environment profiles.
 
-Current package status: complete working/evidence package for the frozen
-`Data Quality Control` candidate set.
+## Files
 
-This package supports method selection inside one Layer 1 `Analysis Problem`.
-It is not a Layer 3 execution surface, Layer 4 implementation, callable
-signature, environment binding, adapter plan, or runtime-support statement.
+- `topic_scope.md`: topic boundary, inclusion/exclusion logic, and caveats.
+- `field_registry.json`: field-level interpretation notes.
+- `method_table.csv`, `method_table.md`, `method_table.json`: synchronized four-row method table.
+- `review_decision_tree.md`: stage- and platform-local routing logic.
+- `closure.md`: confirmation status and formal-rendering caveats.
 
-## Frozen Candidate Set
+## Current Freeze
 
-- `SpotSweeper`
-- `stPipe`
-
-The candidate set is frozen from:
-
-`/tmp/bioharness_layer2_subagents/input/data_quality_control.json`
-
-No methods were added during this Layer 2 pass.
-
-## Artifact Index
-
-| File | Role |
-| --- | --- |
-| `topic_scope.md` | Topic boundary, retrieval record, inclusion/exclusion rules, and candidate freeze. |
-| `field_registry.json` | Shared and topic-specific field definitions. |
-| `method_table.json` | Structured method-selection table built first from the frozen candidate set. |
-| `method_table.csv` | CSV rendering generated from `method_table.json` with a CSV writer. |
-| `method_table.md` | Human-readable Markdown rendering generated from `method_table.json`. |
-| `review_decision_tree.md` | Benchmark/review screening, evidence spot-checks, and branch-local decision logic. |
-| `closure.md` | Gate check, current facts, caveats, closure decision, and representative Layer 3/4 audit batch. |
-
-## Reading Rule
-
-Use this package for conditional method selection only. Do not read the audit
-batch or code links as evidence of BioHarness runtime support.
+1. SpotSweeper - post-count spatial/local/regional QC.
+2. SpatialQC - automated spatial transcriptome QC reporting/filtering/data cleaning.
+3. ovrlpy - post-transcript-localization 3D vertical overlap QC.
+4. stPipe - upstream preprocessing/QC pipeline.

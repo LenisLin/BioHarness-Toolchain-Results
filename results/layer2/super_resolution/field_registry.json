@@ -1,279 +1,248 @@
 {
   "topic": "Super-resolution",
   "layer": "Layer 2",
-  "version_date": "2026-05-01",
+  "version_date": "2026-05-04",
   "purpose": "Field registry for the Super-resolution Layer 2 method-selection evidence package.",
   "non_goals": [
     "Layer 3 execution surfaces",
-    "Layer 4 adapter definitions",
-    "callable signatures",
+    "Layer 4 backend binding definitions",
+    "machine-call contracts",
     "environment bindings",
-    "runtime-support claims",
-    "default-method policy"
+    "execution-readiness claims",
+    "universal-method policy"
   ],
   "fields": [
     {
       "name": "Tool Name",
-      "role": "identity",
+      "role": "shared evidence field",
       "scope": "shared",
       "definition": "Canonical method or tool identity in the frozen topic candidate set.",
-      "fill_rule": "Use the canonical method name from the frozen input JSON.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Defines the row identity."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Method Family",
-      "role": "method characterization",
+      "role": "shared evidence field",
       "scope": "shared",
       "definition": "Short algorithm-family label.",
-      "fill_rule": "Use a concise family phrase from the Layer 1 registry and verified method evidence.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Separates segmentation-free factorization, histology-guided reconstruction, graph fusion, deep data fusion, large-area reconstruction, and high-density generation."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Main Input",
-      "role": "input picture",
+      "role": "shared evidence field",
       "scope": "shared",
       "definition": "High-level input picture for the method in this topic.",
-      "fill_rule": "Use object-level input phrasing rather than parameter lists.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Distinguishes already high-density/submicron data from spot-plus-histology, sparse-input generation, and large-tissue reconstruction routes."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Main Use in This Topic",
-      "role": "topic use",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Main role of the method inside Super-resolution.",
-      "fill_rule": "Describe only the resolution-enhancement, high-density generation, reconstruction, or factorization role; do not foreground unrelated downstream claims.",
+      "definition": "Main role of the method inside this topic.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Keeps cross-task methods scoped to the Super-resolution analysis problem."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Main Output",
-      "role": "output object",
+      "role": "shared evidence field",
       "scope": "shared",
       "definition": "High-level output object relevant to this topic.",
-      "fill_rule": "Use a short object-level phrase such as super-resolved expression map, pseudo-single-cell map, high-density profile, or factor map.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Distinguishes inferred expression, tissue architecture, generated high-density profiles, and factor annotations."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Closest Alternatives",
-      "role": "local comparator set",
+      "role": "shared evidence field",
       "scope": "shared",
       "definition": "Nearby alternatives from the same frozen topic set.",
-      "fill_rule": "Use two to four local alternatives only.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Supports local comparison without global ranking."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Key Difference",
-      "role": "selection discriminator",
+      "role": "shared evidence field",
       "scope": "shared",
       "definition": "Main decision difference versus nearby alternatives.",
-      "fill_rule": "Use one decision-level sentence.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Provides branch-local selection logic."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Compute Requirement",
-      "role": "resource cue",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Coarse compute requirement only.",
-      "fill_rule": "Use the coarse label supported by the registry and method evidence; do not infer runtime readiness.",
-      "controlled_values": [
-        "CPU",
-        "Optional GPU",
-        "Required GPU"
-      ],
-      "topic_relevance": "Acts as a branch-local resource gate."
+      "definition": "Coarse compute requirement only; not runtime readiness.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Memory Burden",
-      "role": "resource cue",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Coarse memory burden.",
-      "fill_rule": "Use low, medium, high, or unclear. Prefer unclear when direct public support is weak.",
-      "controlled_values": [
-        "low",
-        "medium",
-        "high",
-        "unclear"
-      ],
-      "topic_relevance": "Captures practical constraints without creating execution claims."
+      "definition": "Coarse memory burden; use unclear when evidence is weak.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Scale Sensitivity",
-      "role": "resource cue",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Coarse sensitivity to larger tissue scale, higher spatial density, or whole-section reconstruction.",
-      "fill_rule": "Use low, medium, high, or unclear. Be conservative unless public evidence directly supports a label.",
-      "controlled_values": [
-        "low",
-        "medium",
-        "high",
-        "unclear"
-      ],
-      "topic_relevance": "Helps decide whether large slides or high-resolution reconstructions should avoid a method first."
+      "definition": "Coarse sensitivity to larger tissue scale or higher density.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Code Access",
-      "role": "access trace",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Current code-access state.",
-      "fill_rule": "Record access state only; do not equate access with runtime support. Use unclear when no primary link is verified in the frozen input or bounded retrieval.",
-      "controlled_values": [
-        "available",
-        "archived",
-        "unclear",
-        "unavailable"
-      ],
-      "topic_relevance": "Supports later audit triage."
+      "definition": "Access trace only; not execution readiness.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Primary Code Link",
-      "role": "access trace",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "One primary code or official documentation location.",
-      "fill_rule": "Fill only when an official or clearly primary code/documentation source is confirmed by the frozen input or bounded verification pass.",
+      "definition": "One primary code or official documentation location when confirmed.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Provides a traceable code source for later engineering review."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Evidence Source",
-      "role": "evidence trace",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Main evidence basis for the row.",
-      "fill_rule": "Use one controlled source label.",
-      "controlled_values": [
-        "method paper",
-        "benchmark/review",
-        "official docs",
-        "community practice",
-        "mixed"
-      ],
-      "topic_relevance": "Distinguishes direct method evidence from review or community-use evidence."
+      "definition": "Coarse evidence source label.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Evidence Note",
-      "role": "evidence trace",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Short note on what is direct evidence and what is Layer 2 synthesis.",
-      "fill_rule": "Use one to two concise sentences. Mark comparison, burden, risk, and code-access uncertainty as synthesized when appropriate.",
+      "definition": "Evidence and caveat note distinguishing direct evidence from Layer 2 synthesis.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Keeps uncertainty and evidence strength visible."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Best First Choice When",
-      "role": "positive decision cue",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Best-fit starting condition within this topic.",
-      "fill_rule": "Use one positive conditional sentence. Do not write default-method claims.",
+      "definition": "Conditional branch-local cue; not a universal method choice policy.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Feeds the decision tree."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Do Not Start With This When",
-      "role": "exclusion decision cue",
+      "role": "shared evidence field",
       "scope": "shared",
-      "definition": "Main condition where this method should not be the first method read or trialed.",
-      "fill_rule": "Use one concise exclusion sentence.",
+      "definition": "Branch-local exclusion cue; not a cross-branch universal ordering.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Prevents method misuse without claiming runtime failure."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Resolution Target",
-      "role": "topic-specific decision cue",
+      "role": "decision cue",
       "scope": "topic-specific",
-      "definition": "Primary resolution-enhancement target addressed by the method.",
-      "fill_rule": "Use one controlled value. Prefer the method's main claimed target over downstream applications.",
+      "definition": "Resolution or geometry target of the reconstruction.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": [
-        "submicron factorization",
-        "tissue architecture inference",
-        "single-cell-resolution expression",
-        "pseudo-single-cell whole transcriptome",
-        "tumor ecosystem super-resolution",
-        "super-resolved expression",
-        "large-area cellular architecture",
-        "high-density ST generation",
-        "unclear"
+        "spot-to-subspot",
+        "single-cell-resolution inferred",
+        "pseudo-cell inferred",
+        "high-density grid/profile",
+        "cell-level inferred",
+        "submicron/factor map",
+        "large-area cellular architecture"
       ],
-      "topic_relevance": "Separates factorization, tissue-architecture, single-cell/pseudo-cell, tumor, large-area, and high-density-generation branches."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Image Signal Use",
-      "role": "topic-specific decision cue",
+      "role": "decision cue",
       "scope": "topic-specific",
-      "definition": "Whether histology or image-derived signal is central to method selection in this topic.",
-      "fill_rule": "Use none, optional, required, or unclear. Required means the method's topic role depends on matched image signal.",
+      "definition": "How histology or image signal contributes.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": [
+        "required",
+        "optional",
+        "not primary",
+        "unclear"
+      ],
+      "topic_relevance": "Supports branch-local review for Super-resolution."
+    },
+    {
+      "name": "External Reference Dependence",
+      "role": "decision cue",
+      "scope": "topic-specific",
+      "definition": "Whether external reference data are needed for the branch.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": [
         "none",
         "optional",
         "required",
-        "unclear"
+        "unclear",
+        "multi-reference-assisted"
       ],
-      "topic_relevance": "Distinguishes histology-guided super-resolution from expression/spatial-only high-density or factorization routes."
-    },
-    {
-      "name": "External Reference Dependence",
-      "role": "topic-specific decision cue",
-      "scope": "topic-specific",
-      "definition": "Whether the method depends on external references beyond the ST sample and optional matched image.",
-      "fill_rule": "Use one controlled value. Histology from the same sample does not by itself count as an external reference.",
-      "controlled_values": [
-        "reference-free",
-        "scRNA-reference-assisted",
-        "multi-reference-assisted",
-        "unclear"
-      ],
-      "topic_relevance": "Highlights reference-bias and missing-reference constraints."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Output Geometry",
-      "role": "topic-specific output cue",
+      "role": "decision cue",
       "scope": "topic-specific",
-      "definition": "Spatial geometry of the main output relevant to selection.",
-      "fill_rule": "Use a concise phrase describing output geometry rather than a data schema.",
+      "definition": "Primary geometry of the output object.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": [
-        "submicron / pixel factor map",
-        "high-resolution tissue map",
-        "single-cell-resolution expression map",
-        "pseudo-single-cell whole-section map",
-        "histology-guided super-resolution map",
-        "super-resolved expression grid",
+        "subspot map",
+        "pseudo-cell map",
+        "cell-level map",
+        "high-density profile",
+        "factor map",
+        "enhanced-resolution expression / spot map",
         "large-area cellular-level map",
-        "generated high-density ST profile",
         "unclear"
       ],
-      "topic_relevance": "Prevents conflating grids, factors, pseudo-cells, cellular-level maps, and generated ST profiles."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Cellular Reconstruction Mode",
-      "role": "topic-specific decision cue",
+      "role": "decision cue",
       "scope": "topic-specific",
-      "definition": "Dominant conceptual route from original spatial measurement to higher-resolution output.",
-      "fill_rule": "Use one controlled value matching the method's main branch role.",
+      "definition": "Whether cellular output is primary and how it is framed.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": [
-        "segmentation-free factorization",
-        "histology-guided architecture inference",
-        "graph/image fusion",
-        "pseudo-single-cell reconstruction",
+        "not primary",
+        "pseudo-cell reconstruction",
+        "cell-level inferred reconstruction",
         "histology-guided reconstruction",
-        "deep image-expression fusion",
-        "large-area reconstruction",
-        "high-density generation",
         "unclear"
       ],
-      "topic_relevance": "Gives the decision tree a branch-local mechanism cue without claiming implementation details."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     },
     {
       "name": "Signal-risk Caveat",
-      "role": "topic-specific evidence caveat",
+      "role": "decision cue",
       "scope": "topic-specific",
-      "definition": "Concise caveat about over-smoothing, morphology bias, generated-expression hallucination, pseudo-cell certainty, scale masking, or related scientific risks.",
-      "fill_rule": "Use conservative free text. Do not convert the caveat into a severity score unless later evidence justifies that.",
+      "definition": "Conservative caveat for generated or inferred fine-resolution outputs.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
       "controlled_values": null,
-      "topic_relevance": "Makes scientific-critical-thinking concerns explicit in method selection."
+      "topic_relevance": "Supports branch-local review for Super-resolution."
     }
   ]
 }

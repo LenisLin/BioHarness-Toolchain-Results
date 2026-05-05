@@ -1,100 +1,28 @@
 # Artifact Correction Topic Scope
 
-## Layer 2 Topic Unit
+## Layer 1 / Layer 2 Boundary
 
-Analysis Problem: `Artifact Correction`
+The current Layer 1 authority for this package is `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/layer1_spatial_method_registry.csv`. The Artifact Correction freeze contains exactly four Layer 1-positive rows: SpotClean, Non-parametric Vignetting Correction, cellAdmix, and SPLIT.
 
-This package treats `Artifact Correction` as one Layer 2 completion unit. The
-Layer 1 `Subtask` values are used only as internal branch cues:
+Layer 1 records method identity, analysis-problem placement, and code/access trace metadata. Layer 2 records method-selection knowledge for the Artifact Correction task family. A method appearing here can support later representative Layer 3/4 audit planning, but this package does not claim BioHarness execution support, callable interfaces, adapters, or environment profiles.
 
-- spot swapping / contamination correction
-- imaging artifact / vignetting correction
-- segmentation-error / molecular admixture correction
+## Included Task Space
 
-They do not create separate Layer 2 packages.
+Artifact Correction covers methods whose primary output is a correction or adjustment for a defined technical artifact mechanism in spatial transcriptomics data:
 
-## Bounded Retrieval Record
+- spot swapping or local contamination: SpotClean;
+- vignetting or position-dependent intensity attenuation: Non-parametric Vignetting Correction;
+- molecular admixture across cells or compartments: cellAdmix;
+- Xenium-specific signal contamination or transcript spillover: SPLIT.
 
-Retrieval date: `2026-05-01`
+## Exclusion Boundary
 
-Primary local inputs:
+This topic does not include generic QC reporting, segmentation validation, generic denoising/imputation, biological pattern discovery, or methods whose primary output is only an artifact flag without a correction target. Artifact correction can be motivated by QC results, but the rows here are organized by correction mechanism and data object.
 
-- `/tmp/bioharness_layer2_subagents/input/artifact_correction.json`
-- `/home/lenislin/Experiment/projects/BioHarness-Toolchain-ST/README.md`
-- `/home/lenislin/Experiment/projects/BioHarness-Toolchain-ST/docs/10_scope.md`
-- `/home/lenislin/Experiment/projects/BioHarness-Toolchain-ST/docs/15_layer1_method_registry_and_substrate_transition.md`
-- `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/TOPIC_COMPLETION_STANDARD.md`
-- `/mnt/NAS_21T/ProjectData/BioHarness/results/formal/layer2/method_selection_standard.md`
-- new-style example: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/denoising_imputation/`
+## Scientific Caveats
 
-Bounded PubMed / code-link retrieval:
+Artifact Correction rows correct different artifact mechanisms and cannot be universally ranked. QC/artifact signals can overlap with true tissue biology and require contextual review. cellAdmix corrects molecular admixture effects; it does not prove segmentation is solved. SPLIT is Xenium-specific signal-contamination correction, not generic denoising and not generic QC.
 
-- PubMed ESummary for PMIDs `35624112`, `35274110`, and `41559218`.
-- PubMed EFetch abstracts for PMIDs `35624112`, `35274110`, and `41559218`.
-- Code-link checks for:
-  - `https://github.com/zijianni/SpotClean`
-  - `https://github.com/BoveyRao/Non-parametric-vc-for-sparse-st`
-  - `https://github.com/kharchenkolab/cellAdmix`
+## Retrieval Decision
 
-Benchmark/review screening queries:
-
-```text
-("spatial transcriptomics"[Title/Abstract] OR
- "spatially resolved transcriptomics"[Title/Abstract])
-AND
-(artifact[Title/Abstract] OR artefact[Title/Abstract] OR
- contamination[Title/Abstract] OR "spot swapping"[Title/Abstract] OR
- vignetting[Title/Abstract] OR "segmentation error"[Title/Abstract])
-AND
-(benchmark[Title/Abstract] OR review[Publication Type] OR
- comparison[Title/Abstract])
-```
-
-Result: PubMed returned six broad/contextual records, including platform or
-signal-contamination work, but no independent benchmark comparing the three
-frozen artifact-correction methods.
-
-Candidate-specific benchmark/review query:
-
-```text
-(SpotClean[Title/Abstract] OR cellAdmix[Title/Abstract] OR
- vignetting[Title/Abstract])
-AND "spatial transcriptomics"[Title/Abstract]
-AND
-(benchmark[Title/Abstract] OR comparison[Title/Abstract] OR
- review[Publication Type])
-```
-
-Result: PubMed returned no records. The PubMed translation did not recognize
-`cellAdmix` as a searchable phrase in that exact query, so the screen is treated
-as bounded but not exhaustive for unpublished or non-PubMed comparisons.
-
-## Inclusion Rules
-
-- Candidate must be present in the frozen input JSON.
-- Candidate must address artifact correction rather than ordinary
-  normalization, denoising/imputation, segmentation, or downstream clustering.
-- Candidate must have traceable method-paper evidence through PMID/DOI or a
-  documented verification gap.
-- Candidate rows may use registry `Subtask` values as branch cues but remain
-  part of one Analysis Problem.
-
-## Exclusion Rules
-
-- Do not add methods outside the frozen candidate input.
-- Exclude general preprocessing, denoising, image registration, segmentation,
-  domain identification, and cell-cell communication methods unless they are one
-  of the frozen Artifact Correction candidates.
-- Exclude execution details: commands, callable signatures, package entrypoints,
-  adapter boundaries, environment capsules, and runtime-support claims.
-- Do not create formal `formal/layer2` output from this worker package.
-
-## Final Candidate Freeze
-
-| Candidate | Registry subtask cue | Retained rationale |
-| --- | --- | --- |
-| `SpotClean` | Spot swapping / contamination correction | Direct method for spot-swapping contamination in spot-barcoded ST counts. |
-| `Non-parametric Vignetting Correction` | Imaging artifact / vignetting correction | Direct method for optical vignetting and illumination-field correction in sparse ST images. |
-| `cellAdmix` | Segmentation-error / molecular admixture correction | Direct method for molecular admixture arising from segmentation errors in imaging-based ST. |
-
-The candidate set remains exactly the three-method freeze from the input JSON.
+Targeted metadata and code/access checks were sufficient for this reconciliation. No full retrieval redo is indicated because the current task is layer alignment and mechanism-local branch cleanup rather than a new broad candidate search.

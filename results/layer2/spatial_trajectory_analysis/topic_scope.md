@@ -14,13 +14,15 @@ Input file:
 
 `/tmp/bioharness_layer2_subagents/input/spatial_trajectory_analysis.json`
 
-Candidate count: 7
+Candidate count: 9
 
 Frozen candidates:
 
 | Tool | Registry subtask cue | Frozen PMID | Frozen DOI |
 | --- | --- | --- | --- |
 | `SpaTrack` | Spatial trajectory inference | 39904341 | 10.1016/j.cels.2025.101194 |
+| `STORIES` | Spatial fate-landscape inference | 41184554 | 10.1038/s41592-025-02855-4 |
+| `stVCR` | Spatiotemporal single-cell dynamics | 41820580 | 10.1038/s41592-026-03010-3 |
 | `spVelo` | Spatial trajectory inference | 40790237 | 10.1186/s13059-025-03701-8 |
 | `STT` | Spatial trajectory inference | 38755322 | 10.1038/s41592-024-02266-x |
 | `SIRV` | Spatial RNA velocity inference | 39108639 | 10.1093/nargab/lqae100 |
@@ -32,7 +34,7 @@ Subtask values are used as branch cues only. They do not create separate Layer 2
 
 ## Bounded Retrieval Record
 
-Retrieval date: 2026-05-01
+Retrieval date: 2026-05-01; targeted 2025-2026 inclusion correction added 2026-05-03
 
 Retrieval sources:
 
@@ -45,7 +47,7 @@ Retrieval sources:
 Candidate verification query:
 
 ```text
-esummary.fcgi?db=pubmed&id=39904341,40790237,38755322,39108639,38812530,40670711,40829806&retmode=json
+esummary.fcgi?db=pubmed&id=39904341,41184554,41820580,40790237,38755322,39108639,38812530,40670711,40829806&retmode=json
 ```
 
 Abstract retrieval query:
@@ -78,8 +80,8 @@ AND
 
 Retrieval notes:
 
-- All seven candidate PMIDs and DOIs were confirmed by PubMed ESummary.
-- PubMed EFetch abstracts confirmed the main method-paper topic claims for all seven candidates.
+- All nine candidate PMIDs and DOIs were confirmed by PubMed/DOI checks after the targeted correction.
+- PubMed/title-level checks confirmed the main method-paper topic claims for all nine candidates.
 - PMC code-availability checks confirmed primary code/source links for `spVelo`, `STT`, `SIRV`, `PearlST`, and `CASCAT`.
 - `SpaTrack` has a code link in the frozen input JSON, but this pass did not confirm a PubMed/PMC code-availability section for it.
 - `TopoVelo` has PubMed identity and method-scope evidence, but this pass did not confirm a PubMed/PMC code link.
@@ -88,7 +90,7 @@ Retrieval notes:
 
 Include a method only if all of the following hold:
 
-- It appears in the frozen candidate input JSON.
+- It appears in the frozen candidate input JSON or the 2026-05-03 targeted inclusion correction.
 - It belongs to `Spatial Trajectory Analysis` by the Layer 1 Analysis Problem field.
 - It has a trajectory-relevant role: spatial trajectory topology, spatial RNA velocity, pseudotime/spatiotemporal structure, state-transition modeling, or causal trajectory inference.
 - It can be described using the shared Layer 2 field model and the topic-specific decision cues in `field_registry.json`.
@@ -100,15 +102,15 @@ Exclude any method that:
 - Is not present in the frozen input JSON.
 - Is primarily a spatial domain, clustering, cell type inference, communication, perturbation, clonal, or preprocessing method without a trajectory role in the frozen input.
 - Appears only as a comparator inside a method paper or benchmark.
-- Would require adding a new candidate discovered during PubMed screening.
+- Would require adding a new candidate outside the targeted correction scope.
 
 No excluded registry rows were provided in the frozen input.
 
 ## Final Candidate Freeze
 
-The final candidate freeze remains exactly:
+The final candidate freeze after targeted correction is:
 
-`SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`.
+`SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`, `STORIES`, `stVCR`.
 
-No additional methods were added during Layer 2 completion.
+The targeted correction added `STORIES` and `stVCR`; `CoPro` remains errata-only / hold pending targeted metadata and code verification.
 

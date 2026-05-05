@@ -1,0 +1,214 @@
+{
+  "topic": "Spatial Contrast Testing",
+  "layer": "Layer 2",
+  "version_date": "2026-05-04",
+  "purpose": "Field registry for the Spatial Contrast Testing Layer 2 method-selection evidence package.",
+  "non_goals": [
+    "Layer 3 execution surfaces",
+    "Layer 4 backend binding definitions",
+    "machine-call contracts",
+    "execution-environment bindings",
+    "execution-readiness claims",
+    "universal-method policy"
+  ],
+  "fields": [
+    {
+      "name": "Tool Name",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Method Family",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Main Input",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Main Use in This Topic",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Main Output",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Closest Alternatives",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Key Difference",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Compute Requirement",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Memory Burden",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Scale Sensitivity",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Code Access",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Primary Code Link",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Evidence Source",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Evidence Note",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Best First Choice When",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Do Not Start With This When",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Spatial Contrast Testing."
+    },
+    {
+      "name": "Required Contrast Signal",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The explicit condition, group, covariate, matched-tissue, or registered-template contrast required by the method.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Spatial Contrast Testing."
+    },
+    {
+      "name": "Main Contrast Output",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The contrast-test or contrast-map object returned by the method.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Spatial Contrast Testing."
+    },
+    {
+      "name": "Estimand Class",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The scientific object estimated by the method branch.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Spatial Contrast Testing."
+    },
+    {
+      "name": "Spatial Structure Requirement",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Whether the branch uses cell type mixture, niche, coordinates, spatial correlation, structural matching, or registration.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Spatial Contrast Testing."
+    },
+    {
+      "name": "Evidence Strength Cue",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Branch-local evidence strength, including peer-reviewed method paper, benchmark branch, or preprint-only cue.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Spatial Contrast Testing."
+    },
+    {
+      "name": "Primary Validity Caveat",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The main scientific-validity risk for the branch.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Spatial Contrast Testing."
+    }
+  ]
+}

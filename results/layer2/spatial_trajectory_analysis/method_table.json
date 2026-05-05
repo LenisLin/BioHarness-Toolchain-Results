@@ -10,7 +10,9 @@
     "SIRV",
     "PearlST",
     "TopoVelo",
-    "CASCAT"
+    "CASCAT",
+    "STORIES",
+    "stVCR"
   ],
   "fields": [
     "Tool Name",
@@ -212,6 +214,56 @@
       "Temporal / Multi-sample Cue": "single-sample compatible",
       "Output Interpretability Cue": "causal tree",
       "Scientific Caveat": "Causal language is model-based and should not be treated as experimental causality; method-paper benchmarks do not remove confounding or root-choice concerns."
+    },
+    {
+      "Tool Name": "STORIES",
+      "Method Family": "Optimal-transport fate-landscape learning",
+      "Main Input": "spatial transcriptomics expression with spatial coordinates and cell-state context for fate-landscape inference",
+      "Main Use in This Topic": "learn cell fate landscapes from spatial transcriptomics using optimal transport",
+      "Main Output": "cell fate landscape, transition structure, and trajectory interpretation for spatial cell states",
+      "Closest Alternatives": "SpaTrack; STT; PearlST; CASCAT",
+      "Key Difference": "Frames spatial trajectory inference as fate-landscape learning with optimal transport rather than RNA velocity, latent pseudotime, or causal-tree modeling.",
+      "Compute Requirement": "CPU",
+      "Memory Burden": "unclear",
+      "Scale Sensitivity": "unclear",
+      "Code Access": "available",
+      "Primary Code Link": "https://github.com/cantinilab/stories",
+      "Evidence Source": "PubMed PMID 41184554; DOI 10.1038/s41592-025-02855-4; code link supplied by targeted literature check",
+      "Evidence Note": "Direct evidence verifies the Nature Methods STORIES method-paper identity and public code trace. Fate-landscape placement is direct from the method title; directionality and fate claims remain model-based Layer 2 caveats.",
+      "Best First Choice When": "Use when the task explicitly asks for spatial fate-landscape inference from expression and spatial context.",
+      "Do Not Start With This When": "Do not start here when the task only needs RNA velocity, static spatial domains, or experimentally validated lineage causality.",
+      "Trajectory Branch": "differentiation trajectory",
+      "Splicing / Velocity Dependence": "not primary",
+      "Spatial Coupling Mode": "coordinates in transition cost",
+      "Reference Dependence": "reference-free",
+      "Temporal / Multi-sample Cue": "time-course helpful",
+      "Output Interpretability Cue": "trajectory topology",
+      "Scientific Caveat": "Fate landscapes and directionality are model interpretations; they should not be treated as lineage tracing, migration proof, or experimental causality without independent validation."
+    },
+    {
+      "Tool Name": "stVCR",
+      "Method Family": "Spatiotemporal single-cell dynamics modeling",
+      "Main Input": "spatial transcriptomics data with single-cell state information and temporal or progression context",
+      "Main Use in This Topic": "model spatiotemporal dynamics of single cells from spatial transcriptomics",
+      "Main Output": "spatiotemporal cell-state dynamics, trajectory or pseudotime-style summaries, and dynamic interpretation cues",
+      "Closest Alternatives": "spVelo; STT; PearlST; SpaTrack",
+      "Key Difference": "Centers spatiotemporal single-cell dynamics rather than RNA-splicing velocity alone, static trajectory topology, or pure latent pseudotime.",
+      "Compute Requirement": "Optional GPU",
+      "Memory Burden": "unclear",
+      "Scale Sensitivity": "unclear",
+      "Code Access": "available",
+      "Primary Code Link": "https://github.com/QiangweiPeng/stVCR",
+      "Evidence Source": "PubMed PMID 41820580; DOI 10.1038/s41592-026-03010-3; code link supplied by targeted literature check",
+      "Evidence Note": "Direct evidence verifies the Nature Methods stVCR method-paper identity and public code trace. Spatiotemporal dynamics placement is direct from title-level evidence; resource and comparator fields are Layer 2 synthesis.",
+      "Best First Choice When": "Use when the explicit question is spatiotemporal single-cell dynamics with spatial context.",
+      "Do Not Start With This When": "Do not start here when temporal ordering is absent or when the task requires only static domain clustering, cell type inference, or ligand-receptor communication.",
+      "Trajectory Branch": "spatiotemporal embedding / pseudotime",
+      "Splicing / Velocity Dependence": "not primary",
+      "Spatial Coupling Mode": "spatially coupled dynamics",
+      "Reference Dependence": "reference-free",
+      "Temporal / Multi-sample Cue": "multi-sample / temporal interval",
+      "Output Interpretability Cue": "latent pseudotime",
+      "Scientific Caveat": "Spatiotemporal dynamics are model-based summaries; sampling design, temporal alignment, and state-definition choices can drive apparent fate, migration, or counterfactual-style interpretations."
     }
   ]
 }

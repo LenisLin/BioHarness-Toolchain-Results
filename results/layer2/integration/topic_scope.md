@@ -26,9 +26,9 @@ Input source registry:
 
 ## Bounded Retrieval Record
 
-Retrieval date: 2026-05-01; targeted code-link check added 2026-05-02; targeted code-link check added 2026-05-02; targeted code-link check added 2026-05-02; targeted code-link check added 2026-05-02; targeted code-link check added 2026-05-02; targeted code-link check added 2026-05-02
+Retrieval date: 2026-05-01; targeted code-link check added 2026-05-02; targeted 2025-2026 inclusion correction added 2026-05-03
 
-Retrieval role: PMID, DOI, code-link trace, and benchmark/review screening for the frozen candidate set. The 2026-05-02 targeted check updated code-link trace fields for previously unclear rows. This retrieval did not reopen candidate inclusion and did not add methods.
+Retrieval role: PMID, DOI, code-link trace, benchmark/review screening, and targeted 2025-2026 inclusion correction. The 2026-05-02 targeted check updated code-link trace fields for previously unclear rows. The 2026-05-03 correction reopened inclusion only for the four specified Integration methods.
 
 Retrieval sources:
 
@@ -38,18 +38,14 @@ Retrieval sources:
 - PubMed E-utilities ESearch/ESummary for missing candidate identifiers for `CAST`, `SANTO`, and `SLAT`
 - PubMed E-utilities ESearch/ESummary for Integration benchmark/review screening
 - publisher code-availability statements and public repository pages for targeted code-link trace updates
-- publisher code-availability statements and public repository pages for targeted code-link trace updates
-- publisher code-availability statements and public repository pages for targeted code-link trace updates
-- publisher code-availability statements and public repository pages for targeted code-link trace updates
-- publisher code-availability statements and public repository pages for targeted code-link trace updates
-- publisher code-availability statements and public repository pages for targeted code-link trace updates
+- targeted 2025-2026 literature check for `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`
 
 Candidate PMID verification query:
 
 ```text
-39874960,37592182,36859400,35577957,37553263,36653349,
-37990022,38065970,38177758,41398698,41194133,40551235,
-40598307,39815104,40001084
+42032296,42045691,41991905,39874960,37592182,36859400,
+35577957,37553263,36653349,37990022,38065970,38177758,
+41398698,41194133,40551235,40598307,39815104,40001084
 ```
 
 Missing-identifier recovery queries:
@@ -82,7 +78,7 @@ AND ("spatial transcriptomics"[Title/Abstract] OR
 AND (integration[Title/Abstract] OR alignment[Title/Abstract])
 ```
 
-Screening result: PubMed verified method-paper identities for all 18 frozen candidates. It also found directly relevant benchmark records for clustering/alignment/integration (PMID 39123269), multi-slice integration (PMID 41024097), and alignment methods (PMID 41933187). These benchmarks support branch-local caution and coverage checks, but they do not justify a universal ranking across all 18 candidates because the frozen set spans heterogeneous targets: coordinate alignment, partial overlap, latent integration, 3D reconstruction, multimodal modeling, and count batch correction.
+Screening result: PubMed or DOI/publisher checks verified method-paper identities for all 22 candidates after the targeted correction. It also found directly relevant benchmark records for clustering/alignment/integration (PMID 39123269), multi-slice integration (PMID 41024097), and alignment methods (PMID 41933187). These benchmarks support branch-local caution and coverage checks, but they do not justify a universal ranking across all 22 candidates because the frozen set spans heterogeneous targets: coordinate alignment, partial overlap, latent integration, 3D reconstruction, multimodal modeling, and count batch correction.
 
 Code-link verification update: the 2026-05-02 targeted check resolved the 12 rows that were previously `unclear` in this package: `CAST`, `DeST-OT`, `GPSA`, `PRECAST`, `SANTO`, `SLAT`, `STAIR`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, and `Crescendo`. `Primary Code Link` remains a trace field only and does not imply runtime support, adapter availability, callable signatures, environment capsules, or default-method status.
 
@@ -90,14 +86,14 @@ Code-link verification update: the 2026-05-02 targeted check resolved the 12 row
 
 Include methods when all of the following are true:
 
-- the current frozen input lists the method under `Analysis Problem = Integration`
+- the current frozen input or the 2026-05-03 targeted inclusion correction lists the method under `Analysis Problem = Integration`
 - the row has a named reusable computational identity
 - the method's primary reusable contribution is alignment, integration, harmonization, 2D/3D reconstruction, multimodal spatial omics modeling, or spatial-data batch correction
-- PubMed metadata can verify a method-paper identity by PMID/DOI
+- PubMed metadata or DOI/publisher metadata can verify a method-paper identity
 
 ## Exclusion Rules
 
-Do not add or promote methods outside the frozen input, even if PubMed benchmark screening finds related methods.
+Do not add or promote methods outside the frozen input except for the 2026-05-03 targeted inclusion correction requested for `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`.
 
 Keep methods outside this package when the primary contribution is:
 
@@ -112,6 +108,10 @@ Keep methods outside this package when the primary contribution is:
 
 | Tool Name | Layer 1 subtask cue | Evidence identity |
 | --- | --- | --- |
+| `SpaMosaic` | Spatial multi-omics mosaic integration | PMID 42032296; DOI 10.1038/s41588-026-02573-3 |
+| `INSPIRE` | Spatially aware multi-dataset integration | PMID 42045691; DOI 10.1038/s41588-026-02579-x |
+| `SpatialCOC` | Spatial continuous mapping and cross-omics correction | PMID 41991905; DOI 10.1038/s41467-026-71882-2 |
+| `SSpMosaic` | Single-cell/spatial omics integration and annotation | DOI 10.1016/j.xgen.2025.101105 |
 | `CAST` | Multi-slice alignment / integration | PMID 39294367; DOI 10.1038/s41592-024-02410-7 |
 | `DeST-OT` | Multi-slice alignment / integration | PMID 39874960; DOI 10.1016/j.cels.2024.12.001 |
 | `GPSA` | Multi-slice alignment / integration | PMID 37592182; DOI 10.1038/s41592-023-01972-2 |
@@ -143,6 +143,8 @@ The topic is organized by method-selection cues rather than by Layer 1 subtask a
 - latent embedding integration for clustering/domain interpretation
 - 2D/3D multi-slice reconstruction
 - multimodal spatial omics modeling
+- mosaic spatial multi-omics integration and cross-omics correction
+- interpretable gene-program integration with cell type/program/domain boundary caveats
 - single-cell spatial count batch correction
 
 These branches support conditional selection only. They are not default execution routes.

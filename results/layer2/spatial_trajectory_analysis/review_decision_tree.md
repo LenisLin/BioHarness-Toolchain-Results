@@ -6,11 +6,11 @@ Layer served: `Layer 2`
 
 Purpose: `when to choose`, not `how to run`.
 
-This document records the bounded PubMed verification pass, benchmark/review screening, evidence spot-checks, branch-local decision tree, and coverage ledger for the frozen `Spatial Trajectory Analysis` candidate set. It does not define execution surfaces, wrappers, adapter boundaries, callable signatures, environments, default methods, or runtime support.
+This document records the bounded PubMed verification pass, benchmark/review screening, evidence spot-checks, branch-local decision tree, and coverage ledger for the updated `Spatial Trajectory Analysis` candidate set. It does not define execution surfaces, wrappers, adapter boundaries, callable signatures, environments, default methods, or runtime support.
 
 ## Reading Rules
 
-- Keep the seven-method freeze unchanged: `SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`.
+- Keep the nine-method targeted freeze: `SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`, `STORIES`, `stVCR`.
 - Treat registry `Subtask` values as branch cues only.
 - Use compute and code access as branch-local audit cues, not as evidence of BioHarness support.
 - Use benchmark or review evidence only for caveats and branch-local interpretation. Do not convert it into a global ranking.
@@ -18,11 +18,13 @@ This document records the bounded PubMed verification pass, benchmark/review scr
 
 ## PubMed Candidate Verification
 
-All seven frozen candidate PMIDs and DOIs were verified with PubMed E-utilities on 2026-05-01.
+The original seven candidate PMIDs and DOIs were verified with PubMed E-utilities on 2026-05-01; `STORIES` and `stVCR` were added by targeted 2026-05-03 PubMed/DOI verification.
 
 | Tool | PMID | DOI | Verification result |
 | --- | --- | --- | --- |
 | `SpaTrack` | 39904341 | 10.1016/j.cels.2025.101194 | Method-paper identity and optimal-transport spatial trajectory claim confirmed. |
+| `STORIES` | 41184554 | 10.1038/s41592-025-02855-4 | Method-paper identity and optimal-transport fate-landscape claim confirmed. |
+| `stVCR` | 41820580 | 10.1038/s41592-026-03010-3 | Method-paper identity and spatiotemporal single-cell dynamics claim confirmed. |
 | `spVelo` | 40790237 | 10.1186/s13059-025-03701-8 | Method-paper identity and multi-batch spatial RNA-velocity claim confirmed. |
 | `STT` | 38755322 | 10.1038/s41592-024-02266-x | Method-paper identity and spatial transition tensor claim confirmed. |
 | `SIRV` | 39108639 | 10.1093/nargab/lqae100 | Method-paper identity and reference-enriched single-cell-resolution spatial RNA-velocity claim confirmed. |
@@ -37,6 +39,8 @@ PMC code-availability checks were available for methods with PMCID-linked full t
 | Tool | PubMed/PMC code-link result |
 | --- | --- |
 | `SpaTrack` | Frozen registry input gives `https://github.com/yzf072/spaTrack`; no PubMed/PMC code-availability section was confirmed in this pass. |
+| `STORIES` | Targeted literature check supplies `https://github.com/cantinilab/stories`. |
+| `stVCR` | Targeted literature check supplies `https://github.com/QiangweiPeng/stVCR`. |
 | `spVelo` | PMC confirms GitHub `https://github.com/VivLon/spVelo` and a Zenodo record for related simulation code. |
 | `STT` | PMC confirms GitHub `https://github.com/cliffzhou92/STT/tree/release`. |
 | `SIRV` | PMC confirms GitHub `https://github.com/tabdelaal/SIRV` and a Zenodo source-code release. |
@@ -56,7 +60,7 @@ AND
 (benchmark[Title/Abstract] OR comparison[Title/Abstract] OR review[Publication Type])
 ```
 
-Result: 39 PubMed records. The returned set included broad spatial-transcriptomics reviews, broad transcriptomics reviews, disease-specific or platform-specific papers, and method papers. It did not yield an independent benchmark that jointly evaluates and ranks the frozen seven-method candidate set.
+Result: 39 PubMed records. The returned set included broad spatial-transcriptomics reviews, broad transcriptomics reviews, disease-specific or platform-specific papers, and method papers. It did not yield an independent benchmark that jointly evaluates and ranks the updated nine-method candidate set.
 
 Candidate-name benchmark/review query:
 
@@ -78,13 +82,15 @@ AND
 
 Result: 1 PubMed record, not a dedicated benchmark of the frozen candidate set.
 
-Review conclusion: no suitable independent benchmark was found that supports a global ranking across the frozen seven candidates. Method-paper-local comparisons exist for several methods, especially `STT`, `PearlST`, and `CASCAT`, but those comparisons are not interchangeable with a cross-method independent benchmark. This package therefore uses an explicit logic review based on the method table, field registry, and scientific caveats.
+Review conclusion: no suitable independent benchmark was found that supports a global ranking across the updated nine candidates. Method-paper-local comparisons exist for several methods, especially `STT`, `PearlST`, and `CASCAT`, but those comparisons are not interchangeable with a cross-method independent benchmark. This package therefore uses an explicit logic review based on the method table, field registry, and scientific caveats.
 
 ## Evidence Spot-Checks
 
 | Tool | Direct support | Layer 2 synthesis / caution |
 | --- | --- | --- |
 | `SpaTrack` | PubMed abstract supports optimal transport over expression and spatial position for trajectory reconstruction and multi-sample temporal intervals. | Code link comes from frozen registry input, not PubMed/PMC in this pass; causality and directionality remain interpretation risks. |
+| `STORIES` | PubMed verifies PMID 41184554 and DOI 10.1038/s41592-025-02855-4; targeted check supplies GitHub code trace. | Fate landscapes and directionality remain model interpretations, not lineage-tracing proof. |
+| `stVCR` | PubMed verifies PMID 41820580 and DOI 10.1038/s41592-026-03010-3; targeted check supplies GitHub code trace. | Spatiotemporal dynamics depend on sampling design, temporal alignment, and state-definition choices. |
 | `spVelo` | PubMed/PMC supports multi-batch spatial RNA velocity, downstream uncertainty and driver-marker applications, and GitHub availability. | GPU/resource and scale implications are not BioHarness validation; batch effects can influence velocity interpretation. |
 | `STT` | PubMed/PMC supports mRNA splicing plus spatial transcriptomics, multiscale tensor dynamics, streamlines, attractors, and GitHub availability. | Tensor/attractor interpretability depends on data quality and biological validation; method-paper benchmarks are local evidence. |
 | `SIRV` | PubMed/PMC supports reference scRNA-seq enrichment of spatial data with spliced/unspliced expression and GitHub availability. | Reference mismatch and reference composition bias are central scientific risks. |
@@ -148,8 +154,9 @@ If spatially coupled topological velocity and interpretable spatial cell-state d
 
 If yes, and optimal-transport transition costs are a good conceptual fit:
 
-- Prefer / consider `SpaTrack`.
-- Keep trajectory direction and biological-causality caveats visible.
+- Prefer / consider `SpaTrack` for expression-plus-location trajectory reconstruction.
+- Prefer / consider `STORIES` when the task explicitly asks for a fate landscape.
+- Keep trajectory direction, fate, migration, and biological-causality caveats visible.
 
 If no:
 
@@ -159,9 +166,9 @@ If no:
 
 If yes:
 
-- Prefer / consider `PearlST`.
-- Use this branch when histology/spatial-feature integration and latent embeddings are acceptable.
-- Keep representation/objective entanglement caveats visible.
+- Prefer / consider `PearlST` for latent spatiotemporal structure or pseudotime with histology/spatial-feature integration.
+- Prefer / consider `stVCR` when the central question is spatiotemporal single-cell dynamics.
+- Keep representation/objective entanglement, temporal sampling, and state-definition caveats visible.
 
 If no:
 
@@ -199,6 +206,8 @@ If code-link traceability must be confirmed before method reading:
 | Tool | Covered in tree branch | Main caveat carried forward |
 | --- | --- | --- |
 | `SpaTrack` | expression-plus-location optimal-transport trajectory | directionality and causality are model interpretations |
+| `STORIES` | optimal-transport fate-landscape inference | fate and directionality are model interpretations |
+| `stVCR` | spatiotemporal single-cell dynamics | temporal sampling and state-definition sensitivity |
 | `spVelo` | multi-batch spatial RNA velocity | batch effects and resource needs require scrutiny |
 | `STT` | tensor dynamics and attractor paths | tensor interpretation needs biological validation |
 | `SIRV` | reference-enriched spatial RNA velocity | reference mismatch and bias |

@@ -87,18 +87,18 @@ If the main task is denoising, imputation, normalization, artifact correction, c
 
 If the intended output is cell type-specific SVG calls:
 
-- Prefer / consider `Celina`, `STANCE`, or `ctSVG`.
-- Use the 2026 ctSVG benchmark only as branch-local guidance: `Celina` and `STANCE` are reasonable sensitivity-oriented first reads; `ctSVG` is a reasonable conservative false-positive-control read.
+- Consider `Celina`, `STANCE`, or `ctSVG` when the intended output is cell type-specific SVG calls.
+- Use the 2026 ctSVG benchmark only as branch-local guidance: `Celina` and `STANCE` may serve as sensitivity-oriented branch comparators; `ctSVG` may serve as a conservative false-positive-control branch comparator.
 - Keep cell type composition and non-target-cell leakage caveats visible.
 
 If the intended output is spatial gene correlation conditional on the cell type landscape:
 
-- Prefer / consider `InSituCor`.
+- Consider `InSituCor` when the intended output is spatial gene correlation conditional on the cell type landscape.
 - Do not substitute it for direct ctSVG calling or overall SVG ranking.
 
 If cell type effects should be adjusted while clustering or selecting SVGs:
 
-- Prefer / consider `SPACE-SVG`.
+- Consider `SPACE-SVG` when cell type effects should be adjusted while clustering or selecting SVGs.
 - Keep the boundary with feature selection and spatial domain support visible.
 
 If cell type context is absent or not intended:
@@ -109,8 +109,8 @@ If cell type context is absent or not intended:
 
 If yes:
 
-- Prefer / consider `STMiner`.
-- Use it when gene-level spatial pattern interpretation, especially in tumor tissue, is the real deliverable.
+- Consider `STMiner` when gene-level spatial pattern interpretation, especially in tumor tissue, is the real deliverable.
+- Keep its use limited to gene-level spatial pattern interpretation, especially in tumor tissue.
 - Do not use it as a simple replacement for calibrated p-value/ranking SVG workflows.
 
 If no:
@@ -121,9 +121,9 @@ If no:
 
 If yes:
 
-- Prefer / consider `SPARK-X`, `nnSVG`, or `HEARTSVG`.
-- `SPARK-X` has the strongest branch-local benchmark signal in the retrieved 2025 broad SVG benchmark.
-- `nnSVG` is a good first read when a Gaussian-process-style framing is desired with better scalability than canonical SpatialDE.
+- Consider `SPARK-X`, `nnSVG`, or `HEARTSVG` when the active branch is overall SVG detection with a large-data or scalability constraint.
+- Within the scalable overall-SVG branch, `SPARK-X` has the strongest branch-local benchmark signal in the retrieved 2025 broad SVG benchmark.
+- Consider `nnSVG` when a Gaussian-process-style framing is desired with better scalability than canonical SpatialDE.
 - `HEARTSVG` is a large-scale distribution-free method-paper route, but code access is unclear in this package.
 
 If no or data are modest and interpretability/literature comparability matters:
@@ -134,34 +134,34 @@ If no or data are modest and interpretability/literature comparability matters:
 
 If a canonical Gaussian-process baseline is needed:
 
-- Prefer / consider `SpatialDE`.
+- Consider `SpatialDE` when a canonical Gaussian-process baseline is needed.
 - Keep scale and calibration caveats visible.
 
 If count-aware spatial modeling is desired and data size is moderate:
 
-- Prefer / consider `SPARK`.
-- Read `SPARK-X` alongside it when scalability is a concern.
+- Consider `SPARK` when count-aware spatial modeling is desired and data size is moderate.
+- Compare with `SPARK-X` within the overall-SVG branch when scalability is a concern.
 
 If a dimension-agnostic non-parametric or multi-scale/granularity route is desired:
 
-- Prefer / consider `BSP`.
+- Consider `BSP` when a dimension-agnostic non-parametric or multi-scale/granularity route is desired.
 - Treat granularity interpretation as a method-specific assumption to inspect.
 
 If self-organizing-map compression is scientifically attractive:
 
-- Prefer / consider `SOMDE`.
+- Consider `SOMDE` when self-organizing-map compression is scientifically attractive.
 - Keep possible fine-pattern compression caveats visible.
 
 If interpretable spatial variation coefficients are the main deliverable:
 
-- Prefer / consider `spVC`.
+- Consider `spVC` when interpretable spatial variation coefficients are the main deliverable.
 - Keep the overall-versus-cell-type-aware boundary caveat visible.
 
 ### Step 5. Resource and audit gate
 
 If a primary code link is required before later engineering audit:
 
-- Read first: `Celina`, `STANCE`, `STMiner`, `BSP`, `nnSVG`, `SOMDE`, `SPARK`, `SPARK-X`, `SpatialDE`.
+- Traceable-code audit candidates in this package are `Celina`, `STANCE`, `STMiner`, `BSP`, `nnSVG`, `SOMDE`, `SPARK`, `SPARK-X`, and `SpatialDE`.
 - Do not interpret code access as runtime support.
 
 If code access can remain unclear during Layer 2 discussion:

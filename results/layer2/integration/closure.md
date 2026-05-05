@@ -23,7 +23,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 | --- | --- | --- |
 | Analysis Problem unit | Pass | Topic is `Integration`, not individual algorithms or subtasks. |
 | Bounded retrieval record | Pass | `topic_scope.md` records date, sources, queries, inclusion/exclusion rules, and candidate freeze. |
-| Frozen candidate set | Pass | Eighteen rows from the frozen input JSON; no methods added. |
+| Frozen candidate set | Pass | Twenty-two rows: the original frozen input plus targeted additions `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`. |
 | Field schema | Pass | Shared fields plus four topic-specific decision fields in `field_registry.json`. |
 | Method table artifacts | Pass | JSON was built first; CSV and Markdown were generated from `method_table.json`. |
 | Review / benchmark pass | Pass with caveats | PubMed found relevant benchmark records, but they support branch-local logic only. |
@@ -32,12 +32,12 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 
 ## Current Layer 2 Facts
 
-- Candidate rows: 18.
+- Candidate rows: 22.
 - Fields per method row: 20.
-- Code access: 18 available, 0 unclear, 0 unavailable.
-- Compute labels: 7 CPU, 11 Optional GPU, 0 Required GPU.
-- Integration targets represented: search-and-match mapping, spatiotemporal alignment, pairwise slice alignment, partial overlap alignment, coordinate alignment, heterogeneous slice alignment, stitching, latent embedding integration, 3D reconstruction, 2D/3D multi-slice integration, multimodal modeling, and batch correction.
-- Scale sensitivity: 6 high, 11 medium, 1 unclear.
+- Code access: 22 available, 0 unclear, 0 unavailable.
+- Compute labels: 7 CPU, 15 Optional GPU, 0 Required GPU.
+- Integration targets represented: search-and-match mapping, spatiotemporal alignment, pairwise slice alignment, partial overlap alignment, coordinate alignment, heterogeneous slice alignment, stitching, latent embedding integration, 3D reconstruction, 2D/3D multi-slice integration, multimodal modeling, mosaic spatial multi-omics integration, cross-omics correction, interpretable gene-program integration, and batch correction.
+- Scale sensitivity: 8 high, 13 medium, 0 low, 1 unclear.
 - Benchmark/review screening: relevant PubMed benchmark records were found for alignment and multi-slice integration, but not for a universal ranking across all Integration branches.
 
 ## Caveats Carried Into Later Work
@@ -65,6 +65,9 @@ This audit batch is representative coverage for later engineering review. It is 
 | `SANTO` | Coarse-to-fine stitching branch highlighted by alignment benchmarks. |
 | `SPACEL` | 3D tissue-architecture stacking branch with available code link. |
 | `MISO` | Multimodal spatial omics branch. |
+| `SpaMosaic` | Mosaic spatial multi-omics branch with missing-modality caveat. |
+| `SpatialCOC` | Cross-omics correction and continuous-mapping branch. |
+| `SSpMosaic` | Gene-program integration boundary branch with annotation/program/domain route-out caveats. |
 | `Crescendo` | Single-cell spatial count batch-correction branch. |
 
 Audit outputs must remain separate from this Layer 2 package:

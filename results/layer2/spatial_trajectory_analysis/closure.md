@@ -24,28 +24,28 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 | --- | --- | --- |
 | Analysis Problem unit | Pass | Topic is `Spatial Trajectory Analysis`, not individual algorithms or subtasks. |
 | Bounded retrieval record | Pass | `topic_scope.md` records date, sources, queries, inclusion/exclusion rules, and candidate freeze. |
-| Frozen candidate set | Pass | Seven rows: `SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`. |
+| Frozen candidate set | Pass | Nine rows: `SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`, `STORIES`, `stVCR`. |
 | Field schema | Pass | Shared fields plus six topic-specific decision fields in `field_registry.json`. |
-| Method table artifacts | Pass | JSON, CSV, and Markdown tables represent the same seven candidates and field model. |
-| Review / logic pass | Pass with caveats | No dedicated independent benchmark was found for the frozen seven-method set; decision tree uses explicit logic review plus method-paper evidence. |
+| Method table artifacts | Pass | JSON, CSV, and Markdown tables represent the same nine candidates and field model. |
+| Review / logic pass | Pass with caveats | No dedicated independent benchmark was found for the updated nine-method set; decision tree uses explicit logic review plus method-paper evidence. |
 | Decision tree | Pass with caveats | Conditional branch-local method selection only; no global ranking. |
 | Layer boundary | Pass | Artifacts avoid runtime, adapter, environment, callable-signature, and default-method claims. |
 
 ## Current Layer 2 Facts
 
-- Candidate rows: 7.
+- Candidate rows: 9.
 - Fields per method row: 22.
-- Code access: 6 available, 1 unclear.
-- Compute labels: 3 CPU, 4 Optional GPU, 0 Required GPU.
-- Trajectory branches: 1 differentiation trajectory, 4 spatial RNA velocity, 1 spatiotemporal embedding / pseudotime, 1 causal trajectory.
-- Reference dependence: 6 reference-free, 1 scRNA-reference-assisted, 0 unclear.
-- Splicing / velocity dependence: 3 uses splicing / velocity signal, 1 reference-imputed splicing / velocity, 3 not primary.
-- Memory burden: 7 unclear.
-- Scale sensitivity: 7 unclear.
+- Code access: 8 available, 1 unclear.
+- Compute labels: 4 CPU, 5 Optional GPU, 0 Required GPU.
+- Trajectory branches: 2 differentiation trajectory, 4 spatial RNA velocity, 2 spatiotemporal embedding / pseudotime, 1 causal trajectory.
+- Reference dependence: 8 reference-free, 1 scRNA-reference-assisted, 0 unclear.
+- Splicing / velocity dependence: 3 uses splicing / velocity signal, 1 reference-imputed splicing / velocity, 5 not primary.
+- Memory burden: 9 unclear.
+- Scale sensitivity: 9 unclear.
 
 ## Caveats Carried Into Later Work
 
-- No independent benchmark was found that compares and ranks all seven frozen candidates.
+- No independent benchmark was found that compares and ranks all nine targeted candidates.
 - Method-paper-local benchmarks and comparisons should not be treated as general cross-method superiority evidence.
 - RNA-velocity branches can be sensitive to preprocessing, gene selection, splicing signal quality, batch structure, and velocity model assumptions.
 - `SIRV` requires special caution around reference mismatch and reference-induced bias.
@@ -59,11 +59,13 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 
 The representative audit batch is a later engineering review input. It is not runtime support, a default-method list, an execution surface, or an adapter decision.
 
-Because the candidate set is small and each method represents a distinct selection branch, all seven candidates should be considered for representative audit triage:
+Because the candidate set is small and each method represents a distinct selection branch, all nine candidates should be considered for representative audit triage:
 
 | Method | Why include in audit batch |
 | --- | --- |
 | `SpaTrack` | CPU optimal-transport trajectory route with registry code link and multi-sample/temporal cue. |
+| `STORIES` | Optimal-transport fate-landscape branch with targeted code trace and fate-interpretation caveat. |
+| `stVCR` | Spatiotemporal single-cell dynamics branch with targeted code trace and temporal-sampling caveat. |
 | `spVelo` | Multi-batch spatial RNA-velocity route with PMC-confirmed GitHub link and reported GPU training context. |
 | `STT` | Tensor-dynamics and attractor-path route with PMC-confirmed Python package link. |
 | `SIRV` | Reference-assisted spatial RNA-velocity route with PMC-confirmed GitHub and Zenodo code sources. |

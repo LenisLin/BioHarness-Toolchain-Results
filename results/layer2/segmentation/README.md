@@ -4,30 +4,30 @@
 
 Layer served: `Layer 2`
 
-Current status: complete working/evidence package for method selection.
+Current status: reprocessed 11-row working/evidence package for method selection.
 
 This directory contains the Layer 2 method-selection evidence package for the
 spatial transcriptomics `Segmentation` analysis problem. It supports conditional
 method selection within this topic. It is not a Layer 3 execution surface, Layer
-4 adapter implementation, environment capsule, default-method policy, or
-runtime-support claim.
+4 adapter implementation, environment profile, universal method policy, or
+execution-support claim.
 
 ## Topic Boundary
 
-This package covers the frozen Layer 1 segmentation candidate set, including
-cell segmentation / transcript assignment methods, transcript spot-detection
-methods retained under the segmentation topic, and a joint image
-segmentation/classification boundary method.
+This package covers the current Layer 1 Segmentation candidate set, including
+cell segmentation / transcript assignment methods, a histology image-processing
+support boundary row, transcript spot-detection methods retained under the
+segmentation topic, and a joint image segmentation/classification boundary row.
 
-The candidate set is frozen to eight Layer 1 methods:
+The candidate set is frozen to eleven Layer 1 methods:
 
-`Baysor`, `Bering`, `SCS`, `segger`, `UCS`, `Spotiflow`, `Piscis`,
-`CelloType`.
+`Baysor`, `Bering`, `SCS`, `segger`, `UCS`, `BIDCell`, `VistoSeg`, `STCellbin`, `Spotiflow`, `Piscis`, `CelloType`.
 
-`Spotiflow` and `Piscis` are retained as upstream transcript spot-detection
-rows. `CelloType` is retained as a joint image segmentation/classification row.
-Those rows should not be treated as direct substitutes for transcript-to-cell
-assignment methods.
+`VistoSeg` is retained as an image-processing support row. `Spotiflow` and
+`Piscis` are retained as upstream transcript spot-detection rows. `CelloType` is
+retained as a joint image segmentation/classification row. These boundary rows
+should not be treated as direct substitutes for transcript-to-cell assignment
+methods.
 
 ## Artifacts
 
@@ -43,6 +43,7 @@ assignment methods.
 
 ## Current Closure
 
-The closure decision is that this Layer 2 topic is complete enough to serve as
-a working/evidence basis for later formal rendering or representative Layer 3/4
-engineering audit. No runtime execution support is implied.
+The closure decision is that this Layer 2 topic has been reprocessed against the
+current Layer 1 registry and is complete enough to serve as a working/evidence
+basis for later formal rendering or representative Layer 3/4 engineering audit.
+No execution support is implied.

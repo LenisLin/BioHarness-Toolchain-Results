@@ -1,33 +1,20 @@
-# Artifact Correction Layer 2 Package
+# Artifact Correction Layer 2 Working Package
 
-Layer served: `Layer 2`
+This package reconciles the Artifact Correction topic against the active Layer 1 working registry. The current freeze contains four methods: SpotClean, Non-parametric Vignetting Correction, cellAdmix, and SPLIT.
 
-Status: complete working/evidence package for the frozen `Artifact Correction`
-candidate set.
+Layer 2 use is limited to artifact-mechanism and data-object-local method selection for later representative Layer 3/4 audit planning. Code/access links are trace metadata only and do not imply BioHarness execution support, callable interfaces, adapters, or environment profiles.
 
-This package supports conditional method selection inside one Analysis Problem.
-It is not a Layer 3 execution surface, Layer 4 implementation, adapter
-definition, callable signature, environment binding, runtime-support statement,
-or default-method policy.
+## Files
 
-## Candidate Freeze
+- `topic_scope.md`: topic boundary, inclusion/exclusion logic, and caveats.
+- `field_registry.json`: field-level interpretation notes.
+- `method_table.csv`, `method_table.md`, `method_table.json`: synchronized four-row method table.
+- `review_decision_tree.md`: artifact-mechanism and data-object-local routing logic.
+- `closure.md`: confirmation status and formal-rendering caveats.
 
-The frozen input JSON defines exactly three candidates:
+## Current Freeze
 
-- `SpotClean`
-- `Non-parametric Vignetting Correction`
-- `cellAdmix`
-
-No additional methods were added during this Layer 2 pass.
-
-## Artifact Index
-
-| File | Role |
-| --- | --- |
-| `topic_scope.md` | Topic boundary, bounded retrieval record, inclusion/exclusion rules, and candidate freeze. |
-| `field_registry.json` | Shared and topic-specific field definitions. |
-| `method_table.json` | Structured source-of-truth method table. |
-| `method_table.csv` | CSV rendering generated from `method_table.json`. |
-| `method_table.md` | Markdown rendering generated from `method_table.json`. |
-| `review_decision_tree.md` | PubMed verification, benchmark/review screening, logic review, conditional decision tree, and coverage ledger. |
-| `closure.md` | Gate check, current facts, caveats, closure decision, and representative Layer 3/4 audit batch. |
+1. SpotClean - spot swapping / local contamination correction.
+2. Non-parametric Vignetting Correction - vignetting / position-dependent intensity-field correction.
+3. cellAdmix - molecular admixture correction.
+4. SPLIT - Xenium-specific signal-contamination / transcript-spillover correction.

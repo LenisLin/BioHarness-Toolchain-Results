@@ -1,0 +1,214 @@
+{
+  "topic": "Phenotype- / Cohort-linked Spatial Feature and Niche Analysis",
+  "layer": "Layer 2",
+  "version_date": "2026-05-05",
+  "purpose": "Field registry for the Phenotype- / Cohort-linked Spatial Feature and Niche Analysis Layer 2 method-selection evidence package.",
+  "non_goals": [
+    "Layer 3 execution surfaces",
+    "Layer 4 backend binding definitions",
+    "machine-call contracts",
+    "execution-environment bindings",
+    "execution-readiness claims",
+    "universal-method policy"
+  ],
+  "fields": [
+    {
+      "name": "Tool Name",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Method Family",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Main Input",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Main Use in This Topic",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Main Output",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Closest Alternatives",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Key Difference",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Compute Requirement",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Memory Burden",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Scale Sensitivity",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Code Access",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Primary Code Link",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Evidence Source",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Evidence Note",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Best First Choice When",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Do Not Start With This When",
+      "role": "shared evidence field",
+      "scope": "shared",
+      "definition": "Layer 2 method-selection evidence field for the frozen topic candidate set.",
+      "fill_rule": "Use conservative wording from Layer 1 metadata, method evidence, and Layer 2 synthesis; use unclear when public support is weak.",
+      "controlled_values": null,
+      "topic_relevance": "Supports branch-local review for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Phenotype / Cohort Signal",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The phenotype, cohort, disease-control, clinical outcome, survival, therapy-response, or bulk-linked signal used by the method.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Main Feature or Niche Output",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The score, feature, motif, niche, or representation associated with phenotype or cohort signal.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Estimand Class",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The association, prioritization, scoring, or representation object estimated by the method.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Transfer / Representation Dependence",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The cross-cohort, bulk-to-spatial, representation-learning, or supervised weighting dependency.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Boundary Placement Cue",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "Layer 2 boundary cue for topic-local method selection. Controlled duplicate cues may be recorded only when explicitly authorized by Layer 1 working-registry review.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    },
+    {
+      "name": "Primary Validity Caveat",
+      "role": "topic-specific decision cue",
+      "scope": "topic-specific",
+      "definition": "The main scientific-validity risk for the branch.",
+      "fill_rule": "Use one conservative branch-local value; do not convert this cue into a universal ordering.",
+      "controlled_values": null,
+      "topic_relevance": "Defines the Input / Output / Estimand boundary for Phenotype- / Cohort-linked Spatial Feature and Niche Analysis."
+    }
+  ]
+}
