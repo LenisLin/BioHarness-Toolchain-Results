@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BioHarness Layer 1/2 Knowledge Registry</title>
+    <meta
+      name="description"
+      content="Boss-facing static showcase for the BioHarness Layer 1/2 spatial transcriptomics knowledge registry."
+    />
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#registry">Skip to registry</a>
+
+    <header class="topbar" aria-label="Site header">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>BioHarness</span>
+      </div>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#registry">Layer 1</a>
+        <a href="#method-panel">Layer 2</a>
+        <a href="#protocol">Protocol</a>
+        <a href="#scenarios">Scenarios</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="overview" aria-labelledby="page-title">
+        <div class="overview-copy">
+          <p class="eyebrow">2026-05-06 / Spatial Transcriptomics / Agent-facing knowledge</p>
+          <h1 id="page-title">
+            <span class="title-en">Layer 1/2 Knowledge Registry</span>
+            <span class="title-cn">
+              <span>空间转录组问题路由</span>
+              <span>与方法选择</span>
+            </span>
+          </h1>
+          <p class="lede">
+            A compact decision interface for routing one of 20 active analysis problems, then selecting
+            methods within the chosen Layer 2 topic. 这是给 agent 和评审者看的压缩入口，不是执行层。
+          </p>
+          <div id="statusStrip" class="status-strip" aria-label="Registry status"></div>
+        </div>
+        <div class="atlas-field" aria-label="Registry atlas visual">
+          <div class="atlas-caption">
+            <span>Closed-world selection map</span>
+            <span>Layer 3/4 excluded</span>
+          </div>
+          <canvas id="routeCanvas" width="760" height="460"></canvas>
+        </div>
+      </section>
+
+      <section id="registry" class="registry-section" aria-labelledby="registry-title">
+        <div class="section-heading">
+          <p class="eyebrow">Layer 1 routing / 问题路由</p>
+          <h2 id="registry-title">Choose the scientific endpoint first</h2>
+          <p>
+            Layer 1 is fixed to 20 active <code>Analysis Problem</code> values. The routing signal is
+            research object plus target output; input type only breaks ties.
+          </p>
+        </div>
+
+        <div class="registry-workbench">
+          <aside class="tool-rail" aria-label="Registry controls">
+            <label class="search-label" for="routeSearch">Search topics</label>
+            <input id="routeSearch" type="search" autocomplete="off" placeholder="CCC, normalization, graph..." />
+            <div id="principles" class="principle-stack" aria-label="Selection principles"></div>
+          </aside>
+          <div id="routeGrid" class="route-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="method-panel" class="method-section" aria-labelledby="method-title">
+        <div class="section-heading">
+          <p class="eyebrow">Layer 2 method selection / 方法选择</p>
+          <h2 id="method-title">Branch-local selection inside the selected topic</h2>
+          <p>
+            Each topic keeps three formal sections: problem boundary, method feature table, and decision tree.
+          </p>
+        </div>
+
+        <div class="method-layout">
+          <article class="topic-sheet" aria-label="Selected topic details">
+            <div class="topic-kicker">
+              <span id="selectedRoute">Layer 1 route</span>
+              <span id="selectedMethodCount">0 methods</span>
+            </div>
+            <h3 id="selectedTopicTitle">Loading registry</h3>
+            <p id="selectedBoundary" class="topic-boundary"></p>
+            <div id="selectedFields" class="field-pills" aria-label="Topic-specific selection fields"></div>
+          </article>
+
+          <article class="decision-sheet" aria-label="Decision tree preview">
+            <h3>Decision tree preview</h3>
+            <div id="decisionTree" class="decision-tree"></div>
+          </article>
+        </div>
+
+        <div class="method-table-wrap" aria-label="Method table preview">
+          <div class="table-title-row">
+            <h3>Method feature rows</h3>
+            <span id="methodTableNote">Compact formal rows</span>
+          </div>
+          <div id="methodTable" class="method-table"></div>
+        </div>
+      </section>
+
+      <section id="protocol" class="protocol-section" aria-labelledby="protocol-title">
+        <div class="section-heading">
+          <p class="eyebrow">Agent protocol / 选择约束</p>
+          <h2 id="protocol-title">Route, then select. No package hunting.</h2>
+        </div>
+        <div class="protocol-track" aria-label="Layer 1/2 workflow">
+          <div class="protocol-step">
+            <span>01</span>
+            <strong>Parse question</strong>
+            <p>Scientific object + target output.</p>
+          </div>
+          <div class="protocol-step">
+            <span>02</span>
+            <strong>Select Layer 1</strong>
+            <p>One of 20 active problems.</p>
+          </div>
+          <div class="protocol-step">
+            <span>03</span>
+            <strong>Open Layer 2</strong>
+            <p>Use the exact route.</p>
+          </div>
+          <div class="protocol-step">
+            <span>04</span>
+            <strong>Follow branches</strong>
+            <p>Method choice stays topic-local.</p>
+          </div>
+          <div class="protocol-step">
+            <span>05</span>
+            <strong>Bound the handoff</strong>
+            <p>Rationale, candidates, caveats.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="scenarios" class="scenario-section" aria-labelledby="scenario-title">
+        <div class="section-heading">
+          <p class="eyebrow">Scenario simulator / 选择模拟</p>
+          <h2 id="scenario-title">Static routing checks for common requests</h2>
+        </div>
+        <div class="scenario-layout">
+          <div id="scenarioTabs" class="scenario-tabs" role="tablist" aria-label="Scenario list"></div>
+          <article id="scenarioPanel" class="scenario-panel" aria-live="polite"></article>
+        </div>
+      </section>
+
+      <section class="ccc-section" aria-labelledby="ccc-title">
+        <div class="section-heading">
+          <p class="eyebrow">CCC example / 第一个正式样板</p>
+          <h2 id="ccc-title">Cell-Cell Communication keeps all 16 formal methods</h2>
+          <p id="cccSafeLanguage"></p>
+        </div>
+        <div id="cccFields" class="ccc-field-row" aria-label="CCC-specific fields"></div>
+        <div id="cccMethods" class="ccc-method-grid" aria-label="CCC methods"></div>
+      </section>
+
+      <footer class="footer">
+        <span>Presentation layer only. Source artifacts remain under <code>results/formal/</code>.</span>
+        <a href="https://github.com/LenisLin/BioHarness-Toolchain-Results">GitHub repository</a>
+      </footer>
+    </main>
+
+    <script src="assets/site.js" defer></script>
+  </body>
+</html>
