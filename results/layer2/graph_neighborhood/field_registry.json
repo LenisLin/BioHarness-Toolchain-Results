@@ -16,7 +16,7 @@
       "name": "Tool Name",
       "role": "identity",
       "scope": "shared",
-      "definition": "Canonical method or tool identity in the revised 18-method Graph / Neighborhood candidate freeze.",
+      "definition": "Canonical method or tool identity in the revised 20-method Graph / Neighborhood candidate freeze.",
       "fill_rule": "Use the canonical method name from the original frozen input JSON plus the 2026-05-03 targeted Graph supplement.",
       "controlled_values": null,
       "topic_relevance": "Defines row identity and preserves the candidate freeze."

@@ -2,7 +2,7 @@
 
 Layer served: `Layer 2`
 
-Status: revised working/evidence package for the targeted 20-method `Graph / Neighborhood` candidate freeze. Formal rendering remains deferred until the revised freeze and boundary-hardening pass are accepted.
+Status: confirm with caveats after the 2026-05-06 Layer1/Layer2 reconciliation. The targeted 20-method `Graph / Neighborhood` candidate freeze is accepted as ready for formal rendering while preserving branch-local caveats.
 
 This directory is a method-selection evidence package. It is not a Layer 3 execution surface, Layer 4 adapter design, environment capsule, callable-signature spec, runtime support matrix, or default-method policy.
 
@@ -22,7 +22,7 @@ This directory is a method-selection evidence package. It is not a Layer 3 execu
 
 The revised candidate set contains 20 methods: `CellCharter`, `ENVI`, `mNSF`, `NNMF`, `NSF`, `SOTIP`, `MESA`, `NicheCompass`, `Nicheformer`, `SPARROW`, `CytoCommunity`, `SMORE`, `TrimNN`, `scNiche`, `CellNiche`, `DECIPHER`, `scHolography`, `SIGEL`, `SpaNiche`, `SpatialQuery`.
 
-The candidate set combines the original `/tmp/bioharness_layer2_subagents/input/graph_neighborhood.json` freeze with the targeted 2026-05-03 Graph / Neighborhood supplement for `TrimNN`, `scNiche`, `CellNiche`, and `DECIPHER`, plus the 2026-05-03 targeted correction for `SpaNiche` and `SpatialQuery`. This was a targeted freeze update, not a full Graph / Neighborhood redo.
+The candidate set combines the original Graph / Neighborhood frozen rows with the targeted 2026-05-03 Graph / Neighborhood supplement for `TrimNN`, `scNiche`, `CellNiche`, and `DECIPHER`, plus the targeted correction for `SpaNiche` and `SpatialQuery`. The 2026-05-06 Layer1/Layer2 reconciliation backfills `SpaNiche` and `SpatialQuery` into the active Layer1 registry. This was a targeted freeze update, not a full Graph / Neighborhood redo.
 
 ## 2026-05-05 Controlled Duplicate Note
 

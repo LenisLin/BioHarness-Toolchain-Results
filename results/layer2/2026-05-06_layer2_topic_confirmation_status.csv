@@ -1,0 +1,21 @@
+Analysis Problem,Topic Slug,Layer1 Count,Layer2 Count,Review Status,Formal Readiness,Required Errata
+Artifact Correction,artifact_correction,4,4,Confirmed,Ready,None
+Cell-Cell Communication,cell_cell_communication,16,16,Confirmed,Ready,Giotto excluded in Layer1; retained only as backbone/context note.
+Cell Type Inference,cell_type_inference,35,35,Confirmed,Ready,None
+Data Quality Control,data_quality_control,4,4,Confirmed,Ready,None
+Denoising / Signal Recovery,denoising_signal_recovery,7,7,Confirmed,Ready,None
+Domain / Clustering,domain_clustering,37,37,Confirmed,Ready,None
+Gene Expression Prediction / Imputation,gene_expression_prediction_imputation,17,17,Confirmed,Ready,None
+Graph / Neighborhood,graph_neighborhood,20,20,Confirmed,Ready,20-row freeze accepted; SpaNiche and SpatialQuery backfilled to Layer1.
+Integration,integration,22,22,Confirmed,Ready,22-row freeze accepted; four targeted Integration methods backfilled to Layer1.
+Normalization,normalization,1,1,Confirmed,Ready,None
+Panel Design,panel_design,5,5,Confirmed,Ready,None
+Phenotype- / Cohort-linked Spatial Feature and Niche Analysis,phenotype_cohort_linked_spatial_feature_niche_analysis,5,5,Confirmed,Ready,None
+Program Discovery,program_discovery,13,13,Confirmed,Ready,None
+Segmentation,segmentation,11,11,Confirmed,Ready,None
+Spatial Clonal Analysis,spatial_clonal_analysis,5,5,Confirmed,Ready,None
+Spatial Contrast Testing,spatial_contrast_testing,6,6,Confirmed,Ready,None
+Spatial Perturbation Analysis,spatial_perturbation_analysis,5,5,Confirmed,Ready,None
+Spatial Trajectory Analysis,spatial_trajectory_analysis,9,9,Confirmed,Ready,None
+Spatially Variable Gene Detection,spatially_variable_gene_detection,14,14,Confirmed,Ready,None
+Super-resolution,super_resolution,11,11,Confirmed,Ready,None

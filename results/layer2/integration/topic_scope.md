@@ -18,7 +18,7 @@ The Layer 1 `Subtask` values are used only as branch cues inside this topic. The
 
 Primary frozen input:
 
-`/tmp/bioharness_layer2_subagents/input/integration.json`
+`historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/topic_scope.md`
 
 Input source registry:
 

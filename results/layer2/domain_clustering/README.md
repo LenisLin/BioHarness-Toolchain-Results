@@ -12,7 +12,7 @@ Candidate count: `37`
 
 Frozen methods: `ADEPT`, `BANKSY`, `BASS`, `BayesSpace`, `CCST`, `ConGI`, `conST`, `DeepST`, `DR-SC`, `GraphST`, `MENDER`, `Pianno`, `PRECAST`, `PROST`, `SEDR`, `SiGra`, `SpaceFlow`, `SPACEL`, `SpaGCN`, `SpaSEG`, `SpatialPCA`, `SpatialPrompt`, `SpaTopic`, `STAGATE`, `STAMP`, `STCC`, `stLearn`, `Novae`, `IRIS`, `SpatialGlue`, `BINARY`, `stDyer`, `SpatialLeiden`, `GraphPCA`, `iIMPACT`, `MNMST`, `SpaDo`
 
-Source freeze: `/tmp/bioharness_layer2_subagents/input/domain_clustering.json`
+Source freeze: `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/topic_scope.md`
 
 ## Artifacts
 

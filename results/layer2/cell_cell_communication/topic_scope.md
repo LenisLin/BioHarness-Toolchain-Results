@@ -22,7 +22,7 @@ Primary source registry:
 
 Frozen candidate input:
 
-`/tmp/bioharness_layer2_subagents/input/cell_cell_communication.json`
+`historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_cell_communication/topic_scope.md`
 
 ## Bounded Retrieval Record
 

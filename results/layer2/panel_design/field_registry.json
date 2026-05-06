@@ -1,0 +1,45 @@
+{
+  "topic": "Panel Design",
+  "freeze_date": "2026-05-06",
+  "candidate_count": 5,
+  "candidate_order": [
+    "scGIST",
+    "gpsFISH",
+    "Spapros",
+    "PERSIST",
+    "ReconST"
+  ],
+  "excluded_or_related_not_positive": {
+    "SUICA": "Super-resolution / expression enhancement, not pre-assay panel design.",
+    "DeepLinc": "Cell-cell interaction landscape / CCC-related, not panel design.",
+    "stMCDI": "Denoising / imputation, not panel design."
+  },
+  "fields": {
+    "Tool Name": "See method_table.csv for row-level values.",
+    "Method Family": "See method_table.csv for row-level values.",
+    "Main Input": "See method_table.csv for row-level values.",
+    "Main Use in This Topic": "See method_table.csv for row-level values.",
+    "Main Output": "See method_table.csv for row-level values.",
+    "Closest Alternatives": "See method_table.csv for row-level values.",
+    "Key Difference": "See method_table.csv for row-level values.",
+    "Compute Requirement": "See method_table.csv for row-level values.",
+    "Memory Burden": "See method_table.csv for row-level values.",
+    "Scale Sensitivity": "See method_table.csv for row-level values.",
+    "Code Access": "See method_table.csv for row-level values.",
+    "Primary Code Link": "See method_table.csv for row-level values.",
+    "Evidence Source": "See method_table.csv for row-level values.",
+    "Evidence Note": "See method_table.csv for row-level values.",
+    "Best First Choice When": "See method_table.csv for row-level values.",
+    "Do Not Start With This When": "See method_table.csv for row-level values.",
+    "Panel Design Branch": "See method_table.csv for row-level values.",
+    "Reference or Label Dependence": "See method_table.csv for row-level values.",
+    "Targeted Assay Constraint": "See method_table.csv for row-level values.",
+    "Output Object": "See method_table.csv for row-level values.",
+    "Evidence Status": "See method_table.csv for row-level values.",
+    "Scientific-risk Caveat": "See method_table.csv for row-level values."
+  },
+  "required_caveats": [
+    "Panel Design outputs selected gene/probe panels, not SVG calls, normalized expression, or imputed expression.",
+    "Reference, label, tissue-transfer, prioritized-gene-set, and panel-size assumptions must be reviewed."
+  ]
+}

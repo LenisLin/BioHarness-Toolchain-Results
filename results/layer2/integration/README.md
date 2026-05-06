@@ -14,7 +14,7 @@ Frozen candidates: 22
 
 `CAST`, `DeST-OT`, `GPSA`, `GraphST`, `PASTE`, `PASTE2`, `PRECAST`, `SANTO`, `SLAT`, `SPACEL`, `STalign`, `STAligner`, `STAIR`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, `Crescendo`, `SpaMosaic`, `INSPIRE`, `SpatialCOC`, `SSpMosaic`
 
-The candidate set started from `/tmp/bioharness_layer2_subagents/input/integration.json` and was expanded by a targeted 2025-2026 literature correction to include `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`.
+The candidate set started from `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/topic_scope.md` and was expanded by a targeted 2025-2026 literature correction to include `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`.
 
 ## Artifact Index
 

@@ -1,4 +1,6 @@
 # Layer 2 Manual Science Confirmation Report
+> **2026-05-06 reconciliation note:** This dated file is historical for count/state fields that conflict with `2026-05-06_layer1_layer2_reconciliation_report.md` and `2026-05-06_layer2_topic_confirmation_status.csv`. Use the 2026-05-06 reconciliation artifacts for active Layer1/Layer2 counts and formal-rendering readiness.
+
 
 Date: 2026-05-02
 
@@ -192,13 +194,30 @@ NCBI ESummary spot-check was run for high-risk PMID/DOI rows. One unresolved rev
 
 ### Normalization / Feature Selection (`normalization_feature_selection`)
 
-- Status: Confirm with caveats
-- Candidate count: 2
-- Scientific reason: SpaNorm normalization can remove biology when library size tracks tissue signal. scGIST depends on reference/label/tissue-transfer assumptions and fixed-panel constraints.
+- Status: Superseded by 2026-05-06 taxonomy split
+- Candidate count: 0 active; previous 2 rows split
+- Scientific reason: The old topic mixed post-capture spatial-aware normalization with pre-assay targeted panel design.
+- Formal rendering recommendation: Do not render the old combined topic. Use `Normalization` and `Panel Design` instead.
+
+### Normalization (`normalization`)
+
+- Status: Confirm with caveats after taxonomy revision
+- Candidate count: 1
+- Scientific reason: `SpaNorm` is a dedicated spatial-aware normalization method for already measured spatial expression matrices. Standard packages such as Scanpy, Seurat/sctransform, scran/scater, Giotto, and Squidpy are retained only as Layer 2 backbone/baseline workflow context.
 - Blocking issue: None.
-- Metadata issue: PMID/DOI identities verified; code access traceable for both rows.
-- Benchmark / review status: No direct two-method benchmark because the rows solve different branches.
-- Formal rendering recommendation: May proceed to later formal rendering after human approval.
+- Metadata issue: SpaNorm PMID/DOI and Bioconductor code/access trace are verified.
+- Benchmark / review status: Method-paper-local evidence; no universal ranking against backbone workflows.
+- Formal rendering recommendation: May proceed after human approval with signal-removal and backbone-context caveats preserved.
+
+### Panel Design (`panel_design`)
+
+- Status: Confirm with caveats after targeted supplement
+- Candidate count: 5
+- Scientific reason: `scGIST`, `gpsFISH`, `Spapros`, `PERSIST`, and caveated `ReconST` output targeted spatial gene/probe panels rather than normalized expression, SVG calls, or imputed values.
+- Blocking issue: None for working package; `ReconST` remains preprint-level and code-unclear.
+- Metadata issue: gpsFISH, Spapros, PERSIST, and ReconST metadata were added by targeted PubMed/code checks. `SUICA`, `DeepLinc`, and `stMCDI` are excluded from Panel Design positives.
+- Benchmark / review status: Method-paper-local and preprint evidence; no all-candidate panel-design benchmark.
+- Formal rendering recommendation: May proceed after human approval with reference/label/tissue-transfer/panel-size assumptions and ReconST provenance caveat preserved.
 
 ### Program Discovery (`program_discovery`)
 

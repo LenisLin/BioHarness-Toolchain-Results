@@ -18,7 +18,7 @@ The Layer 1 `Subtask` values are used only as branch cues inside this topic. The
 
 Primary frozen candidate input:
 
-`/tmp/bioharness_layer2_subagents/input/cell_type_inference.json`
+`historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference/topic_scope.md`
 
 Source registry recorded in that input:
 

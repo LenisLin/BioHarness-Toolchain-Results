@@ -20,7 +20,7 @@ Retrieval date: `2026-05-01`
 
 Sources used under the convergence constraint:
 
-- Frozen input: `/tmp/bioharness_layer2_subagents/input/domain_clustering.json`
+- Frozen input: `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/topic_scope.md`
 - Local completion standard: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/TOPIC_COMPLETION_STANDARD.md`
 - Local style/schema example: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/denoising_imputation/`
 - Local correction note: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-01_high_priority_journal_sweep_and_backbone_correction.md`

@@ -8,8 +8,8 @@ Purpose: method-selection evidence package for the Layer 1 `Analysis Problem`
 `Spatial Clonal Analysis`.
 
 This document defines the topic boundary and candidate freeze. It does not
-define commands, callable signatures, execution surfaces, adapter boundaries,
-environment bindings, or runtime support.
+define commands, callable interfaces, execution surfaces, adapter boundaries,
+environment bindings, or execution support.
 
 ## Analysis Problem Boundary
 
@@ -29,7 +29,7 @@ Primary source registry from the frozen input:
 
 Frozen candidate input:
 
-`/tmp/bioharness_layer2_subagents/input/spatial_clonal_analysis.json`
+`/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_clonal_analysis.json`
 
 ## Bounded Retrieval Record
 
@@ -151,3 +151,6 @@ as separate packages:
 
 These branches support conditional selection only. They are not default
 execution routes.
+
+
+Allele-specific CNA, total CNA, point-mutation clone deconvolution, sparse spatial CNA, and copy-number-profile subclones are not interchangeable.

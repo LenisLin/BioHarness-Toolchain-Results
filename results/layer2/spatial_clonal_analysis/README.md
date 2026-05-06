@@ -9,8 +9,8 @@ Current status: complete working/evidence package for method selection.
 This directory contains the Layer 2 method-selection evidence package for the
 spatial transcriptomics `Spatial Clonal Analysis` analysis problem. It supports
 conditional method selection within this topic. It is not a Layer 3 execution
-surface, Layer 4 adapter implementation, environment capsule, default-method
-policy, or runtime-support claim.
+surface, Layer 4 adapter implementation, environment profile, universal-method
+policy, or execution-support claim.
 
 ## Topic Boundary
 

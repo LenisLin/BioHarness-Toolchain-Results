@@ -10,12 +10,12 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 
 ## Authority Artifacts
 
-- Topic scope: `/tmp/bioharness_layer2_subagents/output/cell_type_inference/topic_scope.md`
-- Field registry: `/tmp/bioharness_layer2_subagents/output/cell_type_inference/field_registry.json`
-- Structured method table: `/tmp/bioharness_layer2_subagents/output/cell_type_inference/method_table.json`
-- CSV method table: `/tmp/bioharness_layer2_subagents/output/cell_type_inference/method_table.csv`
-- Human-readable method table: `/tmp/bioharness_layer2_subagents/output/cell_type_inference/method_table.md`
-- Review and decision tree: `/tmp/bioharness_layer2_subagents/output/cell_type_inference/review_decision_tree.md`
+- Topic scope: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference/topic_scope.md`
+- Field registry: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference/field_registry.json`
+- Structured method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference/method_table.json`
+- CSV method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference/method_table.csv`
+- Human-readable method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference/method_table.md`
+- Review and decision tree: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference/review_decision_tree.md`
 
 ## Layer 2 Gate Check
 

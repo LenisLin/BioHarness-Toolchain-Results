@@ -14,7 +14,7 @@ Retrieval date: `2026-05-01`
 
 Retrieval sources used for this convergence task:
 
-- Frozen input: `/tmp/bioharness_layer2_subagents/input/program_discovery.json`
+- Frozen input: `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/program_discovery/topic_scope.md`
 - Layer 1 registry source recorded by the frozen input: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-01_layer1_spatial_method_registry_preprocessing_split_working.csv`
 - Local validation note: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-01_six_topic_layer1_supplement_manual_validation.md`
 - Local correction note: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-01_high_priority_journal_sweep_and_backbone_correction.md`

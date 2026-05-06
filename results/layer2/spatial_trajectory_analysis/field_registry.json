@@ -6,10 +6,10 @@
   "non_goals": [
     "Layer 3 execution surfaces",
     "Layer 4 adapter definitions",
-    "callable signatures",
+    "callable interfaces",
     "environment bindings",
-    "runtime-support claims",
-    "default-method policy"
+    "execution-support claims",
+    "universal-method policy"
   ],
   "fields": [
     {
@@ -64,7 +64,7 @@
       "definition": "Nearby alternatives from the same frozen topic set.",
       "fill_rule": "Use two to four local alternatives only; do not add methods outside the frozen candidate set.",
       "controlled_values": null,
-      "topic_relevance": "Supports branch-local comparison without global ranking."
+      "topic_relevance": "Supports branch-local comparison without universal ranking."
     },
     {
       "name": "Key Difference",
@@ -122,7 +122,7 @@
       "role": "access trace",
       "scope": "shared",
       "definition": "Current code-access state for the method.",
-      "fill_rule": "Record access state only; do not equate access with runtime support.",
+      "fill_rule": "Record access state only; do not equate access with execution support.",
       "controlled_values": [
         "available",
         "archived",
@@ -169,7 +169,7 @@
       "role": "positive decision cue",
       "scope": "shared",
       "definition": "Best-fit starting condition within this topic.",
-      "fill_rule": "Use one positive conditional sentence. Avoid default-method claims.",
+      "fill_rule": "Use one positive conditional sentence. Avoid universal-method claims.",
       "controlled_values": null,
       "topic_relevance": "Feeds the branch-local decision tree."
     },

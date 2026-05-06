@@ -4,7 +4,7 @@ Layer served: `Layer 2`
 
 Status: complete working/evidence package for method-selection support.
 
-This package covers the `Spatial Trajectory Analysis` Analysis Problem using the targeted nine-method candidate set supplied in `/tmp/bioharness_layer2_subagents/input/spatial_trajectory_analysis.json`. It is a method-selection evidence package. It is not a Layer 3 execution surface, Layer 4 adapter plan, environment capsule, callable signature, runtime-support claim, or default-method policy.
+This package covers the `Spatial Trajectory Analysis` Analysis Problem using the targeted nine-method candidate set supplied in `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis.json`. It is a method-selection evidence package. It is not a Layer 3 execution surface, Layer 4 adapter plan, environment profile, callable interface, execution-support claim, or universal-method policy.
 
 ## Artifacts
 

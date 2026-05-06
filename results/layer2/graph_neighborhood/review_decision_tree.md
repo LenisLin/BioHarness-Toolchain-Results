@@ -56,7 +56,7 @@ AND (neighborhood OR niche OR microenvironment OR "cellular neighborhood")
 AND (benchmark OR review OR comparison)
 ```
 
-Screening conclusion: no suitable independent benchmark was found that jointly evaluates all 18 frozen methods as Graph / Neighborhood methods. The strongest external benchmark is the Nature Methods 2024 spatial clustering benchmark, which is task-adjacent for `SOTIP` and domain-like branches but is not a full neighborhood/niche benchmark. Several method papers include their own benchmarks, but these are task-local and often author-run.
+Screening conclusion: no suitable independent benchmark was found that jointly evaluates all 20 targeted Graph / Neighborhood candidates as Graph / Neighborhood methods. The strongest external benchmark is the Nature Methods 2024 spatial clustering benchmark, which is task-adjacent for `SOTIP` and domain-like branches but is not a full neighborhood/niche benchmark. Several method papers include their own benchmarks, but these are task-local and often author-run.
 
 Logic-review consequence: the decision tree below is branch-local. It does not rank all methods globally and does not name a default method.
 
@@ -87,6 +87,18 @@ If the primary endpoint is ligand-receptor edges, sender-receiver pairs, communi
 - Treat `SMORE`, `TrimNN`, and `SpatialQuery` as motif/topology methods; CCC/pathway interpretation is downstream only.
 
 Stay here only when the primary endpoint is neighborhood, niche, microenvironment state, cellular motif, spatial factor, soft multicellular signature, reconstructed neighborhood, or spatial-context representation.
+
+If the task asks for standard neighborhood graph construction, spatial graph utilities, neighborhood enrichment, or an AnnData/scverse spatial workflow route rather than dedicated niche, motif, factor, embedding, reconstruction, or gene-representation method selection:
+
+- Expose `Squidpy` as backbone/workflow context.
+- Do not count `Squidpy` as a candidate row in the 20-method Graph / Neighborhood freeze.
+- Do not rank `Squidpy` against dedicated Graph / Neighborhood candidates or treat it as runtime support, adapter availability, execution readiness, or default-method evidence.
+
+If the task asks for standard neighborhood graph construction, spatial graph utilities, neighbor enrichment, or an AnnData/scverse spatial workflow route rather than dedicated niche, motif, factor, embedding, reconstruction, or gene-representation method selection:
+
+- Expose `Squidpy` as backbone/workflow context.
+- Do not count `Squidpy` as a candidate row in the 20-method Graph / Neighborhood freeze.
+- Do not rank `Squidpy` against dedicated Graph / Neighborhood candidates or treat it as runtime support.
 
 If the task asks for runtime support, package commands, adapters, or callable signatures:
 
@@ -247,4 +259,4 @@ If code access must be resolved before deeper engineering work:
 
 ## Review Decision
 
-The current evidence supports a conditional Layer 2 decision tree, not a universal method ranking. The revised package status is `Needs minor errata + targeted 20-row freeze update + boundary-hardening before formal rendering` until the updated artifacts are accepted. Runtime support, adapter scope, environment capsules, callable signatures, and default methods remain outside this package.
+The current evidence supports a conditional Layer 2 decision tree, not a universal method ranking. After the 2026-05-06 Layer1/Layer2 reconciliation, the revised 20-row package is confirmed with caveats and ready for formal rendering while preserving branch-local caveats. Runtime support, adapter scope, environment capsules, callable signatures, and default methods remain outside this package.

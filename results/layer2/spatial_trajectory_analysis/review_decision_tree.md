@@ -6,14 +6,14 @@ Layer served: `Layer 2`
 
 Purpose: `when to choose`, not `how to run`.
 
-This document records the bounded PubMed verification pass, benchmark/review screening, evidence spot-checks, branch-local decision tree, and coverage ledger for the updated `Spatial Trajectory Analysis` candidate set. It does not define execution surfaces, wrappers, adapter boundaries, callable signatures, environments, default methods, or runtime support.
+This document records the bounded PubMed verification pass, benchmark/review screening, evidence spot-checks, branch-local decision tree, and coverage ledger for the updated `Spatial Trajectory Analysis` candidate set. It does not define execution surfaces, wrappers, adapter boundaries, callable interfaces, environments, universal methods, or execution support.
 
 ## Reading Rules
 
 - Keep the nine-method targeted freeze: `SpaTrack`, `spVelo`, `STT`, `SIRV`, `PearlST`, `TopoVelo`, `CASCAT`, `STORIES`, `stVCR`.
 - Treat registry `Subtask` values as branch cues only.
 - Use compute and code access as branch-local audit cues, not as evidence of BioHarness support.
-- Use benchmark or review evidence only for caveats and branch-local interpretation. Do not convert it into a global ranking.
+- Use benchmark or review evidence only for caveats and branch-local interpretation. Do not convert it into a universal ranking.
 - Treat `Closest Alternatives`, `Key Difference`, resource burden, scale sensitivity, and many scientific caveats as Layer 2 synthesized judgment unless a method-paper record directly supports the statement.
 
 ## PubMed Candidate Verification
@@ -82,7 +82,7 @@ AND
 
 Result: 1 PubMed record, not a dedicated benchmark of the frozen candidate set.
 
-Review conclusion: no suitable independent benchmark was found that supports a global ranking across the updated nine candidates. Method-paper-local comparisons exist for several methods, especially `STT`, `PearlST`, and `CASCAT`, but those comparisons are not interchangeable with a cross-method independent benchmark. This package therefore uses an explicit logic review based on the method table, field registry, and scientific caveats.
+Review conclusion: no suitable independent benchmark was found that supports a universal ranking across the updated nine candidates. Method-paper-local comparisons exist for several methods, especially `STT`, `PearlST`, and `CASCAT`, but those comparisons are not interchangeable with a cross-method independent benchmark. This package therefore uses an explicit logic review based on the method table, field registry, and scientific caveats.
 
 ## Evidence Spot-Checks
 
@@ -121,7 +121,7 @@ If no:
 
 If yes:
 
-- Prefer / consider `SIRV`.
+- Consider `SIRV`.
 - Carry forward the reference-bias and reference-mismatch caveat.
 
 If no:
@@ -132,7 +132,7 @@ If no:
 
 If yes:
 
-- Prefer / consider `spVelo`.
+- Consider `spVelo`.
 - Keep batch and resource caveats visible.
 
 If no:
@@ -143,19 +143,19 @@ If no:
 
 If multiscale state-specific dynamics, transition tensors, streamlines, or attractor paths are central:
 
-- Prefer / consider `STT`.
+- Consider `STT`.
 
 If spatially coupled topological velocity and interpretable spatial cell-state dependencies are central:
 
-- Prefer / consider `TopoVelo`.
+- Consider `TopoVelo`.
 - Keep code-link traceability as a later audit concern.
 
 ### Step 5. Is the task an expression-plus-location differentiation trajectory rather than velocity?
 
 If yes, and optimal-transport transition costs are a good conceptual fit:
 
-- Prefer / consider `SpaTrack` for expression-plus-location trajectory reconstruction.
-- Prefer / consider `STORIES` when the task explicitly asks for a fate landscape.
+- Consider `SpaTrack` for expression-plus-location trajectory reconstruction.
+- Consider `STORIES` when the task explicitly asks for a fate landscape.
 - Keep trajectory direction, fate, migration, and biological-causality caveats visible.
 
 If no:
@@ -166,8 +166,8 @@ If no:
 
 If yes:
 
-- Prefer / consider `PearlST` for latent spatiotemporal structure or pseudotime with histology/spatial-feature integration.
-- Prefer / consider `stVCR` when the central question is spatiotemporal single-cell dynamics.
+- Consider `PearlST` for latent spatiotemporal structure or pseudotime with histology/spatial-feature integration.
+- Consider `stVCR` when the central question is spatiotemporal single-cell dynamics.
 - Keep representation/objective entanglement, temporal sampling, and state-definition caveats visible.
 
 If no:
@@ -178,7 +178,7 @@ If no:
 
 If yes:
 
-- Prefer / consider `CASCAT`.
+- Consider `CASCAT`.
 - Keep the distinction between model-based causal structure and experimental causality visible.
 
 If no:
@@ -189,8 +189,8 @@ If no:
 
 If a CPU-first reading set is required:
 
-- Read first: `SpaTrack`, `STT`, `SIRV`.
-- Do not interpret CPU labels as runtime support inside BioHarness.
+- Review first: `SpaTrack`, `STT`, `SIRV`.
+- Do not interpret CPU labels as execution support inside BioHarness.
 
 If optional GPU/deep-model routes are acceptable:
 
@@ -217,5 +217,5 @@ If code-link traceability must be confirmed before method reading:
 
 ## Review Decision
 
-The current evidence supports a conditional Layer 2 decision tree, not a global ranking. No suitable independent all-candidate benchmark was found. The topic is suitable for method-selection discussion and representative Layer 3/4 audit triage after closure, while runtime and adapter decisions remain outside this Layer 2 package.
+The current evidence supports a conditional Layer 2 decision tree, not a universal ranking. No suitable independent all-candidate benchmark was found. The topic is suitable for method-selection discussion and representative Layer 3/4 audit triage after closure, while runtime and adapter decisions remain outside this Layer 2 package.
 

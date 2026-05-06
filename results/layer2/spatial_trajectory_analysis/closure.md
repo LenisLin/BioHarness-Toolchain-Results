@@ -6,17 +6,17 @@ Layer served: `Layer 2`
 
 Closure status: complete working/evidence package with caveats; ready for formal rendering or representative Layer 3/4 engineering audit.
 
-This closure does not freeze a default method, Layer 3 execution surface, backend adapter boundary, callable signature, environment capsule, rewrite decision, or runtime-support status.
+This closure does not freeze a universal method, Layer 3 execution surface, backend adapter boundary, callable interface, environment profile, rewrite decision, or execution-support status.
 
 ## Authority Artifacts
 
-- Topic scope: `/tmp/bioharness_layer2_subagents/output/spatial_trajectory_analysis/topic_scope.md`
-- Field registry: `/tmp/bioharness_layer2_subagents/output/spatial_trajectory_analysis/field_registry.json`
-- Structured method table: `/tmp/bioharness_layer2_subagents/output/spatial_trajectory_analysis/method_table.json`
-- CSV method table: `/tmp/bioharness_layer2_subagents/output/spatial_trajectory_analysis/method_table.csv`
-- Human-readable method table: `/tmp/bioharness_layer2_subagents/output/spatial_trajectory_analysis/method_table.md`
-- Review and decision tree: `/tmp/bioharness_layer2_subagents/output/spatial_trajectory_analysis/review_decision_tree.md`
-- Package README: `/tmp/bioharness_layer2_subagents/output/spatial_trajectory_analysis/README.md`
+- Topic scope: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis/topic_scope.md`
+- Field registry: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis/field_registry.json`
+- Structured method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis/method_table.json`
+- CSV method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis/method_table.csv`
+- Human-readable method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis/method_table.md`
+- Review and decision tree: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis/review_decision_tree.md`
+- Package README: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis/README.md`
 
 ## Layer 2 Gate Check
 
@@ -28,8 +28,8 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 | Field schema | Pass | Shared fields plus six topic-specific decision fields in `field_registry.json`. |
 | Method table artifacts | Pass | JSON, CSV, and Markdown tables represent the same nine candidates and field model. |
 | Review / logic pass | Pass with caveats | No dedicated independent benchmark was found for the updated nine-method set; decision tree uses explicit logic review plus method-paper evidence. |
-| Decision tree | Pass with caveats | Conditional branch-local method selection only; no global ranking. |
-| Layer boundary | Pass | Artifacts avoid runtime, adapter, environment, callable-signature, and default-method claims. |
+| Decision tree | Pass with caveats | Conditional branch-local method selection only; no universal ranking. |
+| Layer boundary | Pass | Artifacts avoid runtime, adapter, environment, callable-signature, and universal-method claims. |
 
 ## Current Layer 2 Facts
 
@@ -57,7 +57,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 
 ## Representative Layer 3/4 Audit Batch
 
-The representative audit batch is a later engineering review input. It is not runtime support, a default-method list, an execution surface, or an adapter decision.
+The representative audit batch is a later engineering review input. It is not execution support, a universal-method list, an execution surface, or an adapter decision.
 
 Because the candidate set is small and each method represents a distinct selection branch, all nine candidates should be considered for representative audit triage:
 
@@ -84,5 +84,5 @@ Audit outputs must remain separate from this Layer 2 package:
 
 ## Closure Decision
 
-`Spatial Trajectory Analysis` Layer 2 is complete as a working/evidence package for method-selection support. The package is ready for later formal rendering or representative Layer 3/4 audit triage. It does not imply default methods, runtime surfaces, package entrypoints, environment capsules, wrappers, rewrites, or adapter implementations.
+`Spatial Trajectory Analysis` Layer 2 is complete as a working/evidence package for method-selection support. The package is ready for later formal rendering or representative Layer 3/4 audit triage. It does not imply universal methods, runtime surfaces, package entrypoints, environment profiles, wrappers, rewrites, or adapter implementations.
 

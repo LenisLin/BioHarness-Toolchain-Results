@@ -431,7 +431,7 @@
       "Primary Scientific Risk": "causal language depends on model assumptions and input CCC calls; output should not be treated as experimental causality"
     }
   ],
-  "source_candidate_input": "/tmp/bioharness_layer2_subagents/input/cell_cell_communication.json",
+  "source_candidate_input": "historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_cell_communication/topic_scope.md",
   "excluded_registry_rows": [
     {
       "Tool Name": "Giotto",

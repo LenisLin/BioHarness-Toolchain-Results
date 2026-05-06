@@ -1,16 +1,14 @@
-# Spatial Domain Identification Layer 2
+# Spatial Domain Identification Layer 2 Pilot
 
 ## Status
 
 Layer served: `Layer 2`
 
-This directory is the canonical location for the current spatial domain
-identification Layer 2 artifacts. The closure decision is that the topic is
-ready for a representative Layer 3/4 method engineering audit, but no Layer 3
-execution surface, backend adapter, environment capsule, or default method is
-frozen here.
+This directory contains dated April 2026 Layer 2 pilot artifacts for spatial domain identification.
 
-## Canonical Artifacts
+For the current Layer 1/2 formal topic set, topic enumeration starts from active Layer 1 registry `Analysis Problem` values and resolves to current Layer 2 topic packages through the active confirmation or reconciliation mapping. The active `Domain / Clustering` analysis problem resolves to the `domain_clustering` package.
+
+## Dated Artifacts
 
 - `2026-04-16_domain_identification_layer2_pilot.md`
 - `2026-04-16_layer2_field_registry.json`
@@ -20,5 +18,4 @@ frozen here.
 - `2026-04-18_domain_identification_layer2_supplement_review.md`
 - `2026-04-26_domain_identification_layer2_closure.md`
 
-No short alias symlinks are kept in this directory. Use the dated artifact names
-above as the stable result paths.
+Use the dated artifact names above as stable pilot result paths.

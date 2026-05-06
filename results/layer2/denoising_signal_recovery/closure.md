@@ -24,8 +24,8 @@
 
 ## Closure Decision
 
-This package is rebuilt as a working/evidence package after the 2026-05-04 taxonomy cleanup. Final human confirmation is intentionally deferred before root confirmation/status documents are updated.
+This package is confirmed with caveats after the 2026-05-06 Layer1/Layer2 reconciliation and can serve as source material for later formal rendering.
 
 ## Representative Layer 3/4 Audit Batch
 
-Representative audit candidates should be selected after human confirmation. Any later audit batch is not a universal-method list and does not imply execution readiness.
+Representative audit candidates remain non-default examples. Any later audit batch is not a universal-method list and does not imply execution readiness.

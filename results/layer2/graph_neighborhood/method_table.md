@@ -1,6 +1,6 @@
 # Graph / Neighborhood Method Table
 
-Source: `method_table.json` rendered on `2026-05-03` from the revised 18-method freeze.
+Source: `method_table.json` rendered on `2026-05-03` from the revised 20-method freeze.
 
 | Tool Name | Method Family | Main Input | Main Use in This Topic | Main Output | Closest Alternatives | Key Difference | Compute Requirement | Memory Burden | Scale Sensitivity | Code Access | Primary Code Link | Evidence Source | Evidence Note | Best First Choice When | Do Not Start With This When | Neighborhood Signal Unit | Multi-sample / Cohort Cue | Reference or Prior Dependence | Output Granularity | Interpretation Anchor | Scientific-risk Caveat |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

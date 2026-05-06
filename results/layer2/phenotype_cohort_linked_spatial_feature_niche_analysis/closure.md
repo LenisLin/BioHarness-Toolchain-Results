@@ -25,7 +25,7 @@
 
 ## Closure Decision
 
-This package is rebuilt as a working/evidence package after the 2026-05-05 Comparative boundary follow-up. It may support later human review, formal rendering, or representative engineering audit planning, but those later steps remain separate.
+This package is rebuilt as a working/evidence package after the 2026-05-05 Comparative boundary follow-up. It is confirmed with caveats and can support later formal rendering or representative engineering audit planning, while those later steps remain separate.
 
 ## Representative Later-Audit Batch
 

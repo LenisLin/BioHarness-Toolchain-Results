@@ -4,7 +4,7 @@
 
 Layer served: `Layer 2`
 
-Closure status: revised working/evidence package with targeted 20-row freeze update and boundary-hardening completed for review. Formal rendering remains deferred until this revised package is accepted.
+Closure status: confirm with caveats after the 2026-05-06 Layer1/Layer2 reconciliation. The targeted 20-row freeze update and boundary-hardening pass are accepted as ready for formal rendering.
 
 This closure does not freeze a default method, Layer 3 execution surface, backend adapter boundary, callable signature, environment capsule, rewrite decision, or runtime-support status.
 
@@ -16,7 +16,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 - CSV method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/graph_neighborhood/method_table.csv`
 - Human-readable method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/graph_neighborhood/method_table.md`
 - Review and decision tree: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/graph_neighborhood/review_decision_tree.md`
-- Targeted Layer 1 supplement: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-03_graph_neighborhood_targeted_freeze_update.md`
+- Layer1/Layer2 reconciliation note: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-06_layer1_layer2_reconciliation_note.md`
 
 ## Layer 2 Gate Check
 
@@ -24,7 +24,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 | --- | --- | --- |
 | Analysis Problem unit | Pass | Topic is `Graph / Neighborhood`, not individual algorithms or subtasks. |
 | Bounded retrieval record | Pass | `topic_scope.md` records original date, targeted reopen date, sources, query strategy, inclusion/exclusion rules, boundary router, and candidate freeze. |
-| Frozen candidate set | Pass with review caveat | Twenty rows reflect the original 14 plus targeted additions `TrimNN`, `scNiche`, `CellNiche`, `DECIPHER`, `SpaNiche`, and `SpatialQuery`; formal rendering waits for human acceptance of this update. |
+| Frozen candidate set | Pass with caveats | Twenty rows reflect the original 14 plus targeted additions `TrimNN`, `scNiche`, `CellNiche`, `DECIPHER`, `SpaNiche`, and `SpatialQuery`; the 2026-05-06 reconciliation backfills `SpaNiche` and `SpatialQuery` to Layer1. |
 | Boundary contract | Pass | Step 0 routes hard domain endpoints to Domain / Clustering and CCC endpoints to Cell-Cell Communication. |
 | Field schema | Pass | Shared fields plus topic-specific decision fields are defined in `field_registry.json`; atlas-scale, motif, niche, preprint, and disentangled-context values were represented. |
 | Method table artifacts | Pass | JSON was built first; CSV and Markdown were rendered from the JSON. |
@@ -41,6 +41,14 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 - Output granularity branches: discrete niches/TCNs, continuous factors/embeddings, soft signatures, microenvironment domains, ecological metrics/hotspots, motif signatures, cellular community motifs, spatial niche/colocalization patterns, atlas-scale microenvironment embeddings, disentangled spatial-context embeddings, reconstructed neighborhoods, and gene representations.
 - Strongest independent benchmark relevance: spatial clustering/domain benchmarks, especially the Nature Methods 2024 benchmark, but only task-adjacent for Graph / Neighborhood and especially for `SOTIP`.
 - Weakest evidence areas: independent cross-method neighborhood benchmarks; very recent 2025-2026 method-paper-local evidence; SpatialQuery preprint-only evidence; scale/resource labels for atlas-scale and disentangled-embedding methods.
+
+## Backbone / Workflow Context Closure
+
+`Squidpy` is recorded as non-counted backbone/workflow context for standard spatial graph construction, neighborhood enrichment, spatial graph utilities, and AnnData/scverse spatial workflow handling. This does not alter the 20-row candidate freeze and does not make `Squidpy` a Graph / Neighborhood method-table row, ranked method, runtime support, adapter availability, execution readiness, or default-method evidence.
+
+## Backbone / Workflow Context Closure
+
+`Squidpy` is recorded as non-counted backbone/workflow context for standard spatial graph construction, neighborhood enrichment, spatial graph utilities, and AnnData/scverse spatial workflow handling. This does not alter the 20-row candidate freeze and does not make `Squidpy` a Graph / Neighborhood method-table row, default method, runtime-support claim, adapter claim, or execution-ready path.
 
 ## Caveats Carried Into Later Work
 
@@ -85,7 +93,7 @@ Audit outputs must remain separate from this Layer 2 package:
 
 ## Closure Decision
 
-`Graph / Neighborhood` Layer 2 is updated as a revised working/evidence package for method-selection support. Its status is `Needs minor errata + targeted 20-row freeze update + boundary-hardening before formal rendering` until this revised freeze is accepted. It does not imply default methods, runtime surfaces, package entrypoints, environment capsules, wrappers, rewrites, or adapter implementations.
+`Graph / Neighborhood` Layer 2 is confirmed with caveats after the 2026-05-06 Layer1/Layer2 reconciliation. It is complete as a working/evidence package for method-selection support and ready for later formal rendering, while preserving branch-local caveats. It does not imply default methods, runtime surfaces, package entrypoints, environment capsules, wrappers, rewrites, or adapter implementations.
 
 ## 2026-05-05 Controlled Duplicate Note
 

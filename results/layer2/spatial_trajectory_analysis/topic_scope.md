@@ -6,13 +6,13 @@ Layer 1 Analysis Problem: `Spatial Trajectory Analysis`
 
 Layer 2 completion unit: the full Analysis Problem, not individual subtasks or method packages.
 
-This package supports method selection for spatial transcriptomics trajectory tasks, including spatial differentiation trajectories, spatial RNA velocity, spatiotemporal pseudotime/embedding, and causal trajectory inference. It does not define executable commands, package entrypoints, adapter boundaries, callable signatures, environment profiles, runtime validation, or BioHarness runtime support.
+This package supports method selection for spatial transcriptomics trajectory tasks, including spatial differentiation trajectories, spatial RNA velocity, spatiotemporal pseudotime/embedding, and causal trajectory inference. It does not define executable commands, package entrypoints, adapter boundaries, callable interfaces, environment profiles, runtime validation, or BioHarness execution support.
 
 ## Frozen Candidate Input
 
 Input file:
 
-`/tmp/bioharness_layer2_subagents/input/spatial_trajectory_analysis.json`
+`/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_trajectory_analysis.json`
 
 Candidate count: 9
 

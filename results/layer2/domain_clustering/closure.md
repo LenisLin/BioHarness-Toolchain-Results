@@ -10,12 +10,12 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 
 ## Authority Artifacts
 
-- Topic scope: `/tmp/bioharness_layer2_subagents/output/domain_clustering/topic_scope.md`
-- Field registry: `/tmp/bioharness_layer2_subagents/output/domain_clustering/field_registry.json`
-- Structured method table: `/tmp/bioharness_layer2_subagents/output/domain_clustering/method_table.json`
-- CSV method table: `/tmp/bioharness_layer2_subagents/output/domain_clustering/method_table.csv`
-- Human-readable method table: `/tmp/bioharness_layer2_subagents/output/domain_clustering/method_table.md`
-- Review and decision tree: `/tmp/bioharness_layer2_subagents/output/domain_clustering/review_decision_tree.md`
+- Topic scope: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/topic_scope.md`
+- Field registry: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/field_registry.json`
+- Structured method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/method_table.json`
+- CSV method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/method_table.csv`
+- Human-readable method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/method_table.md`
+- Review and decision tree: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/review_decision_tree.md`
 
 ## Layer 2 Gate Check
 
@@ -23,7 +23,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 | --- | --- | --- |
 | Analysis Problem unit | Pass | Topic is `Domain / Clustering`, not individual algorithms or subtasks. |
 | Bounded retrieval record | Pass | `topic_scope.md` records date, local sources, brief benchmark/review screening, and candidate freeze. |
-| Frozen candidate set | Pass | 37 rows retained from `/tmp/bioharness_layer2_subagents/input/domain_clustering.json`. |
+| Frozen candidate set | Pass | 37 rows retained from `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/topic_scope.md`. |
 | Field schema | Pass | 16 shared fields plus 6 topic-specific fields in `field_registry.json`. |
 | Method table artifacts | Pass | JSON, CSV, and Markdown are generated from the same row model. |
 | Review / logic pass | Pass with caveats | Relevant domain benchmarks exist, but no all-candidate benchmark was found. |

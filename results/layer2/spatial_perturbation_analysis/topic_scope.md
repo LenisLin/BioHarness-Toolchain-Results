@@ -53,7 +53,7 @@ Targeted boundary check date: `2026-05-02`
 
 Sources consulted:
 
-- Frozen input JSON: `/tmp/bioharness_layer2_subagents/input/spatial_perturbation_analysis.json`
+- Frozen input JSON: `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_perturbation_analysis/topic_scope.md`
 - PubMed E-utilities `esummary` for PMID/DOI verification.
 - PubMed E-utilities `efetch` for bounded method-paper abstract review.
 - PubMed E-utilities `esearch` and `esummary` for benchmark/review screening.

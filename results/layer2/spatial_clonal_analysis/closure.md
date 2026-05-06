@@ -7,24 +7,24 @@ Layer served: `Layer 2`
 Closure status: complete working/evidence package; ready for formal rendering
 or representative Layer 3/4 engineering audit.
 
-This closure does not freeze a default method, Layer 3 execution surface,
-backend adapter boundary, callable signature, environment capsule, rewrite
-decision, or runtime-support status.
+This closure does not freeze a universal method, Layer 3 execution surface,
+backend adapter boundary, callable interface, environment profile, rewrite
+decision, or execution-support status.
 
 ## Authority Artifacts
 
 - Topic scope:
-  `/tmp/bioharness_layer2_subagents/output/spatial_clonal_analysis/topic_scope.md`
+  `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_clonal_analysis/topic_scope.md`
 - Field registry:
-  `/tmp/bioharness_layer2_subagents/output/spatial_clonal_analysis/field_registry.json`
+  `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_clonal_analysis/field_registry.json`
 - CSV method table:
-  `/tmp/bioharness_layer2_subagents/output/spatial_clonal_analysis/method_table.csv`
+  `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_clonal_analysis/method_table.csv`
 - Human-readable method table:
-  `/tmp/bioharness_layer2_subagents/output/spatial_clonal_analysis/method_table.md`
+  `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_clonal_analysis/method_table.md`
 - Structured method table:
-  `/tmp/bioharness_layer2_subagents/output/spatial_clonal_analysis/method_table.json`
+  `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_clonal_analysis/method_table.json`
 - Review and decision tree:
-  `/tmp/bioharness_layer2_subagents/output/spatial_clonal_analysis/review_decision_tree.md`
+  `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/spatial_clonal_analysis/review_decision_tree.md`
 
 ## Layer 2 Gate Check
 
@@ -36,8 +36,8 @@ decision, or runtime-support status.
 | Field schema | Pass | Shared fields plus six topic-specific decision fields in `field_registry.json`. |
 | Method table artifacts | Pass | CSV, Markdown, and JSON tables represent the same five candidates and field model. |
 | Review / logic pass | Pass with caveats | No dedicated five-method independent benchmark was found; decision tree uses explicit logic review plus method-paper evidence. |
-| Decision tree | Pass with caveats | Conditional branch-local method selection only; no global ranking. |
-| Layer boundary | Pass | Artifacts avoid runtime, adapter, environment, and default-method claims. |
+| Decision tree | Pass with caveats | Conditional branch-local method selection only; no universal ranking. |
+| Layer boundary | Pass | Artifacts avoid runtime, adapter, environment, and universal-method claims. |
 
 ## Current Layer 2 Facts
 
@@ -99,6 +99,9 @@ Audit outputs must remain separate from this Layer 2 package:
 
 `Spatial Clonal Analysis` Layer 2 is complete as a working/evidence package for
 method-selection support. It is ready for later formal rendering or
-representative Layer 3/4 audit, but it does not imply default methods, runtime
-surfaces, package entrypoints, environment capsules, wrappers, rewrites, or
+representative Layer 3/4 audit, but it does not imply universal methods, runtime
+surfaces, package entrypoints, environment profiles, wrappers, rewrites, or
 adapter implementations.
+
+
+Allele-specific CNA, total CNA, point-mutation clone deconvolution, sparse spatial CNA, and copy-number-profile subclones are not interchangeable.

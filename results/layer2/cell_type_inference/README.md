@@ -22,4 +22,4 @@ This package is not a Layer 3 execution surface, Layer 4 implementation, adapter
 
 Frozen candidate count: 35.
 
-The candidate set is taken only from `/tmp/bioharness_layer2_subagents/input/cell_type_inference.json`. Bounded retrieval was used for PMID/DOI/code-link verification and benchmark/review screening only; it did not add methods.
+The candidate set is taken only from `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/cell_type_inference/topic_scope.md`. Bounded retrieval was used for PMID/DOI/code-link verification and benchmark/review screening only; it did not add methods.

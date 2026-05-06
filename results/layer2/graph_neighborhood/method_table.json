@@ -531,7 +531,7 @@
       "Scientific-risk Caveat": "Preprint-only evidence; motif calls depend on graph construction, annotation quality, null models, and molecular follow-up, and do not establish causal interaction mechanisms."
     }
   ],
-  "source_candidate_input": "/tmp/bioharness_layer2_subagents/input/graph_neighborhood.json",
+  "source_candidate_input": "historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/graph_neighborhood/topic_scope.md",
   "non_goals": [
     "Layer 3 execution surfaces",
     "Layer 4 adapters",

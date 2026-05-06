@@ -4,11 +4,7 @@
 
 Layer served: `Layer 2`
 
-Closure status: ready for representative `Layer 3/4` method engineering audit.
-
-This note does not freeze a `Layer 3` execution surface, default method,
-backend adapter boundary, callable signature, environment capsule, or rewrite
-decision.
+Closure status: April 2026 Layer 2 pilot closure.
 
 ## Authority Artifacts
 
@@ -34,9 +30,9 @@ decision.
 | Subtable artifact | Pass | Markdown, JSON, and now standalone CSV versions exist. |
 | Benchmark or review pass | Pass with caveats | Decision tree uses benchmark/review evidence only for branch-local ordering. |
 | Standalone decision tree | Pass with caveats | 2026-04-18 supplement provides the current decision tree. |
-| Review/audit pass | Pass for Layer 2 closure | Supplement review records evidence spot checks, coverage ledger, and provisional zones. |
+| Review pass | Pass for Layer 2 closure | Supplement review records evidence spot checks, coverage ledger, and provisional zones. |
 
-## Current Layer 2 Facts
+## Pilot Layer 2 Facts
 
 - Candidate rows: 27.
 - Fields per row: 21.
@@ -47,7 +43,7 @@ decision.
 - Cross-slice support: 15 single-slice only, 3 separate multi-sample use, 9 joint multi-slice modeling.
 - Batch handling: 16 not addressed, 8 implicit / limited, 3 explicit batch-aware.
 
-## Caveats Carried Into Layer 3 Entry Review
+## Layer 2 Caveats
 
 - `Closest Alternatives`, `Key Difference`, `Cross-slice Support`, and `Batch Handling`
   remain pilot-provisional Layer 2 judgment fields.
@@ -60,31 +56,6 @@ decision.
 - Benchmark/review evidence supports branch-local ranking and tie-breaks only;
   it must not be converted into a global all-method ranking.
 
-## Recommended First Layer 3/4 Audit Batch
-
-The following methods are a representative audit batch, not frozen defaults:
-
-| Method | Why include in audit batch |
-| --- | --- |
-| `BANKSY` | CPU-first multiscale neighborhood baseline and scalable structural route. |
-| `BayesSpace` | CPU-first Bayesian single-slice baseline. |
-| `PRECAST` | Probabilistic multi-slide alignment with explicit batch-aware role. |
-| `GraphST` | Graph contrastive method with joint-slice and batch-correction signal. |
-| `SpaGCN` | Established optional-histology graph baseline. |
-| `ConGI` | Required-image contrastive branch and tumor/pathology-oriented image-aware candidate. |
-
-Audit outputs should remain separated:
-
-- `MethodEngineeringAudit`
-- Layer 3 `ExecutionSurfaceSpec`
-- Layer 4 `BackendAdapterSpec`
-- `RewriteDecision`
-- `EnvironmentProfile` assignment
-- validation requirements
-
 ## Closure Decision
 
-Spatial domain identification Layer 2 is complete enough to start a
-representative Layer 3/4 co-design pilot. It is not complete in the stronger
-sense of freezing default methods, runtime surfaces, package entrypoints,
-environment capsules, or adapter implementations.
+This dated pilot package records an April 2026 Layer 2 domain-identification review package. Current Layer 1/2 formal topic enumeration is resolved from the active Layer 1 registry and confirmation-status mapping.

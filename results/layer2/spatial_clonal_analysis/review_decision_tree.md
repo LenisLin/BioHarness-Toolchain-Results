@@ -9,7 +9,7 @@ Purpose: `when to choose`, not `how to run`.
 This document records the bounded PubMed review pass, evidence spot-checks,
 logic review, decision tree, and coverage ledger for the frozen `Spatial
 Clonal Analysis` candidate set. It does not define execution surfaces,
-wrappers, adapter boundaries, callable signatures, environments, or runtime
+wrappers, adapter boundaries, callable interfaces, environments, or runtime
 support.
 
 ## Reading Rules
@@ -118,7 +118,7 @@ If the main task is general single-cell CNA inference without spatial data:
 If yes, and matched bulk DNA/WES, ST mutation-read evidence, and
 pathology-derived cell-count priors are available:
 
-- Prefer / consider `Tumoroscope`.
+- Consider `Tumoroscope`.
 - Keep the input-dependence caveat visible; this branch is not a pure ST-only
   route.
 
@@ -130,7 +130,7 @@ If no:
 
 If yes, and SRT allele counts at informative germline SNPs are available:
 
-- Prefer / consider `CalicoST`.
+- Consider `CalicoST`.
 - Use this branch especially when CNLOH, mirrored subclonal CNAs, multi-slice
   reconstruction, or phylogeography is part of the question.
 
@@ -142,7 +142,7 @@ If only total-CNA or copy-number-profile subclones are needed:
 
 If yes:
 
-- Prefer / consider `SlideCNA`.
+- Consider `SlideCNA`.
 - Keep the caveat that its strongest direct role is spatial CNA detection; use
   subclone language conservatively unless supported by downstream checks.
 
@@ -154,7 +154,7 @@ If no:
 
 If yes:
 
-- Prefer / consider `Clonalscope`.
+- Consider `Clonalscope`.
 - Use this branch for copy-number-profile subclone detection, malignant
   labeling, or tracing spatially segregated subclones.
 
@@ -166,7 +166,7 @@ If no and the available input is mainly ST expression plus coordinates:
 
 If yes:
 
-- Prefer / consider `STARCH`.
+- Consider `STARCH`.
 - Keep the caveat that it is total-CNA and older-method evidence; it should not
   be used as a substitute for allele-specific, mutation-defined, or sparse
   Slide-seq-specific branches.
@@ -183,7 +183,7 @@ If the analysis must stay CPU-first:
 
 - All five rows are currently recorded as CPU in the Layer 1 input, but this is
   only a coarse evidence label.
-- Do not interpret CPU labels as runtime support inside BioHarness.
+- Do not interpret CPU labels as execution support inside BioHarness.
 
 If the dataset is large, multi-slice, high-resolution, or has many clones,
 variants, or genomic bins:
@@ -208,3 +208,6 @@ The current evidence supports a Layer 2 conditional decision tree, not a
 universal method ranking. The package is suitable for method-selection
 discussion and representative Layer 3/4 audit triage after closure, while all
 runtime and adapter decisions remain outside this Layer 2 package.
+
+
+Allele-specific CNA, total CNA, point-mutation clone deconvolution, sparse spatial CNA, and copy-number-profile subclones are not interchangeable.

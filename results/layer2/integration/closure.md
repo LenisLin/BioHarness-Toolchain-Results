@@ -10,12 +10,12 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 
 ## Authority Artifacts
 
-- Topic scope: `/tmp/bioharness_layer2_subagents/output/integration/topic_scope.md`
-- Field registry: `/tmp/bioharness_layer2_subagents/output/integration/field_registry.json`
-- CSV method table: `/tmp/bioharness_layer2_subagents/output/integration/method_table.csv`
-- Human-readable method table: `/tmp/bioharness_layer2_subagents/output/integration/method_table.md`
-- Structured method table: `/tmp/bioharness_layer2_subagents/output/integration/method_table.json`
-- Review and decision tree: `/tmp/bioharness_layer2_subagents/output/integration/review_decision_tree.md`
+- Topic scope: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/topic_scope.md`
+- Field registry: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/field_registry.json`
+- CSV method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/method_table.csv`
+- Human-readable method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/method_table.md`
+- Structured method table: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/method_table.json`
+- Review and decision tree: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/review_decision_tree.md`
 
 ## Layer 2 Gate Check
 

@@ -1,0 +1,43 @@
+{
+  "topic": "Normalization",
+  "freeze_date": "2026-05-06",
+  "candidate_count": 1,
+  "candidate_order": [
+    "SpaNorm"
+  ],
+  "backbone_context_not_counted": [
+    "Scanpy",
+    "Seurat / sctransform",
+    "scran / scater",
+    "Giotto",
+    "Squidpy"
+  ],
+  "layer_boundary": "Dedicated spatial-aware normalization method selection; backbone workflow packages are context only and not positive candidate rows.",
+  "fields": {
+    "Tool Name": "See method_table.csv for row-level values.",
+    "Method Family": "See method_table.csv for row-level values.",
+    "Main Input": "See method_table.csv for row-level values.",
+    "Main Use in This Topic": "See method_table.csv for row-level values.",
+    "Main Output": "See method_table.csv for row-level values.",
+    "Closest Alternatives": "See method_table.csv for row-level values.",
+    "Key Difference": "See method_table.csv for row-level values.",
+    "Compute Requirement": "See method_table.csv for row-level values.",
+    "Memory Burden": "See method_table.csv for row-level values.",
+    "Scale Sensitivity": "See method_table.csv for row-level values.",
+    "Code Access": "See method_table.csv for row-level values.",
+    "Primary Code Link": "See method_table.csv for row-level values.",
+    "Evidence Source": "See method_table.csv for row-level values.",
+    "Evidence Note": "See method_table.csv for row-level values.",
+    "Best First Choice When": "See method_table.csv for row-level values.",
+    "Do Not Start With This When": "See method_table.csv for row-level values.",
+    "Normalization Branch": "See method_table.csv for row-level values.",
+    "Spatial Signal Use": "See method_table.csv for row-level values.",
+    "Backbone Context": "See method_table.csv for row-level values.",
+    "Output Alteration Level": "See method_table.csv for row-level values.",
+    "Scientific-risk Caveat": "See method_table.csv for row-level values."
+  },
+  "required_caveats": [
+    "SpaNorm may attenuate true spatial biology when technical depth effects track tissue structure.",
+    "Backbone workflow packages are baseline context, not dedicated spatial-aware method candidates."
+  ]
+}

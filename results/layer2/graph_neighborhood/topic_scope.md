@@ -21,7 +21,7 @@ Local sources read:
 - `/home/lenislin/Experiment/projects/BioHarness-Toolchain-ST/docs/15_layer1_method_registry_and_substrate_transition.md`
 - `/mnt/NAS_21T/ProjectData/BioHarness/results/layer2/TOPIC_COMPLETION_STANDARD.md`
 - `/mnt/NAS_21T/ProjectData/BioHarness/results/formal/layer2/method_selection_standard.md`
-- `/tmp/bioharness_layer2_subagents/input/graph_neighborhood.json`
+- `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/graph_neighborhood/topic_scope.md`
 - `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/2026-05-03_graph_neighborhood_targeted_freeze_update.md`
 
 Bounded PubMed and article-screening queries used for PMID/DOI/code-link and review/benchmark checks:
@@ -65,6 +65,14 @@ Route out to `Domain / Clustering` / legacy `spatial_domain_identification` when
 Route out to `Cell-Cell Communication` when the primary endpoint is ligand-receptor edges, sender-receiver pairs, communication scores, neighbor-preference effects, pathway CCC, or causal CCC interpretation.
 
 Stay in `Graph / Neighborhood` only when the primary endpoint is neighborhood, niche, microenvironment state, cellular motif, spatial factor, soft multicellular signature, reconstructed neighborhood, or spatial-context representation.
+
+## Backbone / Workflow Context
+
+`Squidpy` is visible as non-counted backbone/workflow context for standard spatial graph construction, neighborhood enrichment, spatial graph utilities, and AnnData/scverse spatial workflow handling. It is not a candidate row in the 20-method Graph / Neighborhood freeze, is not counted or ranked against dedicated niche/motif/factor/embedding/reconstruction candidates, and is not runtime support, adapter availability, execution readiness, or default-method evidence.
+
+## Backbone / Workflow Context
+
+`Squidpy` is visible as non-counted backbone/workflow context for standard spatial graph construction, neighborhood enrichment, spatial graph utilities, and AnnData/scverse spatial workflow handling. It is not a candidate row in the 20-method Graph / Neighborhood freeze, is not counted or ranked against dedicated niche/motif/factor/embedding/reconstruction candidates, and is not runtime support or execution-readiness evidence.
 
 ## Method-Specific Boundary Notes
 
