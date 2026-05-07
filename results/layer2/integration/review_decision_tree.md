@@ -10,7 +10,7 @@ This document records the bounded PubMed review pass, evidence spot-checks, bran
 
 ## Reading Rules
 
-- Keep the 22-method targeted freeze: `CAST`, `DeST-OT`, `GPSA`, `GraphST`, `PASTE`, `PASTE2`, `PRECAST`, `SANTO`, `SLAT`, `SPACEL`, `STalign`, `STAligner`, `STAIR`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, `Crescendo`, `SpaMosaic`, `INSPIRE`, `SpatialCOC`, `SSpMosaic`.
+- Keep the 23-method targeted freeze: `CAST`, `DeST-OT`, `GPSA`, `GraphST`, `PASTE`, `PASTE2`, `PRECAST`, `SANTO`, `SLAT`, `SPACEL`, `STalign`, `STAligner`, `STAIR`, `SpatialZ`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, `Crescendo`, `SpaMosaic`, `INSPIRE`, `SpatialCOC`, `SSpMosaic`.
 - Use `Subtask` values as branch cues only; they are not separate Layer 2 completion units.
 - Treat compute as a branch-local resource gate. It cannot override task fit.
 - Use benchmark evidence for coverage, caveats, and branch-local tie-breaks only. Do not turn it into a universal all-method ranking.
@@ -29,6 +29,7 @@ PubMed E-utilities or DOI/publisher checks verified method-paper identity for al
 | `INSPIRE` | 42045691 | 10.1038/s41588-026-02579-x | Method-paper identity confirmed; code trace supplied by targeted literature check. |
 | `SpatialCOC` | 41991905 | 10.1038/s41467-026-71882-2 | Method-paper identity confirmed; code trace supplied by targeted literature check. |
 | `SSpMosaic` | not recorded in this pass | 10.1016/j.xgen.2025.101105 | DOI/publisher identity confirmed; code trace supplied by targeted literature check. |
+| `SpatialZ` | not recorded in this pass | 10.1038/s41592-025-02969-9 | DOI/publisher identity confirmed; code trace supplied by targeted literature check. |
 | `CAST` | 39294367 | 10.1038/s41592-024-02410-7 | Method-paper identity confirmed. |
 | `SANTO` | 39025895 | 10.1038/s41467-024-50308-x | Method-paper identity confirmed. |
 | `SLAT` | 37945600 | 10.1038/s41467-023-43105-5 | Method-paper identity confirmed. |
@@ -87,6 +88,7 @@ Review conclusion: suitable benchmark evidence exists for alignment and multi-sl
 | `SANTO` | PubMed verifies PMID 39025895 and DOI 10.1038/s41467-024-50308-x. | Stitching branch and scale/audit caveats are Layer 2 synthesis. |
 | `SLAT` | PubMed verifies PMID 37945600 and DOI 10.1038/s41467-023-43105-5. | Heterogeneous-slice branch is direct; relative-placement caution remains Layer 2 synthesis. |
 | `SPACEL` | PubMed verifies PMID 37990022 and DOI 10.1038/s41467-023-43220-3; registry supplies GitHub. | 3D branch is scoped to alignment/stacking within a broader framework. |
+| `SpatialZ` | DOI/publisher evidence verifies 10.1038/s41592-025-02969-9 and targeted check supplies GitHub code trace. | Included in Integration for dense 3D atlas reconstruction and virtual slicing rather than same-section super-resolution. |
 | `STalign` | PubMed verifies PMID 38065970 and DOI 10.1038/s41467-023-43915-7; registry supplies GitHub. | Geometry distortion caution is synthesized from diffeomorphic registration. |
 | `STAligner` | PubMed verifies PMID 38177758 and DOI 10.1038/s43588-023-00528-w; registry supplies GitHub. | Cross-condition/technology branch is direct; signal-removal risk remains a caveat. |
 | `STAIR` | PubMed verifies PMID 41398698 and DOI 10.1186/s13059-025-03895-x. | End-to-end 3D audit priority and model-opacity caveats are synthesized. |
@@ -139,6 +141,7 @@ If the deliverable is 2D/3D multi-slice reconstruction or tissue stacking:
 
 - Tissue-architecture reconstruction: read first within branch `SPACEL`.
 - End-to-end alignment, integration, and 3D reconstruction: read first within branch `STAIR`.
+- Dense 3D atlas reconstruction or in silico virtual slicing: read first within branch `SpatialZ`.
 - Automated 2D/3D integration: read first within branch `VR-Omics`.
 - Carry row-level model-opacity, automation-opacity, and scale-burden cues from the method table.
 
@@ -197,6 +200,7 @@ If public code access is needed before any later audit:
 | `SANTO` | stitching and coordinate alignment | stitching distortion |
 | `SLAT` | heterogeneous slice alignment | heterogeneity overfit |
 | `SPACEL` | 3D reconstruction | model opacity and scale burden |
+| `SpatialZ` | 3D atlas reconstruction / virtual slicing | atlas-scale interpolation bias |
 | `STalign` | coordinate alignment | geometry distortion |
 | `STAligner` | latent embedding integration | biological signal removal |
 | `STAIR` | 3D reconstruction | model opacity and scale burden |

@@ -6,8 +6,8 @@ It supports later method-selection discussion and representative Layer 3/4 audit
 
 ## Status
 
-- Version date: 2026-05-04
-- Candidate freeze: 11 methods
+- Version date: 2026-05-07
+- Candidate freeze: 12 methods
 - Source registry: `/mnt/NAS_21T/ProjectData/BioHarness/results/layer1/registry/layer1_spatial_method_registry.csv`
 - Formal rendering: source package ready; formal artifact not generated in this working package
 

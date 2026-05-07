@@ -1,7 +1,7 @@
 {
   "topic": "Integration",
   "layer": "Layer 2",
-  "version_date": "2026-05-02",
+  "version_date": "2026-05-07",
   "purpose": "Field registry for the Integration Layer 2 method-selection evidence package.",
   "non_goals": [
     "Layer 3 execution surfaces",
@@ -198,6 +198,7 @@
         "spatiotemporal alignment",
         "latent embedding integration",
         "3D reconstruction",
+        "3D atlas reconstruction / virtual slicing",
         "2D/3D multi-slice integration",
         "multimodal modeling",
         "batch correction",
@@ -226,6 +227,7 @@
         "contrastive representation",
         "deep spatial architecture model",
         "end-to-end 3D integration",
+        "dense 3D atlas reconstruction",
         "automated 2D/3D integration",
         "multimodal spatial omics model",
         "batch-correction model",
@@ -240,7 +242,7 @@
       "definition": "Sample relationship or dataset structure that makes the method relevant.",
       "fill_rule": "Use a short phrase grounded in method scope.",
       "controlled_values": null,
-      "topic_relevance": "Highlights whether the method is for comparable slices, partial overlap, heterogeneous sections, conditions, technologies, temporal series, multimodal data, or batches."
+      "topic_relevance": "Highlights whether the method is for comparable slices, partial overlap, heterogeneous sections, serial sections for 3D atlases, conditions, technologies, temporal series, multimodal data, or batches."
     },
     {
       "name": "Primary Risk Cue",
@@ -249,7 +251,7 @@
       "definition": "Main scientific or audit caveat that should travel with branch-local method selection.",
       "fill_rule": "Use a short caution phrase. Prefer unclear when no specific caveat is justified.",
       "controlled_values": null,
-      "topic_relevance": "Makes bias, over-alignment, distortion, model-opacity, modality-imbalance, and code-link trace caveats visible."
+      "topic_relevance": "Makes bias, over-alignment, distortion, atlas-scale interpolation, model-opacity, modality-imbalance, and code-link trace caveats visible."
     }
   ]
 }

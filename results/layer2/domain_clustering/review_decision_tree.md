@@ -10,7 +10,7 @@ This document records bounded benchmark/review screening, evidence spot-checks, 
 
 ## Reading Rules
 
-- Keep the 37-method freeze unchanged: `ADEPT`, `BANKSY`, `BASS`, `BayesSpace`, `CCST`, `ConGI`, `conST`, `DeepST`, `DR-SC`, `GraphST`, `MENDER`, `Pianno`, `PRECAST`, `PROST`, `SEDR`, `SiGra`, `SpaceFlow`, `SPACEL`, `SpaGCN`, `SpaSEG`, `SpatialPCA`, `SpatialPrompt`, `SpaTopic`, `STAGATE`, `STAMP`, `STCC`, `stLearn`, `Novae`, `IRIS`, `SpatialGlue`, `BINARY`, `stDyer`, `SpatialLeiden`, `GraphPCA`, `iIMPACT`, `MNMST`, `SpaDo`.
+- Keep the 38-method freeze unchanged: `ADEPT`, `BANKSY`, `BASS`, `BayesSpace`, `CCST`, `ConGI`, `conST`, `DeepST`, `DR-SC`, `GraphST`, `MENDER`, `Pianno`, `PRECAST`, `PROST`, `SEDR`, `SiGra`, `SpaceFlow`, `SPACEL`, `SpaGCN`, `SpaSEG`, `SpatialPCA`, `SpatialPrompt`, `SpaTopic`, `STAGATE`, `STAMP`, `STCC`, `stLearn`, `Novae`, `IRIS`, `SpatialGlue`, `BINARY`, `stDyer`, `SpatialLeiden`, `GraphPCA`, `GASTON`, `iIMPACT`, `MNMST`, `SpaDo`.
 - Use benchmark/review evidence only for branch-local support or caveats.
 - Do not convert benchmark coverage into a universal ranking.
 - Treat compute, memory, scale, alternatives, and branch-fit fields as Layer 2 synthesis unless the row explicitly says otherwise.
@@ -28,7 +28,7 @@ Brief screening found relevant spatial clustering/domain benchmark evidence, esp
 - `Benchmarking clustering, alignment, and integration methods for spatial transcriptomics`, Genome Biology 2024.
 - Frozen registry notes also cite NAR 2025/domain benchmark or review coverage for selected branches.
 
-No suitable independent benchmark was found that jointly covers and ranks all 37 frozen candidates, especially because several 2024-2025 venue-sweep additions are newer than or outside the main benchmark panels. Therefore this package uses logic review plus branch-local benchmark support, not a global all-candidate ranking.
+No suitable independent benchmark was found that jointly covers and ranks all 38 frozen candidates, especially because several 2024-2025 venue-sweep additions are newer than or outside the main benchmark panels. Therefore this package uses logic review plus branch-local benchmark support, not a global all-candidate ranking.
 
 ## Evidence Spot-checks
 
@@ -37,6 +37,7 @@ No suitable independent benchmark was found that jointly covers and ranks all 37
 | Benchmark-covered spatial clustering/domain methods | `BayesSpace`, `SpaGCN`, `STAGATE`, `GraphST`, `SEDR`, `SpaceFlow`, `conST`, `ADEPT` | Supports inclusion and local comparison branches. | Benchmark panels do not cover every frozen method or every dataset regime. |
 | Multi-slice or integration-aware domain methods | `PRECAST`, `BASS`, `MENDER`, `SPACEL`, `SpaDo`, `SpatialGlue` | Supports multi-slice/alignment branch. | Integration quality and domain quality are related but not identical endpoints. |
 | Image/morphology-guided methods | `SpaGCN`, `ConGI`, `DeepST`, `SiGra`, `iIMPACT`, `SpaSEG` | Supports image-informed branch. | Image signal may help only when matched morphology is available and biologically aligned. |
+| Topographic / continuous-gradient methods | `GASTON` | Supports layered-domain, isodepth, and gradient-aware boundary branches. | Continuous coordinates should not be flattened into plain discrete cluster labels without branch-local review. |
 | Interpretable topic/semantic methods | `SpaTopic`, `STAMP`, `Pianno` | Supports interpretability branch. | Outputs are not always plain clusters and may need manual biological interpretation. |
 | Newer high-priority sweep additions | `Novae`, `IRIS`, `BINARY`, `stDyer`, `SpatialLeiden`, `GraphPCA`, `MNMST`, `SpaDo` | Preserves frozen candidate coverage. | All-candidate benchmark support and public code access may be unclear. |
 
@@ -71,7 +72,19 @@ If expression plus coordinates are the main inputs:
 
 - Continue to Step 2.
 
-### Step 2. Is multi-slice, batch-aware, or cross-sample domain comparison central?
+### Step 2. Are layered organization, continuous gradients, or isodepth-like topography central?
+
+If yes:
+
+- Read first within this branch: `GASTON`.
+- Use this branch when layered tissues, smooth topographic gradients, and explicit domain boundaries all matter to the scientific question.
+- Keep continuous isodepth coordinates and boundary-aware topographic maps distinct from plain discrete clustering outputs.
+
+If no:
+
+- Continue to Step 3.
+
+### Step 3. Is multi-slice, batch-aware, or cross-sample domain comparison central?
 
 If yes:
 
@@ -82,9 +95,9 @@ If yes:
 
 If no:
 
-- Continue to Step 3.
+- Continue to Step 4.
 
-### Step 3. Is interpretability, marker guidance, or semantic labeling more important than plain clusters?
+### Step 4. Is interpretability, marker guidance, or semantic labeling more important than plain clusters?
 
 If yes:
 
@@ -94,9 +107,9 @@ If yes:
 
 If no:
 
-- Continue to Step 4.
+- Continue to Step 5.
 
-### Step 4. Which modeling style best matches the review question?
+### Step 5. Which modeling style best matches the review question?
 
 For statistical/probabilistic baselines:
 
@@ -118,7 +131,7 @@ For foundation-model or newer broad-representation approaches:
 - Read first within this branch: `Novae`.
 - Treat broad representation claims as requiring manual audit before method-selection promotion.
 
-### Step 5. Resource and access gates
+### Step 6. Resource and access gates
 
 If immediate code inspection is required:
 

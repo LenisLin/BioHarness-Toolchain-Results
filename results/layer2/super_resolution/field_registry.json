@@ -1,7 +1,7 @@
 {
   "topic": "Super-resolution",
   "layer": "Layer 2",
-  "version_date": "2026-05-04",
+  "version_date": "2026-05-07",
   "purpose": "Field registry for the Super-resolution Layer 2 method-selection evidence package.",
   "non_goals": [
     "Layer 3 execution surfaces",
@@ -166,6 +166,7 @@
         "spot-to-subspot",
         "single-cell-resolution inferred",
         "pseudo-cell inferred",
+        "continuous whole-slide single-cell reconstruction",
         "high-density grid/profile",
         "cell-level inferred",
         "submicron/factor map",
@@ -212,6 +213,7 @@
         "subspot map",
         "pseudo-cell map",
         "cell-level map",
+        "continuous whole-slide single-cell map",
         "high-density profile",
         "factor map",
         "enhanced-resolution expression / spot map",
@@ -231,9 +233,10 @@
         "pseudo-cell reconstruction",
         "cell-level inferred reconstruction",
         "histology-guided reconstruction",
+        "reference- and histology-guided continuous whole-slide reconstruction",
         "unclear"
       ],
-      "topic_relevance": "Supports branch-local review for Super-resolution."
+      "topic_relevance": "Supports branch-local review for Super-resolution, including rows that reconstruct continuous whole-slide single-cell maps while remaining anchored to target-sample measured spatial signal."
     },
     {
       "name": "Signal-risk Caveat",

@@ -38,6 +38,7 @@
     "stDyer",
     "SpatialLeiden",
     "GraphPCA",
+    "GASTON",
     "iIMPACT",
     "MNMST",
     "SpaDo"
@@ -882,6 +883,30 @@
       "Domain Output Granularity": "embedding for downstream domain labels",
       "Modality Integration Branch": "expression + spatial coordinates branch",
       "Benchmark Support Cue": "newer venue-sweep method; all-candidate benchmark coverage unclear"
+    },
+    {
+      "Tool Name": "GASTON",
+      "Method Family": "Interpretable topographic deep learning",
+      "Main Input": "spatial expression matrix and spatial coordinates",
+      "Main Use in This Topic": "topographic domain identification and continuous-gradient mapping within the frozen Domain / Clustering candidate set.",
+      "Main Output": "continuous isodepth coordinate with domain boundaries and gradient-aware spatial maps",
+      "Closest Alternatives": "GraphPCA; SpatialPCA; Pianno; SpaTopic",
+      "Key Difference": "Learns an interpretable isodepth that jointly captures layered domain structure, continuous gradients, and discontinuous boundaries rather than only plain discrete cluster labels or generic embeddings.",
+      "Compute Requirement": "Optional GPU",
+      "Memory Burden": "medium",
+      "Scale Sensitivity": "medium sensitivity; validate on layered or gradient-structured tissues",
+      "Code Access": "available",
+      "Primary Code Link": "https://github.com/StannisZhou/GASTON",
+      "Evidence Source": "method paper",
+      "Evidence Note": "Direct method-paper evidence: Nature Methods 2025 verifies DOI 10.1038/s41592-024-02503-3 for GASTON, and public code is available at the primary GitHub repository. Layer 2 synthesis: comparator, branch fit, and resource cues are conservative selection logic, not runtime validation.",
+      "Best First Choice When": "Consider when layered tissues, continuous gradients, and domain boundaries are all scientifically central to the domain-selection question.",
+      "Do Not Start With This When": "Do not start here when the real deliverable is only a plain discrete partition, explicit spatial multi-omics integration, or reference-informed tissue transfer.",
+      "Image Signal Use": "none apparent",
+      "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+      "Spatial Prior": "interpretable isodepth / topographic prior",
+      "Domain Output Granularity": "continuous topographic coordinate plus domain boundaries",
+      "Modality Integration Branch": "expression + spatial coordinates branch",
+      "Benchmark Support Cue": "method-paper/direct-search evidence; benchmark coverage unclear"
     },
     {
       "Tool Name": "iIMPACT",

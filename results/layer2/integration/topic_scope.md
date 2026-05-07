@@ -26,9 +26,9 @@ Input source registry:
 
 ## Bounded Retrieval Record
 
-Retrieval date: 2026-05-01; targeted code-link check added 2026-05-02; targeted 2025-2026 inclusion correction added 2026-05-03
+Retrieval date: 2026-05-01; targeted code-link check added 2026-05-02; targeted 2025-2026 inclusion correction added 2026-05-03; targeted 2026-05-07 inclusion correction added 2026-05-07
 
-Retrieval role: PMID, DOI, code-link trace, benchmark/review screening, and targeted 2025-2026 inclusion correction. The 2026-05-02 targeted check updated code-link trace fields for previously unclear rows. The 2026-05-03 correction reopened inclusion only for the four specified Integration methods.
+Retrieval role: PMID, DOI, code-link trace, benchmark/review screening, and targeted inclusion correction. The 2026-05-02 targeted check updated code-link trace fields for previously unclear rows. The 2026-05-03 correction reopened inclusion for four specified Integration methods, and the 2026-05-07 correction added `SpatialZ` as a targeted 3D-atlas / virtual-slicing Integration row.
 
 Retrieval sources:
 
@@ -39,6 +39,7 @@ Retrieval sources:
 - PubMed E-utilities ESearch/ESummary for Integration benchmark/review screening
 - publisher code-availability statements and public repository pages for targeted code-link trace updates
 - targeted 2025-2026 literature check for `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`
+- targeted publisher/code-availability check for `SpatialZ`
 
 Candidate PMID verification query:
 
@@ -78,7 +79,7 @@ AND ("spatial transcriptomics"[Title/Abstract] OR
 AND (integration[Title/Abstract] OR alignment[Title/Abstract])
 ```
 
-Screening result: PubMed or DOI/publisher checks verified method-paper identities for all 22 candidates after the targeted correction. It also found directly relevant benchmark records for clustering/alignment/integration (PMID 39123269), multi-slice integration (PMID 41024097), and alignment methods (PMID 41933187). These benchmarks support branch-local caution and coverage checks, but they do not justify a universal ranking across all 22 candidates because the frozen set spans heterogeneous targets: coordinate alignment, partial overlap, latent integration, 3D reconstruction, multimodal modeling, and count batch correction.
+Screening result: PubMed or DOI/publisher checks verified method-paper identities for all 23 candidates after the targeted correction. It also found directly relevant benchmark records for clustering/alignment/integration (PMID 39123269), multi-slice integration (PMID 41024097), and alignment methods (PMID 41933187). These benchmarks support branch-local caution and coverage checks, but they do not justify a universal ranking across all 23 candidates because the frozen set spans heterogeneous targets: coordinate alignment, partial overlap, latent integration, 3D reconstruction, dense atlas reconstruction with virtual slicing, multimodal modeling, and count batch correction.
 
 Code-link verification update: the 2026-05-02 targeted check resolved the 12 rows that were previously `unclear` in this package: `CAST`, `DeST-OT`, `GPSA`, `PRECAST`, `SANTO`, `SLAT`, `STAIR`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, and `Crescendo`. `Primary Code Link` remains a trace field only and does not imply runtime support, adapter availability, callable signatures, environment capsules, or default-method status.
 
@@ -93,7 +94,7 @@ Include methods when all of the following are true:
 
 ## Exclusion Rules
 
-Do not add or promote methods outside the frozen input except for the 2026-05-03 targeted inclusion correction requested for `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`.
+Do not add or promote methods outside the frozen input except for the targeted inclusion corrections requested for `SpaMosaic`, `INSPIRE`, `SpatialCOC`, `SSpMosaic`, and `SpatialZ`.
 
 Keep methods outside this package when the primary contribution is:
 
@@ -125,6 +126,7 @@ Keep methods outside this package when the primary contribution is:
 | `STalign` | Multi-slice alignment / integration | PMID 38065970; DOI 10.1038/s41467-023-43915-7 |
 | `STAligner` | Multi-slice alignment / integration | PMID 38177758; DOI 10.1038/s43588-023-00528-w |
 | `STAIR` | Multi-slice alignment / integration | PMID 41398698; DOI 10.1186/s13059-025-03895-x |
+| `SpatialZ` | Multi-slice alignment / integration | DOI 10.1038/s41592-025-02969-9; online publication 2025-12-31 |
 | `MaskGraphene` | Multi-slice alignment / integration | PMID 41194133; DOI 10.1186/s13059-025-03850-w |
 | `spCLUE` | Cross-slice / cross-sample spatial integration | PMID 40551235; DOI 10.1186/s13059-025-03636-0 |
 | `VR-Omics` | 2D/3D multi-slice integration | PMID 40598307; DOI 10.1186/s13059-025-03630-6 |
@@ -142,6 +144,7 @@ The topic is organized by method-selection cues rather than by Layer 1 subtask a
 - stitching and heterogeneous-slice alignment
 - latent embedding integration for clustering/domain interpretation
 - 2D/3D multi-slice reconstruction
+- dense 3D atlas reconstruction and virtual slicing
 - multimodal spatial omics modeling
 - mosaic spatial multi-omics integration and cross-omics correction
 - interpretable gene-program integration with cell type/program/domain boundary caveats

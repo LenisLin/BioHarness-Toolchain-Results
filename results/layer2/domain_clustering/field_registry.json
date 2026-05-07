@@ -1,7 +1,7 @@
 {
   "topic": "Domain / Clustering",
   "layer": "Layer 2",
-  "version_date": "2026-05-01",
+  "version_date": "2026-05-07",
   "purpose": "Field registry for the Domain / Clustering Layer 2 method-selection evidence package.",
   "non_goals": [
     "Layer 3 execution surfaces",
@@ -202,7 +202,7 @@
       "definition": "Dominant way spatial structure enters the model.",
       "fill_rule": "Use concise descriptions such as graph, Bayesian, neighborhood kernel, image plus neighborhood, or spatial low-dimensional prior.",
       "controlled_values": null,
-      "topic_relevance": "Captures the scientific assumption that creates domain smoothness or boundary behavior."
+      "topic_relevance": "Captures the scientific assumption that creates domain smoothness, isodepth structure, or boundary behavior."
     },
     {
       "name": "Domain Output Granularity",
@@ -211,7 +211,7 @@
       "definition": "Granularity of output expected for domain review.",
       "fill_rule": "Use discrete labels, aligned labels, semantic annotations, topics/modules, or embeddings.",
       "controlled_values": null,
-      "topic_relevance": "Prevents treating every method as the same kind of cluster-label generator."
+      "topic_relevance": "Prevents treating every method as the same kind of cluster-label generator, especially when some rows return continuous topographic coordinates rather than only plain labels."
     },
     {
       "name": "Modality Integration Branch",
@@ -229,7 +229,7 @@
       "definition": "How benchmark or review evidence appears in the frozen registry evidence.",
       "fill_rule": "Use frozen registry source labels only; mark unclear when broad all-candidate support is absent.",
       "controlled_values": null,
-      "topic_relevance": "Keeps benchmark evidence local rather than converting it into a global ranking."
+      "topic_relevance": "Keeps benchmark evidence local rather than converting it into a global ranking, which is especially important for newer branch-expanding rows such as topographic-gradient methods."
     }
   ]
 }

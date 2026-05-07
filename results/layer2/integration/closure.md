@@ -23,7 +23,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 | --- | --- | --- |
 | Analysis Problem unit | Pass | Topic is `Integration`, not individual algorithms or subtasks. |
 | Bounded retrieval record | Pass | `topic_scope.md` records date, sources, queries, inclusion/exclusion rules, and candidate freeze. |
-| Frozen candidate set | Pass | Twenty-two rows: the original frozen input plus targeted additions `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`. |
+| Frozen candidate set | Pass | Twenty-three rows: the original frozen input plus targeted additions `SpaMosaic`, `INSPIRE`, `SpatialCOC`, `SSpMosaic`, and `SpatialZ`. |
 | Field schema | Pass | Shared fields plus four topic-specific decision fields in `field_registry.json`. |
 | Method table artifacts | Pass | JSON was built first; CSV and Markdown were generated from `method_table.json`. |
 | Review / benchmark pass | Pass with caveats | PubMed found relevant benchmark records, but they support branch-local logic only. |
@@ -32,12 +32,12 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 
 ## Current Layer 2 Facts
 
-- Candidate rows: 22.
+- Candidate rows: 23.
 - Fields per method row: 20.
-- Code access: 22 available, 0 unclear, 0 unavailable.
-- Compute labels: 7 CPU, 15 Optional GPU, 0 Required GPU.
-- Integration targets represented: search-and-match mapping, spatiotemporal alignment, pairwise slice alignment, partial overlap alignment, coordinate alignment, heterogeneous slice alignment, stitching, latent embedding integration, 3D reconstruction, 2D/3D multi-slice integration, multimodal modeling, mosaic spatial multi-omics integration, cross-omics correction, interpretable gene-program integration, and batch correction.
-- Scale sensitivity: 8 high, 13 medium, 0 low, 1 unclear.
+- Code access: 23 available, 0 unclear, 0 unavailable.
+- Compute labels: 7 CPU, 16 Optional GPU, 0 Required GPU.
+- Integration targets represented: search-and-match mapping, spatiotemporal alignment, pairwise slice alignment, partial overlap alignment, coordinate alignment, heterogeneous slice alignment, stitching, latent embedding integration, 3D reconstruction, 3D atlas reconstruction / virtual slicing, 2D/3D multi-slice integration, multimodal modeling, mosaic spatial multi-omics integration, cross-omics correction, interpretable gene-program integration, and batch correction.
+- Scale sensitivity: 9 high, 13 medium, 0 low, 1 unclear.
 - Benchmark/review screening: relevant PubMed benchmark records were found for alignment and multi-slice integration, but not for a universal ranking across all Integration branches.
 
 ## Caveats Carried Into Later Work
@@ -48,6 +48,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 - Graph and contrastive representation methods can remove biological condition signal or entangle integration with clustering/domain objectives.
 - Geometric alignment methods can over-align noncorresponding tissues or distort coordinates if tissue morphology differs.
 - 3D and automated Integration methods need extra audit for model opacity, data-size behavior, and validation criteria.
+- Dense 3D atlas reconstruction and virtual slicing can introduce atlas-scale interpolation bias that is distinct from simpler section stacking or coordinate alignment risk.
 - Multimodal Integration can be biased by modality imbalance, missing modalities, or modality-specific noise.
 
 ## Representative Layer 3/4 Audit Batch
@@ -64,6 +65,7 @@ This audit batch is representative coverage for later engineering review. It is 
 | `CAST` | High-resolution search-and-match branch with scale-sensitivity caveat. |
 | `SANTO` | Coarse-to-fine stitching branch highlighted by alignment benchmarks. |
 | `SPACEL` | 3D tissue-architecture stacking branch with available code link. |
+| `SpatialZ` | Dense 3D atlas and virtual-slicing branch with explicit atlas-scale interpolation caveat. |
 | `MISO` | Multimodal spatial omics branch. |
 | `SpaMosaic` | Mosaic spatial multi-omics branch with missing-modality caveat. |
 | `SpatialCOC` | Cross-omics correction and continuous-mapping branch. |

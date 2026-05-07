@@ -2,7 +2,7 @@
 
 ## Boundary
 
-Super-resolution covers methods whose main reusable contribution is finer-geometry reconstruction, measured high-density/submicron representation, enhanced-resolution representation, high-density profile generation, or cell-level inferred reconstruction anchored by target-sample measured spatial expression or spatial omics. FICTURE is retained as a measured high-density representation row, not as spot-to-subspot reconstruction.
+Super-resolution covers methods whose main reusable contribution is finer-geometry reconstruction, measured high-density/submicron representation, enhanced-resolution representation, high-density profile generation, or cell-level inferred reconstruction anchored by target-sample measured spatial expression or spatial omics. FICTURE is retained as a measured high-density representation row, not as spot-to-subspot reconstruction. PanoSpace remains in this topic because its stated endpoint is continuous whole-slide single-cell reconstruction of the same measured sample signal, even though it also uses matched histology and a matched scRNA-seq reference.
 
 The package is a Layer 2 knowledge artifact. It does not imply execution readiness, machine-call contracts, backend bindings, execution-environment bundles, or universal-method policy.
 
@@ -20,14 +20,15 @@ The package is a Layer 2 knowledge artifact. It does not imply execution readine
 
 ## Candidate Freeze
 
-Candidate count: 11
+Candidate count: 12
 
-Methods, in discussion-locked order: FICTURE, iStar, scstGCN, Spotiphy, TESLA, XFuse, ImSpiRE, soScope, iSCALE, STAGE, Thor.
+Methods, in discussion-locked order: FICTURE, iStar, scstGCN, Spotiphy, PanoSpace, TESLA, XFuse, ImSpiRE, soScope, iSCALE, STAGE, Thor.
 
 ## Branch Organization
 
 - spot/subspot or high-density reconstruction
 - histology-aware super-resolution
+- continuous whole-slide single-cell reconstruction with a measured spatial anchor
 - pseudo-cell or cell-level inferred reconstruction
 - submicron/factor-map representation
 

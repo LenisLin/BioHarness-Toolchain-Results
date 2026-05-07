@@ -10,9 +10,9 @@ This package supports method selection for spatial transcriptomics Integration. 
 
 ## Candidate Freeze
 
-Frozen candidates: 22
+Frozen candidates: 23
 
-`CAST`, `DeST-OT`, `GPSA`, `GraphST`, `PASTE`, `PASTE2`, `PRECAST`, `SANTO`, `SLAT`, `SPACEL`, `STalign`, `STAligner`, `STAIR`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, `Crescendo`, `SpaMosaic`, `INSPIRE`, `SpatialCOC`, `SSpMosaic`
+`CAST`, `DeST-OT`, `GPSA`, `GraphST`, `PASTE`, `PASTE2`, `PRECAST`, `SANTO`, `SLAT`, `SPACEL`, `STalign`, `STAligner`, `STAIR`, `SpatialZ`, `MaskGraphene`, `spCLUE`, `VR-Omics`, `MISO`, `Crescendo`, `SpaMosaic`, `INSPIRE`, `SpatialCOC`, `SSpMosaic`
 
 The candidate set started from `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/integration/topic_scope.md` and was expanded by a targeted 2025-2026 literature correction to include `SpaMosaic`, `INSPIRE`, `SpatialCOC`, and `SSpMosaic`.
 

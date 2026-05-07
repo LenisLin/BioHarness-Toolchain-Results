@@ -23,7 +23,7 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 | --- | --- | --- |
 | Analysis Problem unit | Pass | Topic is `Domain / Clustering`, not individual algorithms or subtasks. |
 | Bounded retrieval record | Pass | `topic_scope.md` records date, local sources, brief benchmark/review screening, and candidate freeze. |
-| Frozen candidate set | Pass | 37 rows retained from `historical topic-subagent staging input; current candidate-freeze authority is /mnt/NAS_21T/ProjectData/BioHarness/results/layer2/domain_clustering/topic_scope.md`. |
+| Frozen candidate set | Pass | 38 rows retained after the targeted 2026-05-07 `GASTON` addition to the previous discussion-locked set. |
 | Field schema | Pass | 16 shared fields plus 6 topic-specific fields in `field_registry.json`. |
 | Method table artifacts | Pass | JSON, CSV, and Markdown are generated from the same row model. |
 | Review / logic pass | Pass with caveats | Relevant domain benchmarks exist, but no all-candidate benchmark was found. |
@@ -32,20 +32,21 @@ This closure does not freeze a default method, Layer 3 execution surface, backen
 
 ## Current Layer 2 Facts
 
-- Candidate rows: `37`.
+- Candidate rows: `38`.
 - Fields per method row: `22`.
-- Code access counts: {'available': 28, 'unclear': 9}.
-- Compute labels: {'Optional GPU': 20, 'CPU': 17}.
-- Modality branch counts: {'expression + spatial coordinates branch': 27, 'expression + image/morphology branch': 7, 'marker/semantic annotation branch': 1, 'reference-informed branch': 1, 'spatial multi-omics integration': 1}.
+- Code access counts: {'available': 29, 'unclear': 9}.
+- Compute labels: {'Optional GPU': 21, 'CPU': 17}.
+- Modality branch counts: {'expression + spatial coordinates branch': 28, 'expression + image/morphology branch': 7, 'marker/semantic annotation branch': 1, 'reference-informed branch': 1, 'spatial multi-omics integration': 1}.
 - Benchmark support cue is branch-local and derived from frozen registry evidence plus brief screening.
 
 ## Caveats Carried Into Later Work
 
-- No suitable benchmark was found that covers and ranks all 37 frozen candidates.
+- No suitable benchmark was found that covers and ranks all 38 frozen candidates.
 - Several rows have pending or unclear code access in the frozen registry and require manual review before engineering audit.
 - Resource, memory, and scale labels are coarse Layer 2 triage cues; they are not BioHarness runtime validation.
 - Image-guided, reference-informed, multi-omics, and foundation-model branches need dataset-specific bias checks before use.
 - Topic-model and semantic-annotation outputs should not be collapsed into ordinary cluster labels without manual interpretation.
+- Topographic or continuous-gradient rows can return continuous coordinates that should not be flattened into ordinary discrete cluster labels without branch-local review.
 - Multi-slice and integration-aware methods may optimize alignment or representation quality as well as domain labels; the endpoint must be checked branch-locally.
 
 ## Representative Layer 3/4 Audit Batch
@@ -59,7 +60,7 @@ This representative audit batch is for later engineering review only. It is not 
 | Scalable neighborhood/CPU branch | `BANKSY`, `SpatialLeiden`, `MNMST` | CPU-oriented or scalable neighborhood/topology routes. |
 | Image-informed branch | `SpaGCN`, `SiGra`, `iIMPACT` | Tests morphology/image-aware assumptions. |
 | Multi-slice/alignment branch | `PRECAST`, `MENDER`, `SpaDo` | Covers cross-slice and batch-aware domain comparison. |
-| Interpretability/semantic branch | `SpaTopic`, `STAMP`, `Pianno` | Covers topic, module, marker, and semantic outputs. |
+| Interpretability/topography branch | `SpaTopic`, `STAMP`, `Pianno`, `GASTON` | Covers topic, module, marker, semantic, and continuous-topography outputs. |
 | Newer broad representation branch | `Novae`, `SpatialGlue`, `IRIS` | Captures high-priority newer candidates requiring careful audit. |
 
 Audit outputs must remain separate from this Layer 2 package: `MethodEngineeringAudit`, Layer 3 `ExecutionSurfaceSpec`, Layer 4 `BackendAdapterSpec`, `RewriteDecision`, `EnvironmentProfile`, and validation requirements.
