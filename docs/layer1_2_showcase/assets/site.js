@@ -8,8 +8,13 @@ const state = {
 const els = {
   statusStrip: document.querySelector("#statusStrip"),
   principles: document.querySelector("#principles"),
+  bubbleCloud: document.querySelector("#bubbleCloud"),
   routeGrid: document.querySelector("#routeGrid"),
   routeSearch: document.querySelector("#routeSearch"),
+  playgroundRoute: document.querySelector("#playgroundRoute"),
+  playgroundTarget: document.querySelector("#playgroundTarget"),
+  playgroundOutput: document.querySelector("#playgroundOutput"),
+  playgroundHint: document.querySelector("#playgroundHint"),
   selectedRoute: document.querySelector("#selectedRoute"),
   selectedMethodCount: document.querySelector("#selectedMethodCount"),
   selectedTopicTitle: document.querySelector("#selectedTopicTitle"),
@@ -18,6 +23,7 @@ const els = {
   decisionTree: document.querySelector("#decisionTree"),
   methodTable: document.querySelector("#methodTable"),
   methodTableNote: document.querySelector("#methodTableNote"),
+  methodPanel: document.querySelector("#method-panel"),
   scenarioTabs: document.querySelector("#scenarioTabs"),
   scenarioPanel: document.querySelector("#scenarioPanel"),
   cccSafeLanguage: document.querySelector("#cccSafeLanguage"),
@@ -43,12 +49,86 @@ function compactText(value = "", limit = 190) {
   return `${clean.slice(0, limit - 1).trim()}...`;
 }
 
+function bubbleLabel(route) {
+  const custom = {
+    artifact_correction: "Artifact\nCorrection",
+    cell_cell_communication: "Cell-Cell\nCommunication",
+    cell_type_inference: "Cell Type\nInference",
+    data_quality_control: "Quality\nControl",
+    denoising_signal_recovery: "Denoising\nRecovery",
+    domain_clustering: "Domain /\nClustering",
+    gene_expression_prediction_imputation: "Prediction /\nImputation",
+    graph_neighborhood: "Graph /\nNeighborhood",
+    integration: "Integration",
+    normalization: "Normalization",
+    panel_design: "Panel\nDesign",
+    phenotype_cohort_linked_spatial_feature_niche_analysis: "Phenotype /\nCohort Niche",
+    program_discovery: "Program\nDiscovery",
+    segmentation: "Segmentation",
+    spatial_clonal_analysis: "Spatial\nClonal",
+    spatial_contrast_testing: "Spatial\nContrast",
+    spatial_perturbation_analysis: "Spatial\nPerturbation",
+    spatial_trajectory_analysis: "Spatial\nTrajectory",
+    spatially_variable_gene_detection: "Spatially\nVariable Genes",
+    super_resolution: "Super-\nresolution",
+  };
+  return custom[route.slug] || route.analysis_problem.replace(" / ", "\n").replace(" ", "\n");
+}
+
+function bubbleSize(topic) {
+  const count = topic.method_count || 0;
+  if (count >= 20) return "large";
+  if (count >= 10) return "medium";
+  return "small";
+}
+
 function routeForSlug(slug) {
   return state.data.routes.find((route) => route.slug === slug);
 }
 
 function topicForSlug(slug) {
   return state.data.topics[slug];
+}
+
+function filteredRoutes() {
+  const q = state.query.trim().toLowerCase();
+  if (!q) return state.data.routes;
+  return state.data.routes.filter((route) => {
+    const haystack = [
+      route.analysis_problem,
+      route.analysis_target,
+      route.main_input_or_signal,
+      route.target_output,
+      route.route,
+    ]
+      .join(" ")
+      .toLowerCase();
+    return haystack.includes(q);
+  });
+}
+
+function setJumpHighlight() {
+  els.methodPanel.classList.remove("is-jumped");
+  window.requestAnimationFrame(() => {
+    els.methodPanel.classList.add("is-jumped");
+    window.setTimeout(() => els.methodPanel.classList.remove("is-jumped"), 1100);
+  });
+}
+
+function activateRoute(slug, { scroll = false, via = "grid" } = {}) {
+  state.selectedSlug = slug;
+  renderBubbleCloud();
+  renderRoutes();
+  renderSelection();
+  drawCanvas();
+  if (scroll) {
+    els.methodPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+    setJumpHighlight();
+    els.playgroundHint.textContent =
+      via === "bubble"
+        ? "Bubble route locked. Jumped to the matching Layer 2 panel."
+        : "Route updated. Layer 2 panel refreshed below.";
+  }
 }
 
 function renderStatus() {
@@ -71,20 +151,31 @@ function renderPrinciples() {
     .join("");
 }
 
-function filteredRoutes() {
-  const q = state.query.trim().toLowerCase();
-  if (!q) return state.data.routes;
-  return state.data.routes.filter((route) => {
-    const haystack = [
-      route.analysis_problem,
-      route.analysis_target,
-      route.main_input_or_signal,
-      route.target_output,
-      route.route,
-    ]
-      .join(" ")
-      .toLowerCase();
-    return haystack.includes(q);
+function renderBubbleCloud() {
+  const routes = filteredRoutes();
+  els.bubbleCloud.innerHTML = routes
+    .map((route, index) => {
+      const topic = topicForSlug(route.slug);
+      const accent = palette[index % palette.length];
+      return `
+        <button
+          class="route-bubble ${route.slug === state.selectedSlug ? "is-active" : ""} size-${bubbleSize(topic)}"
+          data-slug="${escapeHtml(route.slug)}"
+          style="--accent:${accent}; --delay:${index * 45}ms"
+          type="button"
+          role="listitem"
+        >
+          <span class="bubble-name">${escapeHtml(bubbleLabel(route)).replaceAll("\n", "<br />")}</span>
+          <span class="bubble-meta">${topic.method_count} methods</span>
+        </button>
+      `;
+    })
+    .join("");
+
+  els.bubbleCloud.querySelectorAll(".route-bubble").forEach((bubble) => {
+    bubble.addEventListener("click", () => {
+      activateRoute(bubble.dataset.slug, { scroll: true, via: "bubble" });
+    });
   });
 }
 
@@ -107,12 +198,7 @@ function renderRoutes() {
     .join("");
 
   els.routeGrid.querySelectorAll(".route-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      state.selectedSlug = card.dataset.slug;
-      renderSelection();
-      renderRoutes();
-      drawCanvas();
-    });
+    card.addEventListener("click", () => activateRoute(card.dataset.slug, { scroll: false, via: "grid" }));
   });
 }
 
@@ -120,6 +206,10 @@ function renderSelection() {
   const route = routeForSlug(state.selectedSlug);
   const topic = topicForSlug(state.selectedSlug);
   if (!route || !topic) return;
+
+  els.playgroundRoute.textContent = route.analysis_problem;
+  els.playgroundTarget.textContent = route.analysis_target;
+  els.playgroundOutput.textContent = route.target_output;
 
   els.selectedRoute.textContent = route.analysis_problem;
   els.selectedMethodCount.textContent = `${topic.method_count} method rows`;
@@ -314,27 +404,46 @@ function drawCanvas() {
   ctx.textAlign = "start";
 }
 
-async function init() {
+async function loadRegistry() {
+  const inline = window.__REGISTRY__ || null;
+  if (window.location.protocol === "file:" && inline) {
+    return inline;
+  }
   try {
     const response = await fetch("data/registry.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`Registry fetch failed: ${response.status}`);
-    state.data = await response.json();
+    return await response.json();
+  } catch (error) {
+    if (inline) {
+      return inline;
+    }
+    throw error;
+  }
+}
+
+async function init() {
+  try {
+    state.data = await loadRegistry();
     renderStatus();
     renderPrinciples();
+    renderBubbleCloud();
     renderRoutes();
     renderSelection();
     renderScenarios();
     renderCCC();
     drawCanvas();
+    document.body.classList.add("is-ready");
   } catch (error) {
     document.body.classList.add("load-error");
     els.selectedTopicTitle.textContent = "Registry data failed to load";
     els.selectedBoundary.textContent = error.message;
+    els.playgroundHint.textContent = "Registry snapshot was unavailable in this preview context.";
   }
 }
 
 els.routeSearch.addEventListener("input", (event) => {
   state.query = event.target.value;
+  renderBubbleCloud();
   renderRoutes();
 });
 

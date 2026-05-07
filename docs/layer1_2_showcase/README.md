@@ -27,3 +27,8 @@ Folder: /docs
 ```
 
 After GitHub Pages is enabled, this directory is served at `/layer1_2_showcase/`.
+
+## Local Preview
+
+This showcase now carries an inline registry snapshot in addition to `data/registry.json`, so opening
+`index.html` directly from the filesystem remains usable for boss-facing preview and review.

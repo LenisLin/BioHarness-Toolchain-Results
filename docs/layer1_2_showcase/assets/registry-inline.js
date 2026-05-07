@@ -1,0 +1,4869 @@
+window.__REGISTRY__ = {
+  "snapshot": {
+    "title": "BioHarness Layer 1/2 Knowledge Registry Showcase",
+    "date": "2026-05-06",
+    "generated_at_utc": "2026-05-06T14:29:21+00:00",
+    "nas_formal_root": "/mnt/NAS_21T/ProjectData/BioHarness/results/formal",
+    "repo_registry_root": "/home/lenislin/Experiment/projects/BioHarness-Toolchain-ST/knowledge_registry",
+    "github_pages_url": "https://lenislin.github.io/BioHarness-Toolchain-Results/layer1_2_showcase/",
+    "status": [
+      {
+        "label": "Layer 1 routes",
+        "value": 20,
+        "note": "active Analysis Problems"
+      },
+      {
+        "label": "Layer 2 topics",
+        "value": 20,
+        "note": "formal topic files"
+      },
+      {
+        "label": "CCC methods",
+        "value": 16,
+        "note": "complete CCC candidate set"
+      },
+      {
+        "label": "Boundary",
+        "value": "L1/2",
+        "note": "no execution claims"
+      }
+    ]
+  },
+  "principles": [
+    "Layer 1 routes by scientific object and target output before input signal.",
+    "Layer 2 selects methods only inside the selected Analysis Problem.",
+    "Closed-world ordinary selection: do not add packages from memory.",
+    "Backbone workflow packages remain context unless a topic file makes them candidate rows.",
+    "Formal files are knowledge handoff entries, not runtime, adapter, or default-method declarations."
+  ],
+  "routes": [
+    {
+      "analysis_problem": "Artifact Correction",
+      "analysis_target": "technical or ambient artifacts in spatial measurements",
+      "main_input_or_signal": "measured spatial expression, coordinates, optional image or platform artifact signal",
+      "target_output": "artifact-corrected spatial data object or correction report",
+      "route": "formal/layer2/artifact_correction.md",
+      "slug": "artifact_correction"
+    },
+    {
+      "analysis_problem": "Cell Type Inference",
+      "analysis_target": "cell identity, cell-type composition, or spatial cell-type placement",
+      "main_input_or_signal": "spatial expression, optional scRNA reference, marker genes, or annotations",
+      "target_output": "cell-type labels, proportions, deconvolution maps, or annotation confidence",
+      "route": "formal/layer2/cell_type_inference.md",
+      "slug": "cell_type_inference"
+    },
+    {
+      "analysis_problem": "Cell-Cell Communication",
+      "analysis_target": "communication, interaction, or neighborhood-effect signal between cells, spots, or cell groups",
+      "main_input_or_signal": "expression with cell labels or groups, spatial coordinates, LR priors, or neighborhood context",
+      "target_output": "interaction scores, communication networks, spatial LR signals, or pathway-aware CCC summaries",
+      "route": "formal/layer2/cell_cell_communication.md",
+      "slug": "cell_cell_communication"
+    },
+    {
+      "analysis_problem": "Data Quality Control",
+      "analysis_target": "sample, spot, cell, gene, or image-derived data quality",
+      "main_input_or_signal": "raw or early spatial expression object with coordinates and quality metrics",
+      "target_output": "quality flags, filtered data object, or QC report",
+      "route": "formal/layer2/data_quality_control.md",
+      "slug": "data_quality_control"
+    },
+    {
+      "analysis_problem": "Denoising / Signal Recovery",
+      "analysis_target": "same-resolution noisy or sparse measured spatial expression signal",
+      "main_input_or_signal": "measured spatial expression matrix with region, graph, or neighborhood context",
+      "target_output": "denoised or recovered expression values at measured spatial units",
+      "route": "formal/layer2/denoising_signal_recovery.md",
+      "slug": "denoising_signal_recovery"
+    },
+    {
+      "analysis_problem": "Domain / Clustering",
+      "analysis_target": "spatially coherent tissue domains, regions, or structural compartments",
+      "main_input_or_signal": "spatial expression, coordinates, optional image features or graph context",
+      "target_output": "domain labels, spatial clusters, embeddings, or region assignments",
+      "route": "formal/layer2/domain_clustering.md",
+      "slug": "domain_clustering"
+    },
+    {
+      "analysis_problem": "Gene Expression Prediction / Imputation",
+      "analysis_target": "unmeasured, missing, or cross-modal gene expression values",
+      "main_input_or_signal": "spatial expression plus spatial layout, reference data, image, or gene/cell networks",
+      "target_output": "predicted, imputed, or completed spatial gene-expression maps",
+      "route": "formal/layer2/gene_expression_prediction_imputation.md",
+      "slug": "gene_expression_prediction_imputation"
+    },
+    {
+      "analysis_problem": "Graph / Neighborhood",
+      "analysis_target": "local spatial neighborhoods, tissue niches, graphs, or cell-neighborhood structure",
+      "main_input_or_signal": "coordinates, cell labels, expression, morphology, or sample-level neighborhood context",
+      "target_output": "spatial graphs, neighborhood features, niche labels, or local-context representations",
+      "route": "formal/layer2/graph_neighborhood.md",
+      "slug": "graph_neighborhood"
+    },
+    {
+      "analysis_problem": "Integration",
+      "analysis_target": "multiple spatial samples, slices, batches, technologies, or coordinate systems",
+      "main_input_or_signal": "multi-sample or multi-modal spatial expression with coordinates and optional images",
+      "target_output": "integrated embeddings, aligned coordinates, harmonized samples, or joint representations",
+      "route": "formal/layer2/integration.md",
+      "slug": "integration"
+    },
+    {
+      "analysis_problem": "Normalization",
+      "analysis_target": "technical scaling or normalization of measured spatial expression",
+      "main_input_or_signal": "raw or quality-controlled count matrix with spatial sample metadata",
+      "target_output": "normalized expression object ready for downstream analysis",
+      "route": "formal/layer2/normalization.md",
+      "slug": "normalization"
+    },
+    {
+      "analysis_problem": "Panel Design",
+      "analysis_target": "gene panel or feature set for targeted spatial assays",
+      "main_input_or_signal": "candidate genes, references, prior marker sets, or assay constraints",
+      "target_output": "selected spatial gene panel or feature set",
+      "route": "formal/layer2/panel_design.md",
+      "slug": "panel_design"
+    },
+    {
+      "analysis_problem": "Phenotype- / Cohort-linked Spatial Feature and Niche Analysis",
+      "analysis_target": "phenotype-, cohort-, or outcome-linked spatial features and tissue niches",
+      "main_input_or_signal": "spatial features, niche labels, patient/sample metadata, phenotype, or outcome variables",
+      "target_output": "phenotype-associated spatial features, niche scores, or cohort-level associations",
+      "route": "formal/layer2/phenotype_cohort_linked_spatial_feature_niche_analysis.md",
+      "slug": "phenotype_cohort_linked_spatial_feature_niche_analysis"
+    },
+    {
+      "analysis_problem": "Program Discovery",
+      "analysis_target": "latent tissue states, multicellular programs, modules, or coordinated expression programs",
+      "main_input_or_signal": "spatial expression with optional cell labels, niches, or multi-sample context",
+      "target_output": "program scores, latent factors, module assignments, or spatial program maps",
+      "route": "formal/layer2/program_discovery.md",
+      "slug": "program_discovery"
+    },
+    {
+      "analysis_problem": "Segmentation",
+      "analysis_target": "cells, spots, transcripts, boundaries, or spatial units",
+      "main_input_or_signal": "imaging, transcript locations, morphology, or spatial molecular measurements",
+      "target_output": "segmentation labels, cell boundaries, spatial units, or transcript-to-cell assignments",
+      "route": "formal/layer2/segmentation.md",
+      "slug": "segmentation"
+    },
+    {
+      "analysis_problem": "Spatial Clonal Analysis",
+      "analysis_target": "clones, subclones, copy-number states, or lineage-derived tumor structures",
+      "main_input_or_signal": "spatial molecular data with genotype, copy-number, mutation, or lineage signal",
+      "target_output": "spatial clone labels, subclone maps, or clonal composition summaries",
+      "route": "formal/layer2/spatial_clonal_analysis.md",
+      "slug": "spatial_clonal_analysis"
+    },
+    {
+      "analysis_problem": "Spatial Contrast Testing",
+      "analysis_target": "condition, group, niche, domain, or tissue-context differences",
+      "main_input_or_signal": "spatial features with condition, group, domain, niche, or sample metadata",
+      "target_output": "differential spatial features, contrast statistics, or condition-associated effects",
+      "route": "formal/layer2/spatial_contrast_testing.md",
+      "slug": "spatial_contrast_testing"
+    },
+    {
+      "analysis_problem": "Spatial Perturbation Analysis",
+      "analysis_target": "spatial response to perturbation, intervention, screen, or altered tissue state",
+      "main_input_or_signal": "spatial expression plus perturbation labels, guides, treatment, or intervention metadata",
+      "target_output": "perturbation-response effects, spatial response maps, or niche-aware perturbation summaries",
+      "route": "formal/layer2/spatial_perturbation_analysis.md",
+      "slug": "spatial_perturbation_analysis"
+    },
+    {
+      "analysis_problem": "Spatial Trajectory Analysis",
+      "analysis_target": "spatially organized transitions, progressions, dynamics, or lineage-like states",
+      "main_input_or_signal": "spatial expression, coordinates, optional time, pseudotime, lineage, or state cues",
+      "target_output": "spatial trajectories, transition maps, ordered states, or spatial dynamics summaries",
+      "route": "formal/layer2/spatial_trajectory_analysis.md",
+      "slug": "spatial_trajectory_analysis"
+    },
+    {
+      "analysis_problem": "Spatially Variable Gene Detection",
+      "analysis_target": "genes with spatially structured expression patterns",
+      "main_input_or_signal": "spatial expression with coordinates, optional cell-type or domain context",
+      "target_output": "ranked spatially variable genes, pattern classes, or spatial gene sets",
+      "route": "formal/layer2/spatially_variable_gene_detection.md",
+      "slug": "spatially_variable_gene_detection"
+    },
+    {
+      "analysis_problem": "Super-resolution",
+      "analysis_target": "finer spatial resolution or subspot spatial structure",
+      "main_input_or_signal": "lower-resolution spatial expression with coordinates, optional image or reference signal",
+      "target_output": "higher-resolution expression representation or refined spatial tissue map",
+      "route": "formal/layer2/super_resolution.md",
+      "slug": "super_resolution"
+    }
+  ],
+  "topics": {
+    "artifact_correction": {
+      "slug": "artifact_correction",
+      "title": "Artifact Correction",
+      "path": "results/formal/layer2/artifact_correction.md",
+      "method_count": 4,
+      "methods": [
+        "SpotClean",
+        "Non-parametric Vignetting Correction",
+        "cellAdmix",
+        "SPLIT"
+      ],
+      "method_rows": [
+        {
+          "Method": "SpotClean",
+          "Selection role": "correct spot swapping or local contamination effects in spot-based spatial transcriptomics",
+          "Main input/signal": "spot-level spatial transcriptomics count data with spatial neighborhood structure",
+          "Main output": "artifact-corrected expression estimates and contamination-aware summaries",
+          "Artifact Mechanism": "spot swapping / local contamination",
+          "Data Object": "spot-level count matrix with spatial coordinates",
+          "Platform Scope": "spot-based spatial transcriptomics",
+          "Correction Scope": "expression correction / contamination adjustment",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Non-parametric Vignetting Correction",
+          "Selection role": "correct non-uniform vignetting or position-dependent signal attenuation",
+          "Main input/signal": "spatial transcriptomics image or sparse spatial signal affected by position-dependent intensity attenuation",
+          "Main output": "vignetting-corrected spatial signal or expression-like matrix",
+          "Artifact Mechanism": "vignetting / position-dependent intensity field",
+          "Data Object": "image or sparse spatial signal",
+          "Platform Scope": "platforms with measurable vignetting/intensity-field artifact",
+          "Correction Scope": "spatial intensity-field correction",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "cellAdmix",
+          "Selection role": "correct molecular admixture effects after cell/molecule assignment",
+          "Main input/signal": "cell-level or molecule-assigned spatial transcriptomics data with suspected admixture across neighboring cells or compartments",
+          "Main output": "admixture-adjusted expression estimates or corrected cell-level signals",
+          "Artifact Mechanism": "molecular admixture",
+          "Data Object": "cell-level or molecule-assigned spatial expression data",
+          "Platform Scope": "cell-level or molecule-resolved spatial assays",
+          "Correction Scope": "molecular admixture adjustment",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SPLIT",
+          "Selection role": "correct Xenium-specific signal contamination and transcript spillover effects",
+          "Main input/signal": "Xenium spatial transcriptomics transcript calls or expression matrix with spatial molecule context",
+          "Main output": "contamination-aware Xenium expression estimates, transcript-spillover diagnostics, or corrected downstream-ready signal",
+          "Artifact Mechanism": "Xenium signal contamination / transcript spillover",
+          "Data Object": "Xenium transcript calls or expression object",
+          "Platform Scope": "Xenium-specific",
+          "Correction Scope": "signal-contamination correction",
+          "Compute/code cue": "CPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Artifact Mechanism",
+        "Data Object",
+        "Platform Scope",
+        "Correction Scope",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Artifact Mechanism",
+        "Data Object",
+        "Platform Scope",
+        "Correction Scope"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Artifact Correction`. This topic covers artifact-mechanism-specific correction of already measured spatial signal, including spot swapping or local contamination, vignetting or intensity-field distortion, molecular admixture after assignment, and Xenium-specific signal contamination or transcript spillover.",
+      "decision_tree": [
+        {
+          "condition": "If the suspected artifact is spot swapping or local contamination in a spot-level count matrix",
+          "actions": [
+            "Prefer / consider `SpotClean`."
+          ]
+        },
+        {
+          "condition": "If the suspected artifact is vignetting or position-dependent intensity attenuation in an image-linked or sparse spatial signal",
+          "actions": [
+            "Prefer / consider `Non-parametric Vignetting Correction`."
+          ]
+        },
+        {
+          "condition": "If the suspected artifact is molecular admixture across assigned cells or compartments",
+          "actions": [
+            "Prefer / consider `cellAdmix`."
+          ]
+        },
+        {
+          "condition": "If the platform is Xenium and the suspected artifact is signal contamination or transcript spillover",
+          "actions": [
+            "Prefer / consider `SPLIT`.",
+            "Keep the method aligned with the data object and platform scope rather than forcing a cross-branch comparison.",
+            "Route to `Data Quality Control` when the task is artifact flagging or review rather than signal correction.",
+            "Review corrected output against morphology, platform metadata, and known tissue structure before treating changes as biological signal."
+          ]
+        }
+      ]
+    },
+    "cell_type_inference": {
+      "slug": "cell_type_inference",
+      "title": "Cell Type Inference",
+      "path": "results/formal/layer2/cell_type_inference.md",
+      "method_count": 35,
+      "methods": [
+        "AdRoit",
+        "CARD",
+        "cell2location",
+        "Celloscope",
+        "CellsFromSpace",
+        "CytoSPACE",
+        "DestVI",
+        "DSTG",
+        "NLSDeconv",
+        "RCTD",
+        "Redeconve",
+        "SMART",
+        "SONAR",
+        "SPADE",
+        "SpatialDWLS",
+        "SpatialPrompt",
+        "SpatialScope",
+        "SPOTlight",
+        "Starfysh",
+        "STdeconvolve",
+        "STdGCN",
+        "stereoscope",
+        "STIE",
+        "STRIDE",
+        "stVAE",
+        "Tangram",
+        "DeepScence",
+        "OmicsTweezer",
+        "STAMapper",
+        "STHD",
+        "STALocator",
+        "gwSPADE",
+        "DECLUST",
+        "PANDA",
+        "STged"
+      ],
+      "method_rows": [
+        {
+          "Method": "AdRoit",
+          "Selection role": "robust cell-type composition inference for mixed transcriptomes",
+          "Main input/signal": "bulk or spatial mixture expression + reference signatures",
+          "Main output": "cell-type composition estimates",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "none",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "CARD",
+          "Selection role": "spatially informed reference-based cell-type deconvolution",
+          "Main input/signal": "ST count matrix + spatial coordinates + scRNA-seq reference",
+          "Main output": "cell-type proportion map",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "independent benchmark includes",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "cell2location",
+          "Selection role": "fine-grained cell abundance mapping",
+          "Main input/signal": "ST count matrix + scRNA-seq reference signatures",
+          "Main output": "cell-type abundance estimates per location",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "independent benchmark includes",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Celloscope",
+          "Selection role": "marker-gene-driven probabilistic deconvolution",
+          "Main input/signal": "ST count matrix + marker-gene cell-type cues",
+          "Main output": "cell-type proportion estimates",
+          "Reference Dependence": "marker-gene-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "CellsFromSpace",
+          "Selection role": "reference-free deconvolution and cell-type annotation",
+          "Main input/signal": "ST count matrix with spatial locations",
+          "Main output": "cell-type components and annotations",
+          "Reference Dependence": "reference-free",
+          "Resolution Target": "annotation",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "CytoSPACE",
+          "Selection role": "cell placement / high-resolution alignment of single-cell and spatial profiles",
+          "Main input/signal": "ST spots + scRNA-seq reference + spatial coordinates",
+          "Main output": "assigned single cells or cell types at spatial positions",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "cell placement",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "DestVI",
+          "Selection role": "cell-type deconvolution with within-type cell-state continuums",
+          "Main input/signal": "ST count matrix + scRNA-seq reference with continuous states",
+          "Main output": "cell-type proportions and state latent variables",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "cell-state/specialized",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "independent benchmark includes",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "DSTG",
+          "Selection role": "graph-based spatial cell-type deconvolution",
+          "Main input/signal": "ST count matrix + spatial graph + reference information",
+          "Main output": "cell-type proportions",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "NLSDeconv",
+          "Selection role": "efficient weighted least-squares cell-type deconvolution",
+          "Main input/signal": "ST count matrix + reference signatures",
+          "Main output": "cell-type proportions",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "RCTD",
+          "Selection role": "robust reference-based decomposition of cell-type mixtures",
+          "Main input/signal": "ST count matrix + scRNA-seq reference",
+          "Main output": "cell-type weights and singlet/doublet-style mixture calls",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "independent benchmark includes",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Redeconve",
+          "Selection role": "single-cell-resolution spatial deconvolution/reconstruction",
+          "Main input/signal": "ST spots + scRNA-seq reference + spatial information",
+          "Main output": "single-cell-resolution cell-type map",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "single-cell reconstruction",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SMART",
+          "Selection role": "marker-gene-assisted topic-model deconvolution",
+          "Main input/signal": "ST count matrix + marker-gene information",
+          "Main output": "cell-type proportion/topic estimates",
+          "Reference Dependence": "marker-gene-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "SONAR",
+          "Selection role": "spatially weighted probabilistic cell-type deconvolution",
+          "Main input/signal": "ST count matrix + spatial locations + cell-type signatures",
+          "Main output": "cell-type proportion estimates",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "SPADE",
+          "Selection role": "domain-specific cell-type proportion estimation",
+          "Main input/signal": "ST count matrix + spatial domains and cell-type reference cues",
+          "Main output": "domain-aware cell-type estimates",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialDWLS",
+          "Selection role": "weighted least-squares cell-type deconvolution",
+          "Main input/signal": "ST count matrix + scRNA-seq reference",
+          "Main output": "cell-type proportion estimates",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialPrompt",
+          "Selection role": "spatially aware spot deconvolution with domain context",
+          "Main input/signal": "ST count matrix + spatial coordinates and reference/domain cues",
+          "Main output": "cell-type proportions and domain-linked outputs",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "SpatialScope",
+          "Selection role": "cellular-level transcriptomic reconstruction and deconvolution",
+          "Main input/signal": "ST spots + scRNA-seq reference",
+          "Main output": "cellular-resolution transcriptomic map",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "single-cell reconstruction",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "SPOTlight",
+          "Selection role": "seeded NMF regression deconvolution",
+          "Main input/signal": "ST count matrix + scRNA-seq reference or marker-derived signatures",
+          "Main output": "cell-type proportions per spot",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "none",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Starfysh",
+          "Selection role": "reference-free tumor-microenvironment deconvolution using histology-aware latent factors",
+          "Main input/signal": "ST count matrix + histology image",
+          "Main output": "cellular archetypes / spatial factor map",
+          "Reference Dependence": "histology-aware reference-free",
+          "Resolution Target": "annotation",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "required",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STdeconvolve",
+          "Selection role": "reference-free topic-model deconvolution",
+          "Main input/signal": "ST count matrix",
+          "Main output": "cell-type-like topics and proportions",
+          "Reference Dependence": "reference-free",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "none",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "independent benchmark includes",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "STdGCN",
+          "Selection role": "graph convolutional cell-type deconvolution",
+          "Main input/signal": "ST count matrix + spatial graph + reference information",
+          "Main output": "cell-type proportion estimates",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "stereoscope",
+          "Selection role": "probabilistic reference-based cell-type topography inference",
+          "Main input/signal": "ST count matrix + scRNA-seq reference",
+          "Main output": "cell-type proportions / topography map",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "independent benchmark includes",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STIE",
+          "Selection role": "single-cell-level deconvolution, convolution, and clustering",
+          "Main input/signal": "ST count matrix + nuclear morphology/image signal",
+          "Main output": "single-cell-level cell-type and cluster assignments",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "single-cell reconstruction",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "required",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "STRIDE",
+          "Selection role": "cell-type decomposition and integration with scRNA-seq",
+          "Main input/signal": "ST count matrix + scRNA-seq reference",
+          "Main output": "cell-type proportion estimates",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "stVAE",
+          "Selection role": "VAE-based cell-type composition deconvolution",
+          "Main input/signal": "cellular-resolution or high-resolution ST data",
+          "Main output": "cell-type composition estimates",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "review-only coverage",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "Tangram",
+          "Selection role": "mapping single-cell profiles to spatial locations",
+          "Main input/signal": "ST count matrix + scRNA-seq reference",
+          "Main output": "cell-to-space alignment / cell-type map",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "cell placement",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "DeepScence",
+          "Selection role": "specialized inference of senescent-cell state in spatial context",
+          "Main input/signal": "single-cell/spatial expression data for senescence state detection",
+          "Main output": "senescent-cell state labels or scores",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "cell-state/specialized",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "OmicsTweezer",
+          "Selection role": "distribution-independent cell deconvolution",
+          "Main input/signal": "multi-omics or spatial expression mixture data",
+          "Main output": "cell-type deconvolution estimates",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "STAMapper",
+          "Selection role": "cell-type mapping and annotation in single-cell spatial transcriptomics",
+          "Main input/signal": "single-cell spatial transcriptomics expression data",
+          "Main output": "cell-type annotations / spatial cell-type map",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "annotation",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "STHD",
+          "Selection role": "probabilistic high-definition cell typing",
+          "Main input/signal": "whole-transcriptome spatial data at spot or high-definition resolution",
+          "Main output": "cell-type labels or probabilities",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "annotation",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "STALocator",
+          "Selection role": "localization of single-cell profiles using spatial transcriptomics",
+          "Main input/signal": "scRNA-seq profiles + spatial transcriptomics reference tissue",
+          "Main output": "localized cells or cell-type map",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Resolution Target": "cell placement",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "gwSPADE",
+          "Selection role": "gene-frequency-weighted reference-free deconvolution",
+          "Main input/signal": "ST count matrix with spatial expression frequencies",
+          "Main output": "cell-type-like components / proportions",
+          "Reference Dependence": "reference-free",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "DECLUST",
+          "Selection role": "cluster-based cell-type deconvolution",
+          "Main input/signal": "ST count matrix + spatial/cluster structure",
+          "Main output": "cell-type proportion or cluster-associated estimates",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "spot mixture",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "PANDA",
+          "Selection role": "dual decoding of cell types and gene expression",
+          "Main input/signal": "ST count matrix with spot-adaptive expression modeling",
+          "Main output": "cell-type proportions and gene-expression estimates",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "gene-expression deconvolution",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "STged",
+          "Selection role": "gene-expression deconvolution linked to cell-type inference",
+          "Main input/signal": "ST count matrix + graph/spatial expression structure",
+          "Main output": "deconvolved gene expression / inferred cell-type signal",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "gene-expression deconvolution",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "none",
+          "Benchmark Coverage": "method-paper/local benchmark only",
+          "Compute/code cue": "CPU; code access unclear"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Reference Dependence",
+        "Resolution Target",
+        "Spatial Signal Use",
+        "Image Signal Use",
+        "Benchmark Coverage",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Reference Dependence",
+        "Resolution Target",
+        "Spatial Signal Use",
+        "Image Signal Use",
+        "Benchmark Coverage"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Cell Type Inference`. This topic covers cell-type composition inference, cell-type annotation, deconvolution, state-aware inference, image-assisted inference, and spatial placement or reconstruction of cell-type signal. The main branch families here are reference-assisted spot deconvolution, marker-gene-assisted deconvolution, reference-free deconvolution or annotation, spatial or domain-aware deconvolution, image or histology-assisted inference, cell placement or single-cell reconstruction, and specialized state or boundary rows.",
+      "decision_tree": [
+        {
+          "condition": "If a matched scRNA-seq reference is intended and the desired output is spot-level proportions or abundances",
+          "actions": [
+            "Prefer / consider `AdRoit`, `CARD`, `cell2location`, `NLSDeconv`, `RCTD`, `SONAR`, `SpatialDWLS`, `SPOTlight`, `stereoscope`, or `STRIDE`.",
+            "Consider `DestVI` when within-cell-type state variation is central rather than plain discrete proportions."
+          ]
+        },
+        {
+          "condition": "If marker genes are the intended cell-type cue rather than a full reference",
+          "actions": [
+            "Prefer / consider `Celloscope` or `SMART`.",
+            "Consider `SPOTlight` only when seeded signature regression still matches the intended reading path."
+          ]
+        },
+        {
+          "condition": "If a reference-free route is the real goal",
+          "actions": [
+            "Prefer / consider `CellsFromSpace`, `STdeconvolve`, `gwSPADE`, or `DECLUST`.",
+            "Consider `Starfysh` when reference-free inference is intentionally coupled to histology-aware latent structure."
+          ]
+        },
+        {
+          "condition": "If spatial neighborhoods, domains, or graphs should actively shape the inference",
+          "actions": [
+            "Prefer / consider `CARD`, `DSTG`, `SONAR`, `SPADE`, `SpatialPrompt`, or `STdGCN`.",
+            "Keep domain-aware or graph-aware outputs distinct from independent downstream domain validation."
+          ]
+        },
+        {
+          "condition": "If the main question is image-, histology-, or nuclear-morphology-assisted inference",
+          "actions": [
+            "Prefer / consider `Starfysh` or `STIE`.",
+            "Use this branch only when matched image or morphology signal is genuinely part of the scientific question."
+          ]
+        },
+        {
+          "condition": "If the task is cell placement, localization, or single-cell reconstruction rather than spot-mixture estimation",
+          "actions": [
+            "Prefer / consider `CytoSPACE`, `Redeconve`, `SpatialScope`, `Tangram`, or `STALocator`.",
+            "Treat these rows as placement or reconstruction routes, not as ordinary spot-level proportion estimators."
+          ]
+        },
+        {
+          "condition": "If the task is a specialized state, annotation, or gene-expression-coupled boundary row",
+          "actions": [
+            "Prefer / consider `DeepScence` for senescent-cell-state detection.",
+            "Prefer / consider `STAMapper` or `STHD` for single-cell-spatial annotation or high-definition cell typing.",
+            "Prefer / consider `PANDA` or `STged` when cell-type inference is intentionally coupled to gene-expression deconvolution.",
+            "Consider `OmicsTweezer` when distribution-independent or cross-omics deconvolution framing is the central branch cue.",
+            "Keep benchmark coverage as branch-local context, not as a cross-topic ordering rule.",
+            "Keep reference mismatch, marker bias, domain circularity, image bias, and overprecision caveats visible in the reading path.",
+            "Re-check whether the requested endpoint is composition, annotation, placement, reconstruction, or a specialized state before narrowing candidates."
+          ]
+        }
+      ]
+    },
+    "cell_cell_communication": {
+      "slug": "cell_cell_communication",
+      "title": "Cell-Cell Communication",
+      "path": "results/formal/layer2/cell_cell_communication.md",
+      "method_count": 16,
+      "methods": [
+        "CellChat",
+        "CellNEST",
+        "COMMOT",
+        "NicheNet",
+        "SpaOTsc",
+        "SpaTalk",
+        "SpatialDM",
+        "DeepTalk",
+        "stLearn",
+        "COZI",
+        "MISTy",
+        "Spacia",
+        "SVCA",
+        "SPIDER",
+        "Scriabin",
+        "CausalCCC"
+      ],
+      "method_rows": [
+        {
+          "Method": "CellChat",
+          "Selection role": "Broad LR network interpretation for annotated cell groups.",
+          "Main input/signal": "Grouped expression with LR database context.",
+          "Main output": "Cell-group communication network and pathway summaries.",
+          "CCC Branch": "ligand-receptor communication inference",
+          "Spatial Specificity": "spatial use case; not spatial-first",
+          "Ligand-Receptor Dependence": "required",
+          "Resolution / Grouping Level": "cell group / cluster",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "CellNEST",
+          "Selection role": "Relay-network or graph-attention CCC over spatial cells or spots.",
+          "Main input/signal": "Spatial expression, coordinates, LR pairs, optional annotations.",
+          "Main output": "Direct and relay CCC edges with graph outputs.",
+          "CCC Branch": "relay / graph communication inference",
+          "Spatial Specificity": "coordinate-aware graph",
+          "Ligand-Receptor Dependence": "required",
+          "Resolution / Grouping Level": "cell / spot",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "COMMOT",
+          "Selection role": "Spatial sender-receiver communication with geometry or transport signal.",
+          "Main input/signal": "Spatial expression, coordinates, LR or pathway priors.",
+          "Main output": "Spatial communication directions and LR/pathway signals.",
+          "CCC Branch": "ligand-receptor communication inference",
+          "Spatial Specificity": "coordinate-aware spatial transport",
+          "Ligand-Receptor Dependence": "required",
+          "Resolution / Grouping Level": "spot / cell / region",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "NicheNet",
+          "Selection role": "Ligand-to-target regulatory interpretation in receiver cells.",
+          "Main input/signal": "Sender/receiver expression, candidate ligands, target genes, prior network.",
+          "Main output": "Ranked ligands and ligand-target regulatory links.",
+          "CCC Branch": "ligand-target communication interpretation",
+          "Spatial Specificity": "non-spatial baseline with spatial use case",
+          "Ligand-Receptor Dependence": "required plus ligand-target prior",
+          "Resolution / Grouping Level": "cell group / receiver program",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpaOTsc",
+          "Selection role": "Early transport-style spatial signaling or mapping-linked CCC.",
+          "Main input/signal": "Single-cell expression, spatial positions, signaling gene sets.",
+          "Main output": "Spatial mapping and inferred signaling relationships.",
+          "CCC Branch": "ligand-receptor communication inference",
+          "Spatial Specificity": "coordinate-aware spatial transport / mapping",
+          "Ligand-Receptor Dependence": "optional signaling-gene orientation",
+          "Resolution / Grouping Level": "cell / spot",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpaTalk",
+          "Selection role": "Knowledge-graph-supported spatial LR interpretation.",
+          "Main input/signal": "Spatial expression, cell or spot annotations, LR pairs, knowledge graph.",
+          "Main output": "LR-mediated communication events and pathway-style summaries.",
+          "CCC Branch": "ligand-receptor communication inference",
+          "Spatial Specificity": "spatially resolved LR inference",
+          "Ligand-Receptor Dependence": "required",
+          "Resolution / Grouping Level": "cell / spot / cell type",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialDM",
+          "Selection role": "Spatial co-expression style LR testing.",
+          "Main input/signal": "Spatial expression, coordinates, LR database.",
+          "Main output": "Significant spatial LR pairs and communication-pattern summaries.",
+          "CCC Branch": "ligand-receptor communication inference",
+          "Spatial Specificity": "spatial co-expression",
+          "Ligand-Receptor Dependence": "required",
+          "Resolution / Grouping Level": "spot / cell / LR pair",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "DeepTalk",
+          "Selection role": "Single-cell-resolution spatial CCC with paired scRNA/ST context.",
+          "Main input/signal": "Aligned spatial transcriptomics and scRNA-seq expression with spatial affinities.",
+          "Main output": "Predicted single-cell CCC patterns and graph-attention outputs.",
+          "CCC Branch": "single-cell graph communication inference",
+          "Spatial Specificity": "coordinate-aware with scRNA/ST integration",
+          "Ligand-Receptor Dependence": "required",
+          "Resolution / Grouping Level": "single cell",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "stLearn",
+          "Selection role": "CCC readout inside a broader spatial trajectory or tissue-context workflow.",
+          "Main input/signal": "Spatial expression, coordinates, optional image context, LR pairs.",
+          "Main output": "LR interaction scores with related spatial or trajectory outputs.",
+          "CCC Branch": "ligand-receptor communication inference",
+          "Spatial Specificity": "spatial workflow with trajectory context",
+          "Ligand-Receptor Dependence": "required for CCC module",
+          "Resolution / Grouping Level": "spot / region / cell type",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "COZI",
+          "Selection role": "Cell-type neighbor-preference or cohort tissue-architecture comparison.",
+          "Main input/signal": "Cell coordinates, cell-type labels, sample or cohort grouping.",
+          "Main output": "Neighbor-preference scores for cell-type pairs.",
+          "CCC Branch": "neighborhood / interaction-effect modeling",
+          "Spatial Specificity": "cell-neighborhood graph",
+          "Ligand-Receptor Dependence": "not primary",
+          "Resolution / Grouping Level": "cell-type pair / sample",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "MISTy",
+          "Selection role": "Multiview contextual influence over markers, cell types, or targets.",
+          "Main input/signal": "Spatial features with configurable local and broader views.",
+          "Main output": "View-specific importance and variance-explained interaction summaries.",
+          "CCC Branch": "neighborhood / interaction-effect modeling",
+          "Spatial Specificity": "configurable multiview neighborhood context",
+          "Ligand-Receptor Dependence": "not primary",
+          "Resolution / Grouping Level": "cell / spot / marker target",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Spacia",
+          "Selection role": "Probabilistic spatial interaction modeling.",
+          "Main input/signal": "Spatial expression with cellular neighborhoods or bags and interaction features.",
+          "Main output": "Predicted cellular interaction signals and spatial interaction maps.",
+          "CCC Branch": "neighborhood / interaction-effect modeling",
+          "Spatial Specificity": "spatial interaction model",
+          "Ligand-Receptor Dependence": "optional / not primary",
+          "Resolution / Grouping Level": "cell / spot / neighborhood",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "SVCA",
+          "Selection role": "Variance-component framing of spatial interaction effects.",
+          "Main input/signal": "Spatial molecular features with neighborhoods or spatial units.",
+          "Main output": "Variance components and interaction-effect estimates.",
+          "CCC Branch": "neighborhood / interaction-effect modeling",
+          "Spatial Specificity": "spatial variance / neighborhood effect",
+          "Ligand-Receptor Dependence": "not primary",
+          "Resolution / Grouping Level": "cell / spatial unit / feature",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SPIDER",
+          "Selection role": "Spatially variable LR interactions with downstream support.",
+          "Main input/signal": "Spatial expression, LR pairs, downstream genes or TFs, interface profiles.",
+          "Main output": "Spatially variable LR interactions and supported interface signals.",
+          "CCC Branch": "spatially variable ligand-receptor inference",
+          "Spatial Specificity": "spatially variable LR interface",
+          "Ligand-Receptor Dependence": "required plus downstream support",
+          "Resolution / Grouping Level": "LR interaction / interface",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Scriabin",
+          "Selection role": "Single-cell-level comparative CCC.",
+          "Main input/signal": "Single-cell expression with cell-level CCC features; spatial context optional.",
+          "Main output": "Single-cell-level CCC comparison features and interaction summaries.",
+          "CCC Branch": "comparative single-cell CCC",
+          "Spatial Specificity": "single-cell CCC with spatial use cases",
+          "Ligand-Receptor Dependence": "required / CCC prior-based",
+          "Resolution / Grouping Level": "single cell",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "CausalCCC",
+          "Selection role": "Pathway-aware interpretation of existing CCC calls.",
+          "Main input/signal": "Single-cell or spatial expression plus existing LR pairs or user-defined inputs.",
+          "Main output": "Pathway-aware communication interpretations and visualizations.",
+          "CCC Branch": "causal pathway-aware communication interpretation",
+          "Spatial Specificity": "accepts spatial or single-cell CCC inputs",
+          "Ligand-Receptor Dependence": "downstream / user-supplied",
+          "Resolution / Grouping Level": "pathway / interacting cell type",
+          "Compute/code cue": "CPU; web-server boundary"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "CCC Branch",
+        "Spatial Specificity",
+        "Ligand-Receptor Dependence",
+        "Resolution / Grouping Level",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "CCC Branch",
+        "Spatial Specificity",
+        "Ligand-Receptor Dependence",
+        "Resolution / Grouping Level"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Cell-Cell Communication`. This topic covers methods whose primary role is to infer, compare, score, or interpret communication, ligand-receptor interaction, neighbor preference, relay-network structure, interaction effects, or pathway-aware CCC signals between cells, spots, cell types, or tissue compartments.",
+      "decision_tree": [
+        {
+          "condition": "If the requested output is cell-label neighborhood preference or interaction-effect modeling rather than molecular LR calls",
+          "actions": [
+            "Prefer / consider `COZI` for conditional neighbor-preference scores over cell-type pairs or cohort tissue-architecture comparison.",
+            "Prefer / consider `MISTy` for multiview contextual influence over markers, targets, or spatial views.",
+            "Prefer / consider `SVCA` for variance decomposition of spatial interaction effects.",
+            "Prefer / consider `Spacia` for probabilistic spatial interaction modeling when code-access uncertainty is acceptable for the selection stage."
+          ]
+        },
+        {
+          "condition": "If the requested output is a broad LR communication network or sender-receiver summary",
+          "actions": [
+            "Prefer / consider `CellChat` for widely used cell-group LR network interpretation.",
+            "Prefer / consider `NicheNet` when ligand-to-target regulatory potential in receiver cells is central."
+          ]
+        },
+        {
+          "condition": "If spatial geometry, tissue distance, transport, or spatially patterned LR signal is central",
+          "actions": [
+            "Prefer / consider `COMMOT` for geometry-aware transport-style communication.",
+            "Consider `SpaOTsc` for early transport-linked spatial signaling workflows.",
+            "Prefer / consider `SpatialDM` for spatial LR co-expression style testing.",
+            "Prefer / consider `SPIDER` for spatially variable LR interactions with downstream functional support.",
+            "Prefer / consider `SpaTalk` when knowledge-graph-supported spatial LR interpretation is desired."
+          ]
+        },
+        {
+          "condition": "If single-cell or relay-network resolution is central",
+          "actions": [
+            "Prefer / consider `CellNEST` for relay-network CCC or graph attention over spatial cells or spots.",
+            "Prefer / consider `DeepTalk` when paired or aligned scRNA-seq plus spatial data support single-cell-resolution CCC.",
+            "Prefer / consider `Scriabin` for single-cell-level comparative CCC when spatial contact is not the primary signal."
+          ]
+        },
+        {
+          "condition": "If CCC is embedded in a broader workflow or downstream pathway interpretation",
+          "actions": [
+            "Prefer / consider `stLearn` when LR scoring is needed inside a broader spatial trajectory or tissue-context workflow.",
+            "Prefer / consider `CausalCCC` when LR calls already exist and the next question is pathway-aware interpretation across interacting cell types.",
+            "Use CPU-labeled candidates for conservative reading paths.",
+            "Add graph or deep-learning candidates when scale, reference match, and calibration can be evaluated.",
+            "Treat unclear code access or web-server-only use surfaces as selection-stage constraints, not as local execution evidence."
+          ]
+        }
+      ]
+    },
+    "data_quality_control": {
+      "slug": "data_quality_control",
+      "title": "Data Quality Control",
+      "path": "results/formal/layer2/data_quality_control.md",
+      "method_count": 4,
+      "methods": [
+        "SpotSweeper",
+        "SpatialQC",
+        "ovrlpy",
+        "stPipe"
+      ],
+      "method_rows": [
+        {
+          "Method": "SpotSweeper",
+          "Selection role": "detect local or regional post-count spatial QC artifacts that may be missed by global count filters",
+          "Main input/signal": "processed spatial transcriptomics counts with spatial coordinates",
+          "Main output": "spatial QC flags, local artifact summaries, and candidate regions for contextual review",
+          "QC Target Level": "local/regional spatial QC",
+          "Input Processing Stage": "post-count / prepared object",
+          "Platform Scope": "spatial transcriptomics with coordinates",
+          "Spatial Artifact Handling": "focused local/regional artifact flags",
+          "Pipeline Breadth": "focused QC module",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialQC",
+          "Selection role": "automated quality-control reporting, filtering, and data-cleaning support for spatial transcriptome data",
+          "Main input/signal": "spatial transcriptomics data in supported object formats with spatial coordinates and sample/gene/cell or spot metadata",
+          "Main output": "QC reports, filtered spatial transcriptome objects, and cell/spot/gene quality summaries",
+          "QC Target Level": "automated report + filtering",
+          "Input Processing Stage": "prepared spatial transcriptome object",
+          "Platform Scope": "cross-platform spatial transcriptome data",
+          "Spatial Artifact Handling": "general QC / optional spatial review",
+          "Pipeline Breadth": "automated QC reporting/data-cleaning",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "ovrlpy",
+          "Selection role": "quantify vertical overlap or spatial co-localization patterns as quality-control evidence after transcript localization",
+          "Main input/signal": "transcript localization tables with x/y/z coordinates after molecule detection and localization",
+          "Main output": "overlap metrics, 3D localization summaries, and QC evidence for manual/contextual review",
+          "QC Target Level": "3D molecule/coordinate overlap",
+          "Input Processing Stage": "post-transcript-localization",
+          "Platform Scope": "molecule-localization spatial assays with z information",
+          "Spatial Artifact Handling": "vertical overlap / co-localization evidence",
+          "Pipeline Breadth": "focused QC module",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "stPipe",
+          "Selection role": "perform upstream preprocessing and QC before downstream spatial analysis",
+          "Main input/signal": "raw or near-raw sequencing-based spatial transcriptomics data and associated metadata",
+          "Main output": "processed spatial transcriptomics objects, QC summaries, and preprocessing outputs",
+          "QC Target Level": "upstream preprocessing/QC",
+          "Input Processing Stage": "raw / near-raw preprocessing",
+          "Platform Scope": "sequencing-based spatial transcriptomics",
+          "Spatial Artifact Handling": "general upstream QC, not focused artifact correction",
+          "Pipeline Breadth": "preprocessing + QC workflow",
+          "Compute/code cue": "CPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "QC Target Level",
+        "Input Processing Stage",
+        "Platform Scope",
+        "Spatial Artifact Handling",
+        "Pipeline Breadth",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "QC Target Level",
+        "Input Processing Stage",
+        "Platform Scope",
+        "Spatial Artifact Handling",
+        "Pipeline Breadth"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Data Quality Control`. This topic covers stage-aware quality-control methods for raw or prepared spatial data objects, including upstream preprocessing plus QC, prepared-object automated QC reporting, post-count local or regional spatial QC, and post-localization 3D overlap QC.",
+      "decision_tree": [
+        {
+          "condition": "If the input is raw or near-raw sequencing-based spatial transcriptomics data and the task is preprocessing plus QC",
+          "actions": [
+            "Prefer / consider `stPipe`."
+          ]
+        },
+        {
+          "condition": "If the input is a prepared spatial transcriptome object and the goal is automated QC reporting, filtering, or data cleaning",
+          "actions": [
+            "Prefer / consider `SpatialQC`."
+          ]
+        },
+        {
+          "condition": "If the input is a prepared post-count spatial object and the main concern is local or regional spatial artifacts",
+          "actions": [
+            "Prefer / consider `SpotSweeper`."
+          ]
+        },
+        {
+          "condition": "If the input is post-localization transcript coordinates with z information and the QC question is vertical overlap or 3D co-localization evidence",
+          "actions": [
+            "Prefer / consider `ovrlpy`.",
+            "Do not force head-to-head ranking across incompatible processing stages or data objects.",
+            "Review QC calls against tissue morphology, platform artifacts, and sample handling before treating them as meaningful spatial biology."
+          ]
+        }
+      ]
+    },
+    "denoising_signal_recovery": {
+      "slug": "denoising_signal_recovery",
+      "title": "Denoising / Signal Recovery",
+      "path": "results/formal/layer2/denoising_signal_recovery.md",
+      "method_count": 7,
+      "methods": [
+        "MIST",
+        "SpotGF",
+        "Sprod",
+        "DiffusionST",
+        "stGRL",
+        "GNTD",
+        "SPCS"
+      ],
+      "method_rows": [
+        {
+          "Method": "MIST",
+          "Selection role": "region-specific missing-value imputation and denoising",
+          "Main input/signal": "target-sample measured spatial transcriptomics matrix with region context",
+          "Main output": "same-resolution denoised or imputed expression matrix",
+          "Correction Target": "same-resolution expression signal",
+          "Reference Dependence": "none or optional local graph/prior",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "not primary",
+          "Output Alteration Level": "same-grid expression recovery",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpotGF",
+          "Selection role": "denoising through spatially informed gene filtering",
+          "Main input/signal": "target-sample measured spatial transcriptomics expression matrix",
+          "Main output": "filtered/denoised gene set or expression signal",
+          "Correction Target": "gene filtering / expression signal",
+          "Reference Dependence": "none or optional local graph/prior",
+          "Spatial Signal Use": "optional",
+          "Image Signal Use": "not primary",
+          "Output Alteration Level": "feature/gene filtering and signal cleanup",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Sprod",
+          "Selection role": "image- and position-informed denoising/imputation",
+          "Main input/signal": "target-sample measured ST with positions and image information",
+          "Main output": "same-resolution denoised spatial expression values",
+          "Correction Target": "same-resolution expression signal",
+          "Reference Dependence": "none or optional local graph/prior",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "used",
+          "Output Alteration Level": "same-grid expression recovery",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "DiffusionST",
+          "Selection role": "deep generative enhancement and denoising for ST quality improvement",
+          "Main input/signal": "target-sample measured ST matrix with spatial context",
+          "Main output": "denoised spatial transcriptomics expression at the existing spots",
+          "Correction Target": "same-resolution expression signal",
+          "Reference Dependence": "none or optional local graph/prior",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "not primary",
+          "Output Alteration Level": "same-grid expression recovery",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "stGRL",
+          "Selection role": "graph contrastive denoising and imputation coupled to spatial-domain representation",
+          "Main input/signal": "target-sample measured ST with spatial graph/context",
+          "Main output": "denoised or recovered expression representation at the same grid",
+          "Correction Target": "same-resolution expression signal",
+          "Reference Dependence": "none or optional local graph/prior",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "not primary",
+          "Output Alteration Level": "same-grid expression recovery",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "GNTD",
+          "Selection role": "graph-guided tensor decomposition recovers same-resolution measured-coordinate ST signal",
+          "Main input/signal": "spatial gene expression tensor plus spatial spot graph and optional gene functional graph",
+          "Main output": "imputed/reconstructed spatial expression tensor for measured coordinates",
+          "Correction Target": "same-resolution expression signal",
+          "Reference Dependence": "none or optional local graph/prior",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "not primary",
+          "Output Alteration Level": "same-grid expression recovery",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SPCS",
+          "Selection role": "spatial and pattern smoothing recovers same-resolution expression signal",
+          "Main input/signal": "ST expression matrix plus spot positions and expression-pattern neighborhoods",
+          "Main output": "smoothed ST expression values and optional existing-grid blank-spot padding",
+          "Correction Target": "same-resolution expression signal",
+          "Reference Dependence": "none or optional local graph/prior",
+          "Spatial Signal Use": "required",
+          "Image Signal Use": "not primary",
+          "Output Alteration Level": "same-grid expression recovery",
+          "Compute/code cue": "CPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Correction Target",
+        "Reference Dependence",
+        "Spatial Signal Use",
+        "Image Signal Use",
+        "Output Alteration Level",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Correction Target",
+        "Reference Dependence",
+        "Spatial Signal Use",
+        "Image Signal Use",
+        "Output Alteration Level"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Denoising / Signal Recovery`. This topic covers same-resolution recovery of noisy, sparse, or locally degraded measured spatial expression. The target output stays on the measured spot, cell, or coordinate grid rather than creating finer geometry or claiming new unmeasured expression.",
+      "decision_tree": [
+        {
+          "condition": "If the output must stay on the measured spot, cell, or coordinate grid",
+          "actions": [
+            "Continue within this topic."
+          ]
+        },
+        {
+          "condition": "If the branch is region-aware denoising from spatial-expression structure",
+          "actions": [
+            "Prefer / consider `MIST`."
+          ]
+        },
+        {
+          "condition": "If the branch is gene filtering or signal cleanup rather than full value recovery",
+          "actions": [
+            "Prefer / consider `SpotGF`."
+          ]
+        },
+        {
+          "condition": "If image or position information is an explicit denoising signal",
+          "actions": [
+            "Prefer / consider `Sprod`."
+          ]
+        },
+        {
+          "condition": "If graph or diffusion-style denoising is the main modeling branch",
+          "actions": [
+            "Prefer / consider `DiffusionST` for generative diffusion enhancement.",
+            "Prefer / consider `stGRL` when joint graph representation and domain-aware recovery are desired."
+          ]
+        },
+        {
+          "condition": "If tensor or spatial-pattern reconstruction is the main modeling branch",
+          "actions": [
+            "Prefer / consider `GNTD` for graph-guided tensor decomposition.",
+            "Prefer / consider `SPCS` for spatial-and-pattern smoothing on the existing grid.",
+            "Route to `Gene Expression Prediction / Imputation` when the output is unmeasured-gene or reference-derived expression prediction.",
+            "Route to `Super-resolution` when the output is finer-geometry reconstruction.",
+            "Keep denoised output framed as processed recovery signal, not direct truth about newly measured biology."
+          ]
+        }
+      ]
+    },
+    "domain_clustering": {
+      "slug": "domain_clustering",
+      "title": "Domain / Clustering",
+      "path": "results/formal/layer2/domain_clustering.md",
+      "method_count": 37,
+      "methods": [
+        "ADEPT",
+        "BANKSY",
+        "BASS",
+        "BayesSpace",
+        "CCST",
+        "ConGI",
+        "conST",
+        "DeepST",
+        "DR-SC",
+        "GraphST",
+        "MENDER",
+        "Pianno",
+        "PRECAST",
+        "PROST",
+        "SEDR",
+        "SiGra",
+        "SpaceFlow",
+        "SPACEL",
+        "SpaGCN",
+        "SpaSEG",
+        "SpatialPCA",
+        "SpatialPrompt",
+        "SpaTopic",
+        "STAGATE",
+        "STAMP",
+        "STCC",
+        "stLearn",
+        "Novae",
+        "IRIS",
+        "SpatialGlue",
+        "BINARY",
+        "stDyer",
+        "SpatialLeiden",
+        "GraphPCA",
+        "iIMPACT",
+        "MNMST",
+        "SpaDo"
+      ],
+      "method_rows": [
+        {
+          "Method": "ADEPT",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "BANKSY",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "neighborhood kernel prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "BASS",
+          "Selection role": "align and label spatial domains across slices, samples, or batches",
+          "Main input/signal": "one or more spatial expression slices with coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "Bayesian/probabilistic spatial prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "BayesSpace",
+          "Selection role": "infer probabilistic spatial domain labels with an explicit statistical prior",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "Bayesian/probabilistic spatial prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "CCST",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "ConGI",
+          "Selection role": "identify spatial domains using matched image or morphology cues with expression",
+          "Main input/signal": "spatial expression, coordinates, and histology/image features when available",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "image plus spatial-neighborhood prior",
+          "Image Signal Use": "histology/image-informed",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + image/morphology branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "conST",
+          "Selection role": "identify spatial domains using matched image or morphology cues with expression",
+          "Main input/signal": "spatial expression, coordinates, and optional histology/image features",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "optional histology/image-informed boundary",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + image/morphology branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "DeepST",
+          "Selection role": "identify spatial domains using matched image or morphology cues with expression",
+          "Main input/signal": "spatial expression, coordinates, and histology/image features when available",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "image plus spatial-neighborhood prior",
+          "Image Signal Use": "histology/image-informed",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + image/morphology branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "DR-SC",
+          "Selection role": "learn a spatially aware low-dimensional representation for domain structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatially aware low-dimensional prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "GraphST",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "MENDER",
+          "Selection role": "align and label spatial domains across slices, samples, or batches",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "slice-aligned domain labels",
+          "Spatial Prior": "spatial coordinates or neighborhood structure",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "slice-aligned domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Pianno",
+          "Selection role": "assign interpretable semantic domain annotations rather than only plain cluster labels",
+          "Main input/signal": "spatial expression and coordinates, optionally with markers or interpretability cues",
+          "Main output": "semantic spatial domain annotations",
+          "Spatial Prior": "Bayesian/probabilistic spatial prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "semantic domain annotations",
+          "Modality Integration Branch": "marker/semantic annotation branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "PRECAST",
+          "Selection role": "align and label spatial domains across slices, samples, or batches",
+          "Main input/signal": "one or more spatial expression slices with coordinates",
+          "Main output": "integrated embeddings and aligned domain clusters",
+          "Spatial Prior": "Bayesian/probabilistic spatial prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "slice-aligned domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "PROST",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial coordinates or neighborhood structure",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SEDR",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SiGra",
+          "Selection role": "identify spatial domains using matched image or morphology cues with expression",
+          "Main input/signal": "spatial expression, coordinates, and histology/image features when available",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "histology/image-informed",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + image/morphology branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpaceFlow",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SPACEL",
+          "Selection role": "align and label spatial domains across slices, samples, or batches",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "slice-aligned domain labels",
+          "Spatial Prior": "spatial coordinates or neighborhood structure",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "slice-aligned domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpaGCN",
+          "Selection role": "identify spatial domains using matched image or morphology cues with expression",
+          "Main input/signal": "spatial expression, coordinates, and histology/image features when available",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "histology/image-informed",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + image/morphology branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpaSEG",
+          "Selection role": "identify spatial domains using matched image or morphology cues with expression",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial coordinates or neighborhood structure",
+          "Image Signal Use": "histology/image-informed",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + image/morphology branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpatialPCA",
+          "Selection role": "learn a spatial embedding or low-dimensional representation for downstream domain labeling",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "spatial embedding or topics supporting domain labels",
+          "Spatial Prior": "spatially aware low-dimensional prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "embedding for downstream domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialPrompt",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial coordinates or neighborhood structure",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpaTopic",
+          "Selection role": "derive topic-, module-, or program-like spatial domain outputs for interpretation",
+          "Main input/signal": "spatial expression and coordinates, optionally with markers or interpretability cues",
+          "Main output": "domain-associated topics/modules",
+          "Spatial Prior": "spatial topic/domain prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "domain-associated topics/modules",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "STAGATE",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STAMP",
+          "Selection role": "derive topic-, module-, or program-like spatial domain outputs for interpretation",
+          "Main input/signal": "spatial expression and coordinates, optionally with markers or interpretability cues",
+          "Main output": "spatial embedding or topics supporting domain labels",
+          "Spatial Prior": "spatially aware low-dimensional prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "domain-associated topics/modules",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STCC",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial coordinates or neighborhood structure",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "stLearn",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Novae",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "IRIS",
+          "Selection role": "perform reference-informed tissue segmentation or domain labeling",
+          "Main input/signal": "spatial expression, coordinates, and external/reference information",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial coordinates or neighborhood structure",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "reference-informed branch",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "SpatialGlue",
+          "Selection role": "integrate paired spatial modalities to decode multi-omics spatial domains",
+          "Main input/signal": "paired spatial multi-omics profiles with coordinates",
+          "Main output": "multi-omics spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "optional multimodal/image branch unclear",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "multi-omics spatial domain labels",
+          "Modality Integration Branch": "spatial multi-omics integration",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "BINARY",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "stDyer",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "SpatialLeiden",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "GraphPCA",
+          "Selection role": "learn a spatial embedding or low-dimensional representation for downstream domain labeling",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "spatial embedding or topics supporting domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "embedding for downstream domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "iIMPACT",
+          "Selection role": "identify spatial domains using matched image or morphology cues with expression",
+          "Main input/signal": "spatial expression, coordinates, and histology/image features when available",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "image plus spatial-neighborhood prior",
+          "Image Signal Use": "histology/image-informed",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + image/morphology branch",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "MNMST",
+          "Selection role": "identify spatial domains with graph- or neighborhood-aware spatial structure",
+          "Main input/signal": "spatial expression matrix and spatial coordinates",
+          "Main output": "discrete spatial domain labels",
+          "Spatial Prior": "spatial graph/neighborhood prior",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "single-slice first; cross-slice support unclear",
+          "Domain Output Granularity": "discrete spatial domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "SpaDo",
+          "Selection role": "align and label spatial domains across slices, samples, or batches",
+          "Main input/signal": "one or more spatial expression slices with coordinates",
+          "Main output": "slice-aligned domain labels",
+          "Spatial Prior": "spatial coordinates or neighborhood structure",
+          "Image Signal Use": "none apparent",
+          "Cross-slice / Batch Cue": "explicit or plausible multi-slice/batch branch",
+          "Domain Output Granularity": "slice-aligned domain labels",
+          "Modality Integration Branch": "expression + spatial coordinates branch",
+          "Compute/code cue": "CPU; code access unclear"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Spatial Prior",
+        "Image Signal Use",
+        "Cross-slice / Batch Cue",
+        "Domain Output Granularity",
+        "Modality Integration Branch",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Spatial Prior",
+        "Image Signal Use",
+        "Cross-slice / Batch Cue",
+        "Domain Output Granularity",
+        "Modality Integration Branch"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Domain / Clustering`. This topic covers spatial domain identification, tissue-region clustering, interpretable topic or semantic domain outputs, reference-informed segmentation, and alignment-aware or multimodal domain comparison. The main branch families here are expression-plus-coordinates methods, graph or neighborhood-prior methods, Bayesian or probabilistic clustering, image or morphology-informed domains, multi-slice or batch-aware domain comparison, multimodal-integration-aware domains, interpretable topic or semantic outputs, and reference-informed segmentation.",
+      "decision_tree": [
+        {
+          "condition": "If reference-informed tissue segmentation is explicitly intended",
+          "actions": [
+            "Prefer / consider `IRIS`.",
+            "Keep atlas or reference dependence visible rather than treating this branch as ordinary unsupervised clustering."
+          ]
+        },
+        {
+          "condition": "If spatial multi-omics integration is central to the domain call",
+          "actions": [
+            "Prefer / consider `SpatialGlue`.",
+            "Keep this branch distinct from optional image-aware or contrastive rows that are not explicit spatial multi-omics integration methods."
+          ]
+        },
+        {
+          "condition": "If matched histology, morphology, or image signal should actively guide domain boundaries",
+          "actions": [
+            "Prefer / consider `ConGI`, `conST`, `DeepST`, `iIMPACT`, `SiGra`, `SpaGCN`, or `SpaSEG`.",
+            "Use this branch only when matched morphology is expected to carry real domain information."
+          ]
+        },
+        {
+          "condition": "If multi-slice, batch-aware, or cross-sample domain comparison is central",
+          "actions": [
+            "Prefer / consider `BASS`, `MENDER`, `PRECAST`, `SPACEL`, or `SpaDo`.",
+            "Consider `GraphST`, `Novae`, or `STAGATE` only when broad graph representations are part of the comparison objective."
+          ]
+        },
+        {
+          "condition": "If interpretable topics, semantic labels, markers, or tissue programs are more important than plain partitions",
+          "actions": [
+            "Prefer / consider `Pianno`, `SpaTopic`, or `STAMP`.",
+            "Keep topic, semantic, or module outputs explicit rather than rewriting them as ordinary cluster labels."
+          ]
+        },
+        {
+          "condition": "If a statistical or probabilistic clustering frame is preferred",
+          "actions": [
+            "Prefer / consider `BayesSpace`, `BASS`, `DR-SC`, or `PRECAST`.",
+            "Use branch-local benchmark support only inside the matching dataset regime."
+          ]
+        },
+        {
+          "condition": "If graph, neighborhood, or spatial-representation learning is the main route",
+          "actions": [
+            "Prefer / consider `ADEPT`, `CCST`, `GraphST`, `SEDR`, `SpaceFlow`, `STAGATE`, `STCC`, `stDyer`, or `stLearn`.",
+            "Consider `BINARY` when binarized graph-convolution framing is the real modeling cue."
+          ]
+        }
+      ]
+    },
+    "gene_expression_prediction_imputation": {
+      "slug": "gene_expression_prediction_imputation",
+      "title": "Gene Expression Prediction / Imputation",
+      "path": "results/formal/layer2/gene_expression_prediction_imputation.md",
+      "method_count": 17,
+      "methods": [
+        "GHIST",
+        "Hist2ST",
+        "THItoGene",
+        "FmH2ST",
+        "OmiCLIP",
+        "SpaGE",
+        "stPlus",
+        "SpatialScope",
+        "STASCAN",
+        "stAI",
+        "TISSUE",
+        "ENGEP",
+        "iSpatial",
+        "stDiff",
+        "SPRITE",
+        "DIST",
+        "STGAT"
+      ],
+      "method_rows": [
+        {
+          "Method": "GHIST",
+          "Selection role": "predict spatial gene expression at single-cell resolution from histology",
+          "Main input/signal": "histology images with paired training data or learned histology-expression mapping",
+          "Main output": "predicted single-cell-resolution spatial gene expression",
+          "Prediction Route": "histology-to-expression prediction",
+          "Input Dependence": "histology-required",
+          "Reference Dependence": "none or learned training pairs",
+          "Resolution Target": "single-cell or cellular-resolution inferred expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Hist2ST",
+          "Selection role": "predict spot-level spatial transcriptomics from histology",
+          "Main input/signal": "histology image patches with spatial context and paired ST training data",
+          "Main output": "predicted spatial transcriptomics expression profiles",
+          "Prediction Route": "histology-to-expression prediction",
+          "Input Dependence": "histology-required",
+          "Reference Dependence": "none or learned training pairs",
+          "Resolution Target": "spatial expression prediction",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "THItoGene",
+          "Selection role": "predict spatial transcriptomics from histological images",
+          "Main input/signal": "histological images with learned histology-to-ST mapping",
+          "Main output": "predicted spatial transcriptomics expression",
+          "Prediction Route": "histology-to-expression prediction",
+          "Input Dependence": "histology-required",
+          "Reference Dependence": "none or learned training pairs",
+          "Resolution Target": "spatial expression prediction",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "FmH2ST",
+          "Selection role": "generate spatial transcriptomics from histological images using foundation-model features",
+          "Main input/signal": "histology images and foundation-model visual features",
+          "Main output": "generated or predicted spatial transcriptomics expression",
+          "Prediction Route": "histology-to-expression generation",
+          "Input Dependence": "histology-required",
+          "Reference Dependence": "none or learned training pairs",
+          "Resolution Target": "spatial expression prediction",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "OmiCLIP",
+          "Selection role": "bridge histopathology with spatial transcriptomics for image-to-expression prediction and related retrieval tasks",
+          "Main input/signal": "histopathology images with visual-omics representation learning context",
+          "Main output": "predicted or aligned spatial omics/expression representation",
+          "Prediction Route": "visual-omics prediction",
+          "Input Dependence": "histology-required",
+          "Reference Dependence": "none or learned training pairs",
+          "Resolution Target": "spatial expression prediction",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpaGE",
+          "Selection role": "enhance spatial expression by predicting genes from a shared latent space with scRNA-seq",
+          "Main input/signal": "measured spatial expression for shared genes plus scRNA-seq reference",
+          "Main output": "enhanced or imputed spatial expression for unmeasured genes",
+          "Prediction Route": "reference-assisted missing-gene imputation",
+          "Input Dependence": "reference-required",
+          "Reference Dependence": "scRNA/reference-dependent",
+          "Resolution Target": "genome-wide or missing-gene expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "stPlus",
+          "Selection role": "enhance spatial transcriptomics and predict genes using scRNA-seq information",
+          "Main input/signal": "spatial transcriptomics matrix plus single-cell reference",
+          "Main output": "enhanced spatial expression with predicted missing genes",
+          "Prediction Route": "reference-assisted expression enhancement",
+          "Input Dependence": "reference-required",
+          "Reference Dependence": "scRNA/reference-dependent",
+          "Resolution Target": "genome-wide or missing-gene expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialScope",
+          "Selection role": "reconstruct transcriptome-wide spatial expression at cellular resolution",
+          "Main input/signal": "spatial transcriptomics data plus single-cell reference",
+          "Main output": "cellular-resolution inferred transcriptomic reconstruction",
+          "Prediction Route": "cellular-resolution transcriptomic reconstruction",
+          "Input Dependence": "reference-required",
+          "Reference Dependence": "scRNA/reference-dependent",
+          "Resolution Target": "single-cell or cellular-resolution inferred expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STASCAN",
+          "Selection role": "predict fine-resolution spatial cellular distribution in captured or uncharted areas",
+          "Main input/signal": "spatial gene expression profiles plus histology images",
+          "Main output": "fine-resolution cell distribution or spatial completion map",
+          "Prediction Route": "multimodal spatial completion",
+          "Input Dependence": "measured-ST-and-context-required",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "single-cell or cellular-resolution inferred expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "stAI",
+          "Selection role": "impute missing genes in single-cell spatial transcriptomics with coupled cell-type annotation",
+          "Main input/signal": "single-cell spatial transcriptomics with missing genes and annotation context",
+          "Main output": "imputed missing genes and cell-type annotations",
+          "Prediction Route": "missing-gene imputation and annotation",
+          "Input Dependence": "measured-ST-and-context-required",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "genome-wide or missing-gene expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "TISSUE",
+          "Selection role": "calibrate uncertainty around spatial gene-expression predictions and support uncertainty-aware downstream use",
+          "Main input/signal": "predicted spatial expression values with calibration context from measured spatial data",
+          "Main output": "prediction intervals and uncertainty-aware expression-prediction summaries",
+          "Prediction Route": "uncertainty calibration",
+          "Input Dependence": "prediction-input-required",
+          "Reference Dependence": "baseline-prediction-dependent",
+          "Resolution Target": "spatial expression prediction",
+          "Uncertainty Handling": "explicit calibration",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "ENGEP",
+          "Selection role": "ensemble reference-assisted model predicts unmeasured spatial gene expression",
+          "Main input/signal": "spatial query expression matrix plus same- or similar-tissue sc/snRNA-seq references",
+          "Main output": "predicted expression levels for spatially unmeasured genes",
+          "Prediction Route": "ensemble reference-assisted missing-gene prediction",
+          "Input Dependence": "reference-required",
+          "Reference Dependence": "scRNA/reference-dependent",
+          "Resolution Target": "genome-wide or missing-gene expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "iSpatial",
+          "Selection role": "reference-assisted model infers transcriptome-wide spatial expression values",
+          "Main input/signal": "limited-gene spatial transcriptomics or FISH data plus scRNA-seq reference",
+          "Main output": "genome-wide inferred spatial expression",
+          "Prediction Route": "genome-wide spatial expression inference",
+          "Input Dependence": "reference-required",
+          "Reference Dependence": "scRNA/reference-dependent",
+          "Resolution Target": "genome-wide or missing-gene expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "stDiff",
+          "Selection role": "diffusion model performs reference-assisted missing gene expression imputation",
+          "Main input/signal": "measured/shared spatial genes plus reference single-cell transcriptomics",
+          "Main output": "imputed missing spatial expression and enhanced ST data",
+          "Prediction Route": "diffusion-model missing-gene imputation",
+          "Input Dependence": "reference-required",
+          "Reference Dependence": "scRNA/reference-dependent",
+          "Resolution Target": "genome-wide or missing-gene expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SPRITE",
+          "Selection role": "post-processing/meta-algorithm improves imputed or predicted spatial expression values",
+          "Main input/signal": "baseline spatial expression predictions plus gene and cell networks",
+          "Main output": "refined predicted spatial expression for target genes",
+          "Prediction Route": "prediction post-processing / refinement",
+          "Input Dependence": "prediction-input-required",
+          "Reference Dependence": "baseline-prediction-dependent",
+          "Resolution Target": "genome-wide or missing-gene expression",
+          "Uncertainty Handling": "post-prediction refinement",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "DIST",
+          "Selection role": "deep model predicts spatial expression values at unmeasured locations and enhances measured spots",
+          "Main input/signal": "array-based spatial transcriptomics expression maps and spatial layout",
+          "Main output": "imputed expression at unmeasured locations and enhanced expression profiles",
+          "Prediction Route": "unmeasured-location expression imputation",
+          "Input Dependence": "measured-ST-and-context-required",
+          "Reference Dependence": "unclear",
+          "Resolution Target": "unmeasured-location expression",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STGAT",
+          "Selection role": "graph-attention model predicts expression from histology and bulk RNA context; exclude same-name deconvolution paper",
+          "Main input/signal": "training ST data with spot image/coordinates/expression plus target WSI and bulk RNA-seq",
+          "Main output": "spot-level predicted gene-expression profiles and tissue labels",
+          "Prediction Route": "histology and bulk-assisted expression prediction",
+          "Input Dependence": "histology-required",
+          "Reference Dependence": "bulk-RNA-and-ST-training-dependent",
+          "Resolution Target": "spatial expression prediction",
+          "Uncertainty Handling": "not primary",
+          "Compute/code cue": "Optional GPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Prediction Route",
+        "Input Dependence",
+        "Reference Dependence",
+        "Resolution Target",
+        "Uncertainty Handling",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Prediction Route",
+        "Input Dependence",
+        "Reference Dependence",
+        "Resolution Target",
+        "Uncertainty Handling"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Gene Expression Prediction / Imputation`. This topic covers prediction, imputation, reconstruction, refinement, calibration, or completion of unmeasured or missing spatial gene-expression values. The main branch families here are histology-to-expression prediction, reference-assisted missing-gene or genome-wide imputation, cellular-resolution reconstruction, post-prediction calibration or refinement, and unmeasured-location prediction.",
+      "decision_tree": [
+        {
+          "condition": "If histology or WSI-derived signal is the main driver of expression prediction",
+          "actions": [
+            "Prefer / consider `GHIST`, `Hist2ST`, `THItoGene`, `FmH2ST`, `OmiCLIP`, or `STGAT`.",
+            "Keep the branch focused on predicted expression from morphology-linked inputs rather than same-grid denoising or direct measurement claims."
+          ]
+        },
+        {
+          "condition": "If the main goal is missing-gene or genome-wide imputation from measured spatial signal plus a reference",
+          "actions": [
+            "Prefer / consider `SpaGE`, `stPlus`, `ENGEP`, `iSpatial`, or `stDiff`.",
+            "Keep reference dependence explicit and review tissue match before treating imputed genes as downstream evidence."
+          ]
+        },
+        {
+          "condition": "If the main goal is cellular-resolution or high-resolution transcriptomic reconstruction",
+          "actions": [
+            "Prefer / consider `SpatialScope`, `stAI`, or `STASCAN`.",
+            "Keep reconstruction, annotation coupling, and fine-resolution completion distinct from ordinary spot-level proportion estimation or direct single-cell truth."
+          ]
+        },
+        {
+          "condition": "If predictions already exist and the branch question is calibration or refinement",
+          "actions": [
+            "Prefer / consider `TISSUE` for uncertainty-aware calibration.",
+            "Prefer / consider `SPRITE` for post-prediction refinement using gene or cell-network context.",
+            "Do not treat calibration or refinement rows as first-pass generators of expression values."
+          ]
+        },
+        {
+          "condition": "If the stated endpoint is expression prediction at unmeasured locations rather than missing genes within measured locations",
+          "actions": [
+            "Prefer / consider `DIST`.",
+            "Re-check whether the requested output is an imputed expression surface rather than super-resolution or segmentation.",
+            "Keep predicted or imputed expression separate from direct measurement in downstream interpretation.",
+            "Keep leakage, reference mismatch, morphology hallucination, and circular validation caveats in the reading path rather than as negative table columns.",
+            "Do not force one cross-branch ordering across histology, reference-assisted, reconstruction, calibration, and unmeasured-location families."
+          ]
+        }
+      ]
+    },
+    "graph_neighborhood": {
+      "slug": "graph_neighborhood",
+      "title": "Graph / Neighborhood",
+      "path": "results/formal/layer2/graph_neighborhood.md",
+      "method_count": 20,
+      "methods": [
+        "CellCharter",
+        "ENVI",
+        "mNSF",
+        "NNMF",
+        "NSF",
+        "SOTIP",
+        "MESA",
+        "NicheCompass",
+        "Nicheformer",
+        "SPARROW",
+        "CytoCommunity",
+        "SMORE",
+        "TrimNN",
+        "scNiche",
+        "CellNiche",
+        "DECIPHER",
+        "scHolography",
+        "SIGEL",
+        "SpaNiche",
+        "SpatialQuery"
+      ],
+      "method_rows": [
+        {
+          "Method": "CellCharter",
+          "Selection role": "identify, characterize, and compare cellular niches across spatial omics samples",
+          "Main input/signal": "spatial cell or spot observations with expression or phenotype features plus spatial coordinates",
+          "Main output": "niche labels, niche composition summaries, neighborhood-enrichment and shape summaries",
+          "Neighborhood Signal Unit": "cell/spot niche composition and local feature neighborhoods",
+          "Output Granularity": "discrete niches",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "multi-sample supported",
+          "Interpretation Anchor": "cell composition and niche enrichment",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "ENVI",
+          "Selection role": "represent cellular neighborhoods through covariance structure and infer spatial context or missing expression",
+          "Main input/signal": "spatial transcriptomics or multiplexed spatial data plus matched or relevant scRNA-seq data",
+          "Main output": "COVET niche representations, ENVI latent embedding, imputed expression, projected spatial context",
+          "Neighborhood Signal Unit": "local gene covariance environment",
+          "Output Granularity": "continuous embeddings",
+          "Reference or Prior Dependence": "scRNA-reference-assisted",
+          "Multi-sample / Cohort Cue": "multi-sample possible",
+          "Interpretation Anchor": "covariance structure and inferred spatial context",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "mNSF",
+          "Selection role": "extract shared gene loadings and sample-specific spatial factors across multiple sections or samples",
+          "Main input/signal": "multi-sample spatial transcriptomics count matrices with coordinates",
+          "Main output": "multi-sample spatial factors and gene loadings",
+          "Neighborhood Signal Unit": "sample-specific spatial factors with shared gene loadings",
+          "Output Granularity": "continuous factors",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "multi-sample primary",
+          "Interpretation Anchor": "gene programs and anatomical factors",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "NNMF",
+          "Selection role": "identify overlapping spatial neighborhoods and multicellular gene signatures at large scale",
+          "Main input/signal": "spatial transcriptomics matrix with 2D or 3D coordinates, optionally across multiple samples",
+          "Main output": "soft neighborhood signatures, hard cluster labels if postprocessed, spatially variable gene patterns",
+          "Neighborhood Signal Unit": "spatially smoothed gene-program neighborhoods",
+          "Output Granularity": "soft signatures",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "multi-sample supported",
+          "Interpretation Anchor": "gene signatures and overlapping neighborhoods",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "NSF",
+          "Selection role": "derive interpretable spatial factors from a single spatial sample or limited sample set",
+          "Main input/signal": "spatial genomics count matrix with spatial coordinates",
+          "Main output": "nonnegative spatial factors, feature loadings, optional hybrid spatial/nonspatial factor summaries",
+          "Neighborhood Signal Unit": "spatial factors over coordinates",
+          "Output Granularity": "continuous factors",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "single-sample primary",
+          "Interpretation Anchor": "gene loadings and spatial factor maps",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SOTIP",
+          "Selection role": "model microenvironments and their relationships for heterogeneity, domain, and differential microenvironment analysis",
+          "Main input/signal": "spatial omics observations, coordinates, and microenvironment graph features",
+          "Main output": "microenvironment representations, spatial domains, heterogeneity and differential microenvironment summaries",
+          "Neighborhood Signal Unit": "microenvironment graph and optimal-transport relationships",
+          "Output Granularity": "microenvironment domains",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "multi-sample possible",
+          "Interpretation Anchor": "microenvironment composition and differential ME analysis",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "MESA",
+          "Selection role": "quantify tissue-state spatial diversity, hotspots, cold spots, and ecological neighborhood shifts",
+          "Main input/signal": "spatial omics cell maps and optional single-cell multiomics integration inputs",
+          "Main output": "ecological diversity metrics, hotspot/coldspot maps, neighborhood and cohabitation summaries",
+          "Neighborhood Signal Unit": "patch or kNN neighborhood ecological diversity",
+          "Output Granularity": "metrics and hotspots",
+          "Reference or Prior Dependence": "optional multiomics reference-assisted",
+          "Multi-sample / Cohort Cue": "condition/cohort comparison supported",
+          "Interpretation Anchor": "ecological diversity and cohabitation",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "NicheCompass",
+          "Selection role": "learn interpretable communication-aware niche embeddings and spatial gene program activities",
+          "Main input/signal": "single- or multi-sample spatial omics graph with gene expression and optional multiomics covariates",
+          "Main output": "cell embeddings, niche labels, spatial gene program scores, atlas/reference mapping outputs",
+          "Neighborhood Signal Unit": "spatial graph with communication and regulatory programs",
+          "Output Granularity": "interpretable embeddings and niches",
+          "Reference or Prior Dependence": "communication-prior-assisted",
+          "Multi-sample / Cohort Cue": "multi-sample and atlas integration supported",
+          "Interpretation Anchor": "signaling and spatial gene programs",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Nicheformer",
+          "Selection role": "transfer or predict spatial context, niche labels, and neighborhood composition using foundation-model representations",
+          "Main input/signal": "single-cell and spatial transcriptomics profiles tokenized for a pretrained transformer model",
+          "Main output": "foundation-model embeddings, spatial label predictions, neighborhood composition or density predictions",
+          "Neighborhood Signal Unit": "pretrained cell representation with spatial-context tasks",
+          "Output Granularity": "model embeddings and predictions",
+          "Reference or Prior Dependence": "pretrained-foundation-model-assisted",
+          "Multi-sample / Cohort Cue": "cross-tissue and cross-technology transfer supported",
+          "Interpretation Anchor": "learned spatial context in transformer embeddings",
+          "Compute/code cue": "Required GPU; code available"
+        },
+        {
+          "Method": "SPARROW",
+          "Selection role": "jointly represent cell states and cellular organization to identify microenvironment-zone-specific states",
+          "Main input/signal": "spatial omics data for microenvironment-zone-specific cell-state analysis",
+          "Main output": "joint embeddings, soft clusters, microenvironment-zone-specific cell-state summaries",
+          "Neighborhood Signal Unit": "joint cell-state and organization context",
+          "Output Granularity": "soft cell-state organization summaries",
+          "Reference or Prior Dependence": "unclear",
+          "Multi-sample / Cohort Cue": "unclear",
+          "Interpretation Anchor": "cell state by microenvironment zone",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "CytoCommunity",
+          "Selection role": "discover unsupervised or supervised tissue cellular neighborhoods from cell phenotypes",
+          "Main input/signal": "single-cell spatial maps with cell phenotypes, spatial coordinates, and optional sample labels",
+          "Main output": "tissue cellular neighborhood assignments and condition-specific TCN summaries",
+          "Neighborhood Signal Unit": "cell-phenotype spatial graph",
+          "Output Granularity": "discrete TCNs",
+          "Reference or Prior Dependence": "cell-phenotype-label-assisted",
+          "Multi-sample / Cohort Cue": "supervised cohort labels supported",
+          "Interpretation Anchor": "cell phenotypes and sample-label association",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SMORE",
+          "Selection role": "discover overrepresented ordered spatial motifs in cellular architecture",
+          "Main input/signal": "cell-type-labeled spatial neighborhood graph or spatial cell map",
+          "Main output": "spatial motif sequences/logos, motif locations, motif-associated expression summaries",
+          "Neighborhood Signal Unit": "ordered paths in a cell-type spatial graph",
+          "Output Granularity": "motif signatures",
+          "Reference or Prior Dependence": "cell-phenotype-label-assisted",
+          "Multi-sample / Cohort Cue": "multi-sample possible",
+          "Interpretation Anchor": "ordered cell-type motifs and contextual expression",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "TrimNN",
+          "Selection role": "identify cellular community motifs and multicellular topological organization patterns",
+          "Main input/signal": "spatial omics or multiplexed cell maps with cell annotations, features, and spatial coordinates",
+          "Main output": "cellular community motifs, motif abundance summaries, phenotype-associated topological organization patterns",
+          "Neighborhood Signal Unit": "triangulated cellular community graph motifs",
+          "Output Granularity": "cellular community motifs",
+          "Reference or Prior Dependence": "cell-phenotype-label-assisted",
+          "Multi-sample / Cohort Cue": "multi-sample supported",
+          "Interpretation Anchor": "motif topology and phenotype-associated abundance",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "scNiche",
+          "Selection role": "identify and characterize cell niches at single-cell resolution",
+          "Main input/signal": "single-cell-resolution spatial omics data with cell features and coordinates",
+          "Main output": "cell niche labels, niche representations, and niche marker or context summaries",
+          "Neighborhood Signal Unit": "multi-view cell and microenvironment graph representation",
+          "Output Granularity": "discrete niches",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "multi-sample supported",
+          "Interpretation Anchor": "single-cell-resolution niche composition and local context",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "CellNiche",
+          "Selection role": "learn microenvironment-aware cellular embeddings at atlas scale",
+          "Main input/signal": "atlas-scale spatial omics cell maps with cell features and spatial-proximity subgraphs",
+          "Main output": "cellular microenvironment embeddings, niche-context summaries, and downstream microenvironment labels",
+          "Neighborhood Signal Unit": "cell-centric spatial-proximity subgraphs",
+          "Output Granularity": "cellular microenvironment embeddings",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "atlas-scale supported",
+          "Interpretation Anchor": "learned microenvironment context in cell embeddings",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "DECIPHER",
+          "Selection role": "learn disentangled cellular embeddings that separate cell-intrinsic and spatial-context signals",
+          "Main input/signal": "large-scale heterogeneous spatial omics data with cellular features and spatial context",
+          "Main output": "disentangled cellular embeddings, spatial-context embeddings, and downstream context summaries",
+          "Neighborhood Signal Unit": "intracellular and extracellular/spatial-context embeddings",
+          "Output Granularity": "disentangled spatial-context embeddings",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "atlas-scale supported",
+          "Interpretation Anchor": "separated cell-intrinsic and neighborhood-context representation",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "scHolography",
+          "Selection role": "reconstruct single-cell spatial neighborhoods and support 3D tissue visualization",
+          "Main input/signal": "spatial transcriptomics reference data plus single-cell RNA-seq query data",
+          "Main output": "stable matching neighbor graph, reconstructed spatial neighborhoods, 3D visualization coordinates",
+          "Neighborhood Signal Unit": "stable matching neighbor graph inferred from transcriptome-to-space projection",
+          "Output Granularity": "reconstructed neighborhoods",
+          "Reference or Prior Dependence": "scRNA-reference-assisted",
+          "Multi-sample / Cohort Cue": "reference/query transfer supported",
+          "Interpretation Anchor": "spatial neighbor reconstruction and 3D tissue organization",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SIGEL",
+          "Selection role": "learn spatially informed gene representations from genomic context for downstream neighborhood-adjacent analyses",
+          "Main input/signal": "spatial transcriptomics gene expression maps",
+          "Main output": "SIGEL-generated gene representations, spatial co-expression contexts, task-specific imputation/SVG/clustering outputs",
+          "Neighborhood Signal Unit": "spatial genomic context among genes",
+          "Output Granularity": "gene representations",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "cross-sample robustness claimed",
+          "Interpretation Anchor": "spatially co-expressed gene contexts",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpaNiche",
+          "Selection role": "analyze spatial niches, colocalization patterns, and cellular interaction-pattern context",
+          "Main input/signal": "spatial omics data with cell or spot features, spatial coordinates, and optional cell-type or phenotype annotations",
+          "Main output": "spatial niche labels or patterns, colocalization summaries, and interaction-context features",
+          "Neighborhood Signal Unit": "spatial niche and colocalization context",
+          "Output Granularity": "discrete niches",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "unclear",
+          "Interpretation Anchor": "spatial colocalization and niche context",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialQuery",
+          "Selection role": "discover and molecularly characterize multicellular motifs in spatial omics data",
+          "Main input/signal": "spatial omics data with cell or spot identities, molecular features, and spatial neighborhood structure",
+          "Main output": "multicellular motif signatures and motif-associated molecular characterization",
+          "Neighborhood Signal Unit": "multicellular motif",
+          "Output Granularity": "cellular community motifs",
+          "Reference or Prior Dependence": "reference-free",
+          "Multi-sample / Cohort Cue": "unclear",
+          "Interpretation Anchor": "multicellular motif structure and molecular characterization",
+          "Compute/code cue": "unclear; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Neighborhood Signal Unit",
+        "Output Granularity",
+        "Reference or Prior Dependence",
+        "Multi-sample / Cohort Cue",
+        "Interpretation Anchor",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Neighborhood Signal Unit",
+        "Output Granularity",
+        "Reference or Prior Dependence",
+        "Multi-sample / Cohort Cue",
+        "Interpretation Anchor"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Graph / Neighborhood`. This topic covers neighborhood, niche, microenvironment state, cellular motif, spatial factor, soft multicellular signature, reconstructed-neighborhood, and spatial-context representation tasks. These outputs are not interchangeable: niche labels, motifs, factors, embeddings, reconstructed neighborhoods, and gene representations should remain separate during selection.",
+      "decision_tree": [
+        {
+          "condition": "If the task asks for standard neighborhood graph construction, spatial graph utilities, neighbor enrichment, or an AnnData-based spatial workflow route",
+          "actions": [
+            "Use `Squidpy` as backbone/workflow context only.",
+            "Do not count `Squidpy` as one of the 20 dedicated Graph / Neighborhood methods and do not rank it against them."
+          ]
+        },
+        {
+          "condition": "If the primary endpoint is hard tissue/domain/region labels or spatial clustering",
+          "actions": [
+            "Route to `Domain / Clustering`.",
+            "Treat `SOTIP` as Graph / Neighborhood only when microenvironment modeling or differential microenvironment relationships are the endpoint."
+          ]
+        },
+        {
+          "condition": "If the primary endpoint is ligand-receptor edges, sender-receiver pairs, communication scores, neighbor-preference effects, pathway CCC, or causal communication interpretation",
+          "actions": [
+            "Route to `Cell-Cell Communication`.",
+            "Keep `NicheCompass`, `CytoCommunity`, `SMORE`, `TrimNN`, `SpaNiche`, and `SpatialQuery` within Graph / Neighborhood only for niche, neighborhood, motif, topology, or colocalization-pattern outputs."
+          ]
+        },
+        {
+          "condition": "If the desired output is discrete niches or tissue cellular neighborhoods",
+          "actions": [
+            "Prefer / consider `CellCharter`, `CytoCommunity`, `scNiche`, or `SpaNiche` according to the available cell or spot features, annotation quality, and cohort comparison needs."
+          ]
+        },
+        {
+          "condition": "If the desired output is motifs or topology",
+          "actions": [
+            "Prefer / consider `SMORE`, `TrimNN`, or `SpatialQuery`.",
+            "Carry graph construction, annotation, null-model, and preprint caveats for motif interpretation."
+          ]
+        },
+        {
+          "condition": "If the desired output is continuous factors, soft signatures, ecological metrics, or microenvironment relationships",
+          "actions": [
+            "Prefer / consider `NSF`, `mNSF`, `NNMF`, `MESA`, or `SOTIP` according to whether the branch is factorization, scalable overlapping signatures, ecological metrics, or microenvironment relationship modeling."
+          ]
+        },
+        {
+          "condition": "If the desired output is atlas-scale, foundation-model, disentangled, reference-assisted, reconstructed, or gene-level spatial context",
+          "actions": [
+            "Prefer / consider `CellNiche`, `Nicheformer`, `DECIPHER`, `ENVI`, `scHolography`, or `SIGEL` according to the reference, pretrained-model, reconstruction, and gene-representation requirements.",
+            "Keep niche, motif, factor, embedding, reconstruction, and gene-representation outputs distinct.",
+            "Treat colocalization and motif findings as spatial association or organization signals, not as physical interaction, causal communication, or mechanism proof."
+          ]
+        }
+      ]
+    },
+    "integration": {
+      "slug": "integration",
+      "title": "Integration",
+      "path": "results/formal/layer2/integration.md",
+      "method_count": 22,
+      "methods": [
+        "CAST",
+        "DeST-OT",
+        "GPSA",
+        "GraphST",
+        "PASTE",
+        "PASTE2",
+        "PRECAST",
+        "SANTO",
+        "SLAT",
+        "SPACEL",
+        "STalign",
+        "STAligner",
+        "STAIR",
+        "MaskGraphene",
+        "spCLUE",
+        "VR-Omics",
+        "MISO",
+        "Crescendo",
+        "SpaMosaic",
+        "INSPIRE",
+        "SpatialCOC",
+        "SSpMosaic"
+      ],
+      "method_rows": [
+        {
+          "Method": "CAST",
+          "Selection role": "cross-sample spatial matching and alignment at single-cell resolution",
+          "Main input/signal": "single-cell or high-resolution spatial omics samples with expression and coordinates",
+          "Main output": "matched cells or spots and aligned spatial correspondence map",
+          "Integration Target": "search-and-match mapping",
+          "Geometry / Model Cue": "search-and-match",
+          "Cross-Sample Cue": "single-cell or high-resolution samples",
+          "Primary Risk Cue": "scale sensitivity",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "DeST-OT",
+          "Selection role": "alignment across spatial and temporal transcriptomics states",
+          "Main input/signal": "spatiotemporal transcriptomics samples with expression, coordinates, and time or progression structure",
+          "Main output": "spatiotemporally aligned correspondence or trajectory map",
+          "Integration Target": "spatiotemporal alignment",
+          "Geometry / Model Cue": "optimal transport",
+          "Cross-Sample Cue": "spatiotemporal series",
+          "Primary Risk Cue": "temporal-model mismatch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "GPSA",
+          "Selection role": "non-rigid alignment through smooth spatial warping",
+          "Main input/signal": "spatial genomics datasets with expression features and coordinates",
+          "Main output": "aligned spatial coordinates or latent spatial mapping",
+          "Integration Target": "coordinate alignment",
+          "Geometry / Model Cue": "gaussian process non-rigid warp",
+          "Cross-Sample Cue": "same-platform or related spatial genomics samples",
+          "Primary Risk Cue": "scale sensitivity",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "GraphST",
+          "Selection role": "spatially informed representation integration linked to clustering and deconvolution workflows",
+          "Main input/signal": "spatial expression matrix and spatial graph or coordinates",
+          "Main output": "integrated representation or embedding with downstream clustering/deconvolution support",
+          "Integration Target": "latent embedding integration",
+          "Geometry / Model Cue": "graph contrastive representation",
+          "Cross-Sample Cue": "spatial samples with graph-neighborhood signal",
+          "Primary Risk Cue": "multi-task objective entanglement",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "PASTE",
+          "Selection role": "pairwise slice alignment and consensus integration",
+          "Main input/signal": "multiple spatial transcriptomics slices with expression and spatial coordinates",
+          "Main output": "aligned slices and consensus slice representation",
+          "Integration Target": "pairwise slice alignment",
+          "Geometry / Model Cue": "optimal transport",
+          "Cross-Sample Cue": "same-platform comparable slices",
+          "Primary Risk Cue": "over-alignment of noncorresponding tissue",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "PASTE2",
+          "Selection role": "partial alignment for multislice spatially resolved transcriptomics",
+          "Main input/signal": "multiple spatial transcriptomics slices with partial overlap or missing regions",
+          "Main output": "partial slice alignment and matched overlapping regions",
+          "Integration Target": "partial overlap alignment",
+          "Geometry / Model Cue": "partial optimal transport",
+          "Cross-Sample Cue": "partial or missing-overlap slices",
+          "Primary Risk Cue": "partial-overlap mismatch",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "PRECAST",
+          "Selection role": "joint probabilistic embedding, clustering, and alignment for spatial data integration",
+          "Main input/signal": "multiple spatial transcriptomics samples with expression and coordinates",
+          "Main output": "integrated embedding, aligned samples, and cluster labels",
+          "Integration Target": "latent embedding integration",
+          "Geometry / Model Cue": "probabilistic embedding",
+          "Cross-Sample Cue": "multiple spatial transcriptomics samples",
+          "Primary Risk Cue": "cluster-alignment coupling",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SANTO",
+          "Selection role": "coarse-to-fine alignment and stitched tissue reconstruction",
+          "Main input/signal": "spatial omics sections or fields requiring alignment and stitching",
+          "Main output": "stitched and aligned spatial omics map",
+          "Integration Target": "stitching and coordinate alignment",
+          "Geometry / Model Cue": "coarse-to-fine stitching",
+          "Cross-Sample Cue": "multi-section or field-stitching data",
+          "Primary Risk Cue": "stitching distortion",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SLAT",
+          "Selection role": "alignment of heterogeneous slices through spatial-linked correspondence",
+          "Main input/signal": "heterogeneous spatial transcriptomics slices with expression and spatial structure",
+          "Main output": "aligned heterogeneous slices and correspondence links",
+          "Integration Target": "heterogeneous slice alignment",
+          "Geometry / Model Cue": "spatial-linked manifold alignment",
+          "Cross-Sample Cue": "heterogeneous slices",
+          "Primary Risk Cue": "heterogeneity overfit",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SPACEL",
+          "Selection role": "3D slice alignment and tissue architecture stacking through the SPACEL framework",
+          "Main input/signal": "spatial transcriptomics slices with expression, coordinates, and optional image or architecture context",
+          "Main output": "aligned 3D tissue architecture or stacked spatial map",
+          "Integration Target": "3D reconstruction",
+          "Geometry / Model Cue": "deep spatial architecture model",
+          "Cross-Sample Cue": "serial sections for 3D tissue context",
+          "Primary Risk Cue": "model opacity and scale burden",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STalign",
+          "Selection role": "coordinate-framework alignment through diffeomorphic metric mapping",
+          "Main input/signal": "spatial transcriptomics data with coordinates and optionally cross-technology spatial maps",
+          "Main output": "diffeomorphic transform and aligned spatial coordinates",
+          "Integration Target": "coordinate alignment",
+          "Geometry / Model Cue": "diffeomorphic mapping",
+          "Cross-Sample Cue": "cross-section or cross-technology spatial maps",
+          "Primary Risk Cue": "geometry distortion",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "STAligner",
+          "Selection role": "graph-attention integration across samples, conditions, technologies, and developmental stages",
+          "Main input/signal": "multiple spatial transcriptomics datasets across conditions, technologies, or stages",
+          "Main output": "integrated embedding and aligned spatial domains",
+          "Integration Target": "latent embedding integration",
+          "Geometry / Model Cue": "graph attention representation",
+          "Cross-Sample Cue": "cross-condition or cross-technology samples",
+          "Primary Risk Cue": "biological signal removal",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STAIR",
+          "Selection role": "end-to-end spatial transcriptomic alignment, integration, and 3D reconstruction",
+          "Main input/signal": "serial spatial transcriptomics sections for alignment, integration, and 3D reconstruction",
+          "Main output": "aligned integrated sections and reconstructed 3D tissue map",
+          "Integration Target": "3D reconstruction",
+          "Geometry / Model Cue": "end-to-end 3D integration",
+          "Cross-Sample Cue": "serial sections for 3D reconstruction",
+          "Primary Risk Cue": "model opacity and scale burden",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "MaskGraphene",
+          "Selection role": "interpretable joint representation for multi-slice and multi-condition integration",
+          "Main input/signal": "multi-slice and multi-condition spatial transcriptomics datasets",
+          "Main output": "joint integrated representation with interpretability hooks",
+          "Integration Target": "latent embedding integration",
+          "Geometry / Model Cue": "masked self-supervised graph representation",
+          "Cross-Sample Cue": "multi-slice and multi-condition samples",
+          "Primary Risk Cue": "representation-objective ambiguity",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "spCLUE",
+          "Selection role": "contrastive unified analysis across single-slice and multi-slice data",
+          "Main input/signal": "single-slice and multi-slice spatial transcriptomics datasets",
+          "Main output": "unified spatial representation for single-slice and multi-slice analysis",
+          "Integration Target": "latent embedding integration",
+          "Geometry / Model Cue": "contrastive representation",
+          "Cross-Sample Cue": "single-slice and multi-slice samples",
+          "Primary Risk Cue": "representation-objective ambiguity",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "VR-Omics",
+          "Selection role": "automated integration of multi-slice data in 2D and 3D",
+          "Main input/signal": "multi-slice spatial transcriptomics data for 2D or 3D integration",
+          "Main output": "integrated 2D or 3D multi-slice spatial map",
+          "Integration Target": "2D/3D multi-slice integration",
+          "Geometry / Model Cue": "automated 2D/3D integration",
+          "Cross-Sample Cue": "multi-slice 2D or 3D data",
+          "Primary Risk Cue": "automation opacity",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "MISO",
+          "Selection role": "multimodal spatial omics integration for resolving tissue complexity",
+          "Main input/signal": "multimodal spatial omics data from tissue sections",
+          "Main output": "multimodal tissue-complexity model or integrated representation",
+          "Integration Target": "multimodal modeling",
+          "Geometry / Model Cue": "multimodal spatial omics model",
+          "Cross-Sample Cue": "multimodal tissue sections",
+          "Primary Risk Cue": "modality imbalance",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Crescendo",
+          "Selection role": "count-level batch correction and cross-sample harmonization",
+          "Main input/signal": "single-cell spatial transcriptomics count data across batches or samples",
+          "Main output": "batch-corrected count data or corrected representation for visualization and spatial gene pattern analysis",
+          "Integration Target": "batch correction",
+          "Geometry / Model Cue": "batch-correction model",
+          "Cross-Sample Cue": "single-cell spatial count batches",
+          "Primary Risk Cue": "biological signal removal",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpaMosaic",
+          "Selection role": "integrate mosaic spatial multi-omics data while preserving spatial and cross-modality structure",
+          "Main input/signal": "spatial multi-omics datasets with partially observed modalities across samples or tissue sections",
+          "Main output": "integrated spatial multi-omics representation and modality-completion or harmonized feature outputs",
+          "Integration Target": "multimodal modeling",
+          "Geometry / Model Cue": "multimodal spatial omics model",
+          "Cross-Sample Cue": "mosaic spatial multi-omics samples",
+          "Primary Risk Cue": "modality imbalance and cross-modality imputation bias",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "INSPIRE",
+          "Selection role": "integrate heterogeneous spatial transcriptomics datasets with interpretable spatially aware modeling",
+          "Main input/signal": "multiple spatial transcriptomics datasets from diverse sources with expression and spatial context",
+          "Main output": "integrated representation and interpretable spatial factors or components for cross-dataset comparison",
+          "Integration Target": "latent embedding integration",
+          "Geometry / Model Cue": "unclear",
+          "Cross-Sample Cue": "diverse-source spatial transcriptomics datasets",
+          "Primary Risk Cue": "interpretability and representation-objective ambiguity",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpatialCOC",
+          "Selection role": "perform spatial continuous mapping and cross-omics correction for spatial multi-omics integration",
+          "Main input/signal": "spatial multi-omics data requiring continuous spatial mapping and cross-omics correction",
+          "Main output": "cross-omics corrected representation and continuous spatial mapping outputs",
+          "Integration Target": "multimodal modeling",
+          "Geometry / Model Cue": "multimodal spatial omics model",
+          "Cross-Sample Cue": "spatial cross-omics samples",
+          "Primary Risk Cue": "cross-omics overcorrection",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SSpMosaic",
+          "Selection role": "integrate and annotate single-cell and spatial omics data using interpretable gene programs",
+          "Main input/signal": "single-cell and spatial omics data with expression features suitable for interpretable gene-program modeling",
+          "Main output": "integrated representation, gene-program factors, and annotation-supporting outputs",
+          "Integration Target": "latent embedding integration",
+          "Geometry / Model Cue": "probabilistic embedding",
+          "Cross-Sample Cue": "single-cell and spatial omics pairing",
+          "Primary Risk Cue": "annotation and gene-program boundary leakage",
+          "Compute/code cue": "Optional GPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Integration Target",
+        "Geometry / Model Cue",
+        "Cross-Sample Cue",
+        "Primary Risk Cue",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Integration Target",
+        "Geometry / Model Cue",
+        "Cross-Sample Cue",
+        "Primary Risk Cue"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Integration`. This topic covers alignment, latent integration, 3D reconstruction, batch correction, multimodal integration, mosaic multi-omics integration, and cross-sample harmonization for spatial omics. These branches are not interchangeable: coordinate transforms, latent embeddings, count-level correction, 3D tissue maps, and modality-completion outputs should remain distinct during selection.",
+      "decision_tree": [
+        {
+          "condition": "If the deliverable is explicit coordinate alignment or slice correspondence",
+          "actions": [
+            "Prefer / consider `PASTE` for comparable slices, `PASTE2` for partial overlap, `STalign` for diffeomorphic coordinate mapping, `GPSA` for smooth non-rigid warping, `CAST` for high-resolution search-and-match correspondence, and `SLAT` for heterogeneous slice alignment.",
+            "Keep geometry distortion, partial-overlap mismatch, and over-alignment of noncorresponding tissue visible."
+          ]
+        },
+        {
+          "condition": "If the deliverable is stitching, 3D reconstruction, or serial-section tissue assembly",
+          "actions": [
+            "Prefer / consider `SANTO`, `SPACEL`, `STAIR`, or `VR-Omics` according to whether the central cue is stitching, deep tissue architecture, end-to-end 3D reconstruction, or automated 2D/3D integration.",
+            "Keep model opacity, scale burden, and reconstruction assumptions separate from ordinary batch correction."
+          ]
+        },
+        {
+          "condition": "If the deliverable is latent representation integration across samples, conditions, technologies, or slices",
+          "actions": [
+            "Prefer / consider `GraphST`, `PRECAST`, `STAligner`, `MaskGraphene`, `spCLUE`, or `INSPIRE`.",
+            "Keep clustering, domain, and representation objectives distinct from explicit coordinate transforms."
+          ]
+        },
+        {
+          "condition": "If the deliverable is count-level or single-cell spatial batch correction",
+          "actions": [
+            "Prefer / consider `Crescendo`.",
+            "Check whether biological condition signal may be removed with batch signal before using corrected output downstream."
+          ]
+        },
+        {
+          "condition": "If the deliverable is multimodal or mosaic spatial omics integration",
+          "actions": [
+            "Prefer / consider `MISO`, `SpaMosaic`, `SpatialCOC`, or `SSpMosaic` depending on whether the core cue is multimodal tissue modeling, missing-modality mosaic integration, cross-omics correction, or interpretable gene-program integration.",
+            "Keep modality imbalance, cross-modality imputation bias, and annotation or program boundary leakage visible."
+          ]
+        },
+        {
+          "condition": "If no branch fits cleanly",
+          "actions": [
+            "Re-check whether the task is really Integration or whether the output belongs to Cell Type Inference, Domain / Clustering, Program Discovery, Spatial Contrast Testing, or another Layer 1 problem."
+          ]
+        }
+      ]
+    },
+    "normalization": {
+      "slug": "normalization",
+      "title": "Normalization",
+      "path": "results/formal/layer2/normalization.md",
+      "method_count": 1,
+      "methods": [
+        "SpaNorm"
+      ],
+      "method_rows": [
+        {
+          "Method": "SpaNorm",
+          "Selection role": "normalize measured spatial transcriptomics expression by modeling library-size effects while preserving spatial biology when assumptions hold",
+          "Main input/signal": "Spatial transcriptomics count matrix with spatial coordinates",
+          "Main output": "normalized expression matrix for downstream spatial analyses",
+          "Normalization Branch": "post-capture spatial-aware normalization",
+          "Spatial Signal Use": "explicit spatial normalization model",
+          "Backbone Context": "Scanpy; Seurat/sctransform; scran/scater; Giotto; Squidpy",
+          "Output Alteration Level": "normalized expression"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Normalization Branch",
+        "Spatial Signal Use",
+        "Backbone Context",
+        "Output Alteration Level"
+      ],
+      "topic_specific_fields": [
+        "Normalization Branch",
+        "Spatial Signal Use",
+        "Backbone Context",
+        "Output Alteration Level"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Normalization`. This topic currently keeps one dedicated spatial-aware normalization candidate, `SpaNorm`, for already measured spatial expression matrices when library-size effects may be spatially structured. Use it as a dedicated spatial-aware option with caution rather than as a guarantee that spatial biology will be preserved. Backbone or baseline workflow context remains visible here through `Scanpy`, `Seurat/sctransform`, `scran/scater`, `Giotto`, and `Squidpy`.",
+      "decision_tree": [
+        {
+          "condition": "If the active task is dedicated spatial-aware normalization of an already measured spatial expression matrix and library-size effects may be spatially structured",
+          "actions": [
+            "Consider `SpaNorm`, while keeping open the possibility that normalization can also attenuate real spatial structure when technical depth and biology are entangled."
+          ]
+        },
+        {
+          "condition": "If the request is for routine workflow normalization, HVG selection, or preprocessing context rather than a dedicated spatial-aware normalization candidate",
+          "actions": [
+            "Use `Scanpy` for AnnData/scverse workflow context.",
+            "Use `Seurat/sctransform` for R/Seurat workflow context.",
+            "Use `scran/scater` for Bioconductor workflow context.",
+            "Use `Giotto` for broad spatial workflow context.",
+            "Use `Squidpy` for broad spatial workflow context around AnnData objects.",
+            "Keep `Scanpy`, `Seurat/sctransform`, `scran/scater`, `Giotto`, and `Squidpy` visible as backbone context only.",
+            "Do not count or rank those backbone workflows as dedicated spatial-aware normalization candidates against `SpaNorm`.",
+            "Carry the caveat that normalization can attenuate real spatial biology when technical depth and tissue structure are entangled."
+          ]
+        }
+      ]
+    },
+    "panel_design": {
+      "slug": "panel_design",
+      "title": "Panel Design",
+      "path": "results/formal/layer2/panel_design.md",
+      "method_count": 5,
+      "methods": [
+        "scGIST",
+        "gpsFISH",
+        "Spapros",
+        "PERSIST",
+        "ReconST"
+      ],
+      "method_rows": [
+        {
+          "Method": "scGIST",
+          "Selection role": "select genes for targeted spatial transcriptomics panels with prioritized biological or technical gene sets",
+          "Main input/signal": "Single-cell expression data, cell labels or cell-type structure, prioritized gene sets, and target panel size",
+          "Main output": "selected gene panel for targeted spatial transcriptomics assays",
+          "Panel Design Branch": "prioritized gene-set panel design",
+          "Reference or Label Dependence": "single-cell reference / labels used",
+          "Targeted Assay Constraint": "required",
+          "Output Object": "selected gene panel",
+          "Evidence Status": "peer-reviewed method paper",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "gpsFISH",
+          "Selection role": "select informative gene panels for targeted spatial transcriptomics experiments",
+          "Main input/signal": "single-cell or spatial reference expression data, candidate genes, and targeted spatial assay constraints",
+          "Main output": "selected gene panel for targeted spatial transcriptomics assays",
+          "Panel Design Branch": "targeted spatial gene-panel selection",
+          "Reference or Label Dependence": "reference expression required",
+          "Targeted Assay Constraint": "required",
+          "Output Object": "selected gene panel",
+          "Evidence Status": "peer-reviewed method paper",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Spapros",
+          "Selection role": "select probe sets for targeted spatial transcriptomics experiments",
+          "Main input/signal": "single-cell or spatial reference data, marker constraints, target cell types, and panel-size constraints",
+          "Main output": "selected probe set or gene panel for targeted spatial transcriptomics assays",
+          "Panel Design Branch": "targeted probe-set selection",
+          "Reference or Label Dependence": "reference and target labels or constraints used",
+          "Targeted Assay Constraint": "required",
+          "Output Object": "selected probe set / gene panel",
+          "Evidence Status": "peer-reviewed method paper",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "PERSIST",
+          "Selection role": "select compact predictive gene panels for spatial transcriptomics",
+          "Main input/signal": "training expression data and spatial transcriptomics prediction or selection objective",
+          "Main output": "small predictive gene panel for spatial transcriptomics",
+          "Panel Design Branch": "predictive robust gene selection",
+          "Reference or Label Dependence": "training data / selection objective dependent",
+          "Targeted Assay Constraint": "required",
+          "Output Object": "small gene panel",
+          "Evidence Status": "peer-reviewed method paper",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "ReconST",
+          "Selection role": "select an optimal gene panel for targeted spatial transcriptomics experiments",
+          "Main input/signal": "reference expression data and target spatial transcriptomics experiment constraints",
+          "Main output": "selected gene panel for targeted spatial transcriptomics experiments",
+          "Panel Design Branch": "optimal gene-panel selection",
+          "Reference or Label Dependence": "reference and experiment-design dependent",
+          "Targeted Assay Constraint": "required",
+          "Output Object": "selected gene panel",
+          "Evidence Status": "preprint / watchlist positive",
+          "Compute/code cue": "CPU; code access unclear"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Panel Design Branch",
+        "Reference or Label Dependence",
+        "Targeted Assay Constraint",
+        "Output Object",
+        "Evidence Status",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Panel Design Branch",
+        "Reference or Label Dependence",
+        "Targeted Assay Constraint",
+        "Output Object",
+        "Evidence Status"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Panel Design`. This topic covers pre-assay targeted spatial transcriptomics panel or probe-set selection. The deliverable is an assay-design output such as a selected gene panel or probe set, not proof of spatially variable expression, causal marker status, or post-capture biological truth.",
+      "decision_tree": [
+        {
+          "condition": "If prioritized gene sets, cell-type structure, and fixed panel size are central",
+          "actions": [
+            "Prefer / consider `scGIST`."
+          ]
+        },
+        {
+          "condition": "If the task is direct targeted spatial transcriptomics gene-panel selection from reference data and assay constraints",
+          "actions": [
+            "Prefer / consider `gpsFISH`."
+          ]
+        },
+        {
+          "condition": "If probe-set selection with target cell types, marker constraints, or panel-size constraints is central",
+          "actions": [
+            "Prefer / consider `Spapros`."
+          ]
+        },
+        {
+          "condition": "If the selection objective is predictive robustness for a compact panel",
+          "actions": [
+            "Prefer / consider `PERSIST`, while keeping prediction as the internal selection objective rather than the output object."
+          ]
+        },
+        {
+          "condition": "If preprint-level evidence and unclear code trace are acceptable and explicitly recorded",
+          "actions": [
+            "Consider `ReconST`.",
+            "Treat selected panels as assay-design outputs rather than proof of spatially variable genes or causal markers.",
+            "Treat `ReconST` wording about an \"optimal\" panel or positive watchlist status as provisional preprint-era framing rather than a settled superiority claim.",
+            "Treat predictive or reconstruction wording as panel-evaluation logic, not expression-map reconstruction, super-resolution, or gene-expression prediction output."
+          ]
+        }
+      ]
+    },
+    "phenotype_cohort_linked_spatial_feature_niche_analysis": {
+      "slug": "phenotype_cohort_linked_spatial_feature_niche_analysis",
+      "title": "Phenotype- / Cohort-linked Spatial Feature and Niche Analysis",
+      "path": "results/formal/layer2/phenotype_cohort_linked_spatial_feature_niche_analysis.md",
+      "method_count": 5,
+      "methods": [
+        "TissueMosaic",
+        "SpaLinker",
+        "TiRank",
+        "stClinic",
+        "CytoCommunity"
+      ],
+      "method_rows": [
+        {
+          "Method": "TissueMosaic",
+          "Selection role": "learning cross-sample tissue motif representations for cohort- or condition-associated spatial features",
+          "Main input/signal": "multi-sample ST or spatial single-cell datasets + coordinates and optional image-like or cell-type channels",
+          "Main output": "self-supervised tissue representations, motif enrichment, and motif-associated differential features",
+          "Phenotype / Cohort Signal": "multi-sample / cohort labels",
+          "Main Feature or Niche Output": "self-supervised tissue representations, motif enrichment, and motif-associated differential features",
+          "Estimand Class": "cohort-level representation / motif association",
+          "Transfer / Representation Dependence": "self-supervised tissue representation",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpaLinker",
+          "Selection role": "linking spatial tumor microenvironment features to phenotype or clinical outcome signals through bulk cohorts",
+          "Main input/signal": "ST data + spatial features + bulk RNA-seq cohort profiles with clinical phenotype annotations",
+          "Main output": "phenotype-associated spatial TME features, factors, and linked architectures",
+          "Phenotype / Cohort Signal": "bulk cohort phenotypes",
+          "Main Feature or Niche Output": "phenotype-associated spatial TME features, factors, and linked architectures",
+          "Estimand Class": "bulk-linked phenotype association",
+          "Transfer / Representation Dependence": "bulk-to-spatial transfer",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "TiRank",
+          "Selection role": "prioritizing phenotype-associated cells, spots, and spatial niches for clinical biomarker discovery",
+          "Main input/signal": "bulk RNA-seq expression with clinical or phenotype table plus scRNA-seq or spatial transcriptomics inference data",
+          "Main output": "TiRank scores, TiRank labels, and phenotype-associated spatial or cellular niches",
+          "Phenotype / Cohort Signal": "bulk clinical phenotype or outcome signal",
+          "Main Feature or Niche Output": "TiRank score/label and phenotype-associated niches or subpopulations",
+          "Estimand Class": "clinical phenotype-linked niche prioritization",
+          "Transfer / Representation Dependence": "bulk-to-scRNA/ST phenotype transfer",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "stClinic",
+          "Selection role": "identifying clinically or phenotypically relevant niches from integrated spatial multi-slice or multi-omics data",
+          "Main input/signal": "multi-slice spatial omics profiles, spatial coordinates, and optional clinical or phenotype labels",
+          "Main output": "phenotype-linked niches, slice-level niche vectors, niche weights, predicted hazard ratios or class labels, and interpreted high-risk or phenotype-associated niches",
+          "Phenotype / Cohort Signal": "clinical phenotype, survival, class label, or cohort signal",
+          "Main Feature or Niche Output": "clinically relevant niches, niche vectors, and phenotype-linked niche weights",
+          "Estimand Class": "clinical phenotype-linked niche discovery",
+          "Transfer / Representation Dependence": "multi-slice graph integration and supervised phenotype weighting",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "CytoCommunity",
+          "Selection role": "identifying cohort- or phenotype-associated tissue cellular neighborhoods and community features",
+          "Main input/signal": "spatial cell phenotypes or spatial expression with coordinates, neighborhood graph, and cohort/condition/phenotype labels",
+          "Main output": "cohort-associated tissue cellular neighborhoods, community features, and niche summaries",
+          "Phenotype / Cohort Signal": "cohort, condition, or phenotype labels",
+          "Main Feature or Niche Output": "cohort-associated tissue cellular neighborhoods, community features, and niche summaries",
+          "Estimand Class": "cohort-linked cellular neighborhood feature discovery",
+          "Transfer / Representation Dependence": "supervised graph/neighborhood representation",
+          "Compute/code cue": "Optional GPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Phenotype / Cohort Signal",
+        "Main Feature or Niche Output",
+        "Estimand Class",
+        "Transfer / Representation Dependence",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Phenotype / Cohort Signal",
+        "Main Feature or Niche Output",
+        "Estimand Class",
+        "Transfer / Representation Dependence"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Phenotype- / Cohort-linked Spatial Feature and Niche Analysis`. This topic covers phenotype-, cohort-, condition-, survival-, or outcome-linked spatial feature and niche association. The deliverable is association, prioritization, or phenotype-linked niche interpretation, not causal proof.",
+      "decision_tree": [
+        {
+          "condition": "If the deliverable is learned tissue motifs or cohort-associated spatial representations across many samples",
+          "actions": [
+            "Prefer / consider `TissueMosaic`.",
+            "Keep acquisition, composition, preprocessing confounding, and representation-opacity caveats visible."
+          ]
+        },
+        {
+          "condition": "If the deliverable is bulk-cohort-linked spatial tumor microenvironment feature association",
+          "actions": [
+            "Prefer / consider `SpaLinker`.",
+            "Keep bulk-to-spatial transfer, tumor purity, and phenotype-label confounding visible."
+          ]
+        },
+        {
+          "condition": "If the deliverable is phenotype-associated cell, spot, or niche prioritization transferred from clinical bulk cohorts",
+          "actions": [
+            "Prefer / consider `TiRank`.",
+            "Keep association, transfer, and gene-coverage caveats visible rather than treating prioritization as causality."
+          ]
+        },
+        {
+          "condition": "If the deliverable is clinically or phenotypically relevant niche discovery from multi-slice or multi-omics spatial data",
+          "actions": [
+            "Prefer / consider `stClinic`.",
+            "Keep supervised label leakage, representation opacity, batch, slice, and tissue-composition confounding visible."
+          ]
+        },
+        {
+          "condition": "If the deliverable is cohort- or phenotype-associated tissue cellular neighborhoods or community features",
+          "actions": [
+            "Prefer / consider `CytoCommunity` only in this phenotype/cohort-linked use.",
+            "Route generic unsupervised neighborhood discovery back to `Graph / Neighborhood`."
+          ]
+        },
+        {
+          "condition": "If the task asks for a direct contrast statistic, condition-specific DE test, or spatial pattern contrast",
+          "actions": [
+            "Route to `Spatial Contrast Testing` rather than this association and prioritization topic."
+          ]
+        }
+      ]
+    },
+    "program_discovery": {
+      "slug": "program_discovery",
+      "title": "Program Discovery",
+      "path": "results/formal/layer2/program_discovery.md",
+      "method_count": 13,
+      "methods": [
+        "CellPie",
+        "DIALOGUE",
+        "scITD",
+        "SPICEMIX",
+        "STAMP",
+        "SpaTM",
+        "FISHFactor",
+        "SpatialCorr",
+        "SpaceX",
+        "SpaGRN",
+        "SPACE",
+        "spMOCA",
+        "LSGI"
+      ],
+      "method_rows": [
+        {
+          "Method": "CellPie",
+          "Selection role": "scalable factor discovery for spatially organized multicellular programs",
+          "Main input/signal": "spatial transcriptomics count matrix + spatial coordinates, potentially multiple samples",
+          "Main output": "non-negative factors/program loadings + sample/spot/cell scores",
+          "Program Family": "factor / NMF",
+          "Program Output Type": "factors and program scores",
+          "Spatial Coupling": "spatial factor structure",
+          "Reference Dependence": "reference-free",
+          "Multi-sample Cue": "suited when cross-sample factor structure matters",
+          "Compute/code cue": "CPU; code pending/manual review"
+        },
+        {
+          "Method": "DIALOGUE",
+          "Selection role": "mapping coordinated multicellular programs in tissue",
+          "Main input/signal": "single-cell or spatial transcriptomics data with cell-type/context annotations",
+          "Main output": "multicellular program scores and coordinated gene programs across cell types",
+          "Program Family": "multicellular latent program",
+          "Program Output Type": "cell-type-coordinated programs",
+          "Spatial Coupling": "tissue/context-aware, not purely coordinate-first",
+          "Reference Dependence": "annotation-dependent",
+          "Multi-sample Cue": "can support cohort or condition program comparison when annotations are harmonized",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "scITD",
+          "Selection role": "discovering interpretable multicellular programs that stratify patient or sample cohorts",
+          "Main input/signal": "multi-sample single-cell or spatial transcriptomics tensors with cell-type and sample axes",
+          "Main output": "tensor components linking genes, cell types, and samples/cohorts",
+          "Program Family": "tensor decomposition",
+          "Program Output Type": "tensor components / cohort programs",
+          "Spatial Coupling": "indirect through cell/state/sample structure",
+          "Reference Dependence": "annotation-dependent",
+          "Multi-sample Cue": "strong; cohort/sample axis is central",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SPICEMIX",
+          "Selection role": "integrative factor modeling of spatial cell identity and latent tissue programs",
+          "Main input/signal": "spatial transcriptomics with optional single-cell reference or identity cues",
+          "Main output": "latent factors, cell-identity mixtures, and spatially organized state estimates",
+          "Program Family": "probabilistic latent variable",
+          "Program Output Type": "latent identity/program factors",
+          "Spatial Coupling": "explicit spatial mixture modeling",
+          "Reference Dependence": "optional/reference-informed",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "STAMP",
+          "Selection role": "spatial topic and gene-module discovery",
+          "Main input/signal": "spatial transcriptomics count matrix + spatial coordinates",
+          "Main output": "spatial topics, topic proportions, and associated gene modules",
+          "Program Family": "spatial topic model",
+          "Program Output Type": "topics and gene modules",
+          "Spatial Coupling": "explicit coordinate-aware topic structure",
+          "Reference Dependence": "reference-free",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SpaTM",
+          "Selection role": "inferring spatially informed transcriptional programs with topic models",
+          "Main input/signal": "spatial transcriptomics count matrix + spatial coordinates",
+          "Main output": "spatial topics / transcriptional programs with gene weights",
+          "Program Family": "spatial topic model",
+          "Program Output Type": "topics / transcriptional programs",
+          "Spatial Coupling": "explicit spatially informed topics",
+          "Reference Dependence": "reference-free",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "CPU; code pending/manual review"
+        },
+        {
+          "Method": "FISHFactor",
+          "Selection role": "probabilistic factor discovery for subcellular spatial transcriptomics",
+          "Main input/signal": "subcellular-resolution spatial transcriptomics molecule/count data",
+          "Main output": "spatial factors and factor loadings at subcellular resolution",
+          "Program Family": "probabilistic spatial factor",
+          "Program Output Type": "subcellular factors",
+          "Spatial Coupling": "subcellular spatial factor model",
+          "Reference Dependence": "reference-free",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "CPU; code pending/manual review"
+        },
+        {
+          "Method": "SpatialCorr",
+          "Selection role": "detecting gene sets with spatially varying correlation / co-program structure",
+          "Main input/signal": "spatial transcriptomics expression + spatial coordinates + user-defined gene sets",
+          "Main output": "gene-set correlation statistics and spatially varying co-program calls",
+          "Program Family": "gene-set correlation",
+          "Program Output Type": "spatially varying gene-set correlations",
+          "Spatial Coupling": "explicit spatially varying correlation",
+          "Reference Dependence": "gene-set-dependent",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "CPU; code pending/manual review"
+        },
+        {
+          "Method": "SpaceX",
+          "Selection role": "estimating spatial co-expression networks for coordinated module discovery",
+          "Main input/signal": "spatial transcriptomics expression + spatial coordinates",
+          "Main output": "spatial gene co-expression network estimates",
+          "Program Family": "spatial co-expression network",
+          "Program Output Type": "co-expression network / modules",
+          "Spatial Coupling": "explicit spatial network model",
+          "Reference Dependence": "reference-free",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "CPU; code pending/manual review"
+        },
+        {
+          "Method": "SpaGRN",
+          "Selection role": "boundary-sensitive spatial regulatory-program annotation and scoring",
+          "Main input/signal": "spatial transcriptomics expression + spatial coordinates, with regulatory motif/network priors as applicable",
+          "Main output": "spatial regulatory-program-style annotations and scores",
+          "Program Family": "boundary-sensitive regulatory-program output",
+          "Program Output Type": "regulatory-program-style annotations / scores",
+          "Spatial Coupling": "spatially informed regulatory-program annotations",
+          "Reference Dependence": "regulatory-prior-dependent",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "CPU; code pending/manual review"
+        },
+        {
+          "Method": "SPACE",
+          "Selection role": "interaction-aware tissue module discovery",
+          "Main input/signal": "single-cell-resolution spatial transcriptomics expression + spatial cell-cell context",
+          "Main output": "cell embeddings and tissue modules shaped by cell-cell interactions",
+          "Program Family": "interaction-aware tissue module",
+          "Program Output Type": "tissue modules / interaction-aware embeddings",
+          "Spatial Coupling": "cell-cell interaction-aware spatial embedding",
+          "Reference Dependence": "reference-free",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "Optional GPU; code pending/manual review"
+        },
+        {
+          "Method": "spMOCA",
+          "Selection role": "spatially informed co-expression analysis for gene program discovery",
+          "Main input/signal": "spatial transcriptomics expression + spatial coordinates",
+          "Main output": "co-expression patterns/modules from matrix-normal modeling",
+          "Program Family": "spatial co-expression model",
+          "Program Output Type": "co-expression programs/modules",
+          "Spatial Coupling": "explicit spatial covariance/co-expression model",
+          "Reference Dependence": "reference-free",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "CPU; code pending/manual review"
+        },
+        {
+          "Method": "LSGI",
+          "Selection role": "interpretable spatial gradient analysis for program/pattern discovery",
+          "Main input/signal": "spatial transcriptomics expression + spatial coordinates",
+          "Main output": "spatial gradients and interpretable gene/program patterns",
+          "Program Family": "spatial gradient analysis",
+          "Program Output Type": "gradients / spatial program patterns",
+          "Spatial Coupling": "explicit spatial gradient structure",
+          "Reference Dependence": "reference-free",
+          "Multi-sample Cue": "unclear",
+          "Compute/code cue": "CPU; code pending/manual review"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Program Family",
+        "Program Output Type",
+        "Spatial Coupling",
+        "Reference Dependence",
+        "Multi-sample Cue",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Program Family",
+        "Program Output Type",
+        "Spatial Coupling",
+        "Reference Dependence",
+        "Multi-sample Cue"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Program Discovery`. This topic covers latent tissue-state, multicellular-program, topic, factor, gradient, co-expression, gene-set-correlation, regulatory-program-style, and tissue-module discovery outputs from spatial transcriptomics. These outputs are interpretation-oriented summaries and should not be described as direct mechanism discovery, direct regulatory proof, or a separate standalone GRN analysis problem.",
+      "decision_tree": [
+        {
+          "condition": "If the desired output is a coordinated multicellular or cohort-level program",
+          "actions": [
+            "Prefer / consider `DIALOGUE` for coordinated programs across annotated cell types or compartments.",
+            "Prefer / consider `scITD` when cohort or sample-stratifying tensor components are central.",
+            "Prefer / consider `CellPie` for scalable unsupervised factor discovery.",
+            "Prefer / consider `SPICEMIX` when program discovery is coupled to spatial cell-identity mixture modeling."
+          ]
+        },
+        {
+          "condition": "If the desired output is a spatial topic, factor, or continuous spatial program pattern",
+          "actions": [
+            "Prefer / consider `STAMP` or `SpaTM` for spatial topics and associated gene modules or transcriptional programs.",
+            "Prefer / consider `FISHFactor` when the dataset is subcellular-resolution and factor discovery is central.",
+            "Prefer / consider `LSGI` when continuous spatial gradients are central."
+          ]
+        },
+        {
+          "condition": "If the desired output is gene-set correlation or spatial co-expression rather than latent topics or factors",
+          "actions": [
+            "Prefer / consider `SpatialCorr` when predefined gene sets are central.",
+            "Prefer / consider `SpaceX` for spatial co-expression networks.",
+            "Prefer / consider `spMOCA` for model-based spatial co-expression programs or modules."
+          ]
+        },
+        {
+          "condition": "If the desired output is a boundary-sensitive regulatory-program-style annotation or score",
+          "actions": [
+            "Prefer / consider `SpaGRN`.",
+            "Keep regulatory-program interpretation framed as prior-dependent and indirect rather than direct mechanism discovery."
+          ]
+        },
+        {
+          "condition": "If the desired output is interaction-aware tissue modules from single-cell-resolution spatial transcriptomics",
+          "actions": [
+            "Prefer / consider `SPACE`.",
+            "Keep method identity and output interpretation explicit because the name is ambiguous across the literature."
+          ]
+        },
+        {
+          "condition": "If no branch fits cleanly",
+          "actions": [
+            "Record the mismatch and request manual review rather than forcing a default reading order across incompatible output types."
+          ]
+        }
+      ]
+    },
+    "segmentation": {
+      "slug": "segmentation",
+      "title": "Segmentation",
+      "path": "results/formal/layer2/segmentation.md",
+      "method_count": 11,
+      "methods": [
+        "Baysor",
+        "Bering",
+        "SCS",
+        "segger",
+        "UCS",
+        "BIDCell",
+        "VistoSeg",
+        "STCellbin",
+        "Spotiflow",
+        "Piscis",
+        "CelloType"
+      ],
+      "method_rows": [
+        {
+          "Method": "Baysor",
+          "Selection role": "cell segmentation and transcript-to-cell assignment for imaging-based spatial transcriptomics",
+          "Main input/signal": "imaging-based ST molecule coordinates + gene identities, with optional prior segmentation or co-stain information",
+          "Main output": "cell segmentation boundaries plus molecule assignments",
+          "Segmentation Branch": "cell segmentation / transcript assignment",
+          "Primary Segmentation Signal": "transcript coordinates",
+          "Transcript Assignment Role": "primary",
+          "Annotation Coupling": "none",
+          "Modality Fit": "imaging-based ST",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Bering",
+          "Selection role": "joint noise-aware cell segmentation and molecular annotation",
+          "Main input/signal": "subcellular ST transcript coordinates and gene identities, with graph representations and optional pretrained transfer models",
+          "Main output": "cell segmentation plus molecular or cell annotation outputs",
+          "Segmentation Branch": "cell segmentation / transcript assignment",
+          "Primary Segmentation Signal": "graph transcript colocalization",
+          "Transcript Assignment Role": "primary",
+          "Annotation Coupling": "joint molecular annotation",
+          "Modality Fit": "subcellular ST",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "SCS",
+          "Selection role": "cell segmentation and spot assignment for high-resolution spatial transcriptomics",
+          "Main input/signal": "high-resolution ST spots or transcripts plus imaging data",
+          "Main output": "cell assignments for high-resolution ST spots or transcripts",
+          "Segmentation Branch": "cell segmentation / transcript assignment",
+          "Primary Segmentation Signal": "image + transcript signal",
+          "Transcript Assignment Role": "primary",
+          "Annotation Coupling": "none",
+          "Modality Fit": "subcellular ST",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "segger",
+          "Selection role": "fast transcript-to-cell link prediction for cell segmentation",
+          "Main input/signal": "imaging-based ST transcript coordinates, gene identities, and candidate cell context; optional scRNA-seq information may improve assignments",
+          "Main output": "transcript-to-cell links and segmented cell assignments",
+          "Segmentation Branch": "cell segmentation / transcript assignment",
+          "Primary Segmentation Signal": "heterogeneous graph transcript-cell signal",
+          "Transcript Assignment Role": "primary",
+          "Annotation Coupling": "optional scRNA/reference",
+          "Modality Fit": "imaging-based ST",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "UCS",
+          "Selection role": "unified cell segmentation across subcellular ST platforms",
+          "Main input/signal": "subcellular ST transcript data plus nuclei staining or nuclei segmentation information",
+          "Main output": "cell segmentation and transcript assignment outputs",
+          "Segmentation Branch": "cell segmentation / transcript assignment",
+          "Primary Segmentation Signal": "nuclei + transcript signal",
+          "Transcript Assignment Role": "primary",
+          "Annotation Coupling": "downstream only",
+          "Modality Fit": "subcellular ST",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "BIDCell",
+          "Selection role": "biologically informed cell segmentation for subcellular spatial transcriptomics",
+          "Main input/signal": "subcellular spatial transcriptomics data with transcript locations and morphology or cell-shape priors",
+          "Main output": "segmented cells and transcript-to-cell assignments for subcellular ST data",
+          "Segmentation Branch": "cell segmentation / transcript assignment",
+          "Primary Segmentation Signal": "image + transcript signal",
+          "Transcript Assignment Role": "primary",
+          "Annotation Coupling": "unclear",
+          "Modality Fit": "subcellular ST",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "VistoSeg",
+          "Selection role": "image-processing and segmentation-workflow support for spatial transcriptomics histology images",
+          "Main input/signal": "Visium or related high-resolution histology or immunofluorescence images paired with spatial transcriptomics data",
+          "Main output": "processed histology or IF image features and segmentation-support outputs, not direct transcript-to-cell assignments",
+          "Segmentation Branch": "histology image processing / segmentation support",
+          "Primary Segmentation Signal": "tissue image",
+          "Transcript Assignment Role": "not primary",
+          "Annotation Coupling": "downstream only",
+          "Modality Fit": "broad spatial omics",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "STCellbin",
+          "Selection role": "cell-boundary based binning and generation of single-cell expression profiles from high-resolution ST",
+          "Main input/signal": "high-resolution spatial transcriptomics data with cell boundary images, especially Stereo-seq-like settings",
+          "Main output": "cell-boundary informed bins and single-cell gene expression profiles",
+          "Segmentation Branch": "cell segmentation / transcript assignment",
+          "Primary Segmentation Signal": "image + transcript signal",
+          "Transcript Assignment Role": "primary",
+          "Annotation Coupling": "none",
+          "Modality Fit": "subcellular ST",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Spotiflow",
+          "Selection role": "raw transcript spot detection upstream of imaging-based ST segmentation",
+          "Main input/signal": "2D or 3D fluorescence microscopy images with spot-like transcript signals",
+          "Main output": "detected spot coordinates",
+          "Segmentation Branch": "transcript spot detection",
+          "Primary Segmentation Signal": "fluorescence image spots",
+          "Transcript Assignment Role": "upstream spot detection",
+          "Annotation Coupling": "none",
+          "Modality Fit": "RNA FISH / fluorescence microscopy",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Piscis",
+          "Selection role": "automatic deep-learning spot detection for RNA FISH-derived imaging data",
+          "Main input/signal": "RNA FISH or fluorescence microscopy images with manually or synthetically annotated spot examples for training context",
+          "Main output": "detected spot coordinates",
+          "Segmentation Branch": "transcript spot detection",
+          "Primary Segmentation Signal": "fluorescence image spots",
+          "Transcript Assignment Role": "upstream spot detection",
+          "Annotation Coupling": "none",
+          "Modality Fit": "RNA FISH / fluorescence microscopy",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "CelloType",
+          "Selection role": "joint image-based instance segmentation and classification",
+          "Main input/signal": "multiplexed tissue or spatial-omics images",
+          "Main output": "segmented and classified tissue objects or cells",
+          "Segmentation Branch": "joint segmentation / classification",
+          "Primary Segmentation Signal": "tissue image",
+          "Transcript Assignment Role": "not primary",
+          "Annotation Coupling": "joint image classification",
+          "Modality Fit": "multiplex tissue / spatial omics image",
+          "Compute/code cue": "Optional GPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Segmentation Branch",
+        "Primary Segmentation Signal",
+        "Transcript Assignment Role",
+        "Annotation Coupling",
+        "Modality Fit",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Segmentation Branch",
+        "Primary Segmentation Signal",
+        "Transcript Assignment Role",
+        "Annotation Coupling",
+        "Modality Fit"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Segmentation`. This topic covers direct cell segmentation and transcript-to-cell assignment, upstream transcript or fluorescence spot detection, histology or IF image-processing support for segmentation workflows, and joint image segmentation plus classification. These outputs are not interchangeable: spot coordinates, support-image outputs, transcript assignments, cell masks, and classified image objects should be kept distinct during selection.",
+      "decision_tree": [
+        {
+          "condition": "If the required output is raw transcript or fluorescence spot coordinates",
+          "actions": [
+            "Prefer / consider `Spotiflow` or `Piscis`.",
+            "Treat these as upstream spot-detection rows rather than direct cell segmentation."
+          ]
+        },
+        {
+          "condition": "If the required output is histology or IF image processing that supports a segmentation workflow",
+          "actions": [
+            "Prefer / consider `VistoSeg`.",
+            "Do not treat it as direct transcript-to-cell assignment or direct molecular cell segmentation."
+          ]
+        },
+        {
+          "condition": "If the required output is transcript-to-cell assignment, cell masks, or segmented cells from imaging-based or subcellular spatial transcriptomics",
+          "actions": [
+            "Continue within the cell-segmentation and transcript-assignment branch."
+          ]
+        },
+        {
+          "condition": "If a transcript-coordinate-first baseline is needed",
+          "actions": [
+            "Prefer / consider `Baysor`."
+          ]
+        },
+        {
+          "condition": "If segmentation should be coupled to molecular annotation or transfer learning",
+          "actions": [
+            "Prefer / consider `Bering`."
+          ]
+        },
+        {
+          "condition": "If useful imaging data are available and spot-to-cell assignment is central",
+          "actions": [
+            "Prefer / consider `SCS`."
+          ]
+        },
+        {
+          "condition": "If large imaging-based transcript assignment is central and preprint-level evidence is acceptable for the selection stage",
+          "actions": [
+            "Prefer / consider `segger`.",
+            "Keep its preprint and independent-replication caveat visible."
+          ]
+        }
+      ]
+    },
+    "spatial_clonal_analysis": {
+      "slug": "spatial_clonal_analysis",
+      "title": "Spatial Clonal Analysis",
+      "path": "results/formal/layer2/spatial_clonal_analysis.md",
+      "method_count": 5,
+      "methods": [
+        "CalicoST",
+        "Clonalscope",
+        "STARCH",
+        "Tumoroscope",
+        "SlideCNA"
+      ],
+      "method_rows": [
+        {
+          "Method": "CalicoST",
+          "Selection role": "infer allele-specific CNAs, clone labels, tumor phylogeography, and optional tumor proportion from SRT",
+          "Main input/signal": "SRT transcript counts + allele counts at germline SNPs + spatial coordinates from one or more slices",
+          "Main output": "allele-specific copy-number profiles + clone labels + phylogeny/phylogeography",
+          "Clonal Signal Basis": "allele-specific CNA",
+          "Matched Data Dependence": "SRT + allele counts",
+          "Allele / Mutation Resolution": "allele-specific CNA",
+          "Spot Mixture Handling": "models tumor admixture",
+          "Spatial Scope Cue": "multi-slice / phylogeography",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Clonalscope",
+          "Selection role": "detect cancer subclones, label malignant cells or spots, and trace spatially segregated subclones using copy-number profiles",
+          "Main input/signal": "single-cell or spatial omic copy-number profiles, with optional matched bulk DNA sequencing prior information",
+          "Main output": "subclone assignments + malignant labels + traced spatial subclone patterns",
+          "Clonal Signal Basis": "copy-number profile",
+          "Matched Data Dependence": "optional matched DNA",
+          "Allele / Mutation Resolution": "copy-number-profile subclone",
+          "Spot Mixture Handling": "supports single-cell and ST",
+          "Spatial Scope Cue": "multi-dataset / general",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "STARCH",
+          "Selection role": "infer total-copy-number profiles and spatial clone assignments from ST expression data",
+          "Main input/signal": "spatial transcriptomics expression matrix + spatial coordinates / spot graph",
+          "Main output": "copy-number profiles + spot clone assignments",
+          "Clonal Signal Basis": "total CNA from expression",
+          "Matched Data Dependence": "ST only",
+          "Allele / Mutation Resolution": "total-CNA clone",
+          "Spot Mixture Handling": "assumes dominant clone per spot",
+          "Spatial Scope Cue": "single or adjacent sections",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Tumoroscope",
+          "Selection role": "infer clone proportions in each ST spot and clone-specific expression by integrating genomic, image, and spatial transcriptomic data",
+          "Main input/signal": "ST mutation read counts + clone genotypes from bulk DNA/WES + pathology-image-derived cell counts + expression matrix",
+          "Main output": "spot-level clone proportions + refined cell counts + clone-specific expression profiles",
+          "Clonal Signal Basis": "somatic point mutation + expression",
+          "Matched Data Dependence": "ST + matched DNA + pathology image",
+          "Allele / Mutation Resolution": "somatic mutation clone",
+          "Spot Mixture Handling": "deconvolves clone proportions",
+          "Spatial Scope Cue": "spot mixture deconvolution",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SlideCNA",
+          "Selection role": "detect spatial CNA patterns and potential subclones from high-resolution sparse spatial transcriptomics",
+          "Main input/signal": "sparse Slide-seq-like ST expression data + spatial coordinates + non-malignant reference spots or beads",
+          "Main output": "binned spatial CNA scores + CNA-defined clusters / potential subclone patterns",
+          "Clonal Signal Basis": "spatial CNA from sparse expression",
+          "Matched Data Dependence": "ST + reference spots",
+          "Allele / Mutation Resolution": "total-CNA spatial pattern",
+          "Spot Mixture Handling": "bins sparse spots",
+          "Spatial Scope Cue": "high-resolution sparse ST",
+          "Compute/code cue": "CPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Clonal Signal Basis",
+        "Matched Data Dependence",
+        "Allele / Mutation Resolution",
+        "Spot Mixture Handling",
+        "Spatial Scope Cue",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Clonal Signal Basis",
+        "Matched Data Dependence",
+        "Allele / Mutation Resolution",
+        "Spot Mixture Handling",
+        "Spatial Scope Cue"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Spatial Clonal Analysis`. This topic covers spatial clone, subclone, copy-number, allele-specific CNA, point-mutation clone, and copy-number-profile subclone analysis. Allele-specific CNA, total CNA, point-mutation clone deconvolution, and copy-number-profile subclone calls are not interchangeable signal bases.",
+      "decision_tree": [
+        {
+          "condition": "If usable allele counts at germline SNPs are available and the goal is allele-specific CNA clones or phylogeography",
+          "actions": [
+            "Prefer / consider `CalicoST`.",
+            "Keep allele-specific signal and matched validation expectations separate from total-expression CNA methods."
+          ]
+        },
+        {
+          "condition": "If copy-number profiles or compatible CNA estimates are already available and the goal is general subclone detection across spatial or single-cell tumor omics",
+          "actions": [
+            "Prefer / consider `Clonalscope`.",
+            "Keep optional matched DNA priors and input CNA quality visible."
+          ]
+        },
+        {
+          "condition": "If the available data are ST expression plus coordinates and the goal is coarse total-CNA spatial clone assignment",
+          "actions": [
+            "Consider `STARCH`.",
+            "Do not treat it as a default or as allele-specific, point-mutation, or current broad validation evidence."
+          ]
+        },
+        {
+          "condition": "If matched bulk DNA or WES-derived clone genotypes, ST mutation reads, and pathology-derived cell-count priors are available",
+          "actions": [
+            "Prefer / consider `Tumoroscope` for spot-level point-mutation clone mixture deconvolution.",
+            "Keep matched-data dependence and spot-mixture assumptions explicit."
+          ]
+        },
+        {
+          "condition": "If the data are sparse high-resolution Slide-seq-like ST and the goal is spatial CNA recovery or potential CNA-defined subclone patterns",
+          "actions": [
+            "Consider `SlideCNA`.",
+            "Frame outputs as binned spatial CNA scores and potential subclone patterns rather than strong standalone subclone calls."
+          ]
+        },
+        {
+          "condition": "If the signal basis is missing or ambiguous",
+          "actions": [
+            "Resolve whether the task has allele-specific CNA, total CNA, point-mutation clone, or copy-number-profile evidence before selecting a method."
+          ]
+        }
+      ]
+    },
+    "spatial_contrast_testing": {
+      "slug": "spatial_contrast_testing",
+      "title": "Spatial Contrast Testing",
+      "path": "results/formal/layer2/spatial_contrast_testing.md",
+      "method_count": 6,
+      "methods": [
+        "C-SIDE",
+        "Niche-DE",
+        "SPADE",
+        "SpatialGEE",
+        "STcompare",
+        "SpatialSPM"
+      ],
+      "method_rows": [
+        {
+          "Method": "C-SIDE",
+          "Selection role": "testing cell-type-specific expression changes across explicit condition or covariate contrasts",
+          "Main input/signal": "ST count matrix + spatial coordinates + cell type weights or reference-informed assignments + condition/covariate design",
+          "Main output": "cell-type-specific DE genes and effect estimates",
+          "Required Contrast Signal": "condition/covariate plus cell-type weights",
+          "Main Contrast Output": "cell-type-specific DE genes and effect estimates",
+          "Estimand Class": "cell-type-specific condition contrast",
+          "Spatial Structure Requirement": "cell type mixture / reference-informed",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "Niche-DE",
+          "Selection role": "testing expression changes conditioned on local niche or neighborhood definitions",
+          "Main input/signal": "ST or spatial single-cell expression + spatial coordinates + cell or spot annotations + niche/context variables",
+          "Main output": "niche-differential genes and context-dependent interaction signals",
+          "Required Contrast Signal": "condition/covariate within niches",
+          "Main Contrast Output": "niche-differential genes and context-conditioned signals",
+          "Estimand Class": "niche-conditioned condition contrast",
+          "Spatial Structure Requirement": "neighborhood/niche definitions",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SPADE",
+          "Selection role": "testing between-group spatial expression patterns and differential expression without requiring registration",
+          "Main input/signal": "ST expression matrix + spatial coordinates + group or condition labels",
+          "Main output": "spatial pattern statistics and differentially expressed or differentially patterned genes",
+          "Required Contrast Signal": "group or condition labels",
+          "Main Contrast Output": "spatial pattern statistics and differentially expressed or patterned genes",
+          "Estimand Class": "between-group spatial expression/pattern contrast",
+          "Spatial Structure Requirement": "coordinates / pattern; registration not central",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialGEE",
+          "Selection role": "testing condition or covariate effects with spatial-correlation-aware statistical modeling",
+          "Main input/signal": "ST expression matrix + spatial coordinates + condition/covariate design",
+          "Main output": "DE genes, statistical tests, and model-based effect estimates",
+          "Required Contrast Signal": "condition/covariate design",
+          "Main Contrast Output": "DE genes, statistical tests, and model-based effect estimates",
+          "Estimand Class": "spatial-correlation-aware condition contrast",
+          "Spatial Structure Requirement": "spatial correlation model",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "STcompare",
+          "Selection role": "comparing differential spatial patterning across structurally matched tissues",
+          "Main input/signal": "structurally matched ST datasets + expression matrices + spatial coordinates",
+          "Main output": "differentially spatially patterned genes and tissue-pattern comparison results",
+          "Required Contrast Signal": "structurally matched tissue comparison",
+          "Main Contrast Output": "differentially spatially patterned genes and tissue-pattern comparison results",
+          "Estimand Class": "matched-tissue spatial pattern contrast",
+          "Spatial Structure Requirement": "structural comparability required",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialSPM",
+          "Selection role": "performing pixel-wise statistical testing on registered spatial gene-expression pattern images",
+          "Main input/signal": "multiple ST datasets + expression matrices + spatial coordinates + anatomical or template registration workflow",
+          "Main output": "registered expression images, statistical parametric maps, T-scores, and correlation maps",
+          "Required Contrast Signal": "registered multi-sample or template design",
+          "Main Contrast Output": "registered expression images, statistical parametric maps, T-scores, and correlation maps",
+          "Estimand Class": "registered pixel-wise pattern contrast",
+          "Spatial Structure Requirement": "registration/template required",
+          "Compute/code cue": "CPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Required Contrast Signal",
+        "Main Contrast Output",
+        "Estimand Class",
+        "Spatial Structure Requirement",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Required Contrast Signal",
+        "Main Contrast Output",
+        "Estimand Class",
+        "Spatial Structure Requirement"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Spatial Contrast Testing`. This topic covers explicit contrasts across condition, group, niche, domain, anatomical template, or covariate design when the target output is a spatially aware contrast statistic, effect estimate, differential spatial feature, or pattern-comparison result. Do not mix direct contrast testing with phenotype association, cohort-linked niche prioritization, or within-sample spatially variable gene detection.",
+      "decision_tree": [
+        {
+          "condition": "If the explicit contrast is cell-type-specific expression change",
+          "actions": [
+            "Prefer / consider `C-SIDE` when reliable cell type weights or reference-informed assignments support the design.",
+            "Review reference mismatch and composition-condition confounding before interpreting effects."
+          ]
+        },
+        {
+          "condition": "If the explicit contrast is niche- or local-context-conditioned expression",
+          "actions": [
+            "Prefer / consider `Niche-DE`.",
+            "Review niche construction and annotation stability before interpreting context-conditioned effects."
+          ]
+        },
+        {
+          "condition": "If the explicit contrast is between-group spatial expression or pattern differences without requiring registration",
+          "actions": [
+            "Prefer / consider `SPADE`.",
+            "Keep spatial autocorrelation, sampling density, and tissue-resolution differences visible."
+          ]
+        },
+        {
+          "condition": "If the explicit contrast is a spatial-correlation-aware condition or covariate model",
+          "actions": [
+            "Prefer / consider `SpatialGEE`.",
+            "Treat benchmark support as branch-local, not as a global default."
+          ]
+        },
+        {
+          "condition": "If the explicit contrast is differentially spatially patterned genes in structurally matched tissues",
+          "actions": [
+            "Consider `STcompare` with a preprint confidence caveat.",
+            "Do not turn preprint status into a hard exclusion when structural comparability is the real branch-fit condition."
+          ]
+        },
+        {
+          "condition": "If the explicit contrast is registered pixel-wise pattern testing on comparable tissue images or templates",
+          "actions": [
+            "Prefer / consider `SpatialSPM`.",
+            "Keep registration, smoothing, and template choices visible as possible false-positive sources."
+          ]
+        },
+        {
+          "condition": "If the task asks for phenotype association, cohort niche prioritization, within-sample SVG detection, or preprocessing",
+          "actions": [
+            "Route to the matching Layer 1 problem before choosing a contrast-testing method."
+          ]
+        }
+      ]
+    },
+    "spatial_perturbation_analysis": {
+      "slug": "spatial_perturbation_analysis",
+      "title": "Spatial Perturbation Analysis",
+      "path": "results/formal/layer2/spatial_perturbation_analysis.md",
+      "method_count": 5,
+      "methods": [
+        "CONCERT",
+        "Celcomen",
+        "Spatial-ZEDNet",
+        "River",
+        "Perturb-STNet"
+      ],
+      "method_rows": [
+        {
+          "Method": "CONCERT",
+          "Selection role": "predicting spatially localized perturbation responses across patches, tissue borders, and cellular niches",
+          "Main input/signal": "spatial perturbation transcriptomics with gene-expression measurements, spatial coordinates, and perturbation context",
+          "Main output": "predicted post-perturbation spatial expression response and niche-aware response summaries",
+          "Perturbation Question Type": "response prediction",
+          "Spatial Modeling / Pattern Emphasis": "niche kernels",
+          "Direct Perturbation Data Cue": "measured perturbation-response ST",
+          "Validation Evidence Scope": "method-paper benchmark plus case studies",
+          "Compute/code cue": "Required GPU; code available"
+        },
+        {
+          "Method": "Celcomen",
+          "Selection role": "modeling assumption-bound intra- and inter-cellular program structure and generating counterfactual post-perturbation spatial transcriptomics",
+          "Main input/signal": "spatial transcriptomics or single-cell/tissue data represented for causal graph neural modeling",
+          "Main output": "assumption-bound causal-style program representations and counterfactual spatial transcriptomics predictions",
+          "Perturbation Question Type": "causal counterfactual",
+          "Spatial Modeling / Pattern Emphasis": "causal-graph-model program structure under explicit assumptions",
+          "Direct Perturbation Data Cue": "unclear",
+          "Validation Evidence Scope": "method-paper simulations plus tissue case studies",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Spatial-ZEDNet",
+          "Selection role": "detecting spatially differentially expressed genes and differentially activated genes under exposure, perturbation, or treatment conditions",
+          "Main input/signal": "condition-labeled spatial transcriptomics data with expression, spatial coordinates, and control versus perturbed or treatment context",
+          "Main output": "spatial DEGs, spatial DAGs, and condition-specific perturbation-effect summaries",
+          "Perturbation Question Type": "observed perturbation-effect detection",
+          "Spatial Modeling / Pattern Emphasis": "spatial differential activation",
+          "Direct Perturbation Data Cue": "condition-labeled spatial omics",
+          "Validation Evidence Scope": "method-paper benchmark plus case studies",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "River",
+          "Selection role": "prioritizing genes or features with perturbation-responsive differential spatial expression patterns across conditions",
+          "Main input/signal": "multi-slice or multi-condition spatial omics data with expression, spatial coordinates, and condition or slice labels",
+          "Main output": "ranked DSEP genes or features with attribution-supported spatial and non-spatial components",
+          "Perturbation Question Type": "perturbation-responsive pattern prioritization",
+          "Spatial Modeling / Pattern Emphasis": "spatial pattern attribution",
+          "Direct Perturbation Data Cue": "condition-labeled spatial omics",
+          "Validation Evidence Scope": "method-paper benchmark plus case studies",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Perturb-STNet",
+          "Selection role": "ranking spatial and temporal differentially expressed regulators and perturbation-associated network summaries",
+          "Main input/signal": "single-cell or spatially resolved data with spatial coordinates, time or trajectory context, and control versus perturbed conditions",
+          "Main output": "pSTDERs, perturbation-associated regulatory-network summaries, and regulator/cell/neighborhood interaction visualizations",
+          "Perturbation Question Type": "spatiotemporal perturbation regulator prioritization",
+          "Spatial Modeling / Pattern Emphasis": "spatiotemporal network regulator prioritization",
+          "Direct Perturbation Data Cue": "condition-labeled spatial omics",
+          "Validation Evidence Scope": "method-paper benchmark plus case studies",
+          "Compute/code cue": "CPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Perturbation Question Type",
+        "Spatial Modeling / Pattern Emphasis",
+        "Direct Perturbation Data Cue",
+        "Validation Evidence Scope",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Perturbation Question Type",
+        "Spatial Modeling / Pattern Emphasis",
+        "Direct Perturbation Data Cue",
+        "Validation Evidence Scope"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Spatial Perturbation Analysis`. This topic covers spatial perturbation-response prediction, causal-style counterfactual tissue modeling, observed perturbation-effect detection, perturbation-responsive pattern prioritization, and spatiotemporal perturbation regulator prioritization. Observed effects, attribution rankings, and counterfactual generation are not the same as experimental proof of causal perturbation mechanisms.",
+      "decision_tree": [
+        {
+          "condition": "If the question is predictive spatial perturbation-response modeling with local niche, border, or microenvironment context",
+          "actions": [
+            "Consider `CONCERT` when preprint-level evidence and GPU-dependent frontier modeling are acceptable for selection.",
+            "Treat predicted spatial responses as model outputs needing downstream biological validation."
+          ]
+        },
+        {
+          "condition": "If the question is counterfactual tissue perturbation modeling with explicit causal-disentanglement assumptions",
+          "actions": [
+            "Prefer / consider `Celcomen`.",
+            "Keep causal language assumption-bound and separate from experimentally confirmed perturbation effects."
+          ]
+        },
+        {
+          "condition": "If the question is observed perturbation or treatment effect detection in spatial expression or activation",
+          "actions": [
+            "Prefer / consider `Spatial-ZEDNet`.",
+            "Treat detected DEGs or DAGs as condition-associated effects, not counterfactual causal proof."
+          ]
+        },
+        {
+          "condition": "If the question is ranking perturbation-responsive spatial expression patterns across slices or conditions",
+          "actions": [
+            "Prefer / consider `River`.",
+            "Keep attribution and DSEP ranking language as prioritization, not causal mechanism."
+          ]
+        },
+        {
+          "condition": "If the question is spatial and temporal regulator or network-effect prioritization under perturbation",
+          "actions": [
+            "Prefer / consider `Perturb-STNet`.",
+            "Keep regulator rankings and networks as assumption-bound prioritization outputs."
+          ]
+        },
+        {
+          "condition": "If the task asks only for a direct group contrast, phenotype association, or trajectory without intervention metadata",
+          "actions": [
+            "Route to the matching Layer 1 problem before choosing a perturbation-analysis method."
+          ]
+        }
+      ]
+    },
+    "spatial_trajectory_analysis": {
+      "slug": "spatial_trajectory_analysis",
+      "title": "Spatial Trajectory Analysis",
+      "path": "results/formal/layer2/spatial_trajectory_analysis.md",
+      "method_count": 9,
+      "methods": [
+        "SpaTrack",
+        "spVelo",
+        "STT",
+        "SIRV",
+        "PearlST",
+        "TopoVelo",
+        "CASCAT",
+        "STORIES",
+        "stVCR"
+      ],
+      "method_rows": [
+        {
+          "Method": "SpaTrack",
+          "Selection role": "Reconstruct spatial cell differentiation trajectories using expression and spatial position in transition costs.",
+          "Main input/signal": "Spatial transcriptomics expression with spatial coordinates; multiple samples or temporal intervals can be used when available.",
+          "Main output": "Spatial trajectory topology, differentiation paths, and dynamic driver cues.",
+          "Trajectory Branch": "differentiation trajectory",
+          "Splicing / Velocity Dependence": "not primary",
+          "Spatial Coupling Mode": "coordinates in transition cost",
+          "Reference Dependence": "reference-free",
+          "Temporal / Multi-sample Cue": "multi-sample / temporal interval",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "spVelo",
+          "Selection role": "Infer RNA velocity and spatially resolved transcriptional dynamics across multi-batch spatial datasets.",
+          "Main input/signal": "Multi-batch spatial transcriptomics data with spatial information and RNA-velocity-relevant expression dynamics.",
+          "Main output": "Spatial RNA velocity estimates, trajectory patterns, uncertainty cues, driver markers, and related downstream dynamic summaries.",
+          "Trajectory Branch": "spatial RNA velocity",
+          "Splicing / Velocity Dependence": "uses splicing / velocity signal",
+          "Spatial Coupling Mode": "spatial graph / constraints",
+          "Reference Dependence": "reference-free",
+          "Temporal / Multi-sample Cue": "multi-batch",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STT",
+          "Selection role": "Characterize cell-state-specific dynamics and spatial state transitions through a multiscale transition tensor.",
+          "Main input/signal": "Spatial transcriptomics with spatial coordinates and messenger RNA splicing information.",
+          "Main output": "Four-dimensional transition tensor, local tensor streamlines, and long-time transition paths among attractors.",
+          "Trajectory Branch": "spatial RNA velocity",
+          "Splicing / Velocity Dependence": "uses splicing / velocity signal",
+          "Spatial Coupling Mode": "spatial graph / constraints",
+          "Reference Dependence": "reference-free",
+          "Temporal / Multi-sample Cue": "single-sample compatible",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SIRV",
+          "Selection role": "Infer spatial RNA velocities at single-cell resolution when spatial assays lack direct spliced/unspliced capture.",
+          "Main input/signal": "Spatial transcriptomics data enriched with spliced and unspliced mRNA expression from matched or relevant reference scRNA-seq data.",
+          "Main output": "Spatial RNA velocities and spatial differentiation trajectories at single-cell resolution.",
+          "Trajectory Branch": "spatial RNA velocity",
+          "Splicing / Velocity Dependence": "reference-imputed splicing / velocity",
+          "Spatial Coupling Mode": "spatial graph / constraints",
+          "Reference Dependence": "scRNA-reference-assisted",
+          "Temporal / Multi-sample Cue": "single-sample compatible",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "PearlST",
+          "Selection role": "Infer spatiotemporal structures, including trajectory inference and pseudotime analysis, through latent spatial embeddings.",
+          "Main input/signal": "Spatial transcriptomics expression, spatial coordinates, and histology image features when available.",
+          "Main output": "Low-dimensional latent embeddings, spatial domains, temporal trajectories, and pseudotime summaries.",
+          "Trajectory Branch": "spatiotemporal embedding / pseudotime",
+          "Splicing / Velocity Dependence": "not primary",
+          "Spatial Coupling Mode": "histology + spatial features",
+          "Reference Dependence": "reference-free",
+          "Temporal / Multi-sample Cue": "time-course helpful",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "TopoVelo",
+          "Selection role": "infer topological velocity and spatially coupled cell-state dependencies for model-based cell-state transition analysis",
+          "Main input/signal": "Spatial transcriptomic data for jointly modeling spatial and temporal cell-state transition dynamics.",
+          "Main output": "Velocity estimates, spatial cell-state dependencies, and model-based cell-state transition patterns.",
+          "Trajectory Branch": "spatial RNA velocity",
+          "Splicing / Velocity Dependence": "uses splicing / velocity signal",
+          "Spatial Coupling Mode": "spatially coupled dynamics",
+          "Reference Dependence": "reference-free",
+          "Temporal / Multi-sample Cue": "time-course helpful",
+          "Compute/code cue": "Optional GPU; code access unclear"
+        },
+        {
+          "Method": "CASCAT",
+          "Selection role": "infer model-based causal-style spatial trajectories using conditional-dependence pruning and a tree-shaped structural causal model",
+          "Main input/signal": "Spatial transcriptomics expression with spatial coordinates and graph construction for trajectory inference.",
+          "Main output": "Model-based causal-style cell graph, trajectory tree, pseudotime, and cluster-level trajectory interpretation.",
+          "Trajectory Branch": "causal trajectory",
+          "Splicing / Velocity Dependence": "not primary",
+          "Spatial Coupling Mode": "spatially refined causal graph",
+          "Reference Dependence": "reference-free",
+          "Temporal / Multi-sample Cue": "single-sample compatible",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STORIES",
+          "Selection role": "learn model-based fate-landscape structure from spatial transcriptomics using optimal transport",
+          "Main input/signal": "spatial transcriptomics expression with spatial coordinates and cell-state context for fate-landscape inference",
+          "Main output": "Model-framed fate-landscape representation, transition structure, and trajectory interpretation for spatial cell states.",
+          "Trajectory Branch": "differentiation trajectory",
+          "Splicing / Velocity Dependence": "not primary",
+          "Spatial Coupling Mode": "coordinates in transition cost",
+          "Reference Dependence": "reference-free",
+          "Temporal / Multi-sample Cue": "time-course helpful",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "stVCR",
+          "Selection role": "model spatiotemporal dynamics of single cells from spatial transcriptomics",
+          "Main input/signal": "spatial transcriptomics data with single-cell state information and temporal or progression context",
+          "Main output": "spatiotemporal cell-state dynamics, trajectory or pseudotime-style summaries, and dynamic interpretation cues",
+          "Trajectory Branch": "spatiotemporal embedding / pseudotime",
+          "Splicing / Velocity Dependence": "not primary",
+          "Spatial Coupling Mode": "spatially coupled dynamics",
+          "Reference Dependence": "reference-free",
+          "Temporal / Multi-sample Cue": "multi-sample / temporal interval",
+          "Compute/code cue": "Optional GPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Trajectory Branch",
+        "Splicing / Velocity Dependence",
+        "Spatial Coupling Mode",
+        "Reference Dependence",
+        "Temporal / Multi-sample Cue",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Trajectory Branch",
+        "Splicing / Velocity Dependence",
+        "Spatial Coupling Mode",
+        "Reference Dependence",
+        "Temporal / Multi-sample Cue"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Spatial Trajectory Analysis`. This topic covers spatial differentiation trajectories, spatial RNA velocity, latent spatiotemporal embedding or pseudotime, state-transition modeling, fate-landscape learning, and causal trajectory inference. These outputs are model-based summaries of transition structure, velocity, ordered states, or trajectory topology rather than direct proof of lineage, migration, fate commitment, or experimental causality.",
+      "decision_tree": [
+        {
+          "condition": "If the primary question is spatial RNA velocity or cell-fate dynamics from velocity-like signal",
+          "actions": [
+            "Continue within the velocity branch."
+          ]
+        },
+        {
+          "condition": "If a matched or relevant scRNA-seq reference is needed to supply spliced or unspliced information",
+          "actions": [
+            "Prefer / consider `SIRV`.",
+            "Keep reference mismatch and reference-composition bias visible."
+          ]
+        },
+        {
+          "condition": "If the velocity problem is explicitly multi-batch",
+          "actions": [
+            "Prefer / consider `spVelo`."
+          ]
+        },
+        {
+          "condition": "If multiscale transition dynamics, attractors, or streamlines are central",
+          "actions": [
+            "Prefer / consider `STT`."
+          ]
+        },
+        {
+          "condition": "If spatially coupled topological velocity interpretation is central",
+          "actions": [
+            "Prefer / consider `TopoVelo`."
+          ]
+        },
+        {
+          "condition": "If the primary question is expression-plus-location differentiation trajectory rather than velocity",
+          "actions": [
+            "Prefer / consider `SpaTrack` for optimal-transport trajectory reconstruction.",
+            "Prefer / consider `STORIES` when fate-landscape framing is the real target.",
+            "Keep directionality and fate language framed as model interpretation rather than lineage proof."
+          ]
+        },
+        {
+          "condition": "If the primary question is latent spatiotemporal structure or pseudotime from representation learning",
+          "actions": [
+            "Prefer / consider `PearlST` for latent spatiotemporal structure with spatial or image-feature integration.",
+            "Prefer / consider `stVCR` when spatiotemporal single-cell dynamics are central.",
+            "Keep representation and objective entanglement caveats visible."
+          ]
+        }
+      ]
+    },
+    "spatially_variable_gene_detection": {
+      "slug": "spatially_variable_gene_detection",
+      "title": "Spatially Variable Gene Detection",
+      "path": "results/formal/layer2/spatially_variable_gene_detection.md",
+      "method_count": 14,
+      "methods": [
+        "Celina",
+        "ctSVG",
+        "STANCE",
+        "STMiner",
+        "BSP",
+        "HEARTSVG",
+        "nnSVG",
+        "SOMDE",
+        "SPARK",
+        "SPARK-X",
+        "SpatialDE",
+        "spVC",
+        "InSituCor",
+        "SPACE-SVG"
+      ],
+      "method_rows": [
+        {
+          "Method": "Celina",
+          "Selection role": "cell-type-specific SVG detection",
+          "Main input/signal": "spatial expression matrix + spatial coordinates + cell type composition or labels",
+          "Main output": "cell-type-specific SVG calls and statistics",
+          "SVG Branch": "cell-type-specific SVG detection",
+          "Cell-Type Context": "cell-type-specific",
+          "Primary Statistical Output": "ctSVG calls / p-values",
+          "Spatial Pattern Scale": "cell-type-resolved",
+          "Benchmark Coverage": "branch benchmark retrieved",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "ctSVG",
+          "Selection role": "cell-type-specific SVG detection",
+          "Main input/signal": "spatial expression matrix + spatial coordinates + cell type composition or labels",
+          "Main output": "cell-type-specific SVG calls and significance statistics",
+          "SVG Branch": "cell-type-specific SVG detection",
+          "Cell-Type Context": "cell-type-specific",
+          "Primary Statistical Output": "ctSVG calls / p-values",
+          "Spatial Pattern Scale": "cell-type-resolved",
+          "Benchmark Coverage": "branch benchmark retrieved",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "STANCE",
+          "Selection role": "cell-type-specific SVG detection with unified modeling",
+          "Main input/signal": "spatial expression matrix + spatial coordinates + cell type composition or labels",
+          "Main output": "cell-type-specific SVG calls and statistics",
+          "SVG Branch": "cell-type-specific SVG detection",
+          "Cell-Type Context": "cell-type-specific",
+          "Primary Statistical Output": "ctSVG calls / p-values",
+          "Spatial Pattern Scale": "cell-type-resolved",
+          "Benchmark Coverage": "branch benchmark retrieved",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "STMiner",
+          "Selection role": "gene-centric tissue-pattern mining rather than classical hypothesis-test SVG calling",
+          "Main input/signal": "spatial expression matrix + spatial coordinates, typically tissue-scale tumor spatial data",
+          "Main output": "gene-level spatial tissue patterns and interpretable pattern summaries",
+          "SVG Branch": "gene-centric tissue pattern mining",
+          "Cell-Type Context": "none",
+          "Primary Statistical Output": "gene pattern summaries",
+          "Spatial Pattern Scale": "tissue-pattern",
+          "Benchmark Coverage": "method-paper only",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "BSP",
+          "Selection role": "overall SVG detection with dimension-agnostic granularity testing",
+          "Main input/signal": "spatial expression matrix + spatial coordinates",
+          "Main output": "ranked SVGs and statistical evidence",
+          "SVG Branch": "overall SVG detection",
+          "Cell-Type Context": "none",
+          "Primary Statistical Output": "ranked genes / p-values",
+          "Spatial Pattern Scale": "multi-scale / granularity",
+          "Benchmark Coverage": "review-screened only",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "HEARTSVG",
+          "Selection role": "fast overall SVG detection for large-scale spatial transcriptomics",
+          "Main input/signal": "large-scale spatial expression matrix + spatial coordinates",
+          "Main output": "ranked SVGs and statistical evidence",
+          "SVG Branch": "overall SVG detection",
+          "Cell-Type Context": "none",
+          "Primary Statistical Output": "ranked genes / p-values",
+          "Spatial Pattern Scale": "global / overall",
+          "Benchmark Coverage": "method-paper only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "nnSVG",
+          "Selection role": "scalable overall SVG detection with nearest-neighbor Gaussian-process approximation",
+          "Main input/signal": "spatial expression matrix + spatial coordinates",
+          "Main output": "ranked SVGs and statistical evidence",
+          "SVG Branch": "overall SVG detection",
+          "Cell-Type Context": "none",
+          "Primary Statistical Output": "ranked genes / p-values",
+          "Spatial Pattern Scale": "local / nearest-neighbor",
+          "Benchmark Coverage": "broad benchmark retrieved",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SOMDE",
+          "Selection role": "overall SVG detection after self-organizing-map compression",
+          "Main input/signal": "spatial expression matrix + spatial coordinates",
+          "Main output": "ranked SVGs and statistical evidence",
+          "SVG Branch": "overall SVG detection",
+          "Cell-Type Context": "none",
+          "Primary Statistical Output": "ranked genes / p-values",
+          "Spatial Pattern Scale": "global / overall",
+          "Benchmark Coverage": "review-screened only",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SPARK",
+          "Selection role": "overall SVG detection with count-aware spatial modeling",
+          "Main input/signal": "spatial count matrix + spatial coordinates",
+          "Main output": "ranked SVGs and calibrated test statistics when assumptions hold",
+          "SVG Branch": "overall SVG detection",
+          "Cell-Type Context": "none",
+          "Primary Statistical Output": "ranked genes / p-values",
+          "Spatial Pattern Scale": "global / overall",
+          "Benchmark Coverage": "broad benchmark retrieved",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SPARK-X",
+          "Selection role": "scalable and robust overall SVG detection",
+          "Main input/signal": "large spatial expression matrix + spatial coordinates",
+          "Main output": "ranked SVGs and statistical evidence",
+          "SVG Branch": "overall SVG detection",
+          "Cell-Type Context": "none",
+          "Primary Statistical Output": "ranked genes / p-values",
+          "Spatial Pattern Scale": "global / overall",
+          "Benchmark Coverage": "broad benchmark retrieved",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "SpatialDE",
+          "Selection role": "canonical overall SVG detection baseline",
+          "Main input/signal": "spatial expression matrix + spatial coordinates",
+          "Main output": "ranked SVGs and spatial expression pattern statistics",
+          "SVG Branch": "overall SVG detection",
+          "Cell-Type Context": "none",
+          "Primary Statistical Output": "ranked genes / p-values",
+          "Spatial Pattern Scale": "global / overall",
+          "Benchmark Coverage": "broad benchmark retrieved",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "spVC",
+          "Selection role": "detection and interpretation of spatial gene expression variation",
+          "Main input/signal": "spatial expression matrix + spatial coordinates, with cell-type-aware interpretation when applicable",
+          "Main output": "spatial variation coefficients and gene-level variation evidence",
+          "SVG Branch": "overall SVG detection",
+          "Cell-Type Context": "unclear",
+          "Primary Statistical Output": "variation coefficients",
+          "Spatial Pattern Scale": "global / overall",
+          "Benchmark Coverage": "branch benchmark retrieved",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "InSituCor",
+          "Selection role": "finding spatially correlated genes conditional on cell type landscape",
+          "Main input/signal": "spatial expression matrix + spatial coordinates + cell type landscape",
+          "Main output": "cell-type-conditional spatial correlation gene sets",
+          "SVG Branch": "cell-type-conditional SVG detection",
+          "Cell-Type Context": "cell-type-conditional",
+          "Primary Statistical Output": "conditional correlation calls",
+          "Spatial Pattern Scale": "cell-type-resolved",
+          "Benchmark Coverage": "method-paper only",
+          "Compute/code cue": "CPU; code access unclear"
+        },
+        {
+          "Method": "SPACE-SVG",
+          "Selection role": "SVG clustering adjusted for cell type effect and downstream domain-supporting feature selection",
+          "Main input/signal": "spatial expression matrix + spatial coordinates + cell type effect estimates",
+          "Main output": "cell-type-adjusted SVG clusters / selected spatial features",
+          "SVG Branch": "SVG clustering / feature selection",
+          "Cell-Type Context": "cell-type-adjusted",
+          "Primary Statistical Output": "SVG clusters / selected features",
+          "Spatial Pattern Scale": "cell-type-resolved",
+          "Benchmark Coverage": "method-paper only",
+          "Compute/code cue": "CPU; code access unclear"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "SVG Branch",
+        "Cell-Type Context",
+        "Primary Statistical Output",
+        "Spatial Pattern Scale",
+        "Benchmark Coverage",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "SVG Branch",
+        "Cell-Type Context",
+        "Primary Statistical Output",
+        "Spatial Pattern Scale",
+        "Benchmark Coverage"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Spatially Variable Gene Detection`. This topic covers gene-level spatial variability tasks, including overall SVG detection, cell-type-specific SVG detection, cell-type-conditional spatial correlation, gene-centric tissue-pattern mining, and cell-type-adjusted SVG clustering or feature selection. These branches are not interchangeable, and their outputs should not be flattened into one generic SVG ranking problem.",
+      "decision_tree": [
+        {
+          "condition": "If the intended output is cell-type-specific SVG calls",
+          "actions": [
+            "Prefer / consider `Celina`, `STANCE`, or `ctSVG`.",
+            "Keep cell type context, false-positive control, and non-target-cell leakage caveats visible."
+          ]
+        },
+        {
+          "condition": "If the intended output is spatial gene correlation conditional on the cell type landscape",
+          "actions": [
+            "Prefer / consider `InSituCor`.",
+            "Do not substitute it for direct ctSVG calling or overall SVG ranking."
+          ]
+        },
+        {
+          "condition": "If cell type effects should be adjusted while clustering or selecting SVGs",
+          "actions": [
+            "Prefer / consider `SPACE-SVG`.",
+            "Keep its boundary with feature selection and domain-support workflows visible."
+          ]
+        },
+        {
+          "condition": "If the real deliverable is gene-centric tissue-pattern interpretation rather than conventional calibrated SVG testing",
+          "actions": [
+            "Prefer / consider `STMiner`."
+          ]
+        },
+        {
+          "condition": "If the task is overall SVG detection with large-data or scalability pressure",
+          "actions": [
+            "Prefer / consider `SPARK-X`, `nnSVG`, or `HEARTSVG`.",
+            "Use broad benchmark guidance only inside this overall-SVG branch, not as a universal default rule."
+          ]
+        },
+        {
+          "condition": "If the task is overall SVG detection without a strict scalability-first requirement",
+          "actions": [
+            "Prefer / consider `SpatialDE` for a canonical Gaussian-process baseline.",
+            "Prefer / consider `SPARK` for count-aware spatial modeling on moderate data.",
+            "Prefer / consider `BSP` for a non-parametric or granularity-oriented route.",
+            "Prefer / consider `SOMDE` when self-organizing-map compression is scientifically attractive.",
+            "Prefer / consider `spVC` when interpretable spatial variation coefficients are central, while keeping its branch-boundary caveat visible.",
+            "Keep benchmark comparisons branch-local.",
+            "Keep caveats about cell type context, calibration, compression, and boundary interpretation in the reading path rather than encoding them as exclusionary table columns."
+          ]
+        }
+      ]
+    },
+    "super_resolution": {
+      "slug": "super_resolution",
+      "title": "Super-resolution",
+      "path": "results/formal/layer2/super_resolution.md",
+      "method_count": 11,
+      "methods": [
+        "FICTURE",
+        "iStar",
+        "scstGCN",
+        "Spotiphy",
+        "TESLA",
+        "XFuse",
+        "ImSpiRE",
+        "soScope",
+        "iSCALE",
+        "STAGE",
+        "Thor"
+      ],
+      "method_rows": [
+        {
+          "Method": "FICTURE",
+          "Selection role": "segmentation-free analysis of already fine-geometry spatial transcriptomics for factor-level representation",
+          "Main input/signal": "target-sample measured submicron or high-density spatial transcriptomics data",
+          "Main output": "segmentation-free fine-scale spatial factor and tissue-feature maps",
+          "Resolution Target": "measured high-density/factor representation",
+          "Image Signal Use": "none",
+          "External Reference Dependence": "reference-free",
+          "Output Geometry": "factor map",
+          "Cellular Reconstruction Mode": "not primary",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "iStar",
+          "Selection role": "histology-guided inference of super-resolution tissue architecture",
+          "Main input/signal": "target-sample spot-based spatial transcriptomics with matched histology",
+          "Main output": "super-resolved tissue architecture and inferred fine-resolution expression map",
+          "Resolution Target": "tissue architecture inference",
+          "Image Signal Use": "required",
+          "External Reference Dependence": "reference-free",
+          "Output Geometry": "high-resolution tissue map",
+          "Cellular Reconstruction Mode": "histology-guided architecture inference",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "scstGCN",
+          "Selection role": "single-cell-resolution spatial gene-expression inference from fused expression, location, and image signals",
+          "Main input/signal": "target-sample spot-based ST, spatial coordinates, and histology image",
+          "Main output": "inferred single-cell-resolution spatial gene-expression map",
+          "Resolution Target": "single-cell-resolution expression",
+          "Image Signal Use": "required",
+          "External Reference Dependence": "reference-free",
+          "Output Geometry": "single-cell-resolution expression map",
+          "Cellular Reconstruction Mode": "graph/image fusion",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Spotiphy",
+          "Selection role": "single-cell spatial whole-transcriptome reconstruction across an entire tissue section",
+          "Main input/signal": "target-sample section-level spatial transcriptomics with image/context features",
+          "Main output": "pseudo-single-cell whole-transcriptome spatial map",
+          "Resolution Target": "pseudo-single-cell whole transcriptome",
+          "Image Signal Use": "required",
+          "External Reference Dependence": "unclear",
+          "Output Geometry": "pseudo-single-cell whole-section map",
+          "Cellular Reconstruction Mode": "pseudo-single-cell reconstruction",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "TESLA",
+          "Selection role": "super-resolution reconstruction for tumor ecosystem analysis",
+          "Main input/signal": "target-sample spatial transcriptomics with histology image",
+          "Main output": "super-resolved spatial expression and tissue-ecosystem maps",
+          "Resolution Target": "tumor ecosystem super-resolution",
+          "Image Signal Use": "required",
+          "External Reference Dependence": "reference-free",
+          "Output Geometry": "histology-guided super-resolution map",
+          "Cellular Reconstruction Mode": "histology-guided reconstruction",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "XFuse",
+          "Selection role": "deep-learning fusion of image and expression data for super-resolved spatial transcriptomics",
+          "Main input/signal": "target-sample spatial transcriptomics with matched histology",
+          "Main output": "super-resolved spatial expression map",
+          "Resolution Target": "super-resolved expression",
+          "Image Signal Use": "required",
+          "External Reference Dependence": "reference-free",
+          "Output Geometry": "super-resolved expression grid",
+          "Cellular Reconstruction Mode": "deep image-expression fusion",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "ImSpiRE",
+          "Selection role": "image feature-aided subspot resolution enhancement and imputation of unmeasured tissue regions",
+          "Main input/signal": "target-sample spatial transcriptomics with histology image features",
+          "Main output": "image-aided enhanced-resolution spatial expression map",
+          "Resolution Target": "subspot resolution enhancement",
+          "Image Signal Use": "required",
+          "External Reference Dependence": "reference-free",
+          "Output Geometry": "subspot transcriptional profile",
+          "Cellular Reconstruction Mode": "image-feature-aided optimal transport",
+          "Compute/code cue": "CPU; code available"
+        },
+        {
+          "Method": "soScope",
+          "Selection role": "cross-platform generative enhancement of spatial omics profiles to subspot or enhanced spatial resolution",
+          "Main input/signal": "target-sample spatial omics data with cross-platform enhancement context",
+          "Main output": "enhanced-resolution tissue characterization or expression representation",
+          "Resolution Target": "cross-platform enhanced-resolution omics",
+          "Image Signal Use": "required",
+          "External Reference Dependence": "unclear",
+          "Output Geometry": "enhanced-resolution spatial omics profile",
+          "Cellular Reconstruction Mode": "generative spatial omics enhancement",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "iSCALE",
+          "Selection role": "cellular-level tissue-architecture reconstruction beyond conventional platform resolution at large tissue scale",
+          "Main input/signal": "large-area target-sample spatial transcriptomics with tissue architecture context",
+          "Main output": "cellular-level inferred tissue architecture and reconstructed expression map",
+          "Resolution Target": "large-area cellular architecture",
+          "Image Signal Use": "unclear",
+          "External Reference Dependence": "unclear",
+          "Output Geometry": "large-area cellular-level map",
+          "Cellular Reconstruction Mode": "large-area reconstruction",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "STAGE",
+          "Selection role": "generation of high-density spatial transcriptomics from lower-density spatial inputs",
+          "Main input/signal": "sparse target-sample spatial transcriptomics inputs",
+          "Main output": "generated high-density spatial transcriptomics profiles",
+          "Resolution Target": "high-density ST generation",
+          "Image Signal Use": "unclear",
+          "External Reference Dependence": "unclear",
+          "Output Geometry": "generated high-density ST profile",
+          "Cellular Reconstruction Mode": "high-density generation",
+          "Compute/code cue": "Optional GPU; code available"
+        },
+        {
+          "Method": "Thor",
+          "Selection role": "support cell-level investigation by reconstructing or analyzing spatial transcriptomics together with histology",
+          "Main input/signal": "target-sample spatial transcriptomics with matched histology",
+          "Main output": "histology-aware cell-level spatial transcriptomics representation",
+          "Resolution Target": "large-area cellular architecture",
+          "Image Signal Use": "required",
+          "External Reference Dependence": "unclear",
+          "Output Geometry": "large-area cellular-level map",
+          "Cellular Reconstruction Mode": "histology-guided reconstruction",
+          "Compute/code cue": "Optional GPU; code available"
+        }
+      ],
+      "table_columns": [
+        "Method",
+        "Selection role",
+        "Main input/signal",
+        "Main output",
+        "Resolution Target",
+        "Image Signal Use",
+        "External Reference Dependence",
+        "Output Geometry",
+        "Cellular Reconstruction Mode",
+        "Compute/code cue"
+      ],
+      "topic_specific_fields": [
+        "Resolution Target",
+        "Image Signal Use",
+        "External Reference Dependence",
+        "Output Geometry",
+        "Cellular Reconstruction Mode"
+      ],
+      "problem_boundary": "Use this Layer 2 file after Layer 1 routes the task to `Super-resolution`. This topic covers finer-geometry reconstruction, enhanced-resolution representation, generated high-density profiles, and measured high-density or submicron representation when the output remains anchored to target-sample measured spatial expression or spatial omics. Keep measured-versus-inferred status explicit: `FICTURE` stays on the measured high-density or submicron representation side, not the generated-upsampling side.",
+      "decision_tree": [
+        {
+          "condition": "If the task lacks target-sample measured spatial expression or spatial-omics anchoring for the requested output",
+          "actions": [
+            "Route to `Gene Expression Prediction / Imputation` rather than `Super-resolution`."
+          ]
+        },
+        {
+          "condition": "If the input already contains measured submicron or high-density spatial signal and the goal is segmentation-free fine-scale representation",
+          "actions": [
+            "Prefer / consider `FICTURE`.",
+            "Keep its output framed as measured high-density factor or tissue-feature representation rather than generated subspot upsampling."
+          ]
+        },
+        {
+          "condition": "If matched histology is central to reconstructing finer geometry from lower-resolution target-sample data",
+          "actions": [
+            "Prefer / consider `iStar` for histology-guided tissue-architecture inference.",
+            "Prefer / consider `TESLA` when tumor-ecosystem interpretation is central.",
+            "Prefer / consider `XFuse` for deep image-expression fusion.",
+            "Prefer / consider `ImSpiRE` for image-feature-aided subspot enhancement and redistribution."
+          ]
+        },
+        {
+          "condition": "If the requested output is inferred single-cell-resolution or pseudo-cell reconstruction from target-sample data",
+          "actions": [
+            "Prefer / consider `scstGCN` for graph-plus-image single-cell-resolution expression inference.",
+            "Prefer / consider `Spotiphy` for pseudo-single-cell whole-section reconstruction.",
+            "Prefer / consider `Thor` when histology-aware cell-level investigation is the intended framing."
+          ]
+        },
+        {
+          "condition": "If large tissue area or generated higher-density representation is central",
+          "actions": [
+            "Prefer / consider `iSCALE` for large-area cellular-level reconstruction.",
+            "Prefer / consider `STAGE` for generated high-density spatial transcriptomics profiles.",
+            "Prefer / consider `soScope` when cross-platform enhanced-resolution spatial omics framing is central.",
+            "Keep measured versus inferred outputs explicit in downstream interpretation.",
+            "Do not describe pseudo-cell, single-cell-resolution, high-density inferred, or cell-level inferred outputs as direct molecule-level single-cell measurements.",
+            "Route back to `Segmentation` or `Cell Type Inference` when those become the primary endpoint rather than adjacent downstream interpretation."
+          ]
+        }
+      ]
+    }
+  },
+  "scenarios": [
+    {
+      "id": "single",
+      "label": "Single task",
+      "prompt": "I need to identify spatially coherent tumor regions from expression and coordinates.",
+      "route": "Domain / Clustering",
+      "layer2": "domain_clustering",
+      "decision": "Route to Domain / Clustering because the target output is region/domain labels, then select within that topic's domain, semantic, alignment-aware, or clustering branches.",
+      "caveat": "Do not route to Graph / Neighborhood unless the endpoint is niche, motif, factor, or local-context representation."
+    },
+    {
+      "id": "multi",
+      "label": "Multi-endpoint task",
+      "prompt": "Normalize Visium data, then find spatially variable genes and compare tumor versus margin niches.",
+      "route": "Split route",
+      "layer2": "normalization + spatially_variable_gene_detection + spatial_contrast_testing",
+      "decision": "Split into Normalization, Spatially Variable Gene Detection, and Spatial Contrast Testing because each requested output has a different Layer 1 endpoint.",
+      "caveat": "Do not collapse preprocessing, SVG ranking, and contrast statistics into one method-selection table."
+    },
+    {
+      "id": "ambiguous",
+      "label": "Ambiguous task",
+      "prompt": "Find the tissue microenvironment around exhausted T cells.",
+      "route": "Graph / Neighborhood or Cell-Cell Communication",
+      "layer2": "graph_neighborhood or cell_cell_communication",
+      "decision": "Ask whether the desired output is niche/neighborhood structure or sender-receiver/LR communication. The answer changes the candidate set.",
+      "caveat": "Cell proximity, colocalization, or motif enrichment should not be upgraded to causal communication proof."
+    },
+    {
+      "id": "ccc",
+      "label": "CCC boundary",
+      "prompt": "Interpret ligand-receptor interactions and downstream pathway context across interacting cell types.",
+      "route": "Cell-Cell Communication",
+      "layer2": "cell_cell_communication",
+      "decision": "Use CCC, then branch toward broad LR, spatial LR, single-cell/relay-network, neighborhood-effect, or pathway-aware interpretation candidates.",
+      "caveat": "CausalCCC is shown as pathway-aware interpretation of CCC calls, not experimental causal proof."
+    },
+    {
+      "id": "normalization",
+      "label": "Normalization backbone",
+      "prompt": "Use Scanpy or Seurat-style preprocessing before downstream spatial analysis.",
+      "route": "Normalization",
+      "layer2": "normalization",
+      "decision": "Keep Scanpy, Seurat/sctransform, scran/scater, Giotto, and Squidpy as backbone workflow context while SpaNorm remains the dedicated spatial-aware candidate row.",
+      "caveat": "Backbone packages are visible context, not ranked as dedicated spatial-aware normalization candidates."
+    },
+    {
+      "id": "graph",
+      "label": "Graph / Squidpy",
+      "prompt": "Build spatial neighbor graphs and run neighborhood enrichment around cell types.",
+      "route": "Graph / Neighborhood",
+      "layer2": "graph_neighborhood",
+      "decision": "Use Graph / Neighborhood. Squidpy is the AnnData/scverse workflow context for graph utilities and enrichment, while the 20 dedicated candidates remain separate method rows.",
+      "caveat": "Squidpy context is not runtime support, adapter availability, default method, or execution readiness."
+    },
+    {
+      "id": "perturbation",
+      "label": "Perturbation caution",
+      "prompt": "Infer spatial response to treatment across niches and explain affected programs.",
+      "route": "Spatial Perturbation Analysis",
+      "layer2": "spatial_perturbation_analysis",
+      "decision": "Route by perturbation/treatment endpoint, then select methods for observed response, niche-aware response, counterfactual-style interpretation, or regulator prioritization.",
+      "caveat": "Model output supports interpreted perturbation response, not automatically proven biological mechanism."
+    }
+  ],
+  "ccc_highlight": {
+    "fields": [
+      "CCC Branch",
+      "Spatial Specificity",
+      "Ligand-Receptor Dependence",
+      "Resolution / Grouping Level"
+    ],
+    "safe_language": "CCC outputs are displayed as inferred, interpreted, scored, or summarized signals. They are not presented as experimentally proven mechanisms."
+  }
+};

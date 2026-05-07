@@ -19,6 +19,7 @@
         <span>BioHarness</span>
       </div>
       <nav class="nav-links" aria-label="Page sections">
+        <a href="#playground">Playground</a>
         <a href="#registry">Layer 1</a>
         <a href="#method-panel">Layer 2</a>
         <a href="#protocol">Protocol</a>
@@ -60,6 +61,28 @@
             Layer 1 is fixed to 20 active <code>Analysis Problem</code> values. The routing signal is
             research object plus target output; input type only breaks ties.
           </p>
+        </div>
+
+        <div id="playground" class="playground-shell" aria-labelledby="playground-title">
+          <article class="playground-intro">
+            <p class="eyebrow">Agent route playground / 老板可试玩</p>
+            <h3 id="playground-title">Tap one route bubble and jump into the matching Layer 2 file</h3>
+            <p class="playground-copy">
+              The bubble deck simulates how an agent should stay inside the 20 formal routes instead of
+              wandering off to search for random packages.
+            </p>
+            <div class="playground-preview" aria-live="polite">
+              <span class="playground-kicker">Selected route</span>
+              <strong id="playgroundRoute">Cell-Cell Communication</strong>
+              <p id="playgroundTarget" class="playground-target"></p>
+              <p id="playgroundOutput" class="playground-output"></p>
+              <span id="playgroundHint" class="playground-hint">Selecting a bubble scrolls to Layer 2 automatically.</span>
+            </div>
+          </article>
+
+          <div class="bubble-stage" aria-label="Bubble route selector">
+            <div id="bubbleCloud" class="bubble-cloud" role="list"></div>
+          </div>
         </div>
 
         <div class="registry-workbench">
@@ -168,6 +191,7 @@
       </footer>
     </main>
 
+    <script src="assets/registry-inline.js"></script>
     <script src="assets/site.js" defer></script>
   </body>
 </html>
